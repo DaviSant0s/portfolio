@@ -66,7 +66,7 @@ export default function Header() {
         
         <nav className='nav-header'>
           <div className='home link-page'>Início</div>
-          <div className='about link-page'>Sobre mim</div>
+          {/* <div className='about link-page'>Sobre mim</div> */}
           <div className='experiences link-page'>Experiências</div>
           <div className='projects link-page'>Projetos</div>
           <div className='certifications link-page'>Certificações</div>
