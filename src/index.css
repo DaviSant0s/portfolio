@@ -1,0 +1,17 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+  color: #595554;
+}
+
+:root {
+  --heightHeader: 180px;
+  /* --heightHeader: 210px; */
+  --heighBody: calc(100vh - var(--heightHeader));
+}
+
+body {
+  /* background-color: #F9F9F9; */
+}
