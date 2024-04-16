@@ -1,7 +1,9 @@
 .body-container{
-  background-color: #e8e8e8;
   background-color: #F9F9F9;
-  height: var(--heighBody);
-  width: 1300px;
+  /* height: var(--heighBody); */
+
+  width: 100%;
+
+ /*  width: 1300px; */
   margin: auto;
 }

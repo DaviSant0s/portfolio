@@ -8,10 +8,40 @@
 
 :root {
   --heightHeader: 180px;
-  /* --heightHeader: 210px; */
   --heighBody: calc(100vh - var(--heightHeader));
 }
 
-body {
-  /* background-color: #F9F9F9; */
+/* cor padrão do título */
+h1 {
+  color: #4e4d4d;
+  font-size: 2.2em;
+}
+
+/* Barra de Rolagem */
+
+/* trilho */
+::-webkit-scrollbar{
+  background-color: #f1f1f1;
+  width: 5px;
+  border-radius: 50px;
+}
+
+/* scroll */
+::-webkit-scrollbar-thumb{
+  background-color: #c1c1c1;
+  border-radius: 500px;
+}
+
+/* configuração padrão das páginas */
+
+.defaultPages {
+  padding: 20px;
+  padding-top: 50px;
+  
+  padding-left: calc((100vw - 1300px) / 2 );
+  padding-right: calc((100vw - 1300px) / 2 );
+
+  height: var(--heighBody);
+
+  border-bottom: 1px solid #eaecec;
 }

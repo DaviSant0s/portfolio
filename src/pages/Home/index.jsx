@@ -4,14 +4,13 @@ import Button from '../../components/Button';
 
 export default function Home() {
   return (
-    <div className='home-container'>
+    <div className='home-container defaultPages'>
 
-      <h1>Desenvolvedor web</h1>
       <div className='description-image-container'>
-        <div className='image-container-home'>
-          <img src={reactImage} alt="" />
-        </div>
         <div className='description-home'>
+
+          <h1>Desenvolvedor web</h1>
+
           <p>
             Olá, meu nome é Davi Santos! Tenho 23 anos, sou uma pessoa 
             bastante dedicada aos estudos, focado e sempre aprendendo 
@@ -31,6 +30,9 @@ export default function Home() {
           <a className='curriculum-btn' href="https://drive.google.com/file/d/1hHtHCqwOIouLySi8dBQeAUHaJB8wdku1/view?usp=sharing" target='_blank'>
            <Button name={'Currículo'} icon={'file_download'}/>
           </a>
+        </div>
+        <div className='image-container-home'>
+          <img src={reactImage} alt="" />
         </div>
       </div>
 
