@@ -7,12 +7,14 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: start;
+
 }
 
 .home-container h1 {
   line-height: 100%;
 
   margin-bottom: 5px;
+  margin-top: -3px;
 
   -webkit-user-select: none;
   user-select: none;
@@ -21,13 +23,10 @@
 .image-container-home {
   flex-shrink: 0;
 
-  width: 422px;
-  height: 249px;
-  /* width: 500px;
-  height: 300px; */
+  width: 432px;
+  height: 259px;
 
   border: 2px solid #E8E8E8;
-  /* border-radius: 16px; */
   border-radius: 8px;
   padding: 8px;
   box-shadow: 0px 6px 9px 0px rgba(237,237,237,0.9);
@@ -40,8 +39,6 @@
   height: 100%;
   object-fit: cover;
 
-  /* border-radius: 10px; */
-
   -webkit-user-select: none;
   user-select: none;
   
@@ -51,11 +48,10 @@
 
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12.5px;
 
   width: 700px;
 
-  /* background-color: red; */
 }
 
 .curriculum-btn {

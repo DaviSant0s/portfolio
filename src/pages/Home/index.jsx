@@ -1,6 +1,6 @@
 import './styles.css';
-import reactImage from '../../assets/react-image-home.jpg'
 import Button from '../../components/Button';
+import img_home from '../../assets/img-home.jpg';
 
 export default function Home() {
   return (
@@ -32,7 +32,7 @@ export default function Home() {
           </a>
         </div>
         <div className='image-container-home'>
-          <img src={reactImage} alt="" />
+          <img src={img_home} alt="image-home" />
         </div>
       </div>
 
