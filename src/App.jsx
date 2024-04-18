@@ -1,6 +1,6 @@
 import './App.css';
 import Header from './components/Header';
-import Experiences from './pages/Experiences';
+import Certifications from './pages/Certifications';
 import Home from './pages/Home';
 
 function App() {
@@ -10,9 +10,9 @@ function App() {
     <Header/>
     <div className='body-container'>
       <Home/>
-      <Experiences/>
+      <Certifications/>
       <Home/>
-      <Experiences/>
+      <Certifications/>
     </div>
 
    </div>

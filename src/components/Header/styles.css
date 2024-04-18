@@ -171,6 +171,10 @@
   justify-content: flex-start;
   align-items: flex-end;
   height: 50px;
+
+  
+
+  background-color: transparent;
 }
 
 .nav-header > .link-page {
@@ -189,6 +193,7 @@
 
   -webkit-user-select: none;
   user-select: none;
+  
 }
 
 .nav-header > .link-page:hover {
@@ -224,7 +229,7 @@
 .nav-header > .experiences {
   border-left: 5px solid #e8e8e8;
   border-right: 5px solid #e8e8e8;
-  margin-left: -5px;
+  margin-left: -4.5px;
 
   transition: all 0.3s ease-in-out;
 }
