@@ -17,8 +17,6 @@
   width: 1300px;
   height: 100%;
   background-color: transparent;
-
-  /* padding-left: 20px; */
 }
 
 .logo-and-buttons-header {
@@ -177,7 +175,11 @@
   background-color: transparent;
 }
 
-.nav-header > .link-page {
+.nav-header > .Link {
+  height: 100%;
+}
+
+.nav-header .link-page {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -196,11 +198,11 @@
   
 }
 
-.nav-header > .link-page:hover {
+.nav-header .link-page:hover {
   background-color: rgb(255, 241, 227);
 }
 
-.nav-header > .home {
+.nav-header .home {
   border-left: 5px solid #e8e8e8;
   border-right: 5px solid #e8e8e8;
   font-weight: 600;
@@ -209,11 +211,11 @@
 
 }
 
-.nav-header > .home:hover{
+.nav-header .home:hover{
   margin-right: 10px;
 }
 
-.nav-header > .about {
+.nav-header .about {
   border-left: 5px solid #e8e8e8;
   border-right: 5px solid #e8e8e8;
   margin-left: -5px;
@@ -221,12 +223,12 @@
   transition: all 0.3s ease-in-out;
 }
 
-.nav-header > .about:hover{
+.nav-header .about:hover{
   margin-right: 10px;
   margin-left: 5px;
 }
 
-.nav-header > .experiences {
+.nav-header .experiences {
   border-left: 5px solid #e8e8e8;
   border-right: 5px solid #e8e8e8;
   margin-left: -4.5px;
@@ -234,12 +236,12 @@
   transition: all 0.3s ease-in-out;
 }
 
-.nav-header > .experiences:hover{
+.nav-header .experiences:hover{
   margin-right: 10px;
   margin-left: 5px;
 }
 
-.nav-header > .projects{
+.nav-header .projects{
   border-left: 5px solid #e8e8e8;
   border-right: 5px solid #e8e8e8;
   margin-left: -5px;
@@ -247,12 +249,12 @@
   transition: all 0.3s ease-in-out;
 }
 
-.nav-header > .projects:hover{
+.nav-header .projects:hover{
   margin-right: 10px;
   margin-left: 5px;
 }
 
-.nav-header > .certifications {
+.nav-header .certifications {
   border-left: 5px solid #e8e8e8;
   border-right: 5px solid #e8e8e8;
   margin-left: -5px;
@@ -260,12 +262,12 @@
   transition: all 0.3s ease-in-out;
 }
 
-.nav-header > .certifications:hover{
+.nav-header .certifications:hover{
   margin-right: 10px;
   margin-left: 5px;
 }
 
-.nav-header > .skills {
+.nav-header .skills {
   border-left: 5px solid #e8e8e8;
   border-right: 5px solid #e8e8e8;
   margin-left: -5px;
@@ -273,12 +275,12 @@
   transition: all 0.3s ease-in-out;
 }
 
-.nav-header > .skills:hover{
+.nav-header .skills:hover{
   margin-right: 10px;
   margin-left: 5px;
 }
 
-.nav-header > .contact {
+.nav-header .contact {
   border-left: 5px solid #e8e8e8;
   border-right: 5px solid #e8e8e8;
   margin-left: -5px;
@@ -286,6 +288,6 @@
   transition: all 0.3s ease-in-out;
 }
 
-.nav-header > .contact:hover{
+.nav-header .contact:hover{
   margin-left: 5px;
 }

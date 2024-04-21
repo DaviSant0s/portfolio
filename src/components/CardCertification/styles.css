@@ -1,13 +1,11 @@
 .cardCertification-container {
   display: flex;
 
-  height: 179px;
-  height: 200px;
+  height: 226px;
+  width: 400px;
 
-  width: 460px;
   padding-top: 15px;
   padding-bottom: 15px;
-
   padding-right: 15px;
 
   background-color: #f0f2f5;
@@ -15,7 +13,16 @@
 
   border: 2px solid #E8E8E8;
   box-shadow: 0px 6px 9px 0px rgba(237,237,237,0.9);
+
+  transition: all 0.18s 0.12s ease-in-out;
 }
+
+.cardCertification-container:hover {
+  transform: scale(1.03);
+  border: 2px solid #d6d6d6;
+}
+
+.image-container-certification, 
 
 .image-container-certification {
   height: 100%;
@@ -25,12 +32,11 @@
   justify-content: center;
 }
 
+
 .image-content-certification {
   background-color: transparent;
   width: 35px;
   height: 35px;
-
-  /* margin-top: 15px; */
 
   display: flex;
   justify-content: center;
@@ -49,10 +55,8 @@
 
 .description-certification-container {
   height: 100%;
-  /* min-width: calc(100% - 80px); */
   min-width: 295px;
   max-width: 370px;
-  background-color: transparent;
   
 }
 
@@ -63,12 +67,13 @@
 
 
 .description-certification-container > .description {
-  display: block;
   font-weight: 400;
   font-size: 1.05em;
   margin-top: 5px;
   margin-bottom: 10px;
   font-family: 'Roboto Slab';
+
+  height: 2.7em;
 }
 
 .institution-name-container {
@@ -85,29 +90,44 @@
   display: block;
 }
 
+.institution-name > a {
+  text-decoration: none;
+}
+
+.link-credential-btn {
+  text-decoration: none;
+}
+
 .credential-btn {
-  margin-top: 8px;
+  margin-top: 12px;
   width: max-content;
   background-color: transparent;
 
   display: flex;
   gap: 5px;
 
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 2px;
-  padding-bottom: 2px;
+  padding: 2px 10px 2px 10px;
 
   border-radius: 20px;
 
+  border: 1px solid #939393;
+  
+  transition: all 0.07s ease-in-out;
+  cursor: pointer;
+}
+
+.credential-btn:hover {
   border: 1px solid #555555;
-  box-shadow: 0px 6px 9px 0px rgba(237,237,237,0.9);
+  box-shadow: 0px 6px 9px 0px #dbd9d965;
+  color: #413f3f;
 }
 
 .credential-btn > span {
   font-size: 1.2em;
+  color: inherit;
 }
 
 .credential-btn > p {
+  color: inherit;
   font-weight: 600;
 }

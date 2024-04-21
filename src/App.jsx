@@ -12,7 +12,8 @@ function App() {
       <Home/>
       <Certifications/>
       <Home/>
-      <Certifications/>
+      <Home/>
+      <Home/>
     </div>
 
    </div>

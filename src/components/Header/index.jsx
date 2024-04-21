@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-scroll';
 import Logo from '../Logo';
 import github from '../../assets/github.png'
 import linkedin from '../../assets/linkedin.png'
@@ -65,13 +66,25 @@ export default function Header() {
         </div>
         
         <nav className='nav-header'>
-          <div className='home link-page'>Início</div>
+          <Link className='Link'>
+            <div className='home link-page'>Início</div>
+          </Link>
           {/* <div className='about link-page'>Sobre mim</div> */}
-          <div className='experiences link-page'>Experiências</div>
-          <div className='projects link-page'>Projetos</div>
-          <div className='certifications link-page'>Certificações</div>
-          <div className='skills link-page'>Habilidades</div>
-          <div className='contact link-page'>Contato</div>
+          <Link className='Link'>
+            <div className='experiences link-page'>Experiências</div>
+          </Link>
+          <Link className='Link'>
+            <div className='projects link-page'>Projetos</div>
+          </Link>
+          <Link to='id-ertifications' smooth={true} offset={40} duration={700} className='Link'>
+            <div className='certifications link-page'>Certificações</div>
+          </Link>
+          <Link className='Link'>
+            <div className='skills link-page'>Habilidades</div>
+          </Link>
+          <Link className='Link'>
+            <div className='contact link-page'>Contato</div>
+          </Link>
         </nav>
       </div>
     </header>
