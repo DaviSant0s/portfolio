@@ -1,4 +1,5 @@
 import './App.css';
+import Footer from './components/Footer';
 import Header from './components/Header';
 import Certifications from './pages/Certifications';
 import Home from './pages/Home';
@@ -12,7 +13,7 @@ function App() {
       <Home/>
       <Certifications/>
     </div>
-
+    <Footer/>
    </div>
   )
 }
