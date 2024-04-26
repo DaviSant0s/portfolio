@@ -6,14 +6,18 @@
   padding: 0;
   box-sizing: border-box;
   /* font-family: 'Roboto Slab';
-  font-family: 'Plus Jakarta Sans', sans-serif; */
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif; */
+  font-family: 'Plus Jakarta Sans', sans-serif;
   color: #595554;
 }
 
 :root {
   --heightHeader: 180px;
   --heighBody: calc(100vh - var(--heightHeader));
+  /* 
+   */
+  --mainColor: #ffffff;
+  
 }
 
 /* cor padrão do título */
@@ -43,15 +47,21 @@ h2 {
 
 /* configuração padrão das páginas */
 
-.defaultPages {
-  padding: 20px;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  
+.defaultHome {
   padding-left: calc((100vw - 1300px) / 2 );
   padding-right: calc((100vw - 1300px) / 2 );
 
-  min-height: calc(var(--heighBody) - 150px) ;
+  height: calc(var(--heighBody));
+}
 
-  border-bottom: 1px solid #eaecec;
+.defaultPages {
+  padding-left: calc((100vw - 1300px) / 2 );
+  padding-right: calc((100vw - 1300px) / 2 );
+
+  min-height: calc(var(--heighBody));
+
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  /* border-bottom: 1px solid #eaecec; */
 }

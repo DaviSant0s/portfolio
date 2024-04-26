@@ -12,6 +12,8 @@
   user-select: none;
 
   cursor: pointer;
+
+  background-color: transparent;
 }
 
 .logo-container > h1{
@@ -25,6 +27,7 @@
   font-family: 'Dancing Script';
   font-size: 2em;
   font-weight: bolder;
+  color: white;
   color: #544f4e;
 
   margin-top: -22px;

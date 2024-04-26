@@ -22,35 +22,42 @@ export default function CardCertification({img, name, description, institution, 
   
   return (
     <div ref={Ref_hover} className='cardCertification-container'>
-      <div className='image-container-certification'>
-        <div className='image-content-certification'>
+
+      <div className='image-container-cardCertification'>
+        <div className='image-content-cardCertification'>
           <img style={style_icone} src={img} alt="" />
         </div>
       </div>
-      <div className='description-certification-container'>
+
+      <div className='description-cardCertification-container'>
         <h1 style={style_title}>{name}</h1>
         <div className='description'>{description}</div>
-        <div className='institution-name-container'>
-          <span className='institution-title'>Instituição:</span>
-          <p className='institution-name'><a style={underline} target='_blank' href={link_institution}>{institution}</a></p>
-        </div>
-        <div className='institution-name-container'>
-          <span className='institution-title'>Conclusão:</span>
-          <p className='institution-name'>{conclusion}</p>
+        
+        <div className='data-cardCertification-container'>
+          <span className='title'>Instituição:</span>
+          <p className='name'><a style={underline} target='_blank' href={link_institution}>{institution}</a></p>
         </div>
 
-        <div className='institution-name-container'>
-          <span className='institution-title'>Duração:</span>
-          <p className='institution-name'>{duration}</p>
+        <div className='data-cardCertification-container'>
+          <span className='title'>Duração:</span>
+          <p className='name'>{duration}</p>
         </div>
 
-        <a className='link-credential-btn' target='_blank' href={link_credential}>
-          <div className='credential-btn'>
+        <div className='data-cardCertification-container'>
+          <span className='title'>Conclusão:</span>
+          <p className='name'>{conclusion}</p>
+        </div>
+
+
+        <div className='container-credential-btn'>
+          <a className='link-credential-btn' target='_blank' href={link_credential}>
+            <div className='credential-btn'>
           
-            <p>Exibir credencial</p>
-            <span className="material-symbols-outlined">ios_share</span>
-          </div>
-        </a>
+              <p>Exibir credencial</p>
+              <span className="material-symbols-outlined">ios_share</span>
+            </div>
+          </a>
+        </div>
       </div>
     </div>
   )

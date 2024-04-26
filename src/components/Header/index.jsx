@@ -32,13 +32,13 @@ export default function Header() {
               <a href="https://github.com/DaviSant0s" target='_blank' className='link-github'>
                 <div className='github social-contact'>
                   <img src={github} alt="github-icon" />
-                  GitHub
+                  <span>GitHub</span>
                 </div>
               </a>
               <a href="https://www.linkedin.com/in/davisantoss/" target='_blank' className='link-linkedin'>
                 <div className='linkedin social-contact'>
                   <img src={linkedin} alt="linkedin-icon" />
-                  LinkedIn
+                  <span>LinkedIn</span>
                 </div>
               </a>
             </div>
@@ -69,15 +69,15 @@ export default function Header() {
           <Link className='Link'>
             <div className='home link-page'>Início</div>
           </Link>
+          <Link to='id-ertifications' smooth={true} offset={0} duration={700} className='Link'>
+            <div className='certifications link-page'>Certificações</div>
+          </Link>
           {/* <div className='about link-page'>Sobre mim</div> */}
           <Link className='Link'>
             <div className='experiences link-page'>Experiências</div>
           </Link>
           <Link className='Link'>
             <div className='projects link-page'>Projetos</div>
-          </Link>
-          <Link to='id-ertifications' smooth={true} offset={40} duration={700} className='Link'>
-            <div className='certifications link-page'>Certificações</div>
           </Link>
           <Link className='Link'>
             <div className='skills link-page'>Habilidades</div>

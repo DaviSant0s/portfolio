@@ -47,7 +47,7 @@ export default function Certifications() {
           conclusion={'2023'}
           duration={'160 horas'}
           link_institution='https://www.cursoemvideo.com/'
-          style_title={{fontSize: '1.4em'}}
+          style_title={{fontSize: '1.3em'}}
         />
 
         <CardCertification
@@ -57,7 +57,7 @@ export default function Certifications() {
           institution={'Télos'}
           conclusion={'2024'}
           link_institution='https://www.telosconecta.com/en-US'
-          duration={'---'}
+          duration={'null'}
         />
 
         <CardCertification
@@ -76,7 +76,7 @@ export default function Certifications() {
           description={'Introdução ao Git'}
           institution={'Microsoft Learn'}
           conclusion={'2024'}
-          duration={'---'}
+          duration={'null'}
           link_institution='https://learn.microsoft.com/pt-br/training/browse/'
           link_credential='https://drive.google.com/file/d/1hKURT3dkYVdj1A6jdXkFCl_AMrobokFh/view'
         />
@@ -87,7 +87,7 @@ export default function Certifications() {
           description={'Como criar e modificar um projeto Git'}
           institution={'Microsoft Learn'}
           conclusion={'2024'}
-          duration={'---'}
+          duration={'null'}
           link_institution='https://learn.microsoft.com/pt-br/training/browse/'
           link_credential='https://drive.google.com/file/d/1hKw_BF0ucbKRE3nSW0l2_6UvyPsvkshb/view'
         />
@@ -98,7 +98,7 @@ export default function Certifications() {
           description={'Programa de capacitação da Télos '}
           institution={'Télos'}
           conclusion={'2023'}
-          duration={'---'}
+          duration={'null'}
           link_institution='https://www.telosconecta.com/en-US'
           style_icone={{width: '60px', height: '70px'}}
         />
@@ -109,7 +109,7 @@ export default function Certifications() {
           description={'Programa de capacitação da Télos '}
           institution={'Télos'}
           conclusion={'2023'}
-          duration={'---'}
+          duration={'null'}
           link_institution='https://www.telosconecta.com/en-US'
           style_icone={{width: '45px', height: '45px'}}
         />

@@ -4,7 +4,7 @@ import img_home from '../../assets/img-home.jpg';
 
 export default function Home() {
   return (
-    <div className='home-container defaultPages'>
+    <div className='home-container defaultHome'>
 
       <div className='description-image-container'>
         <div className='description-home'>

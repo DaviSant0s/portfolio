@@ -1,133 +1,168 @@
+/* certification card container */
 .cardCertification-container {
   display: flex;
 
-  height: 226px;
   width: 400px;
+  height: 226px;
+
+  background-color: white;
 
   padding-top: 15px;
   padding-bottom: 15px;
   padding-right: 15px;
 
-  background-color: #f0f2f5;
   border-radius: 8px;
+  border: 1px solid #E8E8E8;
+  box-shadow: 0px 6px 9px 0px rgb(222, 222, 222);
 
-  border: 2px solid #E8E8E8;
-  box-shadow: 0px 6px 9px 0px rgba(237,237,237,0.9);
-
-  transition: all 0.18s 0.12s ease-in-out;
+  transition: all 0.18s ease-in-out;
 }
 
+/* certification card animation */
 .cardCertification-container:hover {
   transform: scale(1.03);
-  border: 2px solid #d6d6d6;
+  border: 1px solid #d6d6d6;
 }
 
-.image-container-certification, 
-
-.image-container-certification {
-  height: 100%;
-  width: 70px;
-  background-color: transparent;
+/* certification card image container */
+.image-container-cardCertification {
   display: flex;
   justify-content: center;
+  width: 70px;
+  height: 100%;
+
+  /* background-color: orange; */
+
 }
 
 
-.image-content-certification {
-  background-color: transparent;
-  width: 35px;
-  height: 35px;
-
+/*certification card image content */
+.image-content-cardCertification {
   display: flex;
   justify-content: center;
   align-items: center;
+  
+  width: 35px;
+  height: 35px;
+  
+  /* background-color: green; */
 
   overflow: hidden;
 }
 
-.image-content-certification > img {
-  background-color: transparent ;
+/* certification card image content image */
+.image-content-cardCertification > img {
   width: 100%;
   height: 100%;
 
   object-fit: contain;
 }
 
-.description-certification-container {
+/* certification card description container */
+.description-cardCertification-container {
+  width: 370px;
   height: 100%;
-  min-width: 295px;
-  max-width: 370px;
-  
+
+  /* background-color: grey; */
 }
 
-.description-certification-container > h1 {
-  font-size: 1.7em;
+/* certification card description container title */
+.description-cardCertification-container > h1 {
+  width: 100%;
+  font-size: 1.4em;
   line-height: 100%;
+
+  /* background-color: aqua; */
 }
 
 
-.description-certification-container > .description {
-  font-weight: 400;
+/* container title description of certification card description */
+.description-cardCertification-container > .description {
+  width: 100%;
+  height: 2.7em;
+
+  font-family: 'Roboto Slab';
   font-size: 1.05em;
+  font-weight: 400;
+
   margin-top: 5px;
   margin-bottom: 10px;
-  font-family: 'Roboto Slab';
 
-  height: 2.7em;
+  /* background-color: #0270ad; */
 }
 
-.institution-name-container {
+
+/* certification card data container */
+.data-cardCertification-container {
   display: flex;
+  justify-content: start;
+  align-items: center;
   gap: 5px;
-  background-color: transparent;
+
+  /* background-color: red; */
 }
 
-.institution-title {
+/* certification data title */
+.data-cardCertification-container > .title {
+  display: block;
+
+  font-family: 'Roboto Slab';
   font-size: 1em;
   font-weight: 700;
-  font-family: 'Roboto Slab';
 
-  display: block;
+  /* background-color: brown; */
 }
 
-.institution-name > a {
+/* certification instituation link */
+.data-cardCertification-container > .name > a {
   text-decoration: none;
 }
 
+/* credential buttom link */
 .link-credential-btn {
   text-decoration: none;
 }
 
+.container-credential-btn {
+  width: 100%;
+  margin-top: 23px;
+  /* background-color: #00ffff; */
+}
+
+/* credential buttom */
 .credential-btn {
-  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+
   width: max-content;
   background-color: transparent;
 
-  display: flex;
-  gap: 5px;
 
-  padding: 2px 10px 2px 10px;
-
+  padding: 4px 10px 4px 10px;
   border-radius: 20px;
-
   border: 1px solid #939393;
   
-  transition: all 0.07s ease-in-out;
+  transition: all 0.15s ease-in-out;
   cursor: pointer;
 }
 
 .credential-btn:hover {
-  border: 1px solid #555555;
-  box-shadow: 0px 6px 9px 0px #dbd9d965;
-  color: #413f3f;
+  background-color: #0270ad;
+  color: white;
+  border: 1px solid #025e90;
+  box-shadow: 0px 6px 9px 0px transparent;
 }
 
 .credential-btn > span {
   font-size: 1.2em;
+  font-size: 1em;
   color: inherit;
 }
 
 .credential-btn > p {
   color: inherit;
   font-weight: 600;
+  line-height: 100%;
 }

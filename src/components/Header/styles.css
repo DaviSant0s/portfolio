@@ -3,11 +3,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0px 1px 26px 0px rgba(217,222,222,0.9);
 
   width: 100%;
   height: var(--heightHeader);
-  background-color: white;
+  background-color: var(--mainColor);
 }
 
 .header-content {
@@ -61,11 +60,10 @@
   gap: 5px;
 
   height: 41px;
-  /* width: 85px; */
   padding-left: 10px;
   padding-right: 10px;
 
-  border: 3px solid #e8e8e8;
+  border: 2px solid #e8e8e8;
   border-radius: 10px;
 
   cursor: pointer;
@@ -79,8 +77,7 @@
 }
 
 .contact-btn .social-contact:hover{
-  /* background: linear-gradient(to top, #e8e7e7de, white); */
-  border: 3px solid #d6d6d6;
+  border: 2px solid #d6d6d6;
 }
 
 .contact-btn .social-contact > img {
@@ -117,7 +114,6 @@
 
   border-radius: 20px 20px 20px 20px;
   border: 1px solid #e8e8e8;
-  box-shadow: inset 0px 0px 6px #e8e8e8;
   box-shadow: inset 0px 0px 6px #e3e3e3;
   
   cursor: pointer;
@@ -173,10 +169,25 @@
   
 
   background-color: transparent;
+
+  /* margin-bottom: 20px; */
 }
 
 .nav-header > .Link {
   height: 100%;
+}
+
+/* #e8e8e8 */
+/* --buttomBorderPage: #F1FAEE;
+--buttomBorderPage: #FFD166;
+--buttomBorderPage: #BFD1E5;
+--buttomBorderPage: #F9F9F9;
+--buttomBorderPage: #1C110A;
+--buttomBorderPage: var(--mainColor); */
+
+:root {
+  --buttomBorderPage: #e8e8e8;
+  --buttomBorderPage: #d3d3d3;
 }
 
 .nav-header .link-page {
@@ -187,9 +198,8 @@
   padding-left: 10px;
   padding-right: 10px;
 
-  border-top: 5px solid #e8e8e8;
+  border-top: 1px solid var(--buttomBorderPage);
   border-radius: 10px 10px 0px 0px;
-  border-top: inset 50px solid #e8e8e8;
 
   cursor: pointer;
 
@@ -199,12 +209,14 @@
 }
 
 .nav-header .link-page:hover {
-  background-color: rgb(255, 241, 227);
+  background-color: rgba(255, 241, 227, 0.688);
+  /* box-shadow: 0px 10px 2px rgba(255, 241, 227, 0.653); */
 }
 
 .nav-header .home {
-  border-left: 5px solid #e8e8e8;
-  border-right: 5px solid #e8e8e8;
+  border-left: 1px solid var(--buttomBorderPage);
+  border-right: 1px solid var(--buttomBorderPage);
+
   font-weight: 600;
 
   transition: all 0.3s ease-in-out;
@@ -212,78 +224,73 @@
 }
 
 .nav-header .home:hover{
-  margin-right: 10px;
+  margin-right: 5px;
 }
 
 .nav-header .about {
-  border-left: 5px solid #e8e8e8;
-  border-right: 5px solid #e8e8e8;
+  border-left: 1px solid var(--buttomBorderPage);
+  border-right: 1px solid var(--buttomBorderPage);
   margin-left: -5px;
 
   transition: all 0.3s ease-in-out;
 }
 
 .nav-header .about:hover{
-  margin-right: 10px;
+  margin-right: 5px;
   margin-left: 5px;
 }
 
 .nav-header .experiences {
-  border-left: 5px solid #e8e8e8;
-  border-right: 5px solid #e8e8e8;
-  margin-left: -4.5px;
+  border-left: 1px solid var(--buttomBorderPage);
+  border-right: 1px solid var(--buttomBorderPage);
 
   transition: all 0.3s ease-in-out;
 }
 
 .nav-header .experiences:hover{
-  margin-right: 10px;
+  margin-right: 5px;
   margin-left: 5px;
 }
 
 .nav-header .projects{
-  border-left: 5px solid #e8e8e8;
-  border-right: 5px solid #e8e8e8;
-  margin-left: -5px;
+  border-left: 1px solid var(--buttomBorderPage);
+  border-right: 1px solid var(--buttomBorderPage);
 
   transition: all 0.3s ease-in-out;
 }
 
 .nav-header .projects:hover{
-  margin-right: 10px;
+  margin-right: 5px;
   margin-left: 5px;
 }
 
 .nav-header .certifications {
-  border-left: 5px solid #e8e8e8;
-  border-right: 5px solid #e8e8e8;
-  margin-left: -5px;
+  border-left: 1px solid var(--buttomBorderPage);
+  border-right: 1px solid var(--buttomBorderPage);
 
   transition: all 0.3s ease-in-out;
 }
 
 .nav-header .certifications:hover{
-  margin-right: 10px;
+  margin-right: 5px;
   margin-left: 5px;
 }
 
 .nav-header .skills {
-  border-left: 5px solid #e8e8e8;
-  border-right: 5px solid #e8e8e8;
-  margin-left: -5px;
+  border-left: 1px solid var(--buttomBorderPage);
+  border-right: 1px solid var(--buttomBorderPage);
 
   transition: all 0.3s ease-in-out;
 }
 
 .nav-header .skills:hover{
-  margin-right: 10px;
+  margin-right: 5px;
   margin-left: 5px;
 }
 
 .nav-header .contact {
-  border-left: 5px solid #e8e8e8;
-  border-right: 5px solid #e8e8e8;
-  margin-left: -5px;
+  border-left: 1px solid var(--buttomBorderPage);
+  border-right: 1px solid var(--buttomBorderPage);
 
   transition: all 0.3s ease-in-out;
 }

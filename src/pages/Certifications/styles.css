@@ -2,12 +2,12 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: white;
-  /* background-color: red; */
+  background-color: #f9fafb;
 }
 
 .certifications-container > h1 {
   text-align: center;
+  line-height: 100%;
 }
 
 .certifications-content {

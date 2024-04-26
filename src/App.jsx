@@ -11,9 +11,6 @@ function App() {
     <div className='body-container'>
       <Home/>
       <Certifications/>
-      <Home/>
-      <Home/>
-      <Home/>
     </div>
 
    </div>
