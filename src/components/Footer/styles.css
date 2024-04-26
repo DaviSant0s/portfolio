@@ -48,6 +48,8 @@
   cursor: pointer;
 
   transition: all 0.1s ease-in-out;
+
+  color: #4c4848;
 }
 
 .footer-social-btn:hover {
@@ -61,6 +63,7 @@
 
 .footer-social-btn > span {
   font-weight: 500;
+  color: #4c4848;
 }
 
 .footer-content{
