@@ -2,7 +2,7 @@ import './styles.css';
 import useEventListener from "../../hooks/useEventListener";
 import { useRef, useState } from 'react';
 
-export default function CardCertification({img, name, description, institution, conclusion, duration, link_institution='', link_credential='' , style_icone={}, style_title={}}) {
+export default function CardCertification({img, name, description, institution, conclusion, duration, link_institution='', link_view='', link_credential='' , style_icone={}, style_title={}}) {
   const Ref_hover = useRef();
   const [ underline, setUnderline ] = useState({});
 
@@ -49,13 +49,18 @@ export default function CardCertification({img, name, description, institution, 
           <p className='name'>{conclusion}</p>
         </div>
 
-
-        <div className='container-credential-btn'>
+        <div className='container-credential-btns'>
           <a className='link-credential-btn' target='_blank' href={link_credential}>
             <div className='credential-btn'>
-          
+        
               <p>Exibir credencial</p>
               <span className="material-symbols-outlined">ios_share</span>
+            </div>
+          </a>
+
+          <a className='link-view-btn' target='_blank' href={link_view}>
+            <div className='view-btn'>
+              <p>View</p>
             </div>
           </a>
         </div>
