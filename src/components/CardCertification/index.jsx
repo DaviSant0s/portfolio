@@ -10,7 +10,8 @@ export default function CardCertification({img, name, description, institution, 
 
     if(Ref_hover.current.contains(e.target)) {
       setUnderline({
-        textDecoration: 'underline'
+        textDecoration: 'underline',
+        opacity: 0.9
       });
 
     } else {
