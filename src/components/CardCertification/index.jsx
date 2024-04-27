@@ -8,7 +8,8 @@ export default function CardCertification({img=null, icon, name, description, in
   const Ref_btn_view = useRef();
 
   const [ underline, setUnderline ] = useState({});
-  const [ styleBtns, setStyleBtns ] = useState({});
+  const [ styleBtnCredential, setStyleBtnCredential ] = useState({});
+  const [ styleBtnView, setStyleBtnView ] = useState({});
 
   const handleMouseover = (e) => {
 
@@ -17,19 +18,22 @@ export default function CardCertification({img=null, icon, name, description, in
         textDecoration: 'underline',
       });
 
-      setStyleBtns({border: '1px solid #595554'});
+      setStyleBtnCredential({border: '1px solid #595554'});
+      setStyleBtnView({border: '1px solid #595554'});
 
     } else {
       setUnderline({});
-      setStyleBtns({});
+
+      setStyleBtnCredential({});
+      setStyleBtnView({});
     }
 
     if(Ref_btn_credential.current.contains(e.target)){
-      setStyleBtns({})
+      setStyleBtnCredential({});
     }
 
     if(Ref_btn_view.current.contains(e.target)){
-      setStyleBtns({})
+      setStyleBtnView({});
     }
   }
 
@@ -73,7 +77,7 @@ export default function CardCertification({img=null, icon, name, description, in
 
         <div className='container-credential-btns'>
           <a className='link-credential-btn' target='_blank' href={link_credential}>
-            <div ref={Ref_btn_credential} style={styleBtns} className='credential-btn'>
+            <div ref={Ref_btn_credential} style={styleBtnCredential} className='credential-btn'>
         
               <p>Exibir credencial</p>
               <span className="material-symbols-outlined">ios_share</span>
@@ -81,7 +85,7 @@ export default function CardCertification({img=null, icon, name, description, in
           </a>
 
           <a className='link-view-btn' target='_blank' href={link_view}>
-            <div ref={Ref_btn_view} style={styleBtns} className='view-btn'>
+            <div ref={Ref_btn_view} style={styleBtnView} className='view-btn'>
               <p>View</p>
             </div>
           </a>
