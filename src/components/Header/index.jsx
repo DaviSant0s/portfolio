@@ -66,23 +66,23 @@ export default function Header() {
         </div>
         
         <nav className='nav-header'>
-          <Link className='Link'>
+          <Link to='' className='Link'>
             <div className='home link-page'>Início</div>
           </Link>
           <Link to='id-ertifications' smooth={true} offset={0} duration={700} className='Link'>
             <div className='certifications link-page'>Certificações</div>
           </Link>
           {/* <div className='about link-page'>Sobre mim</div> */}
-          <Link className='Link'>
+          <Link to='' className='Link'>
             <div className='experiences link-page'>Experiências</div>
           </Link>
-          <Link className='Link'>
+          <Link to='' className='Link'>
             <div className='projects link-page'>Projetos</div>
           </Link>
-          <Link className='Link'>
+          <Link to='' className='Link'>
             <div className='skills link-page'>Habilidades</div>
           </Link>
-          <Link className='Link'>
+          <Link to='' className='Link'>
             <div className='contact link-page'>Contato</div>
           </Link>
         </nav>

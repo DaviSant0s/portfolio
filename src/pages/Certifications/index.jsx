@@ -1,144 +1,192 @@
 import CardCertification from '../../components/CardCertification';
-import git from '../../assets/git.png';
-import react from '../../assets/react.svg';
 import javascript from '../../assets/javascript.png';
-import htmlCss from '../../assets/html-css.png';
 import python from '../../assets/python.png';
-import wordpress from '../../assets/wordpress.webp';
 import visualg from '../../assets/visualg.png';
-import microsoft from '../../assets/microsoft.jpeg';
-import telos from '../../assets/telos.jpeg';
-import nodejs from '../../assets/nodejs.png';
-import git_github from '../../assets/git-github.webp';
 import github from '../../assets/github1.webp';
-
 import './styles.css';
+
+const DataCertifications = [
+  {
+    id: 0,
+    name: 'Javascript',
+    icon: "bx bxl-javascript",
+    img: javascript,
+    description: 'JavaScript e TypeScript do básico ao avançado',
+    institution: 'Udemy',
+    conclusion: '2024',
+    duration: '93 horas',
+    link_institution: 'https://www.udemy.com/course/curso-de-javascript-moderno-do-basico-ao-avancado/?couponCode=KEEPLEARNING',
+    style_icone: {width: '30px', height: '30px', border: '1px solid #c7c6bf'},
+  },
+  {
+    id: 1,
+    name: 'React + Next.js',
+    icon: "bx bxl-react",
+    img: null,
+    description: 'React.Js e Next.Js (Intermediário e Avançado)',
+    institution: 'Udemy',
+    conclusion: '2024',
+    duration: '146 horas',
+    link_institution: 'https://www.udemy.com/course/curso-de-reactjs-nextjs-completo-do-basico-ao-avancado/?couponCode=KEEPLEARNING',
+    style_icone: {color: '#61DAFB', fontSize: '2.5em'},
+  },
+  {
+    id: 2,
+    name: 'HTML5 e CSS3',
+    icon: "bx bxl-html5",
+    img: null,
+    description: 'Do básico ao avançado',
+    institution: 'Curso em vídeo',
+    conclusion: '2023',
+    duration: '160 horas',
+    link_institution: 'https://www.cursoemvideo.com/',
+    style_icone: {color: '#DD4B25'},
+  },
+  {
+    id: 3,
+    name: 'Backend',
+    icon: "bx bxl-nodejs",
+    img: null,
+    description: 'Capacitação backend com nodejs e MongoDB',
+    institution: 'Télos',
+    conclusion: '2024',
+    duration: 'null',
+    link_institution: 'https://www.telosconecta.com/en-US',
+    style_icone: {color: '#7CB700'},
+  },
+  {
+    id: 4,
+    name: 'Python',
+    icon: "bx bxl-python",
+    img: python,
+    description: 'Do básico ao avançado',
+    institution: 'Curso em vídeo',
+    conclusion: '2022',
+    duration: '120 horas',
+    link_institution: 'https://www.cursoemvideo.com/',
+    link_credential: '',
+    style_icone: {},
+  },
+  
+  {
+    id: 5,
+    name: 'git',
+    icon: "bx bxl-git",
+    img: null,
+    description: 'Introdução ao Git',
+    institution: 'Microsoft Learn',
+    conclusion: '2024',
+    duration: 'null',
+    link_institution: 'https://learn.microsoft.com/pt-br/training/browse/',
+    link_credential: 'https://drive.google.com/file/d/1hKURT3dkYVdj1A6jdXkFCl_AMrobokFh/view',
+    style_icone: {color: '#E84E31'},
+  },
+
+  {
+    id: 6,
+    name: 'git',
+    icon: "bx bxl-git",
+    img: null,
+    description: 'Como criar e modificar um projeto Git',
+    institution: 'Microsoft Learn',
+    conclusion: '2024',
+    duration: 'null',
+    link_institution: 'https://learn.microsoft.com/pt-br/training/browse/',
+    link_credential: 'https://drive.google.com/file/d/1hKw_BF0ucbKRE3nSW0l2_6UvyPsvkshb/view',
+    style_icone: {color: '#E84E31'},
+  },
+
+  {
+    id: 7,
+    name: 'React',
+    icon: "bx bxl-react",
+    img: null,
+    description: 'Programa de capacitação da Télos',
+    institution: 'Télos',
+    conclusion: '2023',
+    duration: 'null',
+    link_institution: 'https://www.telosconecta.com/en-US',
+    link_credential: '',
+    style_icone: {color: '#61DAFB'},
+  },
+  {
+    id: 8,
+    name: 'Git + GitHub',
+    icon: "bx bxl-github",
+    img: github,
+    description: 'Programa de capacitação da Télos',
+    institution: 'Télos',
+    conclusion: '2023',
+    duration: 'null',
+    link_institution: 'https://www.telosconecta.com/en-US',
+    link_credential: '',
+    style_icone: {width: '45px', height: '45px'},
+  },
+  {
+    id: 9,
+    name: 'Wordpress',
+    icon: "bx bxl-wordpress",
+    img: null,
+    description: 'Wordpress com gutenberg',
+    institution: 'Estudonauta',
+    conclusion: '2021',
+    duration: '80 horas',
+    link_institution: 'https://www.estudonauta.com/',
+    link_credential: '',
+    style_icone: {color: '#207196'},
+  },
+  {
+    id: 10,
+    name: 'Algoritmo + visualG',
+    icon: '',
+    img: visualg,
+    description: 'Algoritmos e Lógica de Programação',
+    institution: 'Curso em vídeo',
+    conclusion: '2020',
+    duration: '40 horas',
+    link_institution: 'https://www.cursoemvideo.com/',
+    link_credential: '',
+    style_icone: {},
+  }
+];
 
 export default function Certifications() {
   return (
     <div id='id-ertifications' className='certifications-container defaultPages'>
       <h1>Certificações</h1>
       <div className='certifications-content'>
-        <CardCertification 
-          img={javascript} 
-          name={'Javascript'} 
-          description={'JavaScript e TypeScript do básico ao avançado'}
-          institution={'Udemy'}
-          conclusion={'2024'}
-          duration={'93 horas'}
-          link_institution='https://www.udemy.com/course/curso-de-javascript-moderno-do-basico-ao-avancado/?couponCode=KEEPLEARNING'
-          style_icone={{width: '30px', height: '30px', border: '1px solid #c7c6bf'}}
-        />
-        <CardCertification 
-          img={react} 
-          name={'React + Next.js'}
-          description={'React.Js e Next.Js (Intermediário e Avançado)'}
-          institution={'Udemy'}
-          conclusion={'2024'}
-          duration={'146 horas'}
-          link_institution='https://www.udemy.com/course/curso-de-reactjs-nextjs-completo-do-basico-ao-avancado/?couponCode=KEEPLEARNING'
-          style_icone={{width: '60px', height: '70px'}}
-        />
-        <CardCertification
-          img={htmlCss}
-          name={'HTML5 e CSS3'}
-          description={'Do básico ao avançado'}
-          institution={'Curso em vídeo'}
-          conclusion={'2023'}
-          duration={'160 horas'}
-          link_institution='https://www.cursoemvideo.com/'
-          style_title={{fontSize: '1.3em'}}
-        />
 
-        <CardCertification
-          img={nodejs}
-          name={'Backend'}
-          description={'Capacitação backend com nodejs e MongoDB'}
-          institution={'Télos'}
-          conclusion={'2024'}
-          link_institution='https://www.telosconecta.com/en-US'
-          duration={'null'}
-        />
-
-        <CardCertification
-          img={python}
-          name={'Python'}
-          description={'Do básico ao avançado'}
-          institution={'Curso em vídeo'}
-          conclusion={'2022'}
-          duration={'120 horas'}
-          link_institution='https://www.cursoemvideo.com/'
-        />
-        
-        <CardCertification 
-          img={git} 
-          name={'git'} 
-          description={'Introdução ao Git'}
-          institution={'Microsoft Learn'}
-          conclusion={'2024'}
-          duration={'null'}
-          link_institution='https://learn.microsoft.com/pt-br/training/browse/'
-          link_credential='https://drive.google.com/file/d/1hKURT3dkYVdj1A6jdXkFCl_AMrobokFh/view'
-        />
-        <CardCertification 
-          img={git} 
-          imgTeste={microsoft}
-          name={'git'} 
-          description={'Como criar e modificar um projeto Git'}
-          institution={'Microsoft Learn'}
-          conclusion={'2024'}
-          duration={'null'}
-          link_institution='https://learn.microsoft.com/pt-br/training/browse/'
-          link_credential='https://drive.google.com/file/d/1hKw_BF0ucbKRE3nSW0l2_6UvyPsvkshb/view'
-        />
-        
-        <CardCertification
-          img={react}
-          name={'React'}
-          description={'Programa de capacitação da Télos '}
-          institution={'Télos'}
-          conclusion={'2023'}
-          duration={'null'}
-          link_institution='https://www.telosconecta.com/en-US'
-          style_icone={{width: '60px', height: '70px'}}
-        />
-
-        <CardCertification
-          img={github}
-          name={'Git + GiHub'}
-          description={'Programa de capacitação da Télos '}
-          institution={'Télos'}
-          conclusion={'2023'}
-          duration={'null'}
-          link_institution='https://www.telosconecta.com/en-US'
-          style_icone={{width: '45px', height: '45px'}}
-        />
-        
-        <CardCertification
-          img={wordpress}
-          name={'Wordpress'}
-          description={'Wordpress com gutenberg'}
-          institution={'Estudonauta'}
-          conclusion={'2021'}
-          duration={'80 horas'}
-          link_institution='https://www.estudonauta.com/'
-          style_icone={{width: '45px', height: '45px'}}
-        />
-        <CardCertification
-          img={visualg}
-          name={'Algoritmo + visualG'}
-          description={'Algoritmos e Lógica de Programação'}
-          institution={'Curso em vídeo'}
-          conclusion={'2020'}
-          duration={'40 horas'}
-          link_institution='https://www.cursoemvideo.com/'
-          style_icone={{width: '45px', height: '45px'}}
-        />
-        
-        
-
-        
+        {
+          DataCertifications.map((data, id) => {
+            return (
+              <div key={id}>
+                <CardCertification
+                  icon={data.icon}
+                  img={data.img}
+                  name={data.name}
+                  description={data.description}
+                  institution={data.institution}
+                  conclusion={data.conclusion}
+                  duration={data.duration}
+                  link_institution={data.link_institution}
+                  link_credential={data.link_credential}
+                  style_icone={data.style_icone}
+                />
+              </div>
+            );
+          })
+        }
       </div>
     </div>
-  )
+  );
 }
+
+
+/* import git from '../../assets/git.png';
+import react from '../../assets/react.svg';
+import htmlCss from '../../assets/html-css.png';
+import wordpress from '../../assets/wordpress.webp';
+import microsoft from '../../assets/microsoft.jpeg';
+import telos from '../../assets/telos.jpeg';
+import nodejs from '../../assets/nodejs.png';
+import git_github from '../../assets/git-github.webp'; */

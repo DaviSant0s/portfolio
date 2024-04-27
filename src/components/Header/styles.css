@@ -186,7 +186,6 @@
 --buttomBorderPage: var(--mainColor); */
 
 :root {
-  --buttomBorderPage: #e8e8e8;
   --buttomBorderPage: #d3d3d3;
 }
 

@@ -23,6 +23,7 @@
 .cardCertification-container:hover {
   transform: scale(1.03);
   border: 1px solid #d6d6d6;
+  background-color: #fb544e8a;
 }
 
 /* certification card image container */
@@ -122,7 +123,6 @@
 }
 
 .container-btns {
-  background-color: red;
   display: flex;
   justify-content: start;
   align-items: end;
@@ -162,7 +162,9 @@
 .credential-btn:hover, .view-btn:hover {
   color: white;
   background-color: #0270ad;
-  border: 1px solid #025e90;
+
+  /* border: 1px solid #025e90; */
+  border: 1px solid transparent;
   box-shadow: 0px 6px 9px 0px transparent;
 }
 
@@ -176,4 +178,8 @@
   color: inherit;
   font-weight: 600;
   line-height: 100%;
+}
+
+.image-content-cardCertification > i {
+  font-size: 2.3em;
 }

@@ -2,20 +2,34 @@ import './styles.css';
 import useEventListener from "../../hooks/useEventListener";
 import { useRef, useState } from 'react';
 
-export default function CardCertification({img, name, description, institution, conclusion, duration, link_institution='', link_view='', link_credential='' , style_icone={}, style_title={}}) {
+export default function CardCertification({img=null, icon, name, description, institution, conclusion, duration, link_institution='', link_view='', link_credential='' , style_icone={}, style_title={}}) {
   const Ref_hover = useRef();
+  const Ref_btn_credential = useRef();
+  const Ref_btn_view = useRef();
+
   const [ underline, setUnderline ] = useState({});
+  const [ styleBtns, setStyleBtns ] = useState({});
 
   const handleMouseover = (e) => {
 
     if(Ref_hover.current.contains(e.target)) {
       setUnderline({
         textDecoration: 'underline',
-        opacity: 0.9
       });
+
+      setStyleBtns({border: '1px solid #595554'});
 
     } else {
       setUnderline({});
+      setStyleBtns({});
+    }
+
+    if(Ref_btn_credential.current.contains(e.target)){
+      setStyleBtns({})
+    }
+
+    if(Ref_btn_view.current.contains(e.target)){
+      setStyleBtns({})
     }
   }
 
@@ -26,7 +40,15 @@ export default function CardCertification({img, name, description, institution, 
 
       <div className='image-container-cardCertification'>
         <div className='image-content-cardCertification'>
-          <img style={style_icone} src={img} alt="" />
+
+          {img && 
+            <img style={style_icone} src={img} alt="" />
+          }
+
+          {!img && 
+            <i style={style_icone} className={icon} />
+          }
+
         </div>
       </div>
 
@@ -51,7 +73,7 @@ export default function CardCertification({img, name, description, institution, 
 
         <div className='container-credential-btns'>
           <a className='link-credential-btn' target='_blank' href={link_credential}>
-            <div className='credential-btn'>
+            <div ref={Ref_btn_credential} style={styleBtns} className='credential-btn'>
         
               <p>Exibir credencial</p>
               <span className="material-symbols-outlined">ios_share</span>
@@ -59,7 +81,7 @@ export default function CardCertification({img, name, description, institution, 
           </a>
 
           <a className='link-view-btn' target='_blank' href={link_view}>
-            <div className='view-btn'>
+            <div ref={Ref_btn_view} style={styleBtns} className='view-btn'>
               <p>View</p>
             </div>
           </a>

@@ -10,16 +10,16 @@ export default function Footer() {
         </div>
         <div className='footer-social-container'>
           <div className='footer-social-btn'>
-           <i class='bx bxl-linkedin-square' />
+           <i className='bx bxl-linkedin-square' />
            <span>Linkedin</span>
           </div>
           <div className='footer-social-btn'>
-           <i class='bx bxl-github' />
+           <i className='bx bxl-github' />
            <span>Github</span>
           </div>
       
           <div className='footer-social-btn'>
-           <i class='bx bxl-instagram' />
+           <i className='bx bxl-instagram' />
            <span>Instagram</span>
           </div>
         </div>
