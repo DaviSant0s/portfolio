@@ -3,11 +3,26 @@ import javascript from '../../assets/javascript.png';
 import python from '../../assets/python.png';
 import visualg from '../../assets/visualg.png';
 import github from '../../assets/github1.webp';
+import sql from '../../assets/database.png';
 import './styles.css';
 
 const DataCertifications = [
   {
+    id: -1,
+    status: false,
+    name: 'Banco de Dados e SQL',
+    icon: "bx bxl-javascript",
+    img: sql,
+    description: 'Business Intelligence, SQL Server, MySQL, Oracle, T-SQL e PLSQL',
+    institution: 'Udemy',
+    conclusion: '2024',
+    duration: '58,5 horas',
+    link_institution: 'https://www.udemy.com/course/bancos-de-dados-relacionais-basico-avancado/?couponCode=KEEPLEARNING',
+    style_icone: {width: '40px', height: '40px'},
+  },
+  {
     id: 0,
+    status: true,
     name: 'Javascript',
     icon: "bx bxl-javascript",
     img: javascript,
@@ -20,6 +35,7 @@ const DataCertifications = [
   },
   {
     id: 1,
+    status: true,
     name: 'React + Next.js',
     icon: "bx bxl-react",
     img: null,
@@ -32,6 +48,7 @@ const DataCertifications = [
   },
   {
     id: 2,
+    status: true,
     name: 'HTML5 e CSS3',
     icon: "bx bxl-html5",
     img: null,
@@ -44,6 +61,7 @@ const DataCertifications = [
   },
   {
     id: 3,
+    status: true,
     name: 'Backend',
     icon: "bx bxl-nodejs",
     img: null,
@@ -56,6 +74,7 @@ const DataCertifications = [
   },
   {
     id: 4,
+    status: true,
     name: 'Python',
     icon: "bx bxl-python",
     img: python,
@@ -70,6 +89,7 @@ const DataCertifications = [
   
   {
     id: 5,
+    status: true,
     name: 'git',
     icon: "bx bxl-git",
     img: null,
@@ -84,6 +104,7 @@ const DataCertifications = [
 
   {
     id: 6,
+    status: true,
     name: 'git',
     icon: "bx bxl-git",
     img: null,
@@ -98,6 +119,7 @@ const DataCertifications = [
 
   {
     id: 7,
+    status: true,
     name: 'React',
     icon: "bx bxl-react",
     img: null,
@@ -111,6 +133,7 @@ const DataCertifications = [
   },
   {
     id: 8,
+    status: true,
     name: 'Git + GitHub',
     icon: "bx bxl-github",
     img: github,
@@ -124,6 +147,7 @@ const DataCertifications = [
   },
   {
     id: 9,
+    status: true,
     name: 'Wordpress',
     icon: "bx bxl-wordpress",
     img: null,
@@ -137,6 +161,7 @@ const DataCertifications = [
   },
   {
     id: 10,
+    status: true,
     name: 'Algoritmo + visualG',
     icon: '',
     img: visualg,
@@ -171,6 +196,7 @@ export default function Certifications() {
                   link_institution={data.link_institution}
                   link_credential={data.link_credential}
                   style_icone={data.style_icone}
+                  status={data.status}
                 />
               </div>
             );
