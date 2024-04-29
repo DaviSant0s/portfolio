@@ -7,6 +7,7 @@ import './styles.css';
 export default function Header() {
   
   /* referências paa os botões */
+  const Ref_hoverBtnSocial = useRef();
   const Ref_hoverBtnGithub = useRef();
   const Ref_hoverBtnLinkedin = useRef();
   
@@ -48,14 +49,14 @@ export default function Header() {
   }
 
   /* customHook de hover */
-  useEventListener('mouseover', handleMouseoverBtn);
+  useEventListener(Ref_hoverBtnSocial, 'mouseover', handleMouseoverBtn);
 
   return (
     <header className='header-container'>
       <div className='header-content'>
         <div className='logo-and-buttons-header'>
           <Logo/>
-          <div className='btns-header'>
+          <div ref={Ref_hoverBtnSocial} className='btns-header'>
 
             <div className='contact-btn'>
               <a href="https://github.com/DaviSant0s" target='_blank' className='link-github'>

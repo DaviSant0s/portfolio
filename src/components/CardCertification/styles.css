@@ -4,6 +4,18 @@
   border-radius: 8px;
 }
 
+.background-diagonal {
+  position: absolute;
+  z-index: 0;
+  left: -3.6px;
+  top: 26.3px;
+
+  width: 16px;
+  height: 16px;
+  background-color: #348C34;
+  transform: rotate(45deg);
+}
+
 .for-background-status:hover {
   transform: scale(1.03);
 }
@@ -12,7 +24,7 @@
 /* certification card container */
 .cardCertification-container {
   position: relative;
-  z-index: 2;
+  z-index: 1;
 
   width: 350px;
   /* height: 215px; */
@@ -23,6 +35,8 @@
   box-shadow: 0px 6px 9px 0px rgb(222, 222, 222);
 
   transition: all 0.18s ease-in-out;
+
+  /* pointer-events: none; */
 }
 
 /* certification card animation */
@@ -41,7 +55,6 @@
 
 .status-cardCertification{
   position: relative;
-
   left: -8px;
 
   width: min-content;
@@ -53,24 +66,12 @@
   text-shadow: 0 1px rgba(0,0,0,0.3);
 
   box-shadow: 0 1px rgba(0, 0, 0, 0.122);
+
 }
 
 .status-cardCertification > span {
   line-height: 100%;
   color: white;
-}
-
-.background-diagonal {
-  position: absolute;
-  z-index: 1;
-  left: -3.6px;
-  top: 26.3px;
-
-
-  width: 16px;
-  height: 16px;
-  background-color: #348C34;
-  transform: rotate(45deg);
 }
 
 .cardCertification-content {
