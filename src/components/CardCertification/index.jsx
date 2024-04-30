@@ -89,6 +89,7 @@ export default function CardCertification({status=true, img=null, icon, name, de
                 <a className='link-credential-btn' target='_blank' href={link_credential}>
                   <div ref={Ref_btn_credential} style={styleBtnCredential} className='credential-btn'>
       
+                    {/* <p>Exibir certificado</p> */}
                     <p>Exibir credencial</p>
                     <span className="material-symbols-outlined">ios_share</span>
                   </div>
@@ -103,7 +104,7 @@ export default function CardCertification({status=true, img=null, icon, name, de
       </div>
 
       {isOpenModal && 
-        <Modal isOpen={isOpenModal} setIsOpen={setIsOpenModal}/>
+        <Modal isOpen={isOpenModal} setIsOpen={setIsOpenModal} themeColor={status ? '#5cb85c' : '#b9b85c'}/>
       }
 
     </div>
