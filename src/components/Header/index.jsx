@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-scroll';
 import Logo from '../Logo';
-import useEventListener from '../../hooks/useEventListener';
+import useEventListenerElement from '../../hooks/useEventListenerElement';
 import './styles.css';
 
 export default function Header() {
@@ -49,7 +49,7 @@ export default function Header() {
   }
 
   /* customHook de hover */
-  useEventListener(Ref_hoverBtnSocial, 'mouseover', handleMouseoverBtn);
+  useEventListenerElement('mouseover', handleMouseoverBtn, Ref_hoverBtnSocial);
 
   return (
     <header className='header-container'>

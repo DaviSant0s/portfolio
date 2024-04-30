@@ -5,6 +5,7 @@ import visualg from '../../assets/visualg.png';
 import github from '../../assets/github1.webp';
 import sql from '../../assets/database.png';
 import './styles.css';
+import { useRef } from 'react';
 
 const DataCertifications = [
   {
@@ -176,8 +177,10 @@ const DataCertifications = [
 ];
 
 export default function Certifications() {
+  const Ref_page = useRef();
+
   return (
-    <div id='id-ertifications' className='certifications-container defaultPages'>
+    <div ref={Ref_page} id='id-ertifications' className='certifications-container defaultPages'>
       <h1>Certificações</h1>
       <div className='certifications-content'>
 
@@ -197,6 +200,7 @@ export default function Certifications() {
                   link_credential={data.link_credential}
                   style_icone={data.style_icone}
                   status={data.status}
+                  pageRef={Ref_page}
                 />
               </div>
             );

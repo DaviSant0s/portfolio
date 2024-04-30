@@ -1,9 +1,9 @@
-import './styles.css';
-import useEventListener from "../../hooks/useEventListener";
-import { useEffect, useRef, useState } from 'react';
+import useEventListenerElement from "../../hooks/useEventListenerElement";
+import { useRef, useState } from 'react';
 import Modal from '../Modal';
+import './styles.css';
 
-export default function CardCertification({status=true, img=null, icon, name, description, institution, conclusion, duration, link_institution='', link_credential='' , style_icone={}, style_title={}}) {
+export default function CardCertification({status=true, img=null, icon, name, description, institution, conclusion, duration, link_institution='', link_credential='' , style_icone={}, style_title={}, pageRef}) {
 
   const Ref_hover = useRef();
   const Ref_btn_credential = useRef();
@@ -13,8 +13,6 @@ export default function CardCertification({status=true, img=null, icon, name, de
   const [ styleBtnCredential, setStyleBtnCredential ] = useState({});
   const [ styleBtnView, setStyleBtnView ] = useState({});
   const [ isOpenModal, setIsOpenModal ] = useState(false);
-
-  /* console.log('renderizei a modal'); */
 
   const handleMouseover = (e) => {
 
@@ -42,7 +40,7 @@ export default function CardCertification({status=true, img=null, icon, name, de
     }
   }
 
-  useEventListener(Ref_hover, 'mouseover', handleMouseover, null);
+  useEventListenerElement('mouseover', handleMouseover, pageRef);
 
   const handleClickModal = () => {
     setIsOpenModal(s => !s);
@@ -51,7 +49,9 @@ export default function CardCertification({status=true, img=null, icon, name, de
   return (
     <div>
       <div className='for-background-status'>
-        <div style={status ? {backgroundColor: '#5cb85c'} : {backgroundColor: '#b9b85c'}} className='background-diagonal'></div>
+
+        <div style={status ? {backgroundColor: '#348C34'} : {backgroundColor: '#b9b85c'}} className='background-diagonal'></div>
+        
         <div ref={Ref_hover} className='cardCertification-container'>
           <div className='status-container-cardCertification'>
             <div style={status ? {backgroundColor: '#5cb85c'} : {backgroundColor: '#b9b85c'}} className='status-cardCertification'>
@@ -105,7 +105,7 @@ export default function CardCertification({status=true, img=null, icon, name, de
       {isOpenModal && 
         <Modal isOpen={isOpenModal} setIsOpen={setIsOpenModal}/>
       }
-      
+
     </div>
   )
 }
