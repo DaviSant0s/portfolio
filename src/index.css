@@ -14,10 +14,10 @@
 :root {
   --heightHeader: 180px;
   --heighBody: calc(100vh - var(--heightHeader));
-  /* 
-   */
-  --mainColor: #ffffff;
-  
+   --mainColor: #191919;
+   --mainColor: #1E1E1E;
+   --mainColor: #ffffff;
+   
 }
 
 /* cor padrão do título */

@@ -21,6 +21,7 @@ const DataCertifications = [
     link_institution: 'https://www.udemy.com/course/bancos-de-dados-relacionais-basico-avancado/?couponCode=KEEPLEARNING',
     style_icone: {width: '40px', height: '40px'},
   },
+  
   {
     id: 0,
     status: true,
