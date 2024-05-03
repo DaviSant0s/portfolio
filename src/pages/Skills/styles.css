@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-
+  
   background-color: #191919;
   background-color: white;
 }
@@ -35,9 +35,20 @@
 
 .skills-content {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 100px);
+  grid-template-columns: repeat(auto-fill, 110px);
   grid-template-rows: auto;
-  column-gap: 20px;
-  row-gap: 40px;
+  column-gap: 10px;
+  row-gap: 25px;
+  align-items: center;
   width: 100%;
+  padding-bottom: 23px;
+  height: auto;
+  max-height: 440px;
+
+  background-color: transparent;
+
+  overflow: auto;
+
+  background: transparent;
+
 }

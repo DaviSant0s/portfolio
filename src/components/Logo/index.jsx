@@ -10,7 +10,7 @@ export default function Logo(style_portfolio={}, style_daviSantos={}) {
 
       <div  className='container-title-logo'>
         <h1 style={style_portfolio}>Portfólio</h1>
-        <span style={style_daviSantos}>DaviSantos</span>
+        <span style={style_daviSantos}>Davi Santos</span>
       </div>
     </div>
   )
