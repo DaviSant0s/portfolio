@@ -58,7 +58,9 @@ h2 {
   padding-left: calc((100vw - 1300px) / 2 );
   padding-right: calc((100vw - 1300px) / 2 );
 
-  min-height: calc(var(--heighBody));
+  /* min-height: calc(var(--heighBody)); */
+
+  height: min-content;
 
   padding-top: 40px;
   padding-bottom: 40px;

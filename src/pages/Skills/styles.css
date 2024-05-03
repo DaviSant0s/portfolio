@@ -1,0 +1,43 @@
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background-color: #191919;
+  background-color: white;
+}
+
+.skills-image-and-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+
+  min-height: 500px;
+}
+
+.skills-image-and-content > img {
+  height: 500px;
+  height: 450px;
+  opacity: 0.9;
+}
+
+.skills-title-and-content {
+  width: 100%;
+  height: min-content;
+}
+
+.skills-title-and-content > h1 {
+  line-height: 100%;
+  font-size: 2.5em;
+  margin-bottom: 30px;
+}
+
+.skills-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 100px);
+  grid-template-rows: auto;
+  column-gap: 20px;
+  row-gap: 40px;
+  width: 100%;
+}

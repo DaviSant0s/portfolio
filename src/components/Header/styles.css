@@ -246,9 +246,6 @@
 
 .nav-header .link-page:hover {
   background-color: rgba(255, 241, 227, 0.688);
-
-  border-top: 1px solid rgba(251, 84, 78, 0.422);
-  border-left: 1px solid rgba(251, 84, 78, 0.422);
   border-right: 1px solid rgba(251, 84, 78, 0.422);
 }
 
