@@ -95,7 +95,7 @@ export default function CardCertification({status=true, img=null, icon, name, de
                   </div>
                 </a>
                 <div onClick={handleClickModal} ref={Ref_btn_view} style={styleBtnView} className='view-btn'>
-                  <p>View</p>
+                  <p>Ementa</p>
                 </div>
               </div>
             </div>

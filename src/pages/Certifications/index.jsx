@@ -4,12 +4,13 @@ import python from '../../assets/python.png';
 import visualg from '../../assets/visualg.png';
 import github from '../../assets/github1.webp';
 import sql from '../../assets/database.png';
+import node from '../../assets/node2.png';
 import './styles.css';
 import { useRef } from 'react';
 
 const DataCertifications = [
   {
-    id: -1,
+    id: -2,
     status: false,
     name: 'Banco de Dados e SQL',
     icon: "bx bxl-javascript",
@@ -20,6 +21,19 @@ const DataCertifications = [
     duration: '58,5 horas',
     link_institution: 'https://www.udemy.com/course/bancos-de-dados-relacionais-basico-avancado/?couponCode=KEEPLEARNING',
     style_icone: {width: '40px', height: '40px'},
+  },
+  {
+    id: -1,
+    status: false,
+    name: 'Node.js',
+    icon: "",
+    img: node,
+    description: 'Node.js do zero a Maestria com diversos Projetos',
+    institution: 'Udemy',
+    conclusion: '2024',
+    duration: '38 horas',
+    link_institution: 'https://www.udemy.com/course/nodejs-do-zero-a-maestria-com-diversos-projetos/?couponCode=KEEPLEARNING',
+    style_icone: {},
   },
   
   {

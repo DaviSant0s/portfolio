@@ -14,6 +14,7 @@
   z-index: 1;
   left: -3.7px;
   top: 25px;
+  top: 27.5px;
 
   border-radius: 2px 2px 2px 2px;
 
@@ -51,6 +52,7 @@
   align-items: center;
   width: 100%;
   height: 40px;
+  height: 45px;
 }
 
 .status-cardCertification{
@@ -64,7 +66,7 @@
   font-size: 14px;
   font-weight: bold;
 
-  border-radius: 1px 1px 1px 2px;
+  border-radius: 4px 1px 1px 2px;
 
   box-shadow: 0px 1px rgba(0, 0, 0, 0.095);
 
@@ -129,8 +131,9 @@
   /* width: 370px; */
   width: 100%;
   height: 100%;
+  padding-top: 5px;
 
-  /* background-color: grey; */
+  background-color: transparent;
 }
 
 /* certification card description container title */
