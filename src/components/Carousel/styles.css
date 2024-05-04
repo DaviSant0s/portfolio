@@ -1,5 +1,5 @@
 .carousel-conteiner {
-
+  
 }
 
 .title-and-btns-carousel-container {
@@ -68,18 +68,10 @@
 .wrapper-carousel {
   display: flex;
   flex-direction: row;
-  /* flex-wrap: wrap; */
-  gap: 20px;
 
-  background-color: rgb(127, 127, 151);
-  background-color: transparent;
-  width: 830px;
   height: max-content;
-  /* border-radius: 15px; */
-
 
   overflow-x: scroll;
-
 
   /* configurações do scroll */
     scroll-snap-type: x mandatory;
