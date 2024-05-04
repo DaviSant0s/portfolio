@@ -50,7 +50,7 @@
   /* background-color: blue; */
 }
 
-.btns-carousel > .arrow_carousel {
+.arrow_carousel {
 
   border: 2px solid #FB544E;
   border-radius: 50px;
@@ -73,13 +73,18 @@
 
   background-color: rgb(127, 127, 151);
   background-color: transparent;
-  width: 800px;
   width: 830px;
   height: max-content;
-  border-radius: 15px;
+  /* border-radius: 15px; */
 
 
   overflow-x: scroll;
+
+
+  /* configurações do scroll */
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
 }
 
 .wrapper-carousel::-webkit-scrollbar {

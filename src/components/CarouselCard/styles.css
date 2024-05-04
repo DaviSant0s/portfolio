@@ -1,5 +1,9 @@
 .carouselCard-container {
   flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   width: 250px;
   height: 340px;
 
@@ -7,4 +11,5 @@
 
   background-color: rgb(61, 54, 54);
   background-color: rgb(163, 117, 117);
+  color: white;
 }
