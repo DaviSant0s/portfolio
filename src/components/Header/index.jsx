@@ -107,12 +107,12 @@ export default function Header() {
           <Link to='id_skills' smooth={true} offset={0} duration={700} className='Link'>
             <div className='skills link-page'>Habilidades</div>
           </Link>
+          <Link to='id_projects' smooth={true} offset={0} duration={700} className='Link'>
+            <div className='projects link-page'>Projetos</div>
+          </Link>
           {/* <div className='about link-page'>Sobre mim</div> */}
           <Link to='' className='Link'>
             <div className='experiences link-page'>Experiências</div>
-          </Link>
-          <Link to='' className='Link'>
-            <div className='projects link-page'>Projetos</div>
           </Link>
           <Link to='' className='Link'>
             <div className='contact link-page'>Contato</div>
