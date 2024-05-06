@@ -20,6 +20,8 @@ export default function Carousel({title}) {
   const [ arrowStyleRight, setArrowStyleRight ] = useState({});
 
   
+
+  
   useEffect(() => {
     if(Ref_wrapperCarousel) {
       const cardNumbers = Ref_wrapperCarousel.current.querySelectorAll('*').length;

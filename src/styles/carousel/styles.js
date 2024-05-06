@@ -3,7 +3,7 @@ export const CardStyles = {
   height: 340,
 }
 
-export const numCardsWidth = 3;
+export const numCardsWidth = 4;
 
 export const carouselStyles = {
   width: (CardStyles.width * numCardsWidth) + (numCardsWidth * 20) + 20,

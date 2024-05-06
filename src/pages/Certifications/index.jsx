@@ -5,8 +5,10 @@ import visualg from '../../assets/visualg.png';
 import github from '../../assets/github1.webp';
 import sql from '../../assets/database.png';
 import node from '../../assets/node2.png';
+import { useRef, useState } from 'react';
+import Button from '../../components/Button';
+import { Link } from 'react-scroll';
 import './styles.css';
-import { useRef } from 'react';
 
 const DataCertifications = [
   {
@@ -193,6 +195,7 @@ const DataCertifications = [
 
 export default function Certifications() {
   const Ref_page = useRef();
+  const [ moreCardsBool, setMoreCardsBool ] = useState(false);
 
   return (
     <div ref={Ref_page} id='id-ertifications' className='certifications-container defaultPages'>
@@ -200,9 +203,14 @@ export default function Certifications() {
       <div className='certifications-content'>
 
         {
-          DataCertifications.map((data, id) => {
+          DataCertifications.map((data, index) => {
+
+            if(!moreCardsBool) {
+              if(index + 1 > 9) return;
+            }
+
             return (
-              <div key={id}>
+              <div key={index}>
                 <CardCertification
                   icon={data.icon}
                   img={data.img}
@@ -220,7 +228,37 @@ export default function Certifications() {
               </div>
             );
           })
+
         }
+      </div>
+
+      <div className='btn-more-certifications-cards'>
+        {!moreCardsBool &&
+          <Button 
+            handleClick={() => setMoreCardsBool(true)} 
+            name='Ver mais' 
+            icon={'expand_more'} 
+            btn_style={{paddingLeft: '30px', paddingRight: '40px'}}
+            icon_style={{fontWeight: '400', marginBottom: '-2px', fontSize: '1.5em'}}
+          />
+        }
+
+        {moreCardsBool &&
+
+          <Link 
+            to='id-ertifications' 
+            smooth={true} offset={0} 
+            duration={700}>
+              <Button 
+                handleClick={() => setMoreCardsBool(false)} 
+                name='Ver menos' 
+                icon={'expand_less'} 
+                btn_style={{paddingLeft: '30px', paddingRight: '40px'}}
+                icon_style={{fontWeight: '400', marginBottom: '-2px', fontSize: '1.5em'}}
+              />
+          </Link>
+        }
+
       </div>
     </div>
   );

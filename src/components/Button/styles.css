@@ -43,3 +43,7 @@
 .icon-btn:hover {
   color: #fd3c35;
 }
+
+.nameButton{
+  line-height: 100%;
+}
