@@ -1,0 +1,128 @@
+:root {
+  --buttomBorderPage: #d3d3d3;
+}
+
+.nav-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+  height: 50px;
+  background-color: transparent;
+}
+
+.nav-header > .Link {
+  height: 100%;
+}
+
+.nav-header .link-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  
+  border-top: 1px solid var(--buttomBorderPage);
+  border-radius: 10px 10px 0px 0px;
+  
+  cursor: pointer;
+  
+  -webkit-user-select: none;
+  user-select: none;
+  
+}
+
+.nav-header .link-page:hover {
+  background-color: rgba(255, 241, 227, 0.688);
+
+  border-right: 1px solid rgba(251, 84, 78, 0.3);
+  border-left: 1px solid rgba(251, 84, 78, 0.3);
+  border-top: 1px solid rgba(251, 84, 78, 0.3);
+}
+
+.nav-header .home {
+  border-left: 1px solid var(--buttomBorderPage);
+  border-right: 1px solid var(--buttomBorderPage);
+  
+  font-weight: 600;
+  
+  transition: all 0.3s ease-in-out;
+  
+}
+
+.nav-header .home:hover{
+  margin-right: 5px;
+}
+
+.nav-header .about {
+  border-left: 1px solid var(--buttomBorderPage);
+  border-right: 1px solid var(--buttomBorderPage);
+  margin-left: -5px;
+  
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-header .about:hover{
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.nav-header .experiences {
+  border-left: 1px solid var(--buttomBorderPage);
+  border-right: 1px solid var(--buttomBorderPage);
+  
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-header .experiences:hover{
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.nav-header .projects{
+  border-left: 1px solid var(--buttomBorderPage);
+  border-right: 1px solid var(--buttomBorderPage);
+  
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-header .projects:hover{
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.nav-header .certifications {
+  border-left: 1px solid var(--buttomBorderPage);
+  border-right: 1px solid var(--buttomBorderPage);
+
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-header .certifications:hover{
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.nav-header .skills {
+  border-left: 1px solid var(--buttomBorderPage);
+  border-right: 1px solid var(--buttomBorderPage);
+
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-header .skills:hover{
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.nav-header .contact {
+  border-left: 1px solid var(--buttomBorderPage);
+  border-right: 1px solid var(--buttomBorderPage);
+
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-header .contact:hover{
+  margin-left: 5px;
+}
