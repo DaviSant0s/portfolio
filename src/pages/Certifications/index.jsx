@@ -197,7 +197,7 @@ export default function Certifications() {
   const [ moreCardsBool, setMoreCardsBool ] = useState(false);
 
   return (
-    <div ref={Ref_page} id='id-ertifications' className='certifications-container defaultPages'>
+    <div id='id-ertifications' className='certifications-container defaultPages'>
       <h1>Certificações</h1>
       <div className='certifications-content'>
 
