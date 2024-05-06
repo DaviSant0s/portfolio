@@ -47,83 +47,12 @@
   gap: 5px;
 
   margin-top: 6px;
+  padding-right: 10px;
 
   /* barra de separação */
   border-right: 1px solid #e8e8e8;
   
 }
-
-.contact-btn > a {
-  text-decoration: none;
-}
-
-.contact-btn .social-contact {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-  
-  height: 41px;
-  padding-left: 10px;
-  padding-right: 10px;
-  
-  border: 2px solid #e8e8e8;
-  border-radius: 10px;
-  
-  cursor: pointer;
-  
-  -webkit-user-select: none;
-  user-select: none;
-  
-  background: linear-gradient(to top, #f2f2f2, white);
-
-  /* aqui */
- /*  background: linear-gradient(273deg,#8ec5fc -13.13%,#e0c3fc 42.75%,#fae69f 82.67%);
-  border-radius: 15px; */
-  /* fim aqui */
-  
-
-  transition: all 0.1s ease-in-out;
-}
-
-.contact-btn .social-contact:hover{
-  border: 2px solid #d6d6d6;
-}
-
-.contact-btn .social-contact  i{
-  font-size: 1.5em;
-  color: black;
-}
-
-.contact-btn .social-contact .bxl-github {
-  opacity: 0.8;
-}
-
-.linkedin-icon-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #0063C1;
-
-  width: 20px;
-  height: 20px;
-
-  opacity: 0.8;
-  border-radius: 50%;
-}
-
-.contact-btn .social-contact .bxl-linkedin {
-  color: #F3F3F3;
-  font-size: 0.9em;
-}
-
-
-
-.contact-btn > .link-linkedin{
-  margin-right: 10px;
-}
-
-
 
 /* dark mode */
 .dark-mode-container {

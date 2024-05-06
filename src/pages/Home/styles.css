@@ -81,6 +81,8 @@
   font-size: 18px;
 }
 
-.curriculum-btn {
-  width: max-content;
+.btns-home-container {
+  width: fit-content;
+  display: flex;
+  gap: 8px;
 }

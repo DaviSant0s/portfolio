@@ -1,6 +1,7 @@
 import './styles.css';
 import Button from '../../components/Button';
 import img_home from '../../assets/img-home.jpg';
+import SocialButton from '../../components/SocialButton';
 
 export default function Home() {
   return (
@@ -27,9 +28,23 @@ export default function Home() {
             Federal do Rio Grande (FURG) e focando no desenvolvimento FullStack.
           </p>
           
-          <a className='curriculum-btn' href="https://drive.google.com/file/d/1hHtHCqwOIouLySi8dBQeAUHaJB8wdku1/view?usp=sharing" target='_blank'>
+          {/* <a className='curriculum-btn' href="https://drive.google.com/file/d/1hHtHCqwOIouLySi8dBQeAUHaJB8wdku1/view?usp=sharing" target='_blank'>
            <Button name={'Currículo'} icon={'file_download'}/>
-          </a>
+          </a> */}
+
+          <div className='btns-home-container'>
+            <SocialButton 
+              type={'github'} 
+              btn_style={{paddingLeft: '25px', paddingRight: '25px'}}
+            />
+
+            <SocialButton 
+              type={'linkedin'}
+              btn_style={{paddingLeft: '25px', paddingRight: '25px'}}
+            />
+          </div>
+
+          
         </div>
         <div className='image-container-home'>
           <img src={img_home} alt="image-home" />

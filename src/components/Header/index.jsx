@@ -1,19 +1,10 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-scroll';
 import Logo from '../Logo';
-import useEventListenerElement from '../../hooks/useEventListenerElement';
 import './styles.css';
+import Button from '../Button';
 
 export default function Header() {
-  
-  /* referências paa os botões */
-  const Ref_hoverBtnSocial = useRef();
-  const Ref_hoverBtnGithub = useRef();
-  const Ref_hoverBtnLinkedin = useRef();
-  
-  /* estados para os botoes */
-  const [ styleBtnGithub, setStyleBtnGithub] = useState({});
-  const [ styleBtnLinkedin, setStyleBtnLinkedin ] = useState({});
   
   /* estados para a animação do darkmode */
   const [ darkMode, setDarkMode ] = useState(false);
@@ -31,48 +22,20 @@ export default function Header() {
       setAnimacaoDarkModeTranslate({});
     }
   }, [darkMode]);
-  
-  /* função para o hover dos botoes */
-  const handleMouseoverBtn = (e) => {
-    
-    if(Ref_hoverBtnGithub.current.contains(e.target)) {
-      setStyleBtnGithub({opacity: 1});
-    } else {
-      setStyleBtnGithub({})
-    }
-
-    if(Ref_hoverBtnLinkedin.current.contains(e.target)) {
-      setStyleBtnLinkedin({opacity: 1});
-    } else {
-      setStyleBtnLinkedin({})
-    }
-  }
-
-  /* customHook de hover */
-  useEventListenerElement('mouseover', handleMouseoverBtn, Ref_hoverBtnSocial);
 
   return (
     <header className='header-container'>
       <div className='header-content'>
         <div className='logo-and-buttons-header'>
           <Logo/>
-          <div ref={Ref_hoverBtnSocial} className='btns-header'>
+          <div className='btns-header'>
 
             <div className='contact-btn'>
-              <a href="https://github.com/DaviSant0s" target='_blank' className='link-github'>
-                <div ref={Ref_hoverBtnGithub} className='github social-contact'>
-                  <i style={styleBtnGithub} className='bx bxl-github'></i>
-                  <span>GitHub</span>
-                </div>
-              </a>
-              <a href="https://www.linkedin.com/in/davisantoss/" target='_blank' className='link-linkedin'>
-                <div ref={Ref_hoverBtnLinkedin} className='linkedin social-contact'>
-                  <div style={styleBtnLinkedin} className='linkedin-icon-container'>
-                    <i className='bx bxl-linkedin' ></i>
-                  </div>
-                  <span>LinkedIn</span>
-                </div>
-              </a>
+
+                <a className='curriculum-btn' href="https://drive.google.com/file/d/1hHtHCqwOIouLySi8dBQeAUHaJB8wdku1/view?usp=sharing" target='_blank'>
+                  <Button name={'Currículo'} icon={'file_download'}/>
+                </a>
+              
             </div>
 
             <div className='dark-mode-container'>
@@ -122,9 +85,3 @@ export default function Header() {
     </header>
   );
 }
-
-
-{/* <img src={github} alt="github-icon" /> */}
-{/* <img src={linkedin} alt="linkedin-icon" /> */}
-/* import github from '../../assets/github.png'
-import linkedin from '../../assets/linkedin.png' */
