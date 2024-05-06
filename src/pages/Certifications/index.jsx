@@ -5,7 +5,7 @@ import visualg from '../../assets/visualg.png';
 import github from '../../assets/github1.webp';
 import sql from '../../assets/database.png';
 import node from '../../assets/node2.png';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import Button from '../../components/Button';
 import { Link } from 'react-scroll';
 import './styles.css';
@@ -194,7 +194,6 @@ const DataCertifications = [
 ];
 
 export default function Certifications() {
-  const Ref_page = useRef();
   const [ moreCardsBool, setMoreCardsBool ] = useState(false);
 
   return (
@@ -223,7 +222,6 @@ export default function Certifications() {
                   link_credential={data.link_credential}
                   style_icone={data.style_icone}
                   status={data.status}
-                  pageRef={Ref_page}
                 />
               </div>
             );

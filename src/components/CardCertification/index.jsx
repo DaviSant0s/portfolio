@@ -1,47 +1,64 @@
-import useEventListenerElement from "../../hooks/useEventListenerElement";
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import Modal from '../Modal';
 import './styles.css';
 
-export default function CardCertification({status=true, img=null, icon, name, description, institution, conclusion, duration, link_institution='', link_credential='' , style_icone={}, style_title={}, pageRef}) {
-
-  const Ref_hover = useRef();
-  const Ref_btn_credential = useRef();
-  const Ref_btn_view = useRef();
+export default function CardCertification(
+  {status=true, 
+    img=null, 
+    icon, 
+    name, 
+    description, 
+    institution, 
+    conclusion, 
+    duration, 
+    link_institution='', 
+    link_credential='' , 
+    style_icone={}, 
+    style_title={}
+  }) {
 
   const [ underline, setUnderline ] = useState({});
   const [ styleBtnCredential, setStyleBtnCredential ] = useState({});
   const [ styleBtnView, setStyleBtnView ] = useState({});
   const [ isOpenModal, setIsOpenModal ] = useState(false);
 
-  const handleMouseover = (e) => {
-
-    if(Ref_hover.current.contains(e.target)) {
-      setUnderline({
-        textDecoration: 'underline',
-      });
-
-      setStyleBtnCredential({border: '1px solid #595554'});
-      setStyleBtnView({border: '1px solid #595554'});
-
-    } else {
-      setUnderline({});
-
-      setStyleBtnCredential({});
-      setStyleBtnView({});
-    }
-
-    if(Ref_btn_credential.current.contains(e.target)){
-      setStyleBtnCredential({});
-    }
-
-    if(Ref_btn_view.current.contains(e.target)){
-      setStyleBtnView({});
-    }
+  /* card */
+  const handleMouseEnterCardCertification = (e) => {
+    setUnderline({
+      textDecoration: 'underline',
+    });
+  
+    setStyleBtnCredential({border: '1px solid #595554'});
+    setStyleBtnView({border: '1px solid #595554'});
+    
   }
 
-  useEventListenerElement('mouseover', handleMouseover, pageRef);
+  const handleMouseLeaveCardCertification = () => {
+    setUnderline({});
+  
+    setStyleBtnCredential({});
+    setStyleBtnView({});
+  }
 
+  /* btns credential */
+  const handleMouseEnter_BtnCredential = () => {
+    setStyleBtnCredential({});
+  }
+
+  const handleMouseLeave_BtnCredential = () => {
+    setStyleBtnCredential({border: '1px solid #595554'});
+  }
+
+  /* btn ementa */
+  const handleMouseEnter_BtnEmenta = () => {
+    setStyleBtnView({});
+  }
+
+  const handleMouseLeave_BtnEmenta = () => {
+    setStyleBtnView({border: '1px solid #595554'});
+  }
+
+  /* modal */
   const handleClickModal = () => {
     setIsOpenModal(s => !s);
   }
@@ -52,7 +69,11 @@ export default function CardCertification({status=true, img=null, icon, name, de
 
         <div style={status ? {backgroundColor: '#348C34'} : {backgroundColor: '#b9b85c'}} className='background-diagonal'></div>
         
-        <div ref={Ref_hover} className='cardCertification-container'>
+        <div 
+          onMouseEnter={handleMouseEnterCardCertification} 
+          onMouseLeave={handleMouseLeaveCardCertification}
+          className='cardCertification-container'
+        >
           <div className='status-container-cardCertification'>
             <div style={status ? {backgroundColor: '#5cb85c'} : {backgroundColor: '#b9b85c'}} className='status-cardCertification'>
               <span>{status ? 'Concluído': 'Fazendo'}</span>
@@ -87,14 +108,23 @@ export default function CardCertification({status=true, img=null, icon, name, de
               </div>
               <div className='container-credential-btns'>
                 <a className='link-credential-btn' target='_blank' href={link_credential}>
-                  <div ref={Ref_btn_credential} style={styleBtnCredential} className='credential-btn'>
-      
-                    {/* <p>Exibir certificado</p> */}
+                  <div
+                    onMouseEnter={handleMouseEnter_BtnCredential}
+                    onMouseLeave={handleMouseLeave_BtnCredential}
+                    style={styleBtnCredential} 
+                    className='credential-btn'
+                  >
                     <p>Exibir credencial</p>
                     <span className="material-symbols-outlined">ios_share</span>
                   </div>
                 </a>
-                <div onClick={handleClickModal} ref={Ref_btn_view} style={styleBtnView} className='view-btn'>
+                <div 
+                  onMouseEnter={handleMouseEnter_BtnEmenta}
+                  onMouseLeave={handleMouseLeave_BtnEmenta}
+                  onClick={handleClickModal} 
+                  style={styleBtnView} 
+                  className='view-btn'
+                >
                   <p>Ementa</p>
                 </div>
               </div>
@@ -104,7 +134,7 @@ export default function CardCertification({status=true, img=null, icon, name, de
       </div>
 
       {isOpenModal && 
-        <Modal setIsOpen={setIsOpenModal} >
+        <Modal setIsOpen={setIsOpenModal}>
           <div 
             className='design-color-theme'
             style={{backgroundColor: `${status ? '#5cb85c' : '#b9b85c'}`}}
