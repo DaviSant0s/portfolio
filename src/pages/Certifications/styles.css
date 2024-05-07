@@ -47,6 +47,6 @@
   width: 100%;
   height: 123px;
 
-  background: linear-gradient(to bottom, transparent, rgba(249, 250, 251, 0.855) 60%);
+  background: linear-gradient(to bottom, transparent 50%, rgba(249, 250, 251, 0.855) 90%);
   /* background-color: red; */
 }
