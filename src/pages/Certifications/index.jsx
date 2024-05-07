@@ -5,7 +5,7 @@ import visualg from '../../assets/visualg.png';
 import github from '../../assets/github1.webp';
 import sql from '../../assets/database.png';
 import node from '../../assets/node2.png';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Button from '../../components/Button';
 import { Link } from 'react-scroll';
 import './styles.css';
@@ -194,80 +194,137 @@ const DataCertifications = [
 ];
 
 export default function Certifications() {
+
   const [ moreCardsBool, setMoreCardsBool ] = useState(false);
+  const [ styleCardCertification, setStyleCardCertification ] = useState({});
+  const [ styleTranparentCard, setStyleTranparentCard ] = useState({});
+  const [ styleHoverBtnMoreAndLess, setStyleHoverBtnMoreAndLess ] = useState({});
+
+  const handeMouseEnterBtnHover_certifications = () => {
+    setStyleHoverBtnMoreAndLess({
+      transform: 'scale(1.05)',
+      
+    });
+  }
+
+  const handeMouseLeaveBtnHover_certifications = () => {
+    setStyleHoverBtnMoreAndLess({});
+  }
+
+  useEffect(() => {
+
+    if(moreCardsBool){
+      setStyleCardCertification({
+        height: 'max-content',
+        overflowY: 'auto',
+        paddingBottom: '10px',
+        
+      });
+    
+       setStyleTranparentCard({
+        background: 'transparent',
+        position: 'static',
+        marginTop: '6px',
+        height: '80px'
+      });
+
+    } else {
+
+      setStyleCardCertification({});
+      setStyleTranparentCard({});
+
+    }
+
+  }, [moreCardsBool])
+
+
+  const handleClickBtnMoreCardsBool = () => {
+    setMoreCardsBool(true)
+  }
+
+  const handleClickBtnLessCardsBool = () => {
+    setTimeout(() => {
+      setMoreCardsBool(false)
+    }, 100)
+  }
 
   return (
-    <div id='id-ertifications' className='certifications-container defaultPages'>
-      <h1>Certificações</h1>
-      <div className='certifications-content'>
+    <div style={{position: 'relative'}}>
+      <div 
+        style={styleCardCertification} 
+        id='id-ertifications' 
+        className='certifications-container'
+      >
+        <h1>Certificações</h1>
+        <div className='certifications-content'>
 
-        {
-          DataCertifications.map((data, index) => {
+          {
+            DataCertifications.map((data, index) => {
 
-            if(!moreCardsBool) {
-              if(index + 1 > 9) return;
-            }
+              /* if(!moreCardsBool) {
+                if(index + 1 > 9) return;
+              } */
 
-            return (
-              <div key={index}>
-                <CardCertification
-                  icon={data.icon}
-                  img={data.img}
-                  name={data.name}
-                  description={data.description}
-                  institution={data.institution}
-                  conclusion={data.conclusion}
-                  duration={data.duration}
-                  link_institution={data.link_institution}
-                  link_credential={data.link_credential}
-                  style_icone={data.style_icone}
-                  status={data.status}
+              return (
+                <div key={index}>
+                  <CardCertification
+                    icon={data.icon}
+                    img={data.img}
+                    name={data.name}
+                    description={data.description}
+                    institution={data.institution}
+                    conclusion={data.conclusion}
+                    duration={data.duration}
+                    link_institution={data.link_institution}
+                    link_credential={data.link_credential}
+                    style_icone={data.style_icone}
+                    status={data.status}
+                  />
+                </div>
+              );
+            })
+
+          }
+        </div>
+      </div>
+      <div style={styleTranparentCard} className='trasparentCards'>
+        <div 
+          onMouseEnter={handeMouseEnterBtnHover_certifications} 
+          onMouseLeave={handeMouseLeaveBtnHover_certifications} 
+          className='btn-container-transparentCards'
+          style={styleHoverBtnMoreAndLess}>
+          {!moreCardsBool &&
+          
+            <Button
+              handleClick={handleClickBtnMoreCardsBool}
+              name='Ver mais'
+              icon={'expand_more'}
+              icon_style={{fontWeight: '400', marginBottom: '-2px', fontSize: '1.5em'}}
+              btn_style={{
+                paddingLeft: '30px',
+                paddingRight: '40px',
+                border: '2px solid #d6d6d6'
+              }}
+            />
+          }
+          {moreCardsBool &&
+            <Link
+            to={'id-ertifications'}
+            smooth={true} offset={0}
+            duration={300}>
+          
+                <Button
+                  handleClick={handleClickBtnLessCardsBool}
+                  name='Ver menos'
+                  icon={'expand_less'}
+                  btn_style={{paddingLeft: '30px', paddingRight: '40px', border: '2px solid #d6d6d6'}}
+                  icon_style={{fontWeight: '400', marginBottom: '-2px', fontSize: '1.5em'}}
                 />
-              </div>
-            );
-          })
 
-        }
-      </div>
-
-      <div className='btn-more-certifications-cards'>
-        {!moreCardsBool &&
-          <Button 
-            handleClick={() => setMoreCardsBool(true)} 
-            name='Ver mais' 
-            icon={'expand_more'} 
-            btn_style={{paddingLeft: '30px', paddingRight: '40px'}}
-            icon_style={{fontWeight: '400', marginBottom: '-2px', fontSize: '1.5em'}}
-          />
-        }
-
-        {moreCardsBool &&
-
-          <Link 
-            to='id-ertifications' 
-            smooth={true} offset={0} 
-            duration={700}>
-              <Button 
-                handleClick={() => setMoreCardsBool(false)} 
-                name='Ver menos' 
-                icon={'expand_less'} 
-                btn_style={{paddingLeft: '30px', paddingRight: '40px'}}
-                icon_style={{fontWeight: '400', marginBottom: '-2px', fontSize: '1.5em'}}
-              />
-          </Link>
-        }
-
-      </div>
+            </Link>
+          }
+        </div>
+      </div> 
     </div>
   );
 }
-
-
-/* import git from '../../assets/git.png';
-import react from '../../assets/react.svg';
-import htmlCss from '../../assets/html-css.png';
-import wordpress from '../../assets/wordpress.webp';
-import microsoft from '../../assets/microsoft.jpeg';
-import telos from '../../assets/telos.jpeg';
-import nodejs from '../../assets/nodejs.png';
-import git_github from '../../assets/git-github.webp'; */
