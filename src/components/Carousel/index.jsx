@@ -1,6 +1,16 @@
 import { useEffect, useRef, useState } from 'react';
 import CarouselCard from '../CarouselCard';
 import { CardStyles, carouselStyles, numCardsWidth } from '../../styles/carousel/styles';
+
+import project1 from '../../assets/projects/curiosity_and_technology_screen.png'
+import project2 from '../../assets/projects/resposividadescreen.png'
+import project3 from '../../assets/projects/cordelscreen.png'
+import project4 from '../../assets/projects/socialscreen.png'
+import project5 from '../../assets/projects/mediascreen.png'
+import project6 from '../../assets/projects/meusitescreen.png'
+import project7 from '../../assets/projects/loginscreen.png'
+import project8 from '../../assets/projects/siteCscreen.png'
+
 import './styles.css';
 
 const styleWrapperCarousel = {
@@ -14,52 +24,48 @@ const visibleCardsNoRepeat = numCardsWidth - 1;
 
 export default function Carousel({title}) {
   const Ref_wrapperCarousel = useRef(null);
+
   const [ totalCardCarousel, setTotalCardCarousel ] = useState(null);
   const [ numberCardCarousel, setNumberCardCarousel ] = useState(1);
   const [ arrowStyleLeft, setArrowStyleLeft] = useState({});
   const [ arrowStyleRight, setArrowStyleRight ] = useState({});
 
-  
-
-  
   useEffect(() => {
-    if(Ref_wrapperCarousel) {
-      const cardNumbers = Ref_wrapperCarousel.current.querySelectorAll('*').length;
-      let numberOfSteps = 0;
+    const cardNumbers = 8;
+    let numberOfSteps = 0;
 
-      if(cardNumbers > numCardsWidth){
+    if(cardNumbers > numCardsWidth){
 
-        if(numCardsWidth > 2) {
-          const verifyDecimalNum = (cardNumbers - visibleCardsNoRepeat)/visibleCardsNoRepeat;
-  
-          if (verifyDecimalNum % 2 === 0){
-            numberOfSteps = verifyDecimalNum;
-          } else {
-            const VerifyDecimalNumSide = verifyDecimalNum - Math.floor(verifyDecimalNum);
-  
-            if(VerifyDecimalNumSide < 0.5) {
-              numberOfSteps = Math.floor(verifyDecimalNum);
-            } else {
-              numberOfSteps = Math.floor(verifyDecimalNum) + 1;
-            }
-          }
+      if(numCardsWidth > 2) {
+        const verifyDecimalNum = (cardNumbers - visibleCardsNoRepeat)/visibleCardsNoRepeat;
+
+        if (verifyDecimalNum % 2 === 0){
+          numberOfSteps = verifyDecimalNum;
         } else {
-          if(numCardsWidth === 2) {
-            const verifyDecimalNum = (cardNumbers - 1) / 1;
-            numberOfSteps = verifyDecimalNum - 1;
+          const VerifyDecimalNumSide = verifyDecimalNum - Math.floor(verifyDecimalNum);
+
+          if(VerifyDecimalNumSide < 0.5) {
+            numberOfSteps = Math.floor(verifyDecimalNum);
           } else {
-            numberOfSteps = cardNumbers - 1;
+            numberOfSteps = Math.floor(verifyDecimalNum) + 1;
           }
         }
-  
-        setTotalCardCarousel(numberOfSteps + 1);
-
       } else {
-        setTotalCardCarousel(1);
+        if(numCardsWidth === 2) {
+          const verifyDecimalNum = (cardNumbers - 1) / 1;
+          numberOfSteps = verifyDecimalNum - 1;
+        } else {
+          numberOfSteps = cardNumbers - 1;
+        }
       }
+
+      setTotalCardCarousel(numberOfSteps + 1);
+
+    } else {
+      setTotalCardCarousel(1);
     }
     
-  }, [Ref_wrapperCarousel] )
+  }, [totalCardCarousel] )
   
   const scrollToLeft = () => {
     if(numCardsWidth > 1) {
@@ -128,35 +134,15 @@ export default function Carousel({title}) {
         style={styleWrapperCarousel} 
         className='wrapper-carousel'
       >
-          <CarouselCard name={'card1'}/>
-           <CarouselCard name={'card2'}/>
-          <CarouselCard name={'card3'}/>
-          <CarouselCard name={'card4'}/>
-           <CarouselCard name={'card5'}/>
-         <CarouselCard name={'card6'}/>
-            <CarouselCard name={'card7'}/>
+          <CarouselCard img={project1} name={'card1'}/>
+          <CarouselCard img={project2} name={'card2'}/>
+          <CarouselCard img={project3} name={'card3'}/>
+          <CarouselCard img={project4} name={'card4'}/>
+          <CarouselCard img={project5} name={'card5'}/>
+          <CarouselCard img={project6} name={'card6'}/>
+          <CarouselCard img={project7} name={'card7'}/>
+          <CarouselCard img={project8} name={'card8'}/>
           
-          <CarouselCard name={'card8'}/>
-          <CarouselCard name={'card9'}/>
-          <CarouselCard name={'card10'}/>
-          <CarouselCard name={'card11'}/>
-          <CarouselCard name={'card12'}/>
-          <CarouselCard name={'card13'}/>
-          <CarouselCard name={'card14'}/>
-          <CarouselCard name={'card15'}/>
-          <CarouselCard name={'card16'}/>
-          {/*<CarouselCard name={'card17'}/> */}
-          {/*<CarouselCard name={'card18'}/> */}
-
-
-          {/* <CarouselCard name={'card17'}/>
-          <CarouselCard name={'card18'}/>
-          <CarouselCard name={'card19'}/>
-
-          <CarouselCard name={'card20'}/>
-          <CarouselCard name={'card21'}/>
-          <CarouselCard name={'card22'}/>
-          <CarouselCard name={'card23'}/> */}
       </div>
     </div>
   )
