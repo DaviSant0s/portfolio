@@ -95,3 +95,10 @@
 .wrapper-carousel::-webkit-scrollbar {
   display: none;
 }
+
+/* editando aqui */
+
+.description-carousel-projects {
+  height: min-content;
+  margin-top: 40px;
+}

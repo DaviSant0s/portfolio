@@ -177,6 +177,11 @@ export default function Carousel({title}) {
             link='https://davisant0s.github.io/Clipboard-landing-page/'/>
           
       </div>
+      <div style={{width: `${carouselStyles.width}px`}} className='description-carousel-projects'>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. At error ex nisi repudiandae impedit itaque ab et vero beatae sequi, placeat consequuntur aliquid rerum, quia expedita corporis possimus corrupti porro.</p>
+        <br />
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi ea ut velit facilis omnis enim minus dolores molestiae magnam soluta non consequatur odio impedit voluptates, ad sed exercitationem suscipit obcaecati.</p>
+      </div>
     </div>
   )
 }
