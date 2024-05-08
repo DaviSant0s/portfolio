@@ -29,7 +29,7 @@
 
 .borderBug {
   position: absolute;
-  z-index: 11;
+  z-index: 10;
   top: 7.5px;
   bottom: 7.5px;
   left: 5.5px;
@@ -40,4 +40,5 @@
   background-color: transparent;
   border: 1px solid black;
   
+  pointer-events: none;
 }
