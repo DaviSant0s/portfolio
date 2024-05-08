@@ -63,6 +63,11 @@
 
   -webkit-user-select: none;
   user-select: none;
+
+  transition: transform .3s ease;
+}
+.arrow_carousel:hover{
+  transform: scale(1.1);
 }
 
 .wrapper-carousel {
@@ -84,6 +89,7 @@
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     scrollbar-width: none;
+
 }
 
 .wrapper-carousel::-webkit-scrollbar {

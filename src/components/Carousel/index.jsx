@@ -95,7 +95,8 @@ export default function Carousel({title}) {
   useEffect(() => {
     if(numberCardCarousel === 1){
       setArrowStyleLeft({
-        opacity: '0.5'
+        opacity: '0.5',
+        transform: 'scale(1)'
       });
     } else {
       setArrowStyleLeft({});
@@ -103,7 +104,8 @@ export default function Carousel({title}) {
 
     if((numberCardCarousel === totalCardCarousel)){
       setArrowStyleRight({
-        opacity: '0.5'
+        opacity: '0.5',
+        transform: 'scale(1)'
       });
 
     } else {
