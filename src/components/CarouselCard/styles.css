@@ -1,151 +1,16 @@
-.carouselCard-and-transparentScreen {
+.carouselCard-container {
   position: relative;
+
+  flex-shrink: 0;
+  border-radius: 15px;
 
   margin-top: 30px;
   margin-bottom: 30px;
-  transition: all .3s ease;
 }
 
-/* .carouselCard-and-transparentScreen:hover{
-  transform: translateY(-10px);
-} */
-
-.carouselCard-container {
-  position: relative;
-  z-index: 2;
-  flex-shrink: 0;
-  /* overflow: hidden; */
-  box-shadow: 3px 3px 10px rgba(160, 160, 160, 0.937);
-  background-color: transparent;
-  border-radius: 15px;
-  transition: all .3s ease;
-}
-
-.carouselCard-container:hover {
-  /* transform: scale(1.05); */
- /*  transform: translateY(-10px); */
-}
-
-.carouselCard-container > img {
-  width: 100%;
-  border-radius: 15px;
+.carouselCard-container .screenImage {
   object-fit: cover;
-  /* overflow: hidden; */
-}
-
-.screenCarousel {
-  position: absolute;
-  top: 6px;
-  left: 5px;
-
-  width: 290.5px;
-  height: 362px;
-
-  background-color: white;
-
-  border-radius: 8px;
-}
-
-.screenCarousel-content {
-  position: relative;
-  display: flex;
-  align-items: start;
-  justify-content: start;
   width: 100%;
   height: 100%;
   border-radius: 8px;
-
-  transition: transform .3s ease;
-  overflow: visible;
-}
-
-.screenCarousel-content > img{
-  width: 100%;
-  height: 100%;
-  border-radius: 8px;
-  object-fit: cover;
-}
-
-
-/* screen transparent with button */
-
-@keyframes translateScreenEnter{
-  from {
-    transform: translateY(380px);
-  }
-
-  to{
-    transform: translateY(0px);
-  }
-}
-
-@keyframes translateScreenOut{
-  from {
-    transform: translateY(0px);
-  }
-
-  to{
-    transform: translateY(380px);
-  }
-}
-
-.transparentScreen-btn-container {
-  height: 362px;
-  width: 290.5px;
-
-  position: absolute;
-  z-index: 100;
-
-  top: 6px;
-  left: 5px;
-
-  border-radius: 2px;
-
-  padding-bottom: 362px;
-
-  overflow-y: hidden;
-
-  transition: all .5s ease;
-  
-}
-
-.transparentScreen-btn-container:hover {
-  padding-bottom: 0px;
-}
-
-.transparentScreen-btn-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 100%;
-  height: 100%;
-
-  border-radius: 8px;
-
-  background-color: rgba(0, 0, 0, 0.444);
-  backdrop-filter: blur(10px);
-}
-
-.transparentScreen-btn-content > a > button {
-  padding-left: 40px;
-  padding-right: 40px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-
-  background-color: #ffffff10;
-  color: white;
-  font-weight: 400;
-
-  border: 2px solid #ffffff30;
-  border: 1px solid #ffffff76;
-  border-radius: 3px;
-
-  transition: all .3s ease;
-  cursor: pointer;
-}
-
-.transparentScreen-btn-content > a > button:hover {
-  transform: scale(1.05);
-  background-color: #ffffff1d;
 }

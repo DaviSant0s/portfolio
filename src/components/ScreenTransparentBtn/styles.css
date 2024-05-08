@@ -1,0 +1,45 @@
+.screenTransparentTabletBtn {
+  position: absolute;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  border-radius: 8px;
+
+  background-color: rgba(0, 0, 0, 0.444);
+  backdrop-filter: blur(10px);
+
+  height: 0px;
+  transition: all .5s ease;
+
+}
+
+
+/* botão */
+.screenTransparentTabletBtn > a > button {
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+  background-color: #ffffff10;
+  color: white;
+  font-weight: 400;
+
+  border: 2px solid #ffffff30;
+  border: 1px solid #ffffff76;
+  border-radius: 3px;
+
+  transition: all .3s ease;
+  cursor: pointer;
+}
+
+.screenTransparentTabletBtn > a > button:hover {
+  transform: scale(1.05);
+  background-color: #ffffff1d;
+}
