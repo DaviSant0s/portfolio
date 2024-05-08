@@ -24,3 +24,20 @@
 
   overflow: hidden;
 }
+
+/* bug da borda */
+
+.borderBug {
+  position: absolute;
+  z-index: 11;
+  top: 7.5px;
+  bottom: 7.5px;
+  left: 5.5px;
+  right: 6.5px;
+
+  border-radius: 9px;
+
+  background-color: transparent;
+  border: 1px solid black;
+  
+}

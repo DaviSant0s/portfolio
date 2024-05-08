@@ -28,6 +28,7 @@ export default function TabletContainer({ children, link }) {
         {children}
         <ScreenTransparentBtn styles={stylesScreenTransparent} link={link}/>
       </div>
+      <div className='borderBug'/>
     </div>
   )
 }
