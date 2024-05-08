@@ -134,14 +134,45 @@ export default function Carousel({title}) {
         style={styleWrapperCarousel} 
         className='wrapper-carousel'
       >
-          <CarouselCard img={project1} name={'card1'}/>
-          <CarouselCard img={project2} name={'card2'}/>
-          <CarouselCard img={project3} name={'card3'}/>
-          <CarouselCard img={project4} name={'card4'}/>
-          <CarouselCard img={project5} name={'card5'}/>
-          <CarouselCard img={project6} name={'card6'}/>
-          <CarouselCard img={project7} name={'card7'}/>
-          <CarouselCard img={project8} name={'card8'}/>
+          <CarouselCard 
+            img={project1} 
+            name={'card1'} 
+            link='https://davisant0s.github.io/projeto-android/'/>
+
+          <CarouselCard 
+            img={project2} 
+            name={'card2'}
+            link='https://davisant0s.github.io/html-css/exercicios/ex026/mq002/'/>
+
+          <CarouselCard 
+            img={project3} 
+            name={'card3'}
+            link='https://davisant0s.github.io/projeto-cordel/'/>
+
+          <CarouselCard 
+            img={project4} 
+            name={'card4'}
+            link='https://davisant0s.github.io/projeto-social/'/>
+
+          <CarouselCard 
+            img={project5} 
+            name={'card5'}
+            link='https://davisant0s.github.io/html-css/exercicios/ex026/mq004/'/>
+
+          <CarouselCard 
+            img={project6} 
+            name={'card6'}
+            link='https://davisant0s.github.io/html-css/exercicios/ex026/mq005/'/>
+
+          <CarouselCard 
+            img={project7} 
+            name={'card7'}
+            link='https://davisant0s.github.io/projeto-login/'/>
+
+          <CarouselCard 
+            img={project8} 
+            name={'card8'}
+            link='https://davisant0s.github.io/Clipboard-landing-page/'/>
           
       </div>
     </div>
