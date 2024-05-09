@@ -19,6 +19,8 @@
 
   height: 290px;
 
+  /* background-color: yellow; */
+
   /* padding-bottom: 120px; */
 
   /* background-color: yellow; */
@@ -81,4 +83,5 @@
   width: fit-content;
   display: flex;
   gap: 8px;
+  margin-top: 8px;
 }

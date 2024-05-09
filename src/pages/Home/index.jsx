@@ -15,7 +15,7 @@ export default function Home() {
           <p>
             Meu nome é <strong>Davi Santos</strong>, tenho 23 anos, sou uma pessoa 
             bastante dedicada aos estudos, focado e sempre aprendendo 
-            coisas novas relacionadas à programação. 
+            coisas novas relacionadas à programação e desenvolvimento pessoal. 
           </p>
 
           <p>
@@ -24,8 +24,10 @@ export default function Home() {
           </p>
 
           <p>
-            Atualmente estou cursando Engenharia de Computação na Universidade 
-            Federal do Rio Grande (FURG) e focando no desenvolvimento FullStack.
+            Atualmente estou cursando <strong>Engenharia de Computação</strong> na <strong>
+              Universidade
+              Federal do Rio Grande
+            </strong> (FURG) e focando no desenvolvimento FullStack.
           </p>
           
           {/* <a className='curriculum-btn' href="https://drive.google.com/file/d/1hHtHCqwOIouLySi8dBQeAUHaJB8wdku1/view?usp=sharing" target='_blank'>
