@@ -1,6 +1,6 @@
 import './styles.css';
-import Button from '../../components/Button';
 import img_home from '../../assets/img-home.jpg';
+
 import SocialButton from '../../components/SocialButton';
 
 export default function Home() {
@@ -10,10 +10,10 @@ export default function Home() {
       <div className='description-image-container'>
         <div className='description-home'>
 
-          <h1>Desenvolvedor web</h1>
+          <h1>Olá, Bem vindo ao meu portfólio!</h1>
 
           <p>
-            Olá, meu nome é Davi Santos! Tenho 23 anos, sou uma pessoa 
+            Meu nome é <strong>Davi Santos</strong>, tenho 23 anos, sou uma pessoa 
             bastante dedicada aos estudos, focado e sempre aprendendo 
             coisas novas relacionadas à programação. 
           </p>
