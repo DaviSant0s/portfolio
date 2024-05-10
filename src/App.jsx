@@ -1,4 +1,5 @@
 import './App.css';
+import FloatingButtons from './components/FloatingButtons';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Certifications from './pages/Certifications';
@@ -11,6 +12,7 @@ function App() {
   return (
    <div className='app-container'>
     <Header/>
+    <FloatingButtons/>
     <div className='body-container'>
       <Home/>
       <Certifications/>
