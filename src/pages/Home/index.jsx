@@ -15,7 +15,7 @@ export default function Home() {
           <p>
             Meu nome é <strong>Davi Santos</strong>, tenho 23 anos, sou uma pessoa 
             bastante dedicada aos estudos, focado e sempre aprendendo 
-            coisas novas relacionadas à programação e desenvolvimento pessoal. 
+            coisas novas relacionadas à programação, engenharia e desenvolvimento pessoal. 
           </p>
 
           <p>
