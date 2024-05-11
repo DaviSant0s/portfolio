@@ -5,7 +5,7 @@ import SocialButton from '../../components/SocialButton';
 
 export default function Home() {
   return (
-    <div className='home-container defaultHome'>
+    <div id='id_home' className='home-container defaultHome'>
 
       <div className='description-image-container'>
         <div className='description-home'>

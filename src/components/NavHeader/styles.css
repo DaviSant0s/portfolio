@@ -31,6 +31,8 @@
   
   -webkit-user-select: none;
   user-select: none;
+
+  transition: background-color, margin 0.3s ease-in-out;
   
 }
 
@@ -46,9 +48,7 @@
   border-left: 1px solid var(--buttomBorderPage);
   border-right: 1px solid var(--buttomBorderPage);
   
-  font-weight: 600;
-  
-  transition: all 0.3s ease-in-out;
+  /* transition: margin 0.1s ease-in-out; */
   
 }
 
@@ -61,7 +61,7 @@
   border-right: 1px solid var(--buttomBorderPage);
   margin-left: -5px;
   
-  transition: all 0.3s ease-in-out;
+  /* transition: margin 0.1s ease-in-out; */
 }
 
 .nav-header .about:hover{
@@ -73,7 +73,7 @@
   border-left: 1px solid var(--buttomBorderPage);
   border-right: 1px solid var(--buttomBorderPage);
   
-  transition: all 0.3s ease-in-out;
+  /* transition: margin 0.1s ease-in-out; */
 }
 
 .nav-header .experiences:hover{
@@ -85,7 +85,7 @@
   border-left: 1px solid var(--buttomBorderPage);
   border-right: 1px solid var(--buttomBorderPage);
   
-  transition: all 0.3s ease-in-out;
+  /* transition: margin 0.1s ease-in-out; */
 }
 
 .nav-header .projects:hover{
@@ -97,7 +97,7 @@
   border-left: 1px solid var(--buttomBorderPage);
   border-right: 1px solid var(--buttomBorderPage);
 
-  transition: all 0.3s ease-in-out;
+  /* transition: margin 0.1s ease-in-out; */
 }
 
 .nav-header .certifications:hover{
@@ -109,7 +109,7 @@
   border-left: 1px solid var(--buttomBorderPage);
   border-right: 1px solid var(--buttomBorderPage);
 
-  transition: all 0.3s ease-in-out;
+  /* transition: margin 0.1s ease-in-out; */
 }
 
 .nav-header .skills:hover{
@@ -121,7 +121,7 @@
   border-left: 1px solid var(--buttomBorderPage);
   border-right: 1px solid var(--buttomBorderPage);
 
-  transition: all 0.3s ease-in-out;
+  /* transition: margin 0.1s ease-in-out; */
 }
 
 .nav-header .contact:hover{

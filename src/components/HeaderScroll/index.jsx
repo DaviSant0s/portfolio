@@ -4,7 +4,12 @@ import Button from '../Button';
 import NavHeader from '../NavHeader';
 import DarkModeBtn from '../DarkModeBtn'
 
-export default function HeaderScroll() {
+export default function HeaderScroll( {
+  currentStyleHome,
+  currentStyleCertification,
+  currentStyleSkills,
+  currentStyleProjects
+} ) {
 
   return (
     <header className='header-container-scroll'>
@@ -12,7 +17,14 @@ export default function HeaderScroll() {
         <div className='logo-and-buttons-header-scroll'>
           <Logo headerScroll={true} />
           <div className='navHeaderAnimationBug-container-scroll'>
-            <NavHeader style_nav={{height: '41px' }}/>
+            <NavHeader 
+              style_nav={{height: '41px' }}
+              
+              currentStyleHome={currentStyleHome}
+              currentStyleCertification={currentStyleCertification}
+              currentStyleSkills={currentStyleSkills}
+              currentStyleProjects={currentStyleProjects}
+            />
           </div>
           <div className='btns-header-scroll'>
 
