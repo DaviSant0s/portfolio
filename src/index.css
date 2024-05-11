@@ -13,10 +13,8 @@
 
 :root {
   --heightHeader: 180px;
+  --heightHeaderScroll: 80px;
   --heighBody: calc(100vh - var(--heightHeader));
-   --mainColor: #191919;
-   --mainColor: #1E1E1E;
-   --mainColor: rgb(253, 246, 246);
    --mainColor: #ffffff;
    
 }

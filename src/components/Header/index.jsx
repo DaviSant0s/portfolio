@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-scroll';
 import Logo from '../Logo';
 import './styles.css';
 import Button from '../Button';
@@ -25,6 +24,7 @@ export default function Header() {
   }, [darkMode]);
 
   return (
+
     <header className='header-container'>
       <div className='header-content'>
         <div className='logo-and-buttons-header'>
@@ -64,5 +64,6 @@ export default function Header() {
         <NavHeader/>
       </div>
     </header>
+
   );
 }

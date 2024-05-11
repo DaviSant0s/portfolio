@@ -1,9 +1,9 @@
 import { Link } from 'react-scroll';
 import './styles.css';
 
-export default function NavHeader() {
+export default function NavHeader( {style_nav={}} ) {
   return (
-    <nav className='nav-header'>
+    <nav style={style_nav} className='nav-header'>
       <Link to='' className='Link'>
         <div className='home link-page'>Início</div>
       </Link>
