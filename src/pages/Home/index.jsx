@@ -10,7 +10,7 @@ export default function Home() {
       <div className='description-image-container'>
         <div className='description-home'>
 
-          <h1>Olá, Bem vindo ao meu portfólio!</h1>
+          <h1>Olá! Bem vindo ao meu portfólio</h1>
 
           <p>
             Meu nome é <strong>Davi Santos</strong>, tenho 23 anos, sou uma pessoa 
