@@ -10,6 +10,7 @@ import Skills from './pages/Skills';
 function App() {
 
   return (
+
     <div className='app-container'>
       <Headers/>
       <FloatingButtons/>
@@ -21,6 +22,7 @@ function App() {
       </div>
       <Footer/>
     </div>
+
   )
 }
 
