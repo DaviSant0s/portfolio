@@ -189,6 +189,11 @@
   text-decoration: none;
 }
 
+/* underline in the intituation link */
+.cardCertification-container:hover .data-cardCertification-container > .institution-name > a {
+  text-decoration: underline;
+}
+
 .container-btns {
   display: flex;
   justify-content: start;
@@ -226,11 +231,18 @@
   cursor: pointer;
 }
 
-.credential-btn:hover, .view-btn:hover {
+.cardCertification-container:hover .credential-btn {
+  border: 1px solid #595554;
+}
+.cardCertification-container:hover .view-btn {
+  border: 1px solid #595554;
+}
+
+.cardCertification-container:hover .credential-btn:hover, 
+.cardCertification-container:hover .view-btn:hover {
   color: white;
   background-color: #0270ad;
 
-  /* border: 1px solid #025e90; */
   border: 1px solid transparent;
   box-shadow: 0px 6px 9px 0px transparent;
 }

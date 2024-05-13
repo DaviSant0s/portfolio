@@ -39,6 +39,11 @@
 
 .socialButton-contact .bxl-github {
   opacity: 0.8;
+  transition: all 0.1s ease-in-out;
+}
+
+.socialButton-contact:hover .bxl-github {
+  opacity: 1;
 }
 
 .linkedin-icon-container {
@@ -46,13 +51,18 @@
   justify-content: center;
   align-items: center;
   background-color: #0063C1;
-  /* background-color: red; */
-
+  
   width: 20px;
   height: 20px;
 
   opacity: 0.8;
   border-radius: 50%;
+
+  transition: all 0.1s ease-in-out;
+}
+
+.socialButton-contact:hover .linkedin-icon-container {
+  opacity: 1;
 }
 
 .socialButton-contact .bxl-linkedin {

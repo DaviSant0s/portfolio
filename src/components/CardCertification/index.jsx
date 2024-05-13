@@ -17,46 +17,8 @@ export default function CardCertification(
     style_title={}
   }) {
 
-  const [ underline, setUnderline ] = useState({});
-  const [ styleBtnCredential, setStyleBtnCredential ] = useState({});
-  const [ styleBtnView, setStyleBtnView ] = useState({});
   const [ isOpenModal, setIsOpenModal ] = useState(false);
 
-  /* card */
-  const handleMouseEnterCardCertification = (e) => {
-    setUnderline({
-      textDecoration: 'underline',
-    });
-  
-    setStyleBtnCredential({border: '1px solid #595554'});
-    setStyleBtnView({border: '1px solid #595554'});
-    
-  }
-
-  const handleMouseLeaveCardCertification = () => {
-    setUnderline({});
-  
-    setStyleBtnCredential({});
-    setStyleBtnView({});
-  }
-
-  /* btns credential */
-  const handleMouseEnter_BtnCredential = () => {
-    setStyleBtnCredential({});
-  }
-
-  const handleMouseLeave_BtnCredential = () => {
-    setStyleBtnCredential({border: '1px solid #595554'});
-  }
-
-  /* btn ementa */
-  const handleMouseEnter_BtnEmenta = () => {
-    setStyleBtnView({});
-  }
-
-  const handleMouseLeave_BtnEmenta = () => {
-    setStyleBtnView({border: '1px solid #595554'});
-  }
 
   /* modal */
   const handleClickModal = () => {
@@ -69,11 +31,7 @@ export default function CardCertification(
 
         <div style={status ? {backgroundColor: '#348C34'} : {backgroundColor: '#b9b85c'}} className='background-diagonal'></div>
         
-        <div 
-          onMouseEnter={handleMouseEnterCardCertification} 
-          onMouseLeave={handleMouseLeaveCardCertification}
-          className='cardCertification-container'
-        >
+        <div className='cardCertification-container'>
           <div className='status-container-cardCertification'>
             <div style={status ? {backgroundColor: '#5cb85c'} : {backgroundColor: '#b9b85c'}} className='status-cardCertification'>
               <span>{status ? 'Concluído': 'Fazendo'}</span>
@@ -96,7 +54,7 @@ export default function CardCertification(
       
               <div className='data-cardCertification-container'>
                 <span className='title'>Instituição:</span>
-                <p className='name'><a style={underline} target='_blank' href={link_institution}>{institution}</a></p>
+                <p className='name institution-name'><a target='_blank' href={link_institution}>{institution}</a></p>
               </div>
               <div className='data-cardCertification-container'>
                 <span className='title'>Duração:</span>
@@ -108,23 +66,12 @@ export default function CardCertification(
               </div>
               <div className='container-credential-btns'>
                 <a className='link-credential-btn' target='_blank' href={link_credential}>
-                  <div
-                    onMouseEnter={handleMouseEnter_BtnCredential}
-                    onMouseLeave={handleMouseLeave_BtnCredential}
-                    style={styleBtnCredential} 
-                    className='credential-btn'
-                  >
+                  <div className='credential-btn'>
                     <p>Exibir credencial</p>
                     <span className="material-symbols-outlined">ios_share</span>
                   </div>
                 </a>
-                <div 
-                  onMouseEnter={handleMouseEnter_BtnEmenta}
-                  onMouseLeave={handleMouseLeave_BtnEmenta}
-                  onClick={handleClickModal} 
-                  style={styleBtnView} 
-                  className='view-btn'
-                >
+                <div onClick={handleClickModal} className='view-btn'>
                   <p>Ementa</p>
                 </div>
               </div>
