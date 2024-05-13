@@ -4,15 +4,10 @@ import Button from '../Button';
 import NavHeader from '../NavHeader';
 import DarkModeBtn from '../DarkModeBtn';
 
-export default function Header({ 
-  currentStyleHome,
-  currentStyleCertification,
-  currentStyleSkills,
-  currentStyleProjects
-}) {
-
+export default function Header() {
+  
   return (
-
+    
     <header id='id_header' className='header-container'>
       <div className='header-content'>
         <div className='logo-and-buttons-header'>
@@ -33,14 +28,11 @@ export default function Header({
           
         </div>
         
-        <NavHeader 
-          currentStyleHome={currentStyleHome}
-          currentStyleCertification={currentStyleCertification}
-          currentStyleSkills={currentStyleSkills}
-          currentStyleProjects={currentStyleProjects}
-        />
+        <NavHeader/>
+
       </div>
     </header>
 
-  );
+);
+
 }
