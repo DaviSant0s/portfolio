@@ -249,10 +249,9 @@ export default function Certifications() {
   }
 
   return (
-    <div style={{position: 'relative'}}>
+    <div id='id_certifications' style={{position: 'relative'}}>
       <div 
         style={styleCardCertification} 
-        id='id-ertifications' 
         className='certifications-container'
       >
         <h1>Certificações</h1>
@@ -309,7 +308,7 @@ export default function Certifications() {
           }
           {moreCardsBool &&
             <Link
-            to={'id-ertifications'}
+            to={'id_certifications'}
             smooth={true} offset={0}
             duration={300}>
           

@@ -15,7 +15,7 @@ export default function NavHeader( { style_nav={} } ) {
         <div style={styleHome} className='home link-page'>Home</div>
       </Link>
 
-      <Link to='id-ertifications' smooth={true} offset={-79} duration={700} className='Link'>
+      <Link to='id_certifications' smooth={true} offset={-79} duration={700} className='Link'>
         <div style={styleCertification} className='certifications link-page'>Certificações</div>
       </Link>
 
