@@ -36,8 +36,9 @@ export default function Headers() {
   
   useEffect(() => {
 
+    setViewHight(window.innerHeight);
+    
     if(height_certifications && height_skills && height_projects){
-      setViewHight(window.innerHeight);
       setCertificationHight((viewHight - 80) + height_certifications);
       setSkillsHight(certificationHight + height_skills);
       setProjectsHight(skillsHight + height_projects);
