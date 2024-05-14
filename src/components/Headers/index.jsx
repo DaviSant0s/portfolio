@@ -10,30 +10,28 @@ import './styles.css';
 
 export default function Headers() {
 
+  // Gambiarra para saber se eu medei de tela
   const isBigScreen = useMediaQuery({ query: '(height: 695.2px)' });
 
   
+  // estados para controlar a posição de mudança de estilo nos botões do header
   const [ viewHight, setViewHight ] = useState(window.innerHeight);
   const [ certificationHight, setCertificationHight ] = useState(0);
   const [ skillsHight, setSkillsHight ] = useState(0);
   const [ projectsHight, setProjectsHight ] = useState(0);
   
-  const headerContext = useContext(GlobalHeaderContext);
+  // estado que armazena a posição atual do scroll
   const [ scrolbarPositionWin, setScrolbarPositionWin ] = useState(0);
 
-  const { 
-    setStyleHome, 
-    setStyleCertification, 
-    setStyleSkills, 
-    setStyleProjects,
+  // estado Global do header
+  const headerContext = useContext(GlobalHeaderContext);
 
-    height_home, /* não estou usando ainda */
-    height_certifications,
-    height_skills,
-    height_projects,
-    
-  } = headerContext;
+  // desestruturação do estado global
+  const { setStyleHome, setStyleCertification, setStyleSkills, setStyleProjects,
+          height_certifications, height_skills, height_projects} = headerContext;
   
+
+  // Efeito que calcula em qual posição se inicia cada seção do site, para mudar o estilo do header
   useEffect(() => {
 
     setViewHight(window.innerHeight);
@@ -44,16 +42,11 @@ export default function Headers() {
       setProjectsHight(skillsHight + height_projects);
     }
 
-  }, [viewHight, 
-      certificationHight, 
-      skillsHight, 
-      projectsHight, 
-      isBigScreen,
-      height_certifications,
-      height_skills,
-      height_projects
-    ]);
+  }, [viewHight, certificationHight, skillsHight, projectsHight, 
+      isBigScreen, height_certifications,height_skills,height_projects]);
 
+  
+  // Efeito que decide dinamicamente quando o scroll estiver dentro de um intervalo de cada seção
   useEffect(() => {
     if(scrolbarPositionWin <= (viewHight - 80) ){
       setStyleHome({...styleCurrentBtnPage, ...MarginCurrentBtnPage.home});
@@ -81,10 +74,12 @@ export default function Headers() {
 
   }, [scrolbarPositionWin])
 
+  // função que retorna a posição atual do scroll na vertical
   const handleOnScrollWin = () => {
     setScrolbarPositionWin(window.scrollY);
   }
 
+  // evento que monitora a posição do scroll
   useEventListener('scroll', handleOnScrollWin);
 
   return (
