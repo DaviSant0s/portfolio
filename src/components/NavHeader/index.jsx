@@ -70,11 +70,11 @@ export default function NavHeader( { style_nav={} } ) {
         <div onClick={() => handleClickBtnPage('certifications')} style={styleCertification} className='certifications link-page'>Certificações</div>
       </Link>
 
-      <Link to='id_skills' smooth={true} offset={-80} duration={700} className='Link'>
+      <Link to='id_skills' smooth={true} offset={-79} duration={700} className='Link'>
         <div onClick={() => handleClickBtnPage('skills')} style={styleSkills} className='skills link-page'>Habilidades</div>
       </Link>
 
-      <Link to='id_projects' smooth={true} offset={-80} duration={700} className='Link'>
+      <Link to='id_projects' smooth={true} offset={-79} duration={700} className='Link'>
         <div onClick={() => handleClickBtnPage('projects')} style={styleProjects} className='projects link-page'>Projetos</div>
       </Link>
 
