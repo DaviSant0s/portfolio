@@ -29,10 +29,6 @@ export default function Home() {
               Federal do Rio Grande
             </strong> (FURG) e focando no desenvolvimento FullStack.
           </p>
-          
-          {/* <a className='curriculum-btn' href="https://drive.google.com/file/d/1hHtHCqwOIouLySi8dBQeAUHaJB8wdku1/view?usp=sharing" target='_blank'>
-           <Button name={'Currículo'} icon={'file_download'}/>
-          </a> */}
 
           <div className='btns-home-container'>
             <SocialButton 

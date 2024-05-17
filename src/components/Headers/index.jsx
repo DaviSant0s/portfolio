@@ -3,7 +3,7 @@ import { useContext, useEffect, useState } from 'react';
 import useEventListener from '../../hooks/useEventListenerDocument';
 import Header from '../Header';
 import HeaderScroll from '../HeaderScroll';
-import { styleCurrentBtnPage, MarginCurrentBtnPage } from  '../../styles/header/index.js';
+import { styleCurrentBtnPage } from  '../../styles/header/index.js';
 import { GlobalHeaderContext } from '../../context/HeaderContext/index.jsx';
 
 import './styles.css';
@@ -32,6 +32,12 @@ export default function Headers() {
 
   // desestruturaçãovariável do estado global de seleção do botão de página
   const { selectedPage, setSelectedPage } = headerContext;
+
+  // estado para indicar qual botão de página está selecionado no momento
+  const { selectedCurrentPage, setSelectedCurrentPage } = headerContext;
+
+  // desestruturação variável do estado global do estilo de espaçamento do botão de página selecionado
+  const { MarginCurrentBtnPage, SetMarginCurrentBtnPage } = headerContext;
 
   useEffect(() => {
 
@@ -83,34 +89,40 @@ export default function Headers() {
   // Efeito que decide dinamicamente quando o scroll estiver dentro de um intervalo de cada seção
   useEffect(() => {
 
+    console.log(scrolbarPositionWin);
+
     if(!selectedPage.bool){
 
       if(scrolbarPositionWin <= (viewHight - 80) ){
         setStyleHome({...styleCurrentBtnPage, ...MarginCurrentBtnPage.home});
+        setSelectedCurrentPage('home');
       } else {
         setStyleHome({});
       }
   
       if(viewHight - 80 < scrolbarPositionWin && scrolbarPositionWin <= certificationHight ){
         setStyleCertification({ ...styleCurrentBtnPage, ...MarginCurrentBtnPage.certifications });
+        setSelectedCurrentPage('certifications');
       } else {
         setStyleCertification({});
       }
   
       if(certificationHight < scrolbarPositionWin && scrolbarPositionWin <= skillsHight){
         setStyleSkills({ ...styleCurrentBtnPage, ...MarginCurrentBtnPage.skills });
+        setSelectedCurrentPage('skills');
       } else {
         setStyleSkills({});
       }
   
       if(skillsHight < scrolbarPositionWin && scrolbarPositionWin <= projectsHight){
         setStyleProjects({ ...styleCurrentBtnPage, ...MarginCurrentBtnPage.projects });
+        setSelectedCurrentPage('projects');
       } else {
         setStyleProjects({});
       }
     }
 
-  }, [scrolbarPositionWin])
+  }, [scrolbarPositionWin]);
 
   // função que retorna a posição atual do scroll na vertical
   const handleOnScrollWin = () => {

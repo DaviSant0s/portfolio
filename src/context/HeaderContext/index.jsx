@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
 import { createContext } from "react";
 import useResizeObserver from "../../hooks/useResizeObserver";
+import { dataMarginCurrentBtnPage} from "./data";
 
 export const GlobalHeaderContext = createContext();
 
 export default function HeaderProvider({ children }) {
+
+  // dados dos estilos de espaçamento dos botoes de páginas selecionados
+  const [ MarginCurrentBtnPage, SetMarginCurrentBtnPage ] = useState(dataMarginCurrentBtnPage);
 
   /* estado que armazena alturas das seções */
   const [ resizeElement, setResizeElement ] = useState({});
@@ -14,6 +18,8 @@ export default function HeaderProvider({ children }) {
   const [ styleCertification, setStyleCertification ] = useState({});
   const [ styleSkills, setStyleSkills ] = useState({});
   const [ styleProjects, setStyleProjects ] = useState({});
+  const [ styleExperiences, setStyleExperiences ] = useState({});
+  const [ styleContact, setStyleContact ] = useState({});
 
 
   /* Utilização do meu customHook para calcular a altura de cada página */
@@ -24,6 +30,9 @@ export default function HeaderProvider({ children }) {
 
   /* Estado que armazena um booleano que indica se a o botão ta página está selecionada */
   const [ selectedPage, setSelectedPage ] = useState({});
+
+  // estado para indicar qual botão de página está selecionado no momento
+  const [ selectedCurrentPage, setSelectedCurrentPage ] = useState('');
 
   /* efeito que armazena as alturas de cada pagina no estado RizeElement */
   useEffect(() => {
@@ -37,14 +46,6 @@ export default function HeaderProvider({ children }) {
           resize_height_projects
         }
       });
-
-      /*     
-      console.log('home', resize_height_home);
-      console.log('certifications', resize_height_certifications);
-      console.log('skills', resize_height_skills);
-      console.log('projects', resize_height_projects); 
-      */
-
     }
 
   }, [resize_height_home, resize_height_certifications, 
@@ -55,6 +56,13 @@ export default function HeaderProvider({ children }) {
   return (
     <GlobalHeaderContext.Provider 
       value={{
+        
+        // Estilos de espaçamento (margem) de cada botão de página quando for selecionado
+        MarginCurrentBtnPage, SetMarginCurrentBtnPage,
+
+        // indica qual botão de página está selecionado no momento
+        selectedCurrentPage, setSelectedCurrentPage,
+
         // seleção do botão de cada página
         selectedPage, setSelectedPage,
         
@@ -68,7 +76,10 @@ export default function HeaderProvider({ children }) {
         styleHome, setStyleHome,
         styleCertification, setStyleCertification,
         styleSkills, setStyleSkills, 
-        styleProjects, setStyleProjects
+        styleProjects, setStyleProjects,
+        styleExperiences, setStyleExperiences,
+        styleContact, setStyleContact
+
       }}>
 
       {children}
