@@ -27,6 +27,7 @@ export default function HeaderProvider({ children }) {
   const resize_height_certifications = useResizeObserver('#id_certifications');
   const resize_height_skills = useResizeObserver('#id_skills');
   const resize_height_projects = useResizeObserver('#id_projects');
+  const resize_height_experience = useResizeObserver('#id_experience');
 
   /* Estado que armazena um booleano que indica se a o botão ta página está selecionada */
   const [ selectedPage, setSelectedPage ] = useState({});
@@ -37,19 +38,20 @@ export default function HeaderProvider({ children }) {
   /* efeito que armazena as alturas de cada pagina no estado RizeElement */
   useEffect(() => {
 
-    if(resize_height_home && resize_height_certifications && resize_height_skills & resize_height_projects){
+    if(resize_height_home && resize_height_certifications && resize_height_skills & resize_height_projects && resize_height_experience){
       setResizeElement(s => {
         return {
           resize_height_home,
           resize_height_certifications,
           resize_height_skills,
-          resize_height_projects
+          resize_height_projects,
+          resize_height_experience
         }
       });
     }
 
   }, [resize_height_home, resize_height_certifications, 
-      resize_height_skills, resize_height_projects,
+      resize_height_skills, resize_height_projects, resize_height_experience
 
   ]);
 
@@ -71,6 +73,7 @@ export default function HeaderProvider({ children }) {
         height_certifications: resizeElement.resize_height_certifications,
         height_skills: resizeElement.resize_height_skills,
         height_projects: resizeElement.resize_height_projects,
+        height_experience: resizeElement.resize_height_experience,
         
         // estilo do botão da pagina que estiver em foco pelo scroll
         styleHome, setStyleHome,

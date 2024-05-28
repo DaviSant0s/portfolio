@@ -18,7 +18,7 @@ export const dataMarginCurrentBtnPage = {
     marginLeft: '5px',
   },
 
-  experiences: {
+  experience: {
     marginRight: '5px',
     marginLeft: '5px',
   },

@@ -19,6 +19,7 @@ export default function Headers() {
   const [ certificationHight, setCertificationHight ] = useState(0);
   const [ skillsHight, setSkillsHight ] = useState(0);
   const [ projectsHight, setProjectsHight ] = useState(0);
+  const [ experienceHight, setExperienceHight ] = useState(0);
 
   // estado que armazena a posição atual do scroll
   const [ scrolbarPositionWin, setScrolbarPositionWin ] = useState(0);
@@ -27,8 +28,9 @@ export default function Headers() {
   const headerContext = useContext(GlobalHeaderContext);
 
   // desestruturação do estado global
-  const { setStyleHome, setStyleCertification, setStyleSkills, setStyleProjects,
-          height_certifications, height_skills, height_projects} = headerContext;
+  const { setStyleHome, setStyleCertification, setStyleSkills, setStyleProjects, setStyleExperiences,
+          height_certifications, height_skills, height_projects,
+          height_experience} = headerContext;
 
   // desestruturaçãovariável do estado global de seleção do botão de página
   const { selectedPage, setSelectedPage } = headerContext;
@@ -66,6 +68,12 @@ export default function Headers() {
         }
       }
 
+      if(selectedPage.to === 'experience') {
+        if(projectsHight < scrolbarPositionWin && scrolbarPositionWin <= experienceHight){
+          setSelectedPage(false);
+        }
+      }
+
     }
 
   }, [selectedPage.bool, scrolbarPositionWin]);
@@ -76,14 +84,15 @@ export default function Headers() {
 
     setViewHight(window.innerHeight);
 
-    if(height_certifications && height_skills && height_projects){
+    if(height_certifications && height_skills && height_projects && height_experience){
       setCertificationHight((viewHight - 80) + height_certifications);
       setSkillsHight(certificationHight + height_skills);
       setProjectsHight(skillsHight + height_projects);
+      setExperienceHight(projectsHight + height_experience);
     }
 
-  }, [viewHight, certificationHight, skillsHight, projectsHight, 
-      isBigScreen, height_certifications,height_skills,height_projects]);
+  }, [viewHight, certificationHight, skillsHight, projectsHight, experienceHight,
+      isBigScreen, height_certifications, height_skills, height_projects, height_experience]);
 
   
   // Efeito que decide dinamicamente quando o scroll estiver dentro de um intervalo de cada seção
@@ -117,6 +126,13 @@ export default function Headers() {
         setSelectedCurrentPage('projects');
       } else {
         setStyleProjects({});
+      }
+
+      if(projectsHight < scrolbarPositionWin && scrolbarPositionWin <= experienceHight){
+        setStyleExperiences({ ...styleCurrentBtnPage, ...MarginCurrentBtnPage.experience });
+        setSelectedCurrentPage('experience');
+      } else {
+        setStyleExperiences({});
       }
     }
 

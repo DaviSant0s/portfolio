@@ -61,13 +61,14 @@ export default function NavHeader( { style_nav={} } ) {
       setStyleProjects({});
     }
 
-    /* ainda não emplementado essas páginas */
-    if(page === 'experiences') {
-      setStyleExperiences({ ...styleCurrentBtnPage, ...MarginCurrentBtnPage.experiences });
-      setSelectedCurrentPage('experiences');
+    if(page === 'experience') {
+      setStyleExperiences({ ...styleCurrentBtnPage, ...MarginCurrentBtnPage.experience });
+      setSelectedCurrentPage('experience');
     } else {
       setStyleExperiences({});
     }
+
+    /* ainda não emplementado essas páginas */
 
     if(page === 'contact') {
       setStyleContact({ ...styleCurrentBtnPage, ...MarginCurrentBtnPage.contact });
@@ -115,16 +116,16 @@ export default function NavHeader( { style_nav={} } ) {
         >Projetos</div>
       </Link>
 
-      <Link to='' className='Link'>
+      <Link to='id_experience' smooth={true} offset={-79} duration={700} className='Link'>
         <div 
-          onClick={() => handleClickBtnPage('experiences')}
+          onClick={() => handleClickBtnPage('experience')}
           style={styleExperiences}
           className='experiences link-page'
 
         >Experiências</div>
       </Link>
 
-      <Link to='' className='Link'>
+      <Link to=''  className='Link'>
         <div 
           onClick={() => handleClickBtnPage('contact')} 
           style={styleContact}
