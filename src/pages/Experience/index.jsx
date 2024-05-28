@@ -1,5 +1,5 @@
 import CardExperience from '../../components/CardExperience';
-import bytelogo from '../../assets/companies/byte.jpeg';
+import bytelogo from '../../assets/companies/byte.png';
 import petlogo from '../../assets/companies/pet.jpg';
 import './styles.css';
 
@@ -9,7 +9,7 @@ export default function Experience() {
       <h1>Experiências</h1>
       <div className='experience-content'>
         <CardExperience
-          date={'10/2022 - 11/2023'}
+          date={'Out/22 - Nov/23'}
           logo={bytelogo}
           companiesName={'Byte Jr. | Empresa Júnior de TI'}
           position={'Desenvolvedor Front-End'}
@@ -18,7 +18,7 @@ export default function Experience() {
         />
 
         <CardExperience
-          date={'06/2021 - 05/2023'}
+          date={'Jun/2021 - Mai/2023'}
           logo={petlogo}
           companiesName={'Programa de Educação Tutorial (PET)'}
           position={'Bolsista - Coordenador de projeto'}

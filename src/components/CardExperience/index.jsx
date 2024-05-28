@@ -5,7 +5,7 @@ export default function CardExperience({date, logo, companiesName, position, des
     <div className='cardExperience-container'>
 
       <div className='date-container-cardExperience'> 
-        <div className='date'><span>{date}</span></div>
+        <span>{date}</span>
       </div>
 
       <div className='logo-container-cardExperience'>
