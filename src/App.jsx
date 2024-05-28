@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import Headers from './components/Headers';
 import HeaderProvider from './context/HeaderContext';
 import Certifications from './pages/Certifications';
+import Experience from './pages/Experience';
 import Home from './pages/Home';
 import Projects from './pages/Projects';
 import Skills from './pages/Skills';
@@ -23,6 +24,7 @@ function App() {
         <Certifications/>
         <Skills/>
         <Projects/>
+        <Experience/>
       </div>
       <Footer/>
     </div>

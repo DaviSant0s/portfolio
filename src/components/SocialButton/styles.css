@@ -12,11 +12,11 @@
   gap: 5px;
   
   height: 41px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
   
   border: 2px solid #e8e8e8;
-  border-radius: 10px;
+  border-radius: 50px;
   
   cursor: pointer;
   
@@ -24,6 +24,7 @@
   user-select: none;
   
   background: linear-gradient(to top, #f2f2f2, white);
+  
   
   transition: all 0.1s ease-in-out;
 }

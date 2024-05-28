@@ -3,7 +3,7 @@ export const CardStyles = {
   height: 373.5,
 }
 
-export const numCardsWidth = 4;
+export const numCardsWidth = 3;
 
 export const carouselStyles = {
   gap: 20,

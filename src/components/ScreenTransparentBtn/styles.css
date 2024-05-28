@@ -15,7 +15,9 @@
   backdrop-filter: blur(10px);
 
   height: 0px;
+  opacity: 0.3;
   transition: all .5s ease;
+
 
 }
 

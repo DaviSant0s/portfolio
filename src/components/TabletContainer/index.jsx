@@ -9,7 +9,8 @@ export default function TabletContainer({ children, link }) {
 
   const handleMouseEnterScreenTransparent = () => {
     setStylesScreenTransparent({
-      height: '100%'
+      height: '100%',
+      opacity: '1'
     });
   }
   

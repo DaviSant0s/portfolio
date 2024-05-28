@@ -1,0 +1,25 @@
+.experience-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+
+  background-color: white;
+}
+.experience-container > h1 {
+  text-align: center;
+  line-height: 100%;
+  margin-bottom: 40px;
+}
+
+.experience-container > .experience-content {
+  width: 70%;
+  min-width: 800px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 20px;
+}
+

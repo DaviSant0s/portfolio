@@ -89,8 +89,6 @@ export default function Headers() {
   // Efeito que decide dinamicamente quando o scroll estiver dentro de um intervalo de cada seção
   useEffect(() => {
 
-    console.log(scrolbarPositionWin);
-
     if(!selectedPage.bool){
 
       if(scrolbarPositionWin <= (viewHight - 80) ){
