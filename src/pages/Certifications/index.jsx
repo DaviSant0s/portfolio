@@ -1,6 +1,6 @@
 import CardCertification from '../../components/CardCertification';
 
-import udemy from '../../assets/companies/udemy-logo.webp';
+import udemy from '../../assets/companies/udemy2.png';
 import cursoEmVideo from '../../assets/companies/curso-em-video.jpg';
 import telos from '../../assets/companies/telos.jpeg';
 import microsoft from '../../assets/companies/microsoft.png';
@@ -23,7 +23,7 @@ const DataCertifications = [
     conclusion: '2024',
     duration: '58,5 horas',
     link_institution: 'https://www.udemy.com/course/bancos-de-dados-relacionais-basico-avancado/?couponCode=KEEPLEARNING',
-    style_icone: {},
+    style_icone: {borderRadius: '3px'},
   },
   {
     id: -1,
@@ -36,7 +36,7 @@ const DataCertifications = [
     conclusion: '2024',
     duration: '38 horas',
     link_institution: 'https://www.udemy.com/course/nodejs-do-zero-a-maestria-com-diversos-projetos/?couponCode=KEEPLEARNING',
-    style_icone: {},
+    style_icone: {borderRadius: '3px'},
   },
   
   {
@@ -50,7 +50,7 @@ const DataCertifications = [
     conclusion: '2024',
     duration: '93 horas',
     link_institution: 'https://www.udemy.com/course/curso-de-javascript-moderno-do-basico-ao-avancado/?couponCode=KEEPLEARNING',
-    style_icone: {},
+    style_icone: {borderRadius: '3px'},
   },
   {
     id: 1,
@@ -63,7 +63,7 @@ const DataCertifications = [
     conclusion: '2024',
     duration: '146 horas',
     link_institution: 'https://www.udemy.com/course/curso-de-reactjs-nextjs-completo-do-basico-ao-avancado/?couponCode=KEEPLEARNING',
-    style_icone: {},
+    style_icone: {borderRadius: '3px'},
   },
   {
     id: 2,

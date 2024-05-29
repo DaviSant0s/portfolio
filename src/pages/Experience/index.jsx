@@ -11,7 +11,7 @@ export default function Experience() {
       <div className='experience-content'>
 
         <CardExperience
-          date={'Jun/2021 - Mai/2023'}
+          date={'Jun/21 - Mai/23'}
           logo={petlogo}
           companiesName={'PET Ciências Computacionais - FURG'}
           position={'Bolsista - Coordenador de projeto'}
