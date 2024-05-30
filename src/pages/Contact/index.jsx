@@ -70,6 +70,7 @@ export default function Contact() {
               <p>
                 daviir17@gmail.com
                 <span 
+                  
                   onClick={() => handleContactCopy('email')} 
                   className="material-symbols-outlined copy-icon-contact"
                 >
