@@ -2,10 +2,14 @@ import { useEffect, useState } from "react";
 import { createContext } from "react";
 import useResizeObserver from "../../hooks/useResizeObserver";
 import { dataMarginCurrentBtnPage} from "./data";
+import useEventListener from "../../hooks/useEventListenerDocument";
 
 export const GlobalHeaderContext = createContext();
 
 export default function HeaderProvider({ children }) {
+
+    // estado que armazena a posição atual do scroll
+    const [ scrolbarPositionWin, setScrolbarPositionWin ] = useState(0);
 
   // dados dos estilos de espaçamento dos botoes de páginas selecionados
   const [ MarginCurrentBtnPage, SetMarginCurrentBtnPage ] = useState(dataMarginCurrentBtnPage);
@@ -35,6 +39,18 @@ export default function HeaderProvider({ children }) {
   // estado para indicar qual botão de página está selecionado no momento
   const [ selectedCurrentPage, setSelectedCurrentPage ] = useState('');
 
+  /* -------------------- start scroll ------------------------- */
+
+  //função que retorna a posição atual do scroll na vertical
+  const handleOnScrollWin = () => {
+    setScrolbarPositionWin(window.scrollY);
+  }
+
+  // evento que monitora a posição do scroll
+  useEventListener('scroll', handleOnScrollWin);
+
+  /* -------------------- end scroll ---------------------------- */
+
   /* efeito que armazena as alturas de cada pagina no estado RizeElement */
   useEffect(() => {
 
@@ -58,6 +74,8 @@ export default function HeaderProvider({ children }) {
   return (
     <GlobalHeaderContext.Provider 
       value={{
+        // posição de scroll
+        scrolbarPositionWin, setScrolbarPositionWin,
         
         // Estilos de espaçamento (margem) de cada botão de página quando for selecionado
         MarginCurrentBtnPage, SetMarginCurrentBtnPage,

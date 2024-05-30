@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
 
+  color: #595554;
   background-color: #f9fafb;
 
   padding-left: calc((100vw - 1300px) / 2 );

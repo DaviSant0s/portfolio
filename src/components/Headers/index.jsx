@@ -21,9 +21,6 @@ export default function Headers() {
   const [ projectsHight, setProjectsHight ] = useState(0);
   const [ experienceHight, setExperienceHight ] = useState(0);
 
-  // estado que armazena a posição atual do scroll
-  const [ scrolbarPositionWin, setScrolbarPositionWin ] = useState(0);
-
   // estado Global do header
   const headerContext = useContext(GlobalHeaderContext);
 
@@ -40,6 +37,9 @@ export default function Headers() {
 
   // desestruturação variável do estado global do estilo de espaçamento do botão de página selecionado
   const { MarginCurrentBtnPage, SetMarginCurrentBtnPage } = headerContext;
+
+  // retorna a posição do scroll do estado global
+  const { scrolbarPositionWin } = headerContext;
 
   useEffect(() => {
 
@@ -137,14 +137,6 @@ export default function Headers() {
     }
 
   }, [scrolbarPositionWin]);
-
-  // função que retorna a posição atual do scroll na vertical
-  const handleOnScrollWin = () => {
-    setScrolbarPositionWin(window.scrollY);
-  }
-
-  // evento que monitora a posição do scroll
-  useEventListener('scroll', handleOnScrollWin);
 
   return (
       <>
