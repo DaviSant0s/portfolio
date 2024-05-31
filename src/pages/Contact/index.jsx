@@ -29,16 +29,23 @@ export default function Contact() {
   const { scrolbarPositionWin } = headerContext;
   /* fim */
 
+  // função para reaproveitar o toast
+  const toast_func = (type, msg, autoClose=null) => {
+    type(msg, {
+      className: scrolbarPositionWin > 180 ? "toast-message" : '',
+      autoClose: autoClose
+      
+    });
+  }
+  /* fim */
+
   /* função para envio de email */
   const  handleSendEmail = async e => {
     e.preventDefault();
 
     if(name_sendEmails === '' || email_sendEmails === '' || message_sendEmails === '') {
-      toast.warning("Preencha todos os campos", {
-        className: scrolbarPositionWin > 180 ? "toast-message" : '',
-        autoClose: 2000
-        
-      })
+
+      toast_func(toast.warning, "Preencha todos os campos", 2000);
 
       return;
       
@@ -59,20 +66,12 @@ export default function Contact() {
       setName_sendEmails('');
       setEmail_sendEmails('');
       setMessage_sendEmails('');
-      
-      toast.success("Email enviado!", {
-        className: scrolbarPositionWin > 180 ? "toast-message" : '',
-        autoClose: 2000
-        
-      })
+
+      toast_func(toast.success, "Email enviado!", 2000);
       
     } catch (err) {
 
-      toast.error("Email enviado!", {
-        className: scrolbarPositionWin > 180 ? "toast-message" : '',
-        autoClose: 2000
-        
-      })
+      toast_func(toast.error, "Falha ao enviar e-mail", 2000);
       
     }
     
@@ -89,11 +88,7 @@ export default function Contact() {
       if(e === 'email' && !contactCopiedGmail){
         await navigator.clipboard.writeText('daviir17@gmail.com');
         
-        toast.success("Copiado para área de transferênca!", {
-          className: scrolbarPositionWin > 180 ? "toast-message" : '',
-          autoClose: 2000
-          
-        })
+        toast_func(toast.success, "Copiado para área de transferênca!", 2000);
         
         setContactCopiedGmail(true);
         setTimeout(() => {
@@ -104,11 +99,7 @@ export default function Contact() {
       if(e === 'whats' && !contactCopiedWhats){
         await navigator.clipboard.writeText('53999322366');
         
-        toast.success("Copiado para área de transferênca!", {
-          className: scrolbarPositionWin > 180 ? "toast-message" : '',
-          autoClose: 2000
-          
-        })
+        toast_func(toast.success, "Copiado para área de transferênca!", 2000);
         
         setContactCopiedWhats(true);
         setTimeout(() => {
@@ -120,11 +111,7 @@ export default function Contact() {
 
     } catch (error) {
 
-      toast.error( `Erro ao copiar o ${e === 'email' ? 'email ' : 'número de telefone'}`, {
-        className: scrolbarPositionWin > 180 ? "toast-message" : '',
-        autoClose: 2000
-        
-      })
+       toast_func(toast.error, `Erro ao copiar o ${e === 'email' ? 'email ' : 'número de telefone'}`, 2000);
       
     }
     
