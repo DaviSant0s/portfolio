@@ -1,49 +1,135 @@
 import gmail from '../../assets/social/gmail.webp';
 import whatsapp from '../../assets/social/whatsapp.png';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useState } from 'react';
 import { toast } from 'react-toastify';
-import './styles.css';
 import { GlobalHeaderContext } from '../../context/HeaderContext';
+import emailjs from '@emailjs/browser';
+import './styles.css';
 
 export default function Contact() {
+  
+  /* estados para a copia de contatos */
+  const [ contactCopiedGmail, setContactCopiedGmail ] = useState(false);
+  const [ contactCopiedWhats, setContactCopiedWhats ] = useState(false);
+  /* fim */
+
+  /* estados para envio de email pelo formulario */
+  const [ name_sendEmails, setName_sendEmails ] = useState('');
+  const [ email_sendEmails, setEmail_sendEmails ] = useState('');
+  const [ message_sendEmails, setMessage_sendEmails ] = useState('');
+  /* fim */
+
+
   /* retorna a posição do scroll do estado global */
   const headerContext = useContext(GlobalHeaderContext);
   const { scrolbarPositionWin } = headerContext;
   /* fim */
 
-  const [ contactCopiedGmail, setContactCopiedGmail ] = useState(false);
-  const [ contactCopiedWhats, setContactCopiedWhats ] = useState(false);
+  /* função para envio de email */
+  const  handleSendEmail = async e => {
+    e.preventDefault();
 
-  const handleContactCopy = (e) => {
-    
-    if(e === 'email' && !contactCopiedGmail){
+    if(name_sendEmails === '' || email_sendEmails === '' || message_sendEmails === '') {
+      toast.warning("Preencha todos os campos", {
+        className: scrolbarPositionWin > 180 ? "toast-message" : '',
+        autoClose: 2000
+        
+      })
 
-      toast.success("Copiado para área de transferênca!", {
+      return;
+      
+    }
+
+    try {
+
+      const templateParams = {
+        from_name: name_sendEmails,
+        email: email_sendEmails, 
+        message: message_sendEmails
+      }
+
+      await emailjs.send('service_63guglu', 'template_t5ayud9', templateParams, "V8wa7ORQu8CmxpKC0");
+
+      setName_sendEmails('');
+      setEmail_sendEmails('');
+      setMessage_sendEmails('');
+      
+      toast.success("Email enviado!", {
         className: scrolbarPositionWin > 180 ? "toast-message" : '',
         autoClose: 2000
         
       })
       
-      setContactCopiedGmail(true);
-      setTimeout(() => {
-        setContactCopiedGmail(false);
-      }, 2000);
-    }
-    
-    if(e === 'whats' && !contactCopiedWhats){
+    } catch (err) {
 
-      toast.success("Copiado para área de transferênca!", {
+      toast.error("Email enviado!", {
         className: scrolbarPositionWin > 180 ? "toast-message" : '',
         autoClose: 2000
         
       })
-
-      setContactCopiedWhats(true);
-      setTimeout(() => {
-        setContactCopiedWhats(false);
-      }, 2000);
+      
     }
+    
   }
+
+  /* fim */
+
+  
+  /* função que faz uma copia do comtato para area de transferência */
+  const handleContactCopy = async (e) => {
+
+    try {
+      
+      if(e === 'email' && !contactCopiedGmail){
+        await navigator.clipboard.writeText('daviir17@gmail.com');
+        
+        toast.success("Copiado para área de transferênca!", {
+          className: scrolbarPositionWin > 180 ? "toast-message" : '',
+          autoClose: 2000
+          
+        })
+        
+        setContactCopiedGmail(true);
+        setTimeout(() => {
+          setContactCopiedGmail(false);
+        }, 2000);
+      }
+      
+      if(e === 'whats' && !contactCopiedWhats){
+        await navigator.clipboard.writeText('53999322366');
+        
+        toast.success("Copiado para área de transferênca!", {
+          className: scrolbarPositionWin > 180 ? "toast-message" : '',
+          autoClose: 2000
+          
+        })
+        
+        setContactCopiedWhats(true);
+        setTimeout(() => {
+          setContactCopiedWhats(false);
+        }, 2000);
+      }
+
+
+
+    } catch (error) {
+
+      toast.error( `Erro ao copiar o ${e === 'email' ? 'email ' : 'número de telefone'}`, {
+        className: scrolbarPositionWin > 180 ? "toast-message" : '',
+        autoClose: 2000
+        
+      })
+      
+    }
+    
+  }
+  /* fim */
+
+
+
+/*   const [ name_sendEmails, setName_sendEmails ] = useState('');
+  const [ email_sendEmails, setEmail_sendEmails ] = useState('');
+  const [ message_sendEmails, setMessage_sendEmails ] = useState(''); */
 
 
   return (
@@ -52,16 +138,38 @@ export default function Contact() {
       <div className='contact-content'>
         <h1>Contato</h1>
         <div className='input-and-social-container-contact'>
-          <form id='form-contact' method="post" onSubmit={() => {alert('Clicado!')}}>
+          <form id='form-contact' method="post" onSubmit={handleSendEmail}>
+
             <div className='name-input-contact-container input-contact'>
-              <input type="text" name="name-input-contact" placeholder='Nome e Sobrenome'/>
+
+              <input 
+              value={name_sendEmails} 
+              onChange={e => setName_sendEmails(e.target.value)}
+              type="text" 
+              name="name-input-contact" 
+              placeholder='Nome e Sobrenome'/>
+
             </div>
+
             <div className='email-input-contact-container input-contact'>
-              <input type="email" name="email-input-contact" placeholder='E-mail'/>
+
+              <input 
+              value={email_sendEmails} 
+              onChange={e => setEmail_sendEmails(e.target.value)}
+              type="email" 
+              name="email-input-contact" 
+              placeholder='E-mail'/>
+
             </div>
+
             <div className='message-input-contact-container input-contact'>
-              <textarea name="message-input-contact" placeholder='O que tem em mente?'></textarea>
+              <textarea 
+              value={message_sendEmails} 
+              onChange={e => setMessage_sendEmails(e.target.value)}
+              name="message-input-contact" 
+              placeholder='O que tem em mente?'/>
             </div>
+
           </form>
           <div className='social-container-contact'>
             <div className='email-social-contact social-contact'>
