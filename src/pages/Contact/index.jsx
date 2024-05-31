@@ -4,6 +4,10 @@ import { useContext, useState } from 'react';
 import { toast } from 'react-toastify';
 import { GlobalHeaderContext } from '../../context/HeaderContext';
 import emailjs from '@emailjs/browser';
+
+/* emailjs */
+import { SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY } from '../../config';
+
 import './styles.css';
 
 export default function Contact() {
@@ -48,7 +52,9 @@ export default function Contact() {
         message: message_sendEmails
       }
 
-      await emailjs.send('service_63guglu', 'template_t5ayud9', templateParams, "V8wa7ORQu8CmxpKC0");
+      await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
+
+      
 
       setName_sendEmails('');
       setEmail_sendEmails('');
@@ -125,13 +131,6 @@ export default function Contact() {
   }
   /* fim */
 
-
-
-/*   const [ name_sendEmails, setName_sendEmails ] = useState('');
-  const [ email_sendEmails, setEmail_sendEmails ] = useState('');
-  const [ message_sendEmails, setMessage_sendEmails ] = useState(''); */
-
-
   return (
     <div className='contact-container defaultPages'>
 
@@ -147,7 +146,7 @@ export default function Contact() {
               onChange={e => setName_sendEmails(e.target.value)}
               type="text" 
               name="name-input-contact" 
-              placeholder='Nome e Sobrenome'/>
+              placeholder='Digite seu nome e sobrenome'/>
 
             </div>
 
@@ -158,7 +157,7 @@ export default function Contact() {
               onChange={e => setEmail_sendEmails(e.target.value)}
               type="email" 
               name="email-input-contact" 
-              placeholder='E-mail'/>
+              placeholder='Digite seu e-mail'/>
 
             </div>
 
@@ -167,55 +166,49 @@ export default function Contact() {
               value={message_sendEmails} 
               onChange={e => setMessage_sendEmails(e.target.value)}
               name="message-input-contact" 
-              placeholder='O que tem em mente?'/>
+              placeholder='Sua mensagem...'/>
             </div>
 
           </form>
           <div className='social-container-contact'>
+
             <div className='email-social-contact social-contact'>
               <img src={gmail} alt="" />
               <span>E-mail</span>
               <p>
                 daviir17@gmail.com
-                <span 
-                  
-                  onClick={() => handleContactCopy('email')} 
+                <span
+            
+                  onClick={() => handleContactCopy('email')}
                   className="material-symbols-outlined copy-icon-contact"
                 >
                   {!contactCopiedGmail &&
-                    'content_copy' 
+                    'content_copy'
                   }
-
                   {contactCopiedGmail &&
                     'check'
                   }
                 </span>
               </p>
-
             </div>
-
             <div className='whatsapp-social-contact social-contact'>
               <img src={whatsapp} alt="" />
               <span>Whatsapp</span>
-
               <p>
-                (53) 99932-2366 
+                (53) 99932-2366
                 <span
-                  onClick={() => handleContactCopy('whats')} 
+                  onClick={() => handleContactCopy('whats')}
                   className="material-symbols-outlined copy-icon-contact"
-                 >
+                  >
                   {!contactCopiedWhats &&
                     'content_copy'
                   }
-
                   {contactCopiedWhats &&
                     'check'
                   }
                 </span>
               </p>
-
             </div>
-
             
           </div>
         </div>
