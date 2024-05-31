@@ -30,10 +30,16 @@
 
 .date-container-cardExperience > span {
   color: #fd6c67;
-  font-size: 1.1em;
   font-weight: 900;
   line-height: 100%;
   text-shadow: 2px 2px 3px #cd58540d;
+
+  background-color: white;
+  border: 1px solid #e8e8e8;
+  font-size: 0.9em;
+  border-radius: 5px;
+  padding: 3px 10px 3px 10px;
+  color: #fd6c67;
 }
 
 
