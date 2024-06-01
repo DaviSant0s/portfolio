@@ -9,6 +9,7 @@ import emailjs from '@emailjs/browser';
 import { SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY } from '../../config';
 
 import './styles.css';
+import Loading from '../../components/Loading';
 
 export default function Contact() {
   
@@ -21,6 +22,10 @@ export default function Contact() {
   const [ name_sendEmails, setName_sendEmails ] = useState('');
   const [ email_sendEmails, setEmail_sendEmails ] = useState('');
   const [ message_sendEmails, setMessage_sendEmails ] = useState('');
+  /* fim */
+
+  /* estado de loadind do emailjs */
+  const [ removeLoading, setRemoveLoading ] = useState(false);
   /* fim */
 
 
@@ -59,6 +64,8 @@ export default function Contact() {
         message: message_sendEmails
       }
 
+      setRemoveLoading(true);
+
       await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
 
       
@@ -68,9 +75,11 @@ export default function Contact() {
       setMessage_sendEmails('');
 
       toast_func(toast.success, "Email enviado!", 2000);
+
+      setRemoveLoading(false);
       
     } catch (err) {
-
+      setRemoveLoading(false);
       toast_func(toast.error, "Falha ao enviar e-mail", 2000);
       
     }
@@ -199,7 +208,10 @@ export default function Contact() {
             
           </div>
         </div>
-        <button className='btn-submit-form-contact' type="submit" form='form-contact'>Enviar</button>
+        <button 
+          className='btn-submit-form-contact' 
+          type="submit" 
+          form='form-contact'>{removeLoading ? <Loading/> : 'Enviar' }</button>
       </div>
 
     </div>

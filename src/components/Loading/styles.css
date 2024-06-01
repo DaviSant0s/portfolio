@@ -1,0 +1,25 @@
+.loading-component {
+  width: 23px;
+  height: 23px;
+
+  border: 3.5px solid white;
+  border-bottom: 3.5px solid transparent;
+  border-radius: 50%;
+  background-color: transparent;
+
+  animation-name: is-rotating;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes is-rotating {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+

@@ -105,6 +105,10 @@
 
 /* botão submite */
 .btn-submit-form-contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
   height: 40px;
   width: 150px;
   color: white;
@@ -134,7 +138,6 @@
   align-items: center;
   justify-content: center;
   gap: 30px;
-
 
   border-radius: 5px;
   width: 40%;
