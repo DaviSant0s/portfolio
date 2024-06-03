@@ -23,7 +23,7 @@
   margin-bottom: 20px;
 }
 
-.social-btns-footer > i {
+.social-btns-footer > a > i {
   font-size: 2em;
   border-radius: 50%;
   padding: 10px;
@@ -36,20 +36,20 @@
   transition: all 0.3s ease;
 }
 
-.social-btns-footer > i:hover{
+.social-btns-footer > a > i:hover{
   background-color: white;
   border: 1px solid #9e9e9e;
 }
 
-.social-btns-footer > .bxl-linkedin:hover {
+.social-btns-footer > a > .bxl-linkedin:hover {
   color: #0077B0;
 }
 
-.social-btns-footer > .bxl-github:hover {
+.social-btns-footer > a > .bxl-github:hover {
   color: #171515;
 }
 
-.social-btns-footer > .bxl-whatsapp:hover {
+.social-btns-footer > a > .bxl-whatsapp:hover {
   color: #4BDC59;
 }
 

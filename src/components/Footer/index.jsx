@@ -8,9 +8,17 @@ export default function Footer() {
       <div className='footer-content'>
 
         <div className='social-btns-footer'>
-        <i class='bx bxl-linkedin' ></i>
-        <i class='bx bxl-github' ></i>
-        <i class='bx bxl-whatsapp' ></i>
+        <a href="https://www.linkedin.com/in/davisantoss/" target='_blank'>
+          <i class='bx bxl-linkedin'/>
+        </a>
+
+        <a href="https://github.com/DaviSant0s" target='_blank'>
+          <i class='bx bxl-github'/>
+        </a>
+
+        <a href="https://api.whatsapp.com/send/?phone=53999322366&text=Ol%C3%A1%2C%20tudo%20bem%20?" target='_blank'>
+          <i class='bx bxl-whatsapp'/>
+        </a>
         </div>
 
         <nav className='navigation-footer' >
