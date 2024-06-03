@@ -16,7 +16,9 @@
 }
 
 .gitHubCalendar-container {
-  width: 980px;
+  display: flex;
+  justify-content: center;
+  /* width: 980px; */
   margin-top: 70px;
 }
 

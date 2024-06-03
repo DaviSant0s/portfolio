@@ -1,82 +1,75 @@
 .footer-container{
-  width: 100%;
-}
-
-.footer-content-social-links {
+  width: 100%; 
+  padding-left: calc((100vw - 1300px) / 2 );
+  padding-right: calc((100vw - 1300px) / 2 );
   background-color: #e8ebed;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  height: 300px;
-}
-
-.footer-logo-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  height: 100%;
-  width: 400px;
-}
-
-.footer-social-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: start;
-  gap: 10px;
-  
-  height: min-content;
-  width: 250px;
-
-  padding-top: 15px;
-  padding-bottom: 15px;
-  padding-left: 15px;
-
-  border-left: 2px solid rgba(166, 166, 166, 0.822);
-
-  background-color: transparent;
-}
-
-.footer-social-btn {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  gap: 5px;
-
-  cursor: pointer;
-
-  transition: all 0.1s ease-in-out;
-
-  color: #4c4848;
-}
-
-.footer-social-btn:hover {
-  color: #fb544e;
-}
-
-.footer-social-btn > .bx {
-  font-size: 1.8em;
-  color: inherit;
-}
-
-.footer-social-btn > span {
-  font-weight: 500;
-  color: #4c4848;
 }
 
 .footer-content{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  gap: 15px;
+  
   width: 100%;
-  height: 60px;
-  background-color: #DBDEE0;
+  height: 300px;
 
 }
 
-.footer-content > span {
-  font-size: 1.2em;
+.social-btns-footer{
+  display: flex;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+
+.social-btns-footer > i {
+  font-size: 2em;
+  border-radius: 50%;
+  padding: 10px;
+  color: white;
+  background-color: rgb(49, 49, 49);
+
+  cursor: pointer;
+  border: 1px solid transparent;
+
+  transition: all 0.3s ease;
+}
+
+.social-btns-footer > i:hover{
+  background-color: white;
+  border: 1px solid #9e9e9e;
+}
+
+.social-btns-footer > .bxl-linkedin:hover {
+  color: #0077B0;
+}
+
+.social-btns-footer > .bxl-github:hover {
+  color: #171515;
+}
+
+.social-btns-footer > .bxl-whatsapp:hover {
+  color: #4BDC59;
+}
+
+.navigation-footer{
+  display: flex;
+  gap: 15px;
+}
+
+.Link-footer > span {
+  font-size: 1.1em;
+  font-weight: 500;
+  cursor: pointer;
+
+  transition: all 0.1s ease-in;
+}
+
+.Link-footer > span:hover {
+  color: #cd5955;
+}
+
+.author-footer{
+  font-weight: 300;
 }
