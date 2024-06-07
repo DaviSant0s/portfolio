@@ -15,11 +15,11 @@
 }
 
 .experience-container > .experience-content {
-  width: 70%;
-  min-width: 800px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
-  gap: 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: transparent;
 }
 

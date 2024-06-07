@@ -1,0 +1,18 @@
+.experienceContainer-container {
+  width: fit-content;
+  background-color: transparent;
+}
+
+.experienceContainer-container > h2 {
+  font-family: 'roboto', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.timeline-experienceContainer {
+  width: fit-content;
+  padding-left: 20px;
+  margin-top: 20px;
+
+  background-color: transparent;
+}

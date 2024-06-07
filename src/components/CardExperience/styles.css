@@ -1,8 +1,8 @@
-.cardExperience-container {
+/* .cardExperience-container {
   display: flex;
   flex-direction: column;
   justify-content: top;
-  /* height: 300px; */
+
   height: 100%;
   border-radius: 8px;
   border: 1px solid hsl(0, 0%, 91%);
@@ -15,20 +15,20 @@
   padding-right: 20px;
 
   transition: all .3s ease;
-}
+} */
 
-.cardExperience-container:hover {
+/* .cardExperience-container:hover {
   transform: translateY(-5px);
   background-color: #fafafb;
-}
+} */
 
 /* data */
 
-.date-container-cardExperience{
+/* .date-container-cardExperience{
   margin-bottom: 15px;
-}
+} */
 
-.date-container-cardExperience > span {
+/* .date-container-cardExperience > span {
   color: #fd6c67;
   font-weight: 900;
   line-height: 100%;
@@ -40,12 +40,12 @@
   border-radius: 5px;
   padding: 3px 10px 3px 10px;
   color: #fd6c67;
-}
+} */
 
 
 /* logo */
 
-.logo-container-cardExperience{
+/* .logo-container-cardExperience{
   display: flex;
   align-items: center;
   gap: 10px;
@@ -60,29 +60,29 @@
 
 .logo-container-cardExperience > span {
   font-weight: bold;
-}
+} */
 
 /* cargo */
 
-.position-container-cardExperience {
+/* .position-container-cardExperience {
   font-weight: 500;
   margin-bottom: 30px;
-}
+} */
 
 /* description */
 
-.description-container-cardExperience{
+/* .description-container-cardExperience{
   background-color: transparent;
   height: fit-content;
   font-weight: 300;
   margin-bottom: 10px;
-}
+} */
 
 /* stacks */
-.stacks-container-cardExperience{
+/* .stacks-container-cardExperience{
   display: flex;
   align-items: center;
   gap: 5px;
   background-color: transparent;
   height: fit-content;
-}
+} */

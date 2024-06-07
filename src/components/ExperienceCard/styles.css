@@ -1,0 +1,132 @@
+.experienceCard-container {
+  position: relative;
+  /* display: flex;
+  justify-content: end; */
+
+  padding-left: 35px;
+
+  width: fit-content;
+  height: fit-content;
+
+  border-left: 1px solid #d8d8d8c4;
+  border-left: 2px solid #fb544eab;
+  padding-bottom: 10px;
+
+  background-color: transparent;
+}
+
+.icon-card-experience {
+  position: absolute;
+  left: -15px;
+  top: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 30px;
+  height: 30px;
+
+  border: 2px solid white;
+  outline: 1px solid #e8e8e8;
+  outline: 1px solid white;
+  border-radius: 50%;
+
+  background-color: #FB544E;
+  color: white;
+
+  font-size: 1.3em;
+
+}
+
+.experienceCard-card {
+  width: 500px;
+  height: 200px;
+  height: fit-content;
+
+  /* border: 2px solid #e8e8e8; */
+  border-radius: 10px;
+
+  background-color: #eef0f3;
+}
+
+.experience-details{
+  display: flex;
+  height: 80%;
+
+  padding: 10px;
+  padding-left: 15px;
+}
+
+.experience-details-description {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  height: 100%;
+  width: 100%;
+  /* background-color: rgba(200, 31, 31, 0.169); */
+}
+
+.experience-duration, .experience-name-institution, .experience-description {
+  font-family: 'roboto', sans-serif;
+}
+
+.experience-duration{
+  /* background-color: blue; */
+  font-weight: 400;
+  font-size: 14px;
+  color: #666666;
+}
+
+.experience-name-institution{
+  /* background-color: orange; */
+  font-size: 1.1em;
+  color: #666666;
+  color: rgb(55, 54, 54);
+  font-weight: 500;
+}
+
+.experience-description {
+  height: 100%;
+  margin-top: 10px;
+  font-size: 1em;
+  color: #5b5e62;
+  /* background-color: green; */
+
+}
+
+.experience-details-logo {
+  height: 100%;
+  width: fit-content;
+
+  padding-left: 10px;
+
+  background-color: transparent;
+}
+
+.experience-details-logo > img {
+  width: 70px;
+}
+
+.profession-name {
+  display: flex;
+  align-items: center;
+
+  height: 20%;
+  height: 40px;
+
+
+  padding-left: 15px;
+  border-top: 1px solid #00000026;
+  background-color: transparent;
+}
+
+.profession-name > span {
+  color: #fc554f;
+  font-weight: 400;
+  font-size: 14px;
+
+  color: #E36209;
+  line-height: 100%;
+}
