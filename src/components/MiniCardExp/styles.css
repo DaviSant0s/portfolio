@@ -1,0 +1,91 @@
+.miniCardExp-container {
+  width: 500px;
+  height: 200px;
+  height: fit-content;
+
+  /* border: 2px solid #e8e8e8; */
+  border-radius: 10px;
+
+  background-color: #eef0f3;
+}
+
+.exp-details-container{
+  display: flex;
+  height: 80%;
+
+  padding: 10px;
+  padding-left: 15px;
+}
+
+.exp-details-description {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  height: 100%;
+  width: 100%;
+  /* background-color: rgba(200, 31, 31, 0.169); */
+}
+
+.exp-duration, .exp-name-institution, .exp-description {
+  font-family: 'roboto', sans-serif;
+}
+
+.exp-duration{
+  /* background-color: blue; */
+  font-weight: 400;
+  font-size: 14px;
+  color: #666666;
+}
+
+.exp-name-institution{
+  /* background-color: orange; */
+  font-size: 1.1em;
+  color: #666666;
+  color: rgb(55, 54, 54);
+  font-weight: 500;
+}
+
+.exp-description {
+  height: 100%;
+  margin-top: 10px;
+  font-size: 1em;
+  color: #5b5e62;
+  /* background-color: green; */
+
+}
+
+.exp-details-logo {
+  height: 100%;
+  width: fit-content;
+
+  padding-left: 10px;
+
+  background-color: transparent;
+}
+
+.exp-details-logo > img {
+  width: 70px;
+}
+
+.profession-name {
+  display: flex;
+  align-items: center;
+
+  height: 20%;
+  height: 40px;
+
+
+  padding-left: 15px;
+  border-top: 1px solid #00000026;
+  background-color: transparent;
+}
+
+.profession-name > span {
+  color: #fc554f;
+  font-weight: 400;
+  font-size: 14px;
+
+  color: #E36209;
+  line-height: 100%;
+}

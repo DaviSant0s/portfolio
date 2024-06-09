@@ -1,6 +1,4 @@
-import CardExperience from '../../components/CardExperience';
 import bytelogo from '../../assets/companies/byte.png';
-/* import petlogo from '../../assets/companies/pet.jpg'; */
 import petlogo from '../../assets/companies/pet-logo.png';
 import './styles.css';
 import ExperienceContainer from '../../components/ExperienceContainer';
