@@ -140,11 +140,11 @@ export default function Headers() {
 
   return (
       <>
-        <Header/>
+        {/* <Header/> */}
 
-        {scrolbarPositionWin > 180 &&
-          <HeaderScroll/>
-        }
+        <HeaderScroll/>
+       {/*  {scrolbarPositionWin > 180 &&
+        } */}
         
       </>
   )

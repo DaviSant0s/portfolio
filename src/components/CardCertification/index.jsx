@@ -74,6 +74,7 @@ export default function CardCertification(
                 <div onClick={handleClickModal} className='view-btn'>
                   <p>Ementa</p>
                 </div>
+                
               </div>
             </div>
           </div>

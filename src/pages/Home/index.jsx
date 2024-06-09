@@ -1,55 +1,39 @@
+import { Link } from 'react-scroll';
+import SocialsGroup from '../../components/SocialsGroup';
 import './styles.css';
-import img_home from '../../assets/img-home.jpg';
-
-import SocialButton from '../../components/SocialButton';
 
 export default function Home() {
   return (
     <div id='id_home' className='home-container defaultHome'>
 
-      <div className='description-image-container'>
-        <div className='description-home'>
+      <div className='home-content'>
+        <h1>Desenvolvedor <span className='title-style-highlight'>Fullstack</span></h1>
 
-          <h1>Olá! Bem vindo ao meu portfólio</h1>
+        <p>
+          Meu nome é <strong>Davi Santos</strong>, tenho 24 anos, sou uma pessoa 
+          bastante dedicada aos estudos, focado e sempre aprendendo 
+          coisas novas relacionadas à programação, engenharia e desenvolvimento pessoal. 
+        </p>
 
-          <p>
-            Meu nome é <strong>Davi Santos</strong>, tenho 23 anos, sou uma pessoa 
-            bastante dedicada aos estudos, focado e sempre aprendendo 
-            coisas novas relacionadas à programação, engenharia e desenvolvimento pessoal. 
-          </p>
+        <p>
+          Estou sempre buscando novos aprendizados  e desafios para crescer profissionalmente, assim, estando em constante evolução.
+        </p>
+        <SocialsGroup/>
+      </div>
 
-          <p>
-          Busco por desafios e oportunidades para crescer profissionalmente, estando em constante evolução para contribuir com 
-          soluções inovadoras e eficientes.
-          </p>
+      <Link to='id_certifications' smooth={true} offset={-79} className='Link'>
+        <span class="material-symbols-outlined arrow-scrollPageDown-home">
+          keyboard_arrow_down
+        </span>
+      </Link>
 
-          <p>
+    </div>
+  )
+}
+
+         /*  <p>
             Atualmente estou cursando <strong>Engenharia de Computação</strong> na <strong>
               Universidade
               Federal do Rio Grande
             </strong> (FURG) e focando no desenvolvimento FullStack.
-          </p>
-
-          <div className='btns-home-container'>
-            <SocialButton 
-              type={'github'} 
-              btn_style={{paddingLeft: '25px', paddingRight: '25px'}}
-            />
-
-            <SocialButton 
-              type={'linkedin'}
-              btn_style={{paddingLeft: '25px', paddingRight: '25px'}}
-            />
-          </div>
-
-          
-        </div>
-        <div className='image-container-home'>
-          <img src={img_home} alt="image-home" />
-        </div>
-      </div>
-
-      
-    </div>
-  )
-}
+          </p> */

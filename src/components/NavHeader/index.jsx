@@ -82,7 +82,7 @@ export default function NavHeader( { style_nav={} } ) {
   return (
     <nav className='nav-header' style={style_nav} >
 
-      <Link to='id_header' smooth={true} className='Link'>
+      <Link to='id_home' smooth={true} offset={-80} className='Link'>
         <div 
           onClick={() => handleClickBtnPage('home')} 
           style={styleHome} className='home link-page'

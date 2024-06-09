@@ -158,12 +158,12 @@
 
 /* email */
 .email-social-contact > img {
-  width: 20px;
+  width: 30px;
 }
 
 /* whatsapp */
 .whatsapp-social-contact > img {
-  width: 25px;
+  width: 35px;
 }
 
 /* BOTÃO DE COPIAR */
@@ -173,6 +173,7 @@
   align-items: center;
   justify-content: center;
   gap: 5px;
+  font-size: 1.1em;
 }
 
 /* icone de copiar */

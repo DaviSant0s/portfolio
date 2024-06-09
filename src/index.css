@@ -18,7 +18,7 @@
 :root {
   --heightHeader: 180px;
   --heightHeaderScroll: 80px;
-  --heighBody: calc(100vh - var(--heightHeader));
+  --heighBody: calc(100vh - var(--heightHeaderScroll));
    --mainColor: #ffffff;
    
 }

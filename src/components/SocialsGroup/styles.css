@@ -1,0 +1,40 @@
+.socialsGroup-container {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
+
+  padding: 5px 30px;
+  background-color: #f9fafb;
+  border-radius: 10rem;
+  margin-top: 10px;
+
+  transition: all 0.3s ease;
+}
+
+.socialsGroup-container .bx {
+  font-size: 1.8em;
+  color: #7a7979;
+  transition: all 0.3s ease;
+}
+
+.socialsGroup-container .bx:hover{
+  transform: translateY(-2px);
+}
+
+.socialsGroup-container > a > .bxl-linkedin:hover {
+  color: #0077B0;
+}
+
+.socialsGroup-container > a > .bxl-github:hover {
+  color: #171515;
+}
+
+.socialsGroup-container > a > .bxl-whatsapp:hover {
+  color: #4BDC59;
+}
+
+.socialsGroup-container > a > .bxl-gmail:hover {
+  color: #E34133;
+}
