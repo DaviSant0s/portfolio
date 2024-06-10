@@ -21,7 +21,7 @@ export default function Home() {
         <SocialsGroup/>
       </div>
 
-      <Link to='id_certifications' smooth={true} offset={-79} className='Link'>
+      <Link to='id_certifications' smooth={true} offset={-79} className='Link-skills'>
         <span class="material-symbols-outlined arrow-scrollPageDown-home">
           keyboard_arrow_down
         </span>

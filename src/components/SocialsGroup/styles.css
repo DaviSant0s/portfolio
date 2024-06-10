@@ -13,10 +13,14 @@
   transition: all 0.3s ease;
 }
 
+.socialsGroup-container:hover {
+  transform: scale(1.05);
+}
+
 .socialsGroup-container .bx {
   font-size: 1.8em;
   color: #7a7979;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .socialsGroup-container .bx:hover{

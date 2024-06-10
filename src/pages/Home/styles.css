@@ -44,6 +44,7 @@
   -webkit-background-clip: text;
 
   -webkit-text-fill-color: transparent;
+
 }
 
 @keyframes scrollDowArrow {
@@ -58,9 +59,8 @@
   }
 }
 
-.arrow-scrollPageDown-home {
+.Link-skills{
   position: absolute;
-  font-size: 2.2em;
   bottom: 30px;
 
   animation-name: scrollDowArrow;
@@ -68,9 +68,13 @@
   animation-timing-function: ease-out;
   animation-iteration-count: infinite;
   animation-fill-mode: forwards;
+}
 
+.arrow-scrollPageDown-home {
+  font-size: 2.2em;
+  
   cursor: pointer;
-
+  
   -webkit-user-select: none;
   user-select: none;
 }
