@@ -255,7 +255,10 @@ export default function Certifications() {
         style={styleCardCertification} 
         className='certifications-container'
       >
-        <h1>Certificações</h1>
+        <h1 >
+          Certificações
+          <div className='animationTitle'/>
+        </h1>
         <div className='certifications-content'>
 
           {
@@ -310,7 +313,7 @@ export default function Certifications() {
           {moreCardsBool &&
             <Link
             to={'id_certifications'}
-            smooth={true} offset={0}
+            smooth={true} offset={-79}
             duration={300}>
           
                 <Button

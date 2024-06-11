@@ -118,7 +118,10 @@ export default function Carousel({title}) {
     <div className='carousel-conteiner'>
       <div className='title-and-btns-carousel-container'>
         <div className='title-carousel-container'>
-          <h1>{title}</h1>
+          <h1>
+            {title}
+            <div className='animationTitle'></div>
+          </h1>
         </div>
         <div className='btns-carousel-container'>
           <span className='count-cards'>{numberCardCarousel} de {totalCardCarousel ? totalCardCarousel : '1'}</span>

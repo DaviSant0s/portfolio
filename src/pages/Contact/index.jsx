@@ -128,10 +128,13 @@ export default function Contact() {
   /* fim */
 
   return (
-    <div className='contact-container defaultPages'>
+    <div id='id_contact' className='contact-container defaultPages'>
 
       <div className='contact-content'>
-        <h1>Contato</h1>
+        <h1>
+          Contato
+          <div className='animationTitle'></div>
+        </h1>
         <div className='input-and-social-container-contact'>
           <form id='form-contact' method="post" onSubmit={handleSendEmail}>
 

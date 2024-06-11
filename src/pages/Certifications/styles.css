@@ -4,7 +4,6 @@
   flex-direction: column;
 
   color: #595554;
-  background-color: #f9fafb;
 
   padding-left: calc((100vw - 1300px) / 2 );
   padding-right: calc((100vw - 1300px) / 2 );
@@ -14,10 +13,17 @@
   overflow-y: hidden;
 }
 
+#id_certifications{
+  background-color: #f9fafb;
+}
+
 .certifications-container > h1 {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+
   text-align: center;
   line-height: 100%;
-  margin-bottom: 40px;
 }
 
 .certifications-content {

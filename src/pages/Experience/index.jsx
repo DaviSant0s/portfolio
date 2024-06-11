@@ -6,7 +6,10 @@ import ExperienceContainer from '../../components/ExperienceContainer';
 export default function Experience() {
   return (
     <div id='id_experience' className='experience-container defaultPages'>
-      <h1>Experiências</h1>
+      <h1>
+        Experiências
+        <div className='animationTitle'></div>
+      </h1>
       <div className='experience-content'>
 
         <ExperienceContainer/>

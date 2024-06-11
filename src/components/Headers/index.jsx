@@ -1,7 +1,5 @@
 import { useMediaQuery } from 'react-responsive'
 import { useContext, useEffect, useState } from 'react';
-import useEventListener from '../../hooks/useEventListenerDocument';
-import Header from '../Header';
 import HeaderScroll from '../HeaderScroll';
 import { styleCurrentBtnPage } from  '../../styles/header/index.js';
 import { GlobalHeaderContext } from '../../context/HeaderContext/index.jsx';

@@ -19,7 +19,10 @@ import wordpress from '../../assets/wordpress.webp';
 export default function Skills() {
   return (
     <div id='id_skills' className='skills-container'>
-      <h1>Habilidades</h1>
+      <h1>
+        Habilidades
+        <div className='animationTitle'></div>
+      </h1>
       <div className='skills-content'>
           <SkillsCard name={'Javascript'} image={javascript} style_image={{borderRadius: '4px'}}/>
           <SkillsCard name={'python'} image={python}/>

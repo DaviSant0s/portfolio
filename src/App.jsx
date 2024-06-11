@@ -14,27 +14,29 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import './App.css';
+import AnimationProvider from './context/AnimationContext';
 
 function App() {
 
   return (
     <div className='app-container'>
-      
-      <HeaderProvider>
-        <Headers/>
-        <FloatingButtons/>
-        <div className='body-container'>
-          <ToastContainer />
-          <Home/>
-          <Certifications/>
-          <Skills/>
-          <Projects/>
-          <Experience/>
-          <Contact/>
-        </div>
+      <AnimationProvider>
+        <HeaderProvider>
+          <Headers/>
+          <FloatingButtons/>
+          <div className='body-container'>
+            <ToastContainer />
+            <Home/>
+            <Certifications/>
+            <Skills/>
+            <Projects/>
+            <Experience/>
+            <Contact/>
+          </div>
 
-        <Footer/>
-      </HeaderProvider>
+          <Footer/>
+        </HeaderProvider>
+      </AnimationProvider>
     </div>
 
   )

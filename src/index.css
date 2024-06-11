@@ -25,7 +25,9 @@
 
 /* cor padrão do título */
 h1 {
+  position: relative;
   color: #4e4d4d;
+  width: fit-content;
   font-size: 2.2em;
 }
 
@@ -67,4 +69,36 @@ h2 {
 
   padding-top: 20px;
   padding-bottom: 40px;
+}
+
+@keyframes animationTitle {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+.animationTitle {
+  position: absolute;
+  left: 0px;
+  margin: auto;
+  width: 0%;
+  height: 5px;
+  margin-top: 7px;
+
+  background: linear-gradient(to right, #F8534D, transparent 75%);
+  opacity: 0.8;
+  border-radius: 2px;
+
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+
+}
+
+h1:hover > .animationTitle {
+  animation-name: animationTitle;
 }
