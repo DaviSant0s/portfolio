@@ -6,10 +6,11 @@ import telos from '../../assets/companies/telos.jpeg';
 import microsoft from '../../assets/companies/microsoft.png';
 import estudonauta from '../../assets/companies/estudonauta.jpg';
 
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Button from '../../components/Button';
 import { Link } from 'react-scroll';
 import './styles.css';
+import { GlobalAnimationContext } from '../../context/AnimationContext';
 
 const DataCertifications = [
   {
@@ -196,6 +197,13 @@ const DataCertifications = [
 
 export default function Certifications() {
 
+  // estado global para animação do titulo
+
+  const titleContext = useContext(GlobalAnimationContext);
+  const animationTitle = titleContext.animationCertification;
+
+  // fim
+
   const [ moreCardsBool, setMoreCardsBool ] = useState(false);
   const [ styleCardCertification, setStyleCardCertification ] = useState({});
   const [ styleTranparentCard, setStyleTranparentCard ] = useState({});
@@ -255,9 +263,9 @@ export default function Certifications() {
         style={styleCardCertification} 
         className='certifications-container'
       >
-        <h1 >
+        <h1 id='id_title_certifications'>
           Certificações
-          <div className='animationTitle'/>
+          <div style={animationTitle} className='animationTitle'/>
         </h1>
         <div className='certifications-content'>
 

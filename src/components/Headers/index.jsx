@@ -25,7 +25,7 @@ export default function Headers() {
   // desestruturação do estado global
   const { setStyleHome, setStyleCertification, setStyleSkills, setStyleProjects, setStyleExperiences,
           height_certifications, height_skills, height_projects,
-          height_experience} = headerContext;
+          height_experience } = headerContext;
 
   // desestruturaçãovariável do estado global de seleção do botão de página
   const { selectedPage, setSelectedPage } = headerContext;

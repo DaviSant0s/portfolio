@@ -10,8 +10,16 @@ import { SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY } from '../../config';
 
 import './styles.css';
 import Loading from '../../components/Loading';
+import { GlobalAnimationContext } from '../../context/AnimationContext';
 
 export default function Contact() {
+
+  // estado global para animação do titulo
+
+  const titleContext = useContext(GlobalAnimationContext);
+  const animationTitle = titleContext.animationContact;
+
+  // fim
   
   /* estados para a copia de contatos */
   const [ contactCopiedGmail, setContactCopiedGmail ] = useState(false);
@@ -131,9 +139,9 @@ export default function Contact() {
     <div id='id_contact' className='contact-container defaultPages'>
 
       <div className='contact-content'>
-        <h1>
+        <h1 id='id_title_contact'>
           Contato
-          <div className='animationTitle'></div>
+          <div style={animationTitle} className='animationTitle'></div>
         </h1>
         <div className='input-and-social-container-contact'>
           <form id='form-contact' method="post" onSubmit={handleSendEmail}>

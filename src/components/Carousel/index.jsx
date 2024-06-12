@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import CarouselCard from '../CarouselCard';
 import { CardStyles, carouselStyles, numCardsWidth } from '../../styles/carousel/styles';
 
@@ -12,6 +12,7 @@ import project7 from '../../assets/projects/loginscreen.png'
 import project8 from '../../assets/projects/siteCscreen.png'
 
 import './styles.css';
+import { GlobalAnimationContext } from '../../context/AnimationContext';
 
 const styleWrapperCarousel = {
   width: `${carouselStyles.width}px`,
@@ -23,6 +24,13 @@ const stepDistanceOne = carouselStyles.width - carouselStyles.gap;
 const visibleCardsNoRepeat = numCardsWidth - 1;
 
 export default function Carousel({title}) {
+    // estado global para animação do titulo
+
+    const titleContext = useContext(GlobalAnimationContext);
+    const animationTitle = titleContext.animationProjects;
+  
+    // fim
+
   const Ref_wrapperCarousel = useRef(null);
 
   const [ totalCardCarousel, setTotalCardCarousel ] = useState(null);
@@ -118,9 +126,9 @@ export default function Carousel({title}) {
     <div className='carousel-conteiner'>
       <div className='title-and-btns-carousel-container'>
         <div className='title-carousel-container'>
-          <h1>
+          <h1 id='id_title_projects'>
             {title}
-            <div className='animationTitle'></div>
+            <div style={animationTitle} className='animationTitle'></div>
           </h1>
         </div>
         <div className='btns-carousel-container'>

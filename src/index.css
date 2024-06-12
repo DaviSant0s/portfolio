@@ -75,7 +75,7 @@ h2 {
   0% {
     width: 0%;
   }
-
+    
   100% {
     width: 100%;
   }
@@ -86,19 +86,15 @@ h2 {
   left: 0px;
   margin: auto;
   width: 0%;
-  height: 5px;
+  height: 4px;
   margin-top: 7px;
 
-  background: linear-gradient(to right, #F8534D, transparent 75%);
+  background: linear-gradient(to right, #f83029, #F8534D, transparent 75%);
   opacity: 0.8;
   border-radius: 2px;
 
-  animation-duration: 0.5s;
+  animation-duration: 0.9s;
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
 
-}
-
-h1:hover > .animationTitle {
-  animation-name: animationTitle;
 }
