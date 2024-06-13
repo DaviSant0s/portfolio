@@ -5,6 +5,8 @@ import { styleCurrentBtnPage } from  '../../styles/header/index.js';
 import { GlobalHeaderContext } from '../../context/HeaderContext/index.jsx';
 
 import './styles.css';
+import useGetScrollPosition from '../../hooks/useGetScrollPosition.jsx';
+import useGetHightSection from '../../hooks/useGetHightSection.jsx';
 
 export default function Headers() {
 
@@ -26,8 +28,11 @@ export default function Headers() {
   const { setStyleHome, setStyleCertification, setStyleSkills, setStyleProjects, setStyleExperiences,
           height_certifications, height_skills, height_projects,
           height_experience } = headerContext;
+  
+  // alturas das seções
+  const heightSection = useGetHightSection();
 
-  // desestruturaçãovariável do estado global de seleção do botão de página
+  // desestruturação da variável do estado global de seleção do botão de página
   const { selectedPage, setSelectedPage } = headerContext;
 
   // estado para indicar qual botão de página está selecionado no momento
@@ -35,46 +40,45 @@ export default function Headers() {
 
   // desestruturação variável do estado global do estilo de espaçamento do botão de página selecionado
   const { MarginCurrentBtnPage, SetMarginCurrentBtnPage } = headerContext;
-
-  // retorna a posição do scroll do estado global
-  const { scrolbarPositionWin } = headerContext;
+  
+  // retorna a posição do scroll
+  const scrollPosition = useGetScrollPosition();
 
   useEffect(() => {
 
     if(selectedPage.bool){
       if(selectedPage.to === 'home') {
-        if(scrolbarPositionWin <= (viewHight - 80) ){
+        if(scrollPosition <= (viewHight - 80) ){
           setSelectedPage(false);
         }
       }
   
       if(selectedPage.to === 'certifications') {
-        if(viewHight - 80 < scrolbarPositionWin && scrolbarPositionWin <= certificationHight ) {
+        if(viewHight - 80 < scrollPosition && scrollPosition <= certificationHight ) {
           setSelectedPage(false);
         }
       }
   
       if(selectedPage.to === 'skills') {
-        if(certificationHight < scrolbarPositionWin && scrolbarPositionWin <= skillsHight) {
+        if(certificationHight < scrollPosition && scrollPosition <= skillsHight) {
           setSelectedPage(false);
         }
       }
   
       if(selectedPage.to === 'projects') {
-        if(skillsHight < scrolbarPositionWin && scrolbarPositionWin <= projectsHight){
+        if(skillsHight < scrollPosition && scrollPosition <= projectsHight){
           setSelectedPage(false);
         }
       }
 
       if(selectedPage.to === 'experience') {
-        if(projectsHight < scrolbarPositionWin && scrolbarPositionWin <= experienceHight){
+        if(projectsHight < scrollPosition && scrollPosition <= experienceHight){
           setSelectedPage(false);
         }
       }
-
     }
 
-  }, [selectedPage.bool, scrolbarPositionWin]);
+  }, [selectedPage.bool, scrollPosition]);
 
 
   // Efeito que calcula em qual posição se inicia cada seção do site, para mudar o estilo do header
@@ -98,35 +102,35 @@ export default function Headers() {
 
     if(!selectedPage.bool){
 
-      if(scrolbarPositionWin <= (viewHight - 80) ){
+      if(scrollPosition <= (viewHight - 80) ){
         setStyleHome({...styleCurrentBtnPage, ...MarginCurrentBtnPage.home});
         setSelectedCurrentPage('home');
       } else {
         setStyleHome({});
       }
   
-      if(viewHight - 80 < scrolbarPositionWin && scrolbarPositionWin <= certificationHight ){
+      if(viewHight - 80 < scrollPosition && scrollPosition <= certificationHight ){
         setStyleCertification({ ...styleCurrentBtnPage, ...MarginCurrentBtnPage.certifications });
         setSelectedCurrentPage('certifications');
       } else {
         setStyleCertification({});
       }
   
-      if(certificationHight < scrolbarPositionWin && scrolbarPositionWin <= skillsHight){
+      if(certificationHight < scrollPosition && scrollPosition <= skillsHight){
         setStyleSkills({ ...styleCurrentBtnPage, ...MarginCurrentBtnPage.skills });
         setSelectedCurrentPage('skills');
       } else {
         setStyleSkills({});
       }
   
-      if(skillsHight < scrolbarPositionWin && scrolbarPositionWin <= projectsHight){
+      if(skillsHight < scrollPosition && scrollPosition <= projectsHight){
         setStyleProjects({ ...styleCurrentBtnPage, ...MarginCurrentBtnPage.projects });
         setSelectedCurrentPage('projects');
       } else {
         setStyleProjects({});
       }
 
-      if(projectsHight < scrolbarPositionWin && scrolbarPositionWin <= experienceHight){
+      if(projectsHight < scrollPosition && scrollPosition <= experienceHight){
         setStyleExperiences({ ...styleCurrentBtnPage, ...MarginCurrentBtnPage.experience });
         setSelectedCurrentPage('experience');
       } else {
@@ -134,7 +138,7 @@ export default function Headers() {
       }
     }
 
-  }, [scrolbarPositionWin]);
+  }, [scrollPosition]);
 
   return (
       <>

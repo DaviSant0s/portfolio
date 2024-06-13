@@ -19,7 +19,7 @@ export default function AnimationProvider({ children }) {
   const [ animationExperience, setAnimationExperience ] = useState({});
   const [ animationContact, setAnimationContact ] = useState({});
 
-  // cunstomHook que retorna a posição do elemento na tela em relação a viewport
+  // customHook que retorna a posição do elemento na tela em relação a viewport
   const positionHome = useGetPositionElement('#id_home'); // não usando no momento
   const positionCertifications = useGetPositionElement('#id_title_certifications');
   const positionSkills = useGetPositionElement('#id_title_skills');

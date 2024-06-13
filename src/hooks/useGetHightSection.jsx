@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import useResizeObserver from "./useResizeObserver";
 
-export default function useGetHightSection(initialValue) {
+export default function useGetHightSection(initialValue=null) {
   /* estado que armazena alturas das seções */
   const [ resizeElement, setResizeElement ] = useState(initialValue);
 
@@ -24,7 +24,7 @@ export default function useGetHightSection(initialValue) {
           skills: resize_height_skills,
           projects: resize_height_projects,
           experience: resize_height_experience,
-          contacts: resize_height_contacts
+          contact: resize_height_contacts
         }
       });
     }
