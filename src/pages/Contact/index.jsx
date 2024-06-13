@@ -45,7 +45,7 @@ export default function Contact() {
   // função para reaproveitar o toast
   const toast_func = (type, msg, autoClose=null) => {
     type(msg, {
-      className: scrolbarPositionWin > 180 ? "toast-message" : '',
+      className:  "toast-message",
       autoClose: autoClose
       
     });

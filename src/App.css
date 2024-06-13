@@ -5,5 +5,5 @@
 }
 
 .toast-message {
-  top: var(--heightHeaderScroll);
+  top: 70px;
 }
