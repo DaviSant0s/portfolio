@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import useResizeObserver from "./useResizeObserver";
 
-export default function useGetHightSection(initialValue=null) {
+export default function useGetHightSection() {
   /* estado que armazena alturas das seções */
-  const [ resizeElement, setResizeElement ] = useState(initialValue);
+  const [ resizeElement, setResizeElement ] = useState({});
 
   /* Utilização do meu customHook para calcular a altura de cada página */
   const resize_height_home = useResizeObserver('#id_home');

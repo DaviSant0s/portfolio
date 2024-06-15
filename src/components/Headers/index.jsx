@@ -3,46 +3,51 @@ import { useContext, useEffect, useState } from 'react';
 import HeaderScroll from '../HeaderScroll';
 import { styleCurrentBtnPage } from  '../../styles/header/index.js';
 import { GlobalHeaderContext } from '../../context/HeaderContext/index.jsx';
-
-import './styles.css';
 import useGetScrollPosition from '../../hooks/useGetScrollPosition.jsx';
 import useGetHightSection from '../../hooks/useGetHightSection.jsx';
 
+import './styles.css';
+import screenSize from '../../hooks/screenSize.jsx';
+
 export default function Headers() {
+  // estado Global do header
+  const headerContext = useContext(GlobalHeaderContext);
 
-  // Gambiarra para saber se eu medei de tela
-  const isBigScreen = useMediaQuery({ query: '(height: 695.2px)' });
+  // desestruturação de estilo do botão da pagina que estiver em foco pelo scroll, do estado global.
+  const { setStyleHome, setStyleCertification, setStyleSkills, setStyleProjects, setStyleExperiences} = headerContext;
 
+  // desestruturação da variável do estado global de seleção do botão de página
+  const { selectedPage, setSelectedPage } = headerContext;
 
+  // estado para indicar qual botão de página está selecionado no momento
+  const { setSelectedCurrentPage } = headerContext;
+
+  // desestruturação variável do estado global do estilo de espaçamento do botão de página selecionado
+  const { MarginCurrentBtnPage } = headerContext;
+  
   // estados para controlar a posição de mudança de estilo nos botões do header
   const [ viewHight, setViewHight ] = useState(window.innerHeight);
   const [ certificationHight, setCertificationHight ] = useState(0);
   const [ skillsHight, setSkillsHight ] = useState(0);
   const [ projectsHight, setProjectsHight ] = useState(0);
   const [ experienceHight, setExperienceHight ] = useState(0);
-
-  // estado Global do header
-  const headerContext = useContext(GlobalHeaderContext);
-
-  // desestruturação do estado global
-  const { setStyleHome, setStyleCertification, setStyleSkills, setStyleProjects, setStyleExperiences,
-          height_certifications, height_skills, height_projects,
-          height_experience } = headerContext;
+  const [ contactHight, setContactHight ] = useState(0);
   
+  // Gambiarra para saber se eu medei de tela
+  const isBigScreen = useMediaQuery({ query: '(height: 695.2px)' });
+
+
   // alturas das seções
-  const heightSection = useGetHightSection();
+  const height = useGetHightSection();
 
-  // desestruturação da variável do estado global de seleção do botão de página
-  const { selectedPage, setSelectedPage } = headerContext;
-
-  // estado para indicar qual botão de página está selecionado no momento
-  const { selectedCurrentPage, setSelectedCurrentPage } = headerContext;
-
-  // desestruturação variável do estado global do estilo de espaçamento do botão de página selecionado
-  const { MarginCurrentBtnPage, SetMarginCurrentBtnPage } = headerContext;
-  
   // retorna a posição do scroll
   const scrollPosition = useGetScrollPosition();
+
+  const screenUpdate = screenSize();
+
+  useEffect(() => {
+    console.log('olá')
+  }, [screenUpdate])
 
   useEffect(() => {
 
@@ -86,16 +91,16 @@ export default function Headers() {
 
     setViewHight(window.innerHeight);
 
-    if(height_certifications && height_skills && height_projects && height_experience){
-      setCertificationHight((viewHight - 80) + height_certifications);
-      setSkillsHight(certificationHight + height_skills);
-      setProjectsHight(skillsHight + height_projects);
-      setExperienceHight(projectsHight + height_experience);
+    if(height.certifications && height.skills && height.projects && height.experience && height.home){
+      setCertificationHight(height.home + height.certifications);
+      setSkillsHight(certificationHight + height.skills);
+      setProjectsHight(skillsHight + height.projects);
+      setExperienceHight(projectsHight + height.experience);
+      setContactHight(experienceHight + height.contact);
     }
 
-  }, [viewHight, certificationHight, skillsHight, projectsHight, experienceHight,
-      isBigScreen, height_certifications, height_skills, height_projects, height_experience]);
-
+  }, [screenUpdate, certificationHight, skillsHight, projectsHight,        
+      height.home, height.certifications, height.skills, height.projects, height.experience]);
   
   // Efeito que decide dinamicamente quando o scroll estiver dentro de um intervalo de cada seção
   useEffect(() => {
@@ -141,13 +146,6 @@ export default function Headers() {
   }, [scrollPosition]);
 
   return (
-      <>
-        {/* <Header/> */}
-
-        <HeaderScroll/>
-       {/*  {scrolbarPositionWin > 180 &&
-        } */}
-        
-      </>
+    <HeaderScroll/>
   )
 }
