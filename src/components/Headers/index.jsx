@@ -1,20 +1,20 @@
-import { useMediaQuery } from 'react-responsive'
 import { useContext, useEffect, useState } from 'react';
 import HeaderScroll from '../HeaderScroll';
 import { styleCurrentBtnPage } from  '../../styles/header/index.js';
 import { GlobalHeaderContext } from '../../context/HeaderContext/index.jsx';
 import useGetScrollPosition from '../../hooks/useGetScrollPosition.jsx';
 import useGetHightSection from '../../hooks/useGetHightSection.jsx';
+import screenSize from '../../hooks/screenSize.jsx';
 
 import './styles.css';
-import screenSize from '../../hooks/screenSize.jsx';
 
 export default function Headers() {
   // estado Global do header
   const headerContext = useContext(GlobalHeaderContext);
 
   // desestruturação de estilo do botão da pagina que estiver em foco pelo scroll, do estado global.
-  const { setStyleHome, setStyleCertification, setStyleSkills, setStyleProjects, setStyleExperiences} = headerContext;
+  const { setStyleHome, setStyleCertification, setStyleSkills, 
+          setStyleProjects, setStyleExperiences, setStyleContact} = headerContext;
 
   // desestruturação da variável do estado global de seleção do botão de página
   const { selectedPage, setSelectedPage } = headerContext;
@@ -32,10 +32,6 @@ export default function Headers() {
   const [ projectsHight, setProjectsHight ] = useState(0);
   const [ experienceHight, setExperienceHight ] = useState(0);
   const [ contactHight, setContactHight ] = useState(0);
-  
-  // Gambiarra para saber se eu medei de tela
-  const isBigScreen = useMediaQuery({ query: '(height: 695.2px)' });
-
 
   // alturas das seções
   const height = useGetHightSection();
@@ -43,23 +39,20 @@ export default function Headers() {
   // retorna a posição do scroll
   const scrollPosition = useGetScrollPosition();
 
+  // responsavel por atualizar o estado quando a tela mudar
   const screenUpdate = screenSize();
-
-  useEffect(() => {
-    console.log('olá')
-  }, [screenUpdate])
 
   useEffect(() => {
 
     if(selectedPage.bool){
       if(selectedPage.to === 'home') {
-        if(scrollPosition <= (viewHight - 80) ){
+        if(scrollPosition <= height.home + 80 ){
           setSelectedPage(false);
         }
       }
   
       if(selectedPage.to === 'certifications') {
-        if(viewHight - 80 < scrollPosition && scrollPosition <= certificationHight ) {
+        if(height.home + 80 < scrollPosition && scrollPosition <= certificationHight ) {
           setSelectedPage(false);
         }
       }
@@ -81,9 +74,16 @@ export default function Headers() {
           setSelectedPage(false);
         }
       }
+
+      if(selectedPage.to === 'contact') {
+        if(experienceHight < scrollPosition && scrollPosition <= contactHight){
+          setSelectedPage(false);
+        }
+      }
     }
 
-  }, [selectedPage.bool, scrollPosition]);
+  }, [selectedPage, scrollPosition, viewHight, certificationHight, 
+      skillsHight, projectsHight, experienceHight, contactHight, height]);
 
 
   // Efeito que calcula em qual posição se inicia cada seção do site, para mudar o estilo do header
@@ -141,9 +141,17 @@ export default function Headers() {
       } else {
         setStyleExperiences({});
       }
+
+      if(experienceHight < scrollPosition){
+        setStyleContact({ ...styleCurrentBtnPage, ...MarginCurrentBtnPage.contact });
+        setSelectedCurrentPage('contact');
+      } else {
+        setStyleContact({});
+      }
     }
 
-  }, [scrollPosition]);
+  }, [scrollPosition, selectedPage, viewHight, styleCurrentBtnPage, MarginCurrentBtnPage,
+      certificationHight, skillsHight, projectsHight, experienceHight, contactHight]);
 
   return (
     <HeaderScroll/>

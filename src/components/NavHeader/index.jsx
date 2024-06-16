@@ -11,22 +11,22 @@ export default function NavHeader( { style_nav={} } ) {
   const headerContext = useContext(GlobalHeaderContext);
 
   // desestruturação variável do estado global do estilo de espaçamento do botão de página selecionado
-  const { MarginCurrentBtnPage, SetMarginCurrentBtnPage } = headerContext;
+  const { MarginCurrentBtnPage } = headerContext;
 
   // desestruturação das funções que muda as variáveis do estado global
   const { setStyleHome, setStyleCertification, 
           setStyleSkills, setStyleProjects,
-          styleExperiences, setStyleExperiences,
-          styleContact, setStyleContact} = headerContext;
+          setStyleExperiences, setStyleContact} = headerContext;
   
   // desestruturação das variáveis de estado global
-  const { styleHome, styleCertification, styleSkills, styleProjects } = headerContext;
+  const { styleHome, styleCertification, styleSkills, 
+          styleProjects, styleExperiences, styleContact } = headerContext;
   
   // desestruturação da função que altera do estado global de seleção do botão de página
-  const { selectedPage, setSelectedPage } = headerContext;
+  const { setSelectedPage } = headerContext;
 
   // estado para indicar qual botão de página está selecionado no momento
-  const { selectedCurrentPage, setSelectedCurrentPage } = headerContext;
+  const { setSelectedCurrentPage } = headerContext;
   
   // Função que altera a variável de estado global de seleção do botão de página
   const handleClickBtnPage = (page) => {
@@ -125,7 +125,7 @@ export default function NavHeader( { style_nav={} } ) {
         >Experiências</div>
       </Link>
 
-      <Link to=''  className='Link'>
+      <Link to='id_contact'  smooth={true} offset={-79} duration={700} className='Link'>
         <div 
           onClick={() => handleClickBtnPage('contact')} 
           style={styleContact}
