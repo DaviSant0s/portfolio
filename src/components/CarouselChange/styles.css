@@ -1,14 +1,8 @@
-.carousel-conteiner {
-  /* transform: scale(2.5); */
-  width: 950px;
-}
-
 .title-and-btns-carousel-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80px;
-  /* background-color: orangered; */
+  margin-bottom: 0px;
 }
 
 .title-carousel-container {
@@ -20,13 +14,36 @@
   /* background-color: yellow; */
 }
 
-.title-carousel-container > h1 {
-  font-family: Sora;
-  font-size: 36px;
-  font-size: 33px;
-  line-height: 100%;
-
+/* editando aqui */
+.optionsSlides{
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
 }
+
+.title-carousel-container > .optionsSlides > h1 {
+  font-family: Sora;
+  font-size: 25px;
+  line-height: 100%;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.optionsSlides > .selected {
+  opacity: 1;
+}
+
+.optionsSlides > .notSelected {
+  opacity: 0.5;
+  transition: all .2s ease;
+}
+
+.optionsSlides > .notSelected:hover{
+  opacity: 0.8;
+}
+
+/* fim editando aqui */
 
 .btns-carousel-container {
   display: flex;
@@ -69,26 +86,4 @@
 }
 .arrow_carousel:hover{
   transform: scale(1.1);
-}
-
-.wrapper-carousel {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-
-  height: max-content;
-
-  overflow-x: scroll;
-
-  filter: drop-shadow(3px 3px 10px rgba(122, 122, 122, 0.722));
-
-  /* configurações do scroll */
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
-
-}
-
-.wrapper-carousel::-webkit-scrollbar {
-  display: none;
 }

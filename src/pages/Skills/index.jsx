@@ -1,10 +1,8 @@
 import './styles.css';
-import hardskills from '../../assets/hardskills.jpg'
 import SkillsCard from '../../components/SkillsCard';
 
 import javascript from '../../assets/javascript.png';
 import python from '../../assets/python.png';
-import visualg from '../../assets/visualg.png';
 import github from '../../assets/github1.webp';
 import sql from '../../assets/database.png';
 import react from '../../assets/react.png';

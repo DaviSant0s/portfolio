@@ -1,8 +1,10 @@
 .screenTransparentTabletBtn {
   position: absolute;
-   display: flex;
-   justify-content: center;
-   align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 
   top: 0;
   left: 0;
@@ -17,18 +19,20 @@
   height: 0px;
   opacity: 0.3;
   transition: all .5s ease;
-
-
+  
+  /* para edição */
+ /*  height: 100%;
+  opacity: 1; */
 }
 
 
 /* botão */
 
 .screenTransparentTabletBtn > a > button {
-  padding-left: 40px;
-  padding-right: 40px;
   padding-top: 5px;
   padding-bottom: 5px;
+
+  width: 130px;
 
   background-color: #ffffff10;
   color: white;
@@ -45,4 +49,17 @@
 .screenTransparentTabletBtn > a > button:hover {
   transform: scale(1.05);
   background-color: #ffffff1d;
+}
+
+.screenTransparentTabletBtn > .technologies {
+  display: flex;
+  gap: 5px;
+  margin-top: 10px;
+
+  height: fit-content;
+}
+
+.screenTransparentTabletBtn > .technologies > img{
+  width: 20px;
+  height: fit-content;
 }

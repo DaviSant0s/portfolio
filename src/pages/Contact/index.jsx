@@ -140,7 +140,7 @@ export default function Contact() {
 
       <div className='contact-content'>
         <h1 id='id_title_contact'>
-          Contato
+          Contatos
           <div style={animationTitle} className='animationTitle'></div>
         </h1>
         <div className='input-and-social-container-contact'>
