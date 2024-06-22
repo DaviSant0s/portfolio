@@ -112,6 +112,25 @@ export default function Carousel() {
         arrowStyleLeft={arrowStyleLeft}
         arrowStyleRight={arrowStyleRight}
       />
+      <div className='title-and-btns-carousel-container'>
+        <div className='title-carousel-container'>
+          <h1>
+            
+          </h1>
+        </div>
+        <div className='btns-carousel-container'>
+          <span className='count-cards'>{views} de {totalViews}</span>
+          <div className='btns-carousel'>
+
+            <span onClick={handleClickScrollToLeft} className="material-symbols-outlined arrow_right_carousel arrow_carousel" style={arrowStyleLeft}>chevron_left</span>
+            
+            <span onClick={handleClickScrollToRight} className="material-symbols-outlined arrow_left_carousel arrow_carousel" style={arrowStyleRight}>chevron_right</span>
+
+          </div>
+        </div>
+      </div>
+
+
 
       <div ref={Ref_wrapperCarousel} className='wrapper-carousel'>
 

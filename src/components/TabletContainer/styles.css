@@ -9,8 +9,6 @@
   height: 100%;
   width: 100%;
   object-fit: contain;
- /*  filter: drop-shadow(3px 3px 10px rgba(160, 160, 160, 0.937));
-  filter: drop-shadow(3px 3px 10px rgba(160, 160, 160, 0.722)); */
 }
 
 .screenTable {

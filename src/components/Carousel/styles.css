@@ -1,84 +1,15 @@
 .carousel-conteiner {
-  /* transform: scale(2.5); */
   width: 950px;
-}
-
-.title-and-btns-carousel-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 80px;
-  /* background-color: orangered; */
-}
-
-.title-carousel-container {
-  display: flex;
-  align-items: center;
-
-  width: 100%;
-  height: 100%;
-  /* background-color: yellow; */
-}
-
-.title-carousel-container > h1 {
-  font-family: Sora;
-  font-size: 36px;
-  font-size: 33px;
-  line-height: 100%;
-
-}
-
-.btns-carousel-container {
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  gap: 20px;
-
-  width: 40%;
-  height: 100%;
-  /* background-color: white; */
-}
-
-.count-cards {
-  /* background-color: red; */
-  font-weight: bold;
-  color: #3e3d3d;
-}
-
-.btns-carousel {
-  display: flex;
-  gap: 10px;
-  /* background-color: blue; */
-}
-
-.arrow_carousel {
-
-  border: 2px solid #FB544E;
-  border-radius: 50px;
-  
-  font-weight: 200;
-  font-size: 1.8em;
-  color: #FB544E;
-
-  cursor: pointer;
-
-  -webkit-user-select: none;
-  user-select: none;
-
-  transition: transform .3s ease;
-}
-.arrow_carousel:hover{
-  transform: scale(1.1);
 }
 
 .wrapper-carousel {
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 10px;
 
-  height: max-content;
-
   overflow-x: scroll;
+  overflow-y: hidden;
 
   filter: drop-shadow(3px 3px 10px rgba(122, 122, 122, 0.722));
 
@@ -86,7 +17,7 @@
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     scrollbar-width: none;
-
+    height: 380px;
 }
 
 .wrapper-carousel::-webkit-scrollbar {
