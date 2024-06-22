@@ -7,7 +7,7 @@ import {dataSlider} from './data.js';
 // gap entre os cards
 const gap = 10;
 
-export default function Carousel({title}) {
+export default function Carousel() {
 
   // referencia ao carrossel
   const Ref_wrapperCarousel = useRef(null);
@@ -105,8 +105,8 @@ export default function Carousel({title}) {
     <div className='carousel-conteiner'>
       <div className='title-and-btns-carousel-container'>
         <div className='title-carousel-container'>
-          <h1 id='id_title_projects'>
-            {title}
+          <h1>
+            
           </h1>
         </div>
         <div className='btns-carousel-container'>
@@ -126,9 +126,12 @@ export default function Carousel({title}) {
       <div ref={Ref_wrapperCarousel} className='wrapper-carousel'>
 
         {dataSlider.map((project, index) => (
-            <CarouselCard 
-              img={project.img} 
-            />
+            <div key={index}>
+              <CarouselCard
+                key={index}
+                img={project.img}
+              />
+            </div>
             
           ))}
           
