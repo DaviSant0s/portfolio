@@ -1,17 +1,54 @@
+import { useCarousel } from '../../context/CarrouselContext';
 import './styles.css';
 
-export default function CarouselChange({ views, totalViews, handleClickScrollToLeft, handleClickScrollToRight, arrowStyleLeft, arrowStyleRight}) {
+export default function CarouselChange({ views, totalViews, handleClickScrollToLeft,    handleClickScrollToRight, arrowStyleLeft, arrowStyleRight}) {
+
+  const { toggleCarousel, setToggleCarousel } = useCarousel();
+
+  const handleClickToggleCarousel = (carouselName) => {
+    if(carouselName === 'frontend'){
+      setToggleCarousel('frontend');
+    }
+
+    if(carouselName === 'backend'){
+      setToggleCarousel('backend');
+    }
+
+    if(carouselName === 'fullstack'){
+      setToggleCarousel('fullstack');
+    }
+
+  }
 
   return (
     <div className='carouselChange-container'>
       <div className='optionsSlides-container'>
         <div className='optionsSlides'>
-          <h1 className='selected'>
+
+          <h1 
+          className={`${toggleCarousel === 'frontend' ? 'selected' : 'notSelected'}`}
+          onClick={() => handleClickToggleCarousel('frontend')}
+          >
             Frontend
-            <div className='selectSlides'> </div>
+            <div></div>
           </h1>
-          <h1 className='notSelected'>Backend</h1>
-          <h1 className='notSelected'>Fullstack</h1>
+
+          <h1 
+          className={`${toggleCarousel === 'backend' ? 'selected' : 'notSelected'}`}
+          onClick={() => handleClickToggleCarousel('backend')}
+          >
+            Backend
+            <div></div>
+          </h1>
+
+          <h1 
+          className={`${toggleCarousel === 'fullstack' ? 'selected' : 'notSelected'}`}
+          onClick={() => handleClickToggleCarousel('fullstack')}
+          >
+            Fullstack
+            <div></div>
+          </h1>
+
         </div>
       </div>
       <div className='btns-carouselChange-container'>

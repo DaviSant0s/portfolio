@@ -2,6 +2,7 @@ import GitHubCalendar from 'react-github-calendar';
 import './styles.css';
 
 import Carousel from '../../components/Carousel';
+import CarouselProvider from '../../context/CarrouselContext';
 
 export default function Projects() {
 
@@ -9,7 +10,9 @@ export default function Projects() {
     <div id='id_projects' className='projects-container defaultPages'>
       <h1 id='id_title_projects'>Meus projetos</h1>
 
-      <Carousel/>
+      <CarouselProvider>
+        <Carousel/>
+      </CarouselProvider>
     
       <div className='gitHubCalendar-container'>
         <GitHubCalendar username="DaviSant0s" year={2024} colorScheme='light'/>
