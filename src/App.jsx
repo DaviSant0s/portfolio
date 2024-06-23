@@ -15,6 +15,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import './App.css';
 import AnimationProvider from './context/AnimationContext';
+import CarouselProvider from './context/CarrouselContext';
 
 function App() {
 
@@ -29,7 +30,9 @@ function App() {
             <Home/>
             <Certifications/>
             <Skills/>
-            <Projects/>
+            <CarouselProvider>
+              <Projects/>
+            </CarouselProvider>
             <Experience/>
             <Contact/>
           </div>

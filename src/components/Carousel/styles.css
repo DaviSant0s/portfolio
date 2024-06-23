@@ -23,3 +23,7 @@
 .wrapper-carousel::-webkit-scrollbar {
   display: none;
 }
+
+.noSmooth {
+  scroll-behavior: auto;
+}
