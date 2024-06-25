@@ -20,9 +20,19 @@
   opacity: 0.3;
   transition: all .5s ease;
   
-  /* para edição */
- /*  height: 100%;
+  /* teste */
+  /* height: 100%;
   opacity: 1; */
+
+  overflow: hidden;
+}
+
+.screenTransparentTabletBtn > h1 {
+  color: white;
+  font-family: sora;
+  font-size: 1.3em;
+  margin-bottom: 5px;
+  text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.317);
 }
 
 
@@ -44,6 +54,7 @@
 
   transition: all .3s ease;
   cursor: pointer;
+
 }
 
 .screenTransparentTabletBtn > a > button:hover {
@@ -51,15 +62,30 @@
   background-color: #ffffff1d;
 }
 
-.screenTransparentTabletBtn > .technologies {
+
+/* stacks */
+
+.screenTransparentTabletBtn > .technologies-container {
   display: flex;
+  align-items: center;
+
   gap: 5px;
   margin-top: 10px;
 
   height: fit-content;
+
 }
 
-.screenTransparentTabletBtn > .technologies > img{
-  width: 20px;
-  height: fit-content;
+.screenTransparentTabletBtn .technologies-background {
+  width: fit-content;
+  height: 20px;
+  border-radius: 3px;
+  filter: drop-shadow(0px 0px 10px rgba(76, 76, 76, 0.722));
+
+  overflow: hidden;
+}
+
+.screenTransparentTabletBtn .technologies-background > img{
+  height: 100%;
+  object-fit: cover;
 }

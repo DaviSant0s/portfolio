@@ -161,8 +161,11 @@ export default function Carousel() {
         {toggleData.map((project, index) => (
           <div key={index}>
             <CarouselCard
-              key={index}
               img={project.img}
+              stacks={project.stacks}
+              link={project.link}
+              github={project.github}
+              name={project.name}
             />
           </div>
         ))}

@@ -3,7 +3,7 @@ import tablet from '../../assets/projects/tablet.png';
 import ScreenTransparentBtn from '../ScreenTransparentBtn';
 import './styles.css';
 
-export default function TabletContainer({ children, link, stacks }) {
+export default function TabletContainer({ children, link, github, name, stacks }) {
 
   const [ stylesScreenTransparent, setStylesScreenTransparent ] = useState({});
 
@@ -27,7 +27,7 @@ export default function TabletContainer({ children, link, stacks }) {
       <img src={tablet} alt="" />
       <div className='screenTable'>
         {children}
-        <ScreenTransparentBtn styles={stylesScreenTransparent} link={link} stacks={stacks}/>
+        <ScreenTransparentBtn styles={stylesScreenTransparent} link={link} github={github} name={name} stacks={stacks}/>
       </div>
       <div className='borderBug'/>
     </div>

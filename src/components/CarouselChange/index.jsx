@@ -8,14 +8,17 @@ export default function CarouselChange({ views, totalViews, handleClickScrollToL
   const handleClickToggleCarousel = (carouselName) => {
     if(carouselName === 'frontend'){
       setToggleCarousel('frontend');
+      return;
     }
 
     if(carouselName === 'backend'){
       setToggleCarousel('backend');
+      return;
     }
 
     if(carouselName === 'fullstack'){
       setToggleCarousel('fullstack');
+      return;
     }
 
   }

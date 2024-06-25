@@ -7,11 +7,11 @@ const carouselCardStyle = {
   height: `${CardStyles.height}px`,
 }
 
-export default function CarouselCard({ img, link, stacks }) {
+export default function CarouselCard({ img, link, github, name, stacks }) {
 
   return (
     <div style={carouselCardStyle} className='carouselCard-container'>
-      <TabletContainer link={link} stacks={stacks}>
+      <TabletContainer link={link} github={github} name={name} stacks={stacks}>
         <img className='screenImage' src={img} alt="" />
       </TabletContainer>
     </div>
