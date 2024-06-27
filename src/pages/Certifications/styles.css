@@ -1,4 +1,9 @@
-.certifications-container {
+.certifications-container{
+  background-color: #f9fafb;
+  position: relative;
+}
+
+.certifications-content {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -8,16 +13,12 @@
   padding-left: calc((100vw - 1300px) / 2 );
   padding-right: calc((100vw - 1300px) / 2 );
   
-  height: 752px;
   padding-top: 20px;
-  overflow-y: hidden;
+
 }
 
-#id_certifications{
-  background-color: #f9fafb;
-}
 
-.certifications-container > h1 {
+.certifications-content > h1 {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 40px;
@@ -25,33 +26,92 @@
   text-align: center;
 }
 
-.certifications-content {
+.certifications-content > h1 > .animationTitle {
+  /* margin-top: -5px; */
+}
+
+.cards-certifications-grid {
+  width: 1110px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, 350px);
+  grid-template-columns: 350px 350px 350px;
   grid-template-rows: auto;
   gap: 20px;
-  justify-content: center;
+
+
+  padding-top: 6px;
+  padding-left: 10px;
+  margin: auto;
 }
+
+
 
 .btn-container-transparentCards {
   width: fit-content;
   height: fit-content;
-  border-radius: 10px;
   transition: all 0.18s ease-in-out;
+
+}
+
+.btn-container-transparentCards:hover{
+  transform: scale(1.05);
 }
 
 .trasparentCards {
   display: flex;
   align-items: center;
   justify-content: center;
-
-  position: absolute;
-  z-index: 5;
-  bottom: 0px;
-
   width: 100%;
-  height: 123px;
+}
 
+
+/* estilos caso o botão de ver mais seja clicado */
+
+.certifications-viewMore-false{
+  overflow-y: hidden;
+}
+
+.certifications-viewMore-true{
+  height: max-content;
+  overflow-y: auto;
+  padding-bottom: 10px;
+}
+
+.trasparentCards-viewMore-false{
+  position: absolute;
+  bottom: 0px;
+  z-index: 5;
+  height: 123px;
   background: linear-gradient(to bottom, transparent 50%, rgba(249, 250, 251, 0.855) 90%);
-  /* background-color: red; */
+}
+
+.trasparentCards-viewMore-true{
+  position: static;
+  height: 80px;
+  background: transparent;
+  margin-top: 6px;
+}
+
+.cards-certifications-grid-viwMore-false{
+  height: 650px;
+}
+
+.cards-certifications-grid-viwMore-true{
+  height: max-content;
+}
+
+
+/* media queries */
+
+@media screen and (max-width: 1115px){
+  .cards-certifications-grid {
+    width: 740px;
+    grid-template-columns: 350px 350px;
+  }
+}
+
+@media screen and (max-width: 745px){
+  .cards-certifications-grid {
+    width: 370px;
+    grid-template-columns: 350px;
+  }
 }

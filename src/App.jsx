@@ -16,6 +16,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 import AnimationProvider from './context/AnimationContext';
 import CarouselProvider from './context/CarrouselContext';
+import CertificationsProvider from './context/CertificationsContext';
 
 function App() {
 
@@ -28,11 +29,17 @@ function App() {
           <div className='body-container'>
             <ToastContainer />
             <Home/>
-            <Certifications/>
+
+              <Certifications/>
+           {/*  <CertificationsProvider>
+            </CertificationsProvider> */}
+
             <Skills/>
+
             <CarouselProvider>
               <Projects/>
             </CarouselProvider>
+            
             <Experience/>
             <Contact/>
           </div>

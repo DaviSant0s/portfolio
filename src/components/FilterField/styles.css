@@ -1,0 +1,33 @@
+.filterField-container{
+  width: 1110px;
+  margin: auto;
+  margin-bottom: 20px;
+  margin-top: 10px;
+
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.filterField-content {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  height: 100%;
+  width: 100%;
+}
+
+@media screen and (max-width: 1115px){
+  .filterField-container {
+    width: 740px;
+  }
+}
+
+@media screen and (max-width: 745px){
+  .filterField-container {
+    width: 370px;
+  }
+}

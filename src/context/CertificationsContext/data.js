@@ -1,19 +1,12 @@
-import CardCertification from '../../components/CardCertification';
-
 import udemy from '../../assets/companies/udemy2.png';
 import cursoEmVideo from '../../assets/companies/curso-em-video.jpg';
 import telos from '../../assets/companies/telos.jpeg';
 import microsoft from '../../assets/companies/microsoft.png';
 import estudonauta from '../../assets/companies/estudonauta.jpg';
 
-import { useContext, useState } from 'react';
-import Button from '../../components/Button';
-import { Link } from 'react-scroll';
-import './styles.css';
-import { GlobalAnimationContext } from '../../context/AnimationContext';
-import FilterField from '../../components/FilterField';
 
-const DataCertifications = [
+
+const dataCertifications = [
   {
     id: -2,
     status: false,
@@ -195,101 +188,3 @@ const DataCertifications = [
     style_icone: {borderRadius: '3px'},
   }
 ];
-
-export default function Certifications() {
-
-  // estado global para animação do titulo
-
-  const titleContext = useContext(GlobalAnimationContext);
-  const animationTitle = titleContext.animationCertification;
-
-  // fim
-
-  const [ moreCardsBool, setMoreCardsBool ] = useState(false);
-
-  const handleClickBtnMoreCardsBool = () => {
-    setMoreCardsBool(true)
-  }
-
-  const handleClickBtnLessCardsBool = () => {
-    setTimeout(() => {
-      setMoreCardsBool(false)
-    }, 100)
-  }
-
-  return (
-    <div className='certifications-container' id='id_certifications'>
-      <div className={`certifications-content ${moreCardsBool ? 'certifications-viewMore-true' : 'certifications-viewMore-false'}`}>
-
-        <h1 id='id_title_certifications'>
-          Certificações
-          <div style={animationTitle} className='animationTitle'/>
-        </h1>
-
-        <FilterField/>
-
-        <div className={`cards-certifications-grid ${moreCardsBool ? 'cards-certifications-grid-viwMore-true' : 'cards-certifications-grid-viwMore-false'}`}>
-
-          {DataCertifications.map((data, index) => (
-
-            <div key={index}>
-              <CardCertification
-                icon={data.icon}
-                img={data.img}
-                name={data.name}
-                description={data.description}
-                institution={data.institution}
-                conclusion={data.conclusion}
-                duration={data.duration}
-                link_institution={data.link_institution}
-                link_credential={data.link_credential}
-                style_icone={data.style_icone}
-                status={data.status}
-              />
-            </div>
-              
-          ))}
-            
-        </div>
-      </div>
-      <div 
-        className={`trasparentCards ${moreCardsBool ? 'trasparentCards-viewMore-true': 'trasparentCards-viewMore-false'}`}
-      >
-        <div className='btn-container-transparentCards'>
-
-          {!moreCardsBool &&
-          
-            <Button
-              handleClick={handleClickBtnMoreCardsBool}
-              name='Ver mais'
-              icon={'expand_more'}
-              icon_style={{fontWeight: '400', marginBottom: '-2px', fontSize: '1.5em'}}
-              btn_style={{
-                paddingLeft: '30px',
-                paddingRight: '40px',
-                border: '2px solid #d6d6d6'
-              }}
-            />
-          }
-
-          {moreCardsBool &&
-            <Link
-            to={'id_certifications'}
-            smooth={true} offset={-79}
-            duration={300}>
-          
-                <Button
-                  handleClick={handleClickBtnLessCardsBool}
-                  name='Ver menos'
-                  icon={'expand_less'}
-                  btn_style={{paddingLeft: '30px', paddingRight: '40px', border: '2px solid #d6d6d6'}}
-                  icon_style={{fontWeight: '400', marginBottom: '-2px', fontSize: '1.5em'}}
-                />
-
-            </Link>
-          }
-        </div>
-      </div> 
-    </div>
-  );
-}
