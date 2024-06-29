@@ -30,9 +30,9 @@ function App() {
             <ToastContainer />
             <Home/>
 
+            <CertificationsProvider>
               <Certifications/>
-           {/*  <CertificationsProvider>
-            </CertificationsProvider> */}
+            </CertificationsProvider>
 
             <Skills/>
 

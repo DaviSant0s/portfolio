@@ -1,8 +1,14 @@
+import { useCertification } from '../../context/CertificationsContext';
 import './styles.css';
 
-export default function FilterCertificationsBtn( {name, selected=false} ) {
+export default function FilterCertificationsBtn( {name, handleClick, type} ){
+
+  const { filterCards } = useCertification();
+
   return (
-    <div className={`filterCertificationsBtn-conatiner ${selected ? 'selectedFilterCertifications' : 'notSelectedFilterCertifications'}`}>
+    <div 
+    onClick={() => handleClick(type)} 
+    className={`filterCertificationsBtn-conatiner ${filterCards === type ? 'selectedFilterCertifications' : 'notSelectedFilterCertifications'}`}>
       {name}
     </div>
   )

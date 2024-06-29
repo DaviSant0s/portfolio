@@ -12,12 +12,15 @@
   border: 1px solid #E8E8E8;
 
   cursor: pointer;
+
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .selectedFilterCertifications {
+  transition: all 0.18s ease;
   color: white;
   background: linear-gradient(to top, #FB544E, #f7a9a6 80%);
-  transition: all 0.18s ease;
 }
 
 .selectedFilterCertifications:hover {
@@ -26,7 +29,6 @@
 
 .notSelectedFilterCertifications{
   background: linear-gradient(to top, #e8e7e7, white);
-  transition: all 0.18s ease;
 }
 
 .notSelectedFilterCertifications:hover {

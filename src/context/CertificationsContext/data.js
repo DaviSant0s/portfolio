@@ -6,9 +6,10 @@ import estudonauta from '../../assets/companies/estudonauta.jpg';
 
 
 
-const dataCertifications = [
+export const certifications = [
   {
     id: -2,
+    type: 'database',
     status: false,
     name: 'Banco de Dados e SQL',
     icon: "bx bxl-javascript",
@@ -22,6 +23,7 @@ const dataCertifications = [
   },
   {
     id: -1,
+    type: 'back',
     status: false,
     name: 'Node.js',
     icon: "",
@@ -36,6 +38,7 @@ const dataCertifications = [
   
   {
     id: 0,
+    type: 'languages',
     status: true,
     name: 'Javascript',
     icon: "bx bxl-javascript",
@@ -49,6 +52,7 @@ const dataCertifications = [
   },
   {
     id: 1,
+    type: 'front',
     status: true,
     name: 'React + Next.js',
     icon: "bx bxl-react",
@@ -62,6 +66,7 @@ const dataCertifications = [
   },
   {
     id: 2,
+    type: 'front',
     status: true,
     name: 'HTML5 e CSS3',
     icon: "bx bxl-html5",
@@ -75,6 +80,7 @@ const dataCertifications = [
   },
   {
     id: 3,
+    type: 'back',
     status: true,
     name: 'Backend',
     icon: "bx bxl-nodejs",
@@ -88,6 +94,7 @@ const dataCertifications = [
   },
   {
     id: 4,
+    type: 'languages',
     status: true,
     name: 'Python',
     icon: "bx bxl-python",
@@ -103,6 +110,7 @@ const dataCertifications = [
   
   {
     id: 5,
+    type: 'others',
     status: true,
     name: 'git',
     icon: "bx bxl-git",
@@ -118,6 +126,7 @@ const dataCertifications = [
 
   {
     id: 6,
+    type: 'others',
     status: true,
     name: 'git',
     icon: "bx bxl-git",
@@ -133,6 +142,7 @@ const dataCertifications = [
 
   {
     id: 7,
+    type: 'front',
     status: true,
     name: 'React',
     icon: "bx bxl-react",
@@ -147,6 +157,7 @@ const dataCertifications = [
   },
   {
     id: 8,
+    type: 'others',
     status: true,
     name: 'Git + GitHub',
     icon: "bx bxl-github",
@@ -161,6 +172,7 @@ const dataCertifications = [
   },
   {
     id: 9,
+    type: 'others',
     status: true,
     name: 'Wordpress',
     icon: "bx bxl-wordpress",
@@ -175,6 +187,7 @@ const dataCertifications = [
   },
   {
     id: 10,
+    type: 'languages',
     status: true,
     name: 'Algoritmo + visualG',
     icon: '',
