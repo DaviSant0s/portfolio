@@ -1,8 +1,11 @@
 import { useEffect, useRef } from 'react';
+import { useModal } from '../../context/ModalContext/index';
 import './styles.css';
 
-export default function Modal({children, setIsOpen}) {
+export default function Modal({children}) {
   const Ref_modal_content = useRef();
+
+  const { isOpen, setIsOpen } = useModal();
 
   useEffect(() => {
     document.body.style.overflow = 'hidden';
@@ -19,7 +22,7 @@ export default function Modal({children, setIsOpen}) {
   }
 
   return (
-    <div onClick={handeClickModalOut} className='modal-container'> 
+    <div style={{display: `${isOpen ? '' : 'none'}`}} onClick={handeClickModalOut} className='modal-container'> 
       <div ref={Ref_modal_content} className='modal-content'>
         {children}
       </div>

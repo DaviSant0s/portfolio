@@ -17,6 +17,7 @@ import './App.css';
 import AnimationProvider from './context/AnimationContext';
 import CarouselProvider from './context/CarrouselContext';
 import CertificationsProvider from './context/CertificationsContext';
+import ModalCertificationProvider from './context/ModalContextCertification';
 
 function App() {
 
@@ -31,8 +32,11 @@ function App() {
             <Home/>
 
             <CertificationsProvider>
-              <Certifications/>
+              <ModalCertificationProvider>
+                  <Certifications/>
+              </ModalCertificationProvider> 
             </CertificationsProvider>
+            
 
             <Skills/>
 
