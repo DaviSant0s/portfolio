@@ -8,12 +8,15 @@ export default function Modal({children}) {
   const { isOpen, setIsOpen } = useModal();
 
   useEffect(() => {
-    document.body.style.overflow = 'hidden';
+
+    if(isOpen){
+      document.body.style.overflow = 'hidden';
+    }
 
     return () => {
       document.body.style.overflow = 'auto';
     }
-  }, []);
+  }, [isOpen]);
 
   const handeClickModalOut = (e) => {
     if(!Ref_modal_content.current.contains(e.target)) {
@@ -22,11 +25,15 @@ export default function Modal({children}) {
   }
 
   return (
-    <div style={{display: `${isOpen ? '' : 'none'}`}} onClick={handeClickModalOut} className='modal-container'> 
-      <div ref={Ref_modal_content} className='modal-content'>
-        {children}
-      </div>
-    </div>
+    <>
+      {isOpen &&
+        <div onClick={handeClickModalOut} className='modal-container'> 
+          <div ref={Ref_modal_content} className='modal-content'>
+            {children}
+          </div>
+        </div>
+      }
+    </>
   );
   
 }
