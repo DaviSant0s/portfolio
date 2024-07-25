@@ -13,21 +13,13 @@ import node from '../../assets/node.png';
 import c from '../../assets/c.png';
 import git from '../../assets/git.png';
 import wordpress from '../../assets/wordpress.webp';
-import { useContext } from 'react';
-import { GlobalAnimationContext } from '../../context/AnimationContext';
 
 export default function Skills() {
-    // estado global para animação do titulo
 
-    /* const titleContext = useContext(GlobalAnimationContext);
-    const animationTitle = titleContext.animationSkills; */
-  
-    // fim
   return (
     <div id='id_skills' className='skills-container'>
       <h1 id='id_title_skills'>
         Habilidades
-        {/* <div style={animationTitle} className='animationTitle'></div> */}
       </h1>
       <div className='skills-content'>
           <SkillsCard name={'Javascript'} image={javascript} style_image={{borderRadius: '4px'}}/>

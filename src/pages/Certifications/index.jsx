@@ -1,19 +1,13 @@
 import CardCertification from '../../components/CardCertification';
 
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import Button from '../../components/Button';
 import { Link } from 'react-scroll';
-import { GlobalAnimationContext } from '../../context/AnimationContext';
 import FilterField from '../../components/FilterField';
 import { useCertification } from '../../context/CertificationsContext';
 import './styles.css';
 
 export default function Certifications() {
-
-  // estados global
-
-  /* const titleContext = useContext(GlobalAnimationContext);
-  const animationTitle = titleContext.animationCertification; */
 
   const { filterCards, filteredData } = useCertification();
 
@@ -42,7 +36,6 @@ export default function Certifications() {
 
         <h1 id='id_title_certifications'>
           Certificações
-          {/* <div style={animationTitle} className='animationTitle'/> */}
         </h1>
 
         <FilterField/>

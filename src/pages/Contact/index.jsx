@@ -1,8 +1,7 @@
 import gmail from '../../assets/social/gmail.webp';
 import whatsapp from '../../assets/social/whatsapp.png';
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import { toast } from 'react-toastify';
-import { GlobalHeaderContext } from '../../context/HeaderContext';
 import emailjs from '@emailjs/browser';
 
 /* emailjs */
@@ -10,16 +9,8 @@ import { SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY } from '../../config';
 
 import './styles.css';
 import Loading from '../../components/Loading';
-import { GlobalAnimationContext } from '../../context/AnimationContext';
 
 export default function Contact() {
-
-  // estado global para animação do titulo
-
-  /* const titleContext = useContext(GlobalAnimationContext);
-  const animationTitle = titleContext.animationContact; */
-
-  // fim
   
   /* estados para a copia de contatos */
   const [ contactCopiedGmail, setContactCopiedGmail ] = useState(false);
@@ -34,12 +25,6 @@ export default function Contact() {
 
   /* estado de loadind do emailjs */
   const [ removeLoading, setRemoveLoading ] = useState(false);
-  /* fim */
-
-
-  /* retorna a posição do scroll do estado global */
-  /* const headerContext = useContext(GlobalHeaderContext);
-  const { scrolbarPositionWin } = headerContext; */
   /* fim */
 
   // função para reaproveitar o toast

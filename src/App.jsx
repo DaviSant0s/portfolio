@@ -14,7 +14,6 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import './App.css';
-import AnimationProvider from './context/AnimationContext';
 import CarouselProvider from './context/CarrouselContext';
 import CertificationsProvider from './context/CertificationsContext';
 import ModalCertificationProvider from './context/ModalContextCertification';
@@ -23,34 +22,34 @@ function App() {
 
   return (
     <div className='app-container'>
-      <AnimationProvider>
-        <HeaderProvider>
-          <Headers/>
-          <FloatingButtons/>
-          <div className='body-container'>
-            <ToastContainer />
-            <Home/>
 
-            <CertificationsProvider>
-              <ModalCertificationProvider>
-                  <Certifications/>
-              </ModalCertificationProvider> 
-            </CertificationsProvider>
-            
+      <HeaderProvider>
+        <Headers/>
+        <FloatingButtons/>
+        <div className='body-container'>
+          <ToastContainer />
+          <Home/>
 
-            <Skills/>
+          <CertificationsProvider>
+            <ModalCertificationProvider>
+                <Certifications/>
+            </ModalCertificationProvider> 
+          </CertificationsProvider>
+          
 
-            <CarouselProvider>
-              <Projects/>
-            </CarouselProvider>
-            
-            <Experience/>
-            <Contact/>
-          </div>
+          <Skills/>
 
-          <Footer/>
-        </HeaderProvider>
-      </AnimationProvider>
+          <CarouselProvider>
+            <Projects/>
+          </CarouselProvider>
+          
+          <Experience/>
+          <Contact/>
+        </div>
+
+        <Footer/>
+      </HeaderProvider>
+
     </div>
 
   )
