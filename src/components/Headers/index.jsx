@@ -9,6 +9,7 @@ import screenSize from '../../hooks/screenSize.jsx';
 import './styles.css';
 
 export default function Headers() {
+
   // estado Global do header
   const headerContext = useContext(GlobalHeaderContext);
 
@@ -38,6 +39,7 @@ export default function Headers() {
 
   // retorna a posição do scroll
   const scrollPosition = useGetScrollPosition();
+  /* const scrollPosition = 20; */
 
   // responsavel por atualizar o estado quando a tela mudar
   const screenUpdate = screenSize();

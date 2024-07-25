@@ -4,7 +4,6 @@ import './styles.css';
 import Carousel from '../../components/Carousel';
 
 export default function Projects() {
-  
 
   return (
     <div id='id_projects' className='projects-container defaultPages'>

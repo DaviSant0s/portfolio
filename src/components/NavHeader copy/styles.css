@@ -8,7 +8,7 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-end;
-  height: 41px;
+  height: 40px;
 }
 
 .nav-header > .Link {
@@ -33,6 +33,7 @@
   -webkit-user-select: none;
   user-select: none;
 
+  transition:  margin, 0.3s ease-in-out;
   transition:  margin, 0.15s ease-in-out;
 }
 
@@ -79,44 +80,4 @@
   border-left: 1px solid var(--buttomBorderPage);
   border-right: 1px solid var(--buttomBorderPage);
   margin-left: -1px;
-}
-
-/* classes de animações de scrolls */
-#homeAnimation, #certificationsAnimation, 
-#skillsAnimation, #projectsAnimation, 
-#experiencesAnimation, #contactAnimation {
-  background-color: rgba(255, 241, 227, 0.688);
-
-  border-right: 1px solid rgba(251, 84, 78, 0.3);
-  border-left: 1px solid rgba(251, 84, 78, 0.3);
-  border-top: 3px solid rgba(251, 84, 78, 0.3);
-}
-
-
-#homeAnimation{
-  margin-right: 5px !important;
-}
-
-#certificationsAnimation{
-  margin-left: 4px; 
-  margin-right: 5px !important;
-}
-
-#skillsAnimation{
-  margin-left: 4px !important;
-  margin-right: 5px;
-}
-
-#projectsAnimation{
-  margin-left: 4px !important;
-  margin-right: 5px;
-}
-
-#experiencesAnimation{
-  margin-left: 4px !important;
-  margin-right: 5px;
-}
-
-#contactAnimation{
-  margin-left: 4px !important;
 }

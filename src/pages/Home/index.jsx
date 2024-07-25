@@ -3,6 +3,7 @@ import SocialsGroup from '../../components/SocialsGroup';
 import './styles.css';
 
 export default function Home() {
+
   return (
     <div id='id_home' className='home-container defaultHome'>
 
@@ -30,10 +31,3 @@ export default function Home() {
     </div>
   )
 }
-
-         /*  <p>
-            Atualmente estou cursando <strong>Engenharia de Computação</strong> na <strong>
-              Universidade
-              Federal do Rio Grande
-            </strong> (FURG) e focando no desenvolvimento FullStack.
-          </p> */

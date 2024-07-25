@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { useModal } from '../../context/ModalContext/index';
 import './styles.css';
 
-export default function Modal({children}) {
+export default function Modal({ children }) {
   const Ref_modal_content = useRef();
 
   const { isOpen, setIsOpen } = useModal();

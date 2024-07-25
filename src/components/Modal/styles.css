@@ -1,11 +1,13 @@
 .modal-container {
   position: fixed;
-  z-index: 10000;
+  z-index: 99999999999999999999999999999999999999999999999;
 
   top: 0px;
   bottom: 0px;
   left: 0px;
   right: 0px;
+
+  padding-top: 80px;
 
   display: flex;
   align-items: center;

@@ -12,8 +12,8 @@ export default function Certifications() {
 
   // estados global
 
-  const titleContext = useContext(GlobalAnimationContext);
-  const animationTitle = titleContext.animationCertification;
+  /* const titleContext = useContext(GlobalAnimationContext);
+  const animationTitle = titleContext.animationCertification; */
 
   const { filterCards, filteredData } = useCertification();
 
@@ -42,7 +42,7 @@ export default function Certifications() {
 
         <h1 id='id_title_certifications'>
           Certificações
-          <div style={animationTitle} className='animationTitle'/>
+          {/* <div style={animationTitle} className='animationTitle'/> */}
         </h1>
 
         <FilterField/>

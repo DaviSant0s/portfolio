@@ -16,8 +16,8 @@ export default function Contact() {
 
   // estado global para animação do titulo
 
-  const titleContext = useContext(GlobalAnimationContext);
-  const animationTitle = titleContext.animationContact;
+  /* const titleContext = useContext(GlobalAnimationContext);
+  const animationTitle = titleContext.animationContact; */
 
   // fim
   
@@ -38,8 +38,8 @@ export default function Contact() {
 
 
   /* retorna a posição do scroll do estado global */
-  const headerContext = useContext(GlobalHeaderContext);
-  const { scrolbarPositionWin } = headerContext;
+  /* const headerContext = useContext(GlobalHeaderContext);
+  const { scrolbarPositionWin } = headerContext; */
   /* fim */
 
   // função para reaproveitar o toast
@@ -141,7 +141,7 @@ export default function Contact() {
       <div className='contact-content'>
         <h1 id='id_title_contact'>
           Contatos
-          <div style={animationTitle} className='animationTitle'></div>
+          {/* <div style={animationTitle} className='animationTitle'></div> */}
         </h1>
         <div className='input-and-social-container-contact'>
           <form id='form-contact' method="post" onSubmit={handleSendEmail}>

@@ -13,7 +13,7 @@ export default function HeaderScroll() {
           <Logo headerScroll={true} />
           <div className='navHeaderAnimationBug-container-scroll'>
 
-            <NavHeader style_nav={{height: '41px' }}/>
+            <NavHeader/>
 
           </div>
           <div className='btns-header-scroll'>
