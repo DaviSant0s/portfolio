@@ -16,6 +16,7 @@ export default function Modal({ children }) {
     return () => {
       document.body.style.overflow = 'auto';
     }
+    
   }, [isOpen]);
 
   const handeClickModalOut = (e) => {

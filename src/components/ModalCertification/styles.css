@@ -10,20 +10,26 @@
   align-items: center;
   justify-content: end;
 
-  width: 1200px;
   height: 600px;
+  width: 1200px;
+
+  width: calc(100vw * 0.9);
+  max-width: 1000px;
+  min-width: 200px;
+  height: calc(var(--heighBody) * 0.8);
 
   background-color: white;
   border-radius: 0px 0px 8px 8px;
+
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-bottom: 10px;
 }
 
 .amount-content {
   overflow-y: auto;
   width: 100%;
-  background-color: transparent;
-  width: 1170px;
-  height: 570px;
-  padding-top: 5px;
+  height: 100%;
 }
 
 /* botão de sair */
