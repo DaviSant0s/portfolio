@@ -10,7 +10,7 @@ export default function Header() {
     <header className='header-container-scroll'>
       <div className='header-content-scroll'>
         <div className='logo-and-buttons-header-scroll'>
-          <Logo headerScroll={true} />
+          <Logo/*  headerScroll={true} */ />
           <div className='navHeaderAnimationBug-container-scroll'>
 
             <NavHeader/>
