@@ -16,7 +16,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 import CarouselProvider from './context/CarrouselContext';
 import CertificationsProvider from './context/CertificationsContext';
-import ModalCertificationProvider from './context/ModalContextCertification';
 
 function App() {
 
@@ -31,9 +30,7 @@ function App() {
           <Home/>
 
           <CertificationsProvider>
-            <ModalCertificationProvider>
-                <Certifications/>
-            </ModalCertificationProvider> 
+            <Certifications/>
           </CertificationsProvider>
           
 

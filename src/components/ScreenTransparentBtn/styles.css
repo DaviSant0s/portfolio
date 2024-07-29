@@ -16,13 +16,9 @@
   background-color: rgba(0, 0, 0, 0.444);
   backdrop-filter: blur(10px);
 
-  height: 0px;
-  opacity: 0.3;
+  height: 0;
+  opacity: 1;
   transition: all .5s ease;
-  
-  /* teste */
-  /* height: 100%;
-  opacity: 1; */
 
   overflow: hidden;
 }

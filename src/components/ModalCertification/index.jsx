@@ -1,14 +1,11 @@
-import { useModal } from '../../context/ModalContext';
 import Modal from '../Modal';
 import './styles.css'
 
-export default function ModalCertification({ status }) {
-  const { setIsOpen } = useModal();
-
+export default function ModalCertification({ status, isOpen, setIsOpen }) {
 
   return (
 
-    <Modal>
+    <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
       
       <div 
         className='design-color-theme'

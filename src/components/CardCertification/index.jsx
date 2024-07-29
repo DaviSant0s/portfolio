@@ -1,10 +1,10 @@
 import './styles.css';
-import { useModal } from '../../context/ModalContext';
 import ModalCertification from '../ModalCertification';
+import { useState } from 'react';
 
 export default function CardCertification(
   {
-    status=true, 
+    status=false, 
     img=null, 
     icon, 
     name, 
@@ -18,7 +18,7 @@ export default function CardCertification(
     style_title={}
   }) {
 
-  const { setIsOpen } = useModal();
+  const [ isOpen, setIsOpen ] = useState(false);
 
   
   return (
@@ -77,7 +77,7 @@ export default function CardCertification(
         </div>
       </div>
 
-      <ModalCertification status={status}/>
+      <ModalCertification isOpen={isOpen} setIsOpen={setIsOpen} status={status}/>
     </>
   )
 }
