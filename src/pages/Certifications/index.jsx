@@ -1,5 +1,4 @@
 import CardCertification from '../../components/CardCertification';
-
 import { useState } from 'react';
 import Button from '../../components/Button';
 import { Link } from 'react-scroll';
