@@ -4,7 +4,9 @@ import Button from '../Button';
 import NavHeader from '../NavHeader';
 import DarkModeBtn from '../DarkModeBtn'
 import { useMediaQuery } from 'react-responsive';
-import { useState } from 'react';
+import { useSideBar } from '../../context/SideBarContext';
+import SideBar from '../SideBar';
+import { useEffect } from 'react';
 
 export default function Header() {
   // responsividade
@@ -12,11 +14,18 @@ export default function Header() {
   const Mobile = useMediaQuery({query: '(max-width: 500px)'});
   const miniMobile = useMediaQuery({query: '(max-width: 410px)'});
 
-  // estados
-  const [ menuEnabled, setMenuEnabled ] = useState(false);
+  // estados globais
+  const { menuEnabled, setMenuEnabled } = useSideBar();
+
+  // faz com que o side bar feche uando mudar a mediaquery
+  useEffect(() => {
+    setMenuEnabled(s=>false)
+  }, [isTabletOrMobile])
+  
   
   return (
     <header className='header-container-scroll'>
+
       <div className='header-content-scroll'>
         <div className='logo-and-buttons-header-scroll'>
           <Logo  menuEnabled={menuEnabled} setMenuEnabled={setMenuEnabled}/>
@@ -54,6 +63,11 @@ export default function Header() {
         </div>
         
       </div>
+      
+      {isTabletOrMobile &&
+        <SideBar menuEnabled={menuEnabled} setMenuEnabled={setMenuEnabled}/>
+      }
+
     </header>
   );
 }

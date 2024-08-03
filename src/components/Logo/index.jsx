@@ -13,15 +13,15 @@ export default function Logo({ menuEnabled, setMenuEnabled }) {
         {/* se não couber o nav vai desaparecer a foto e aparecer as barras */}
       
         {
-          (isTabletOrMobile && !menuEnabled) && 
-          <span onClick={() => setMenuEnabled(s => !s)} className="material-symbols-outlined menuHeader">menu</span>
+          (isTabletOrMobile) && 
+          <span onClick={() => setMenuEnabled(true)} className="material-symbols-outlined menuHeader">menu</span>
         }
 
-        {
+        {/* {
           (isTabletOrMobile && menuEnabled) && 
           <span onClick={() => setMenuEnabled(s => !s)} className="material-symbols-outlined menuHeader">close</span>
         }
-
+ */}
         {!isTabletOrMobile && 
           <div className='container-photo-logo' style={{width: '40px', height: '40px'}}>
             <img src={photo} alt=""/>

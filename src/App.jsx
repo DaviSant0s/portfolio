@@ -16,6 +16,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 import CarouselProvider from './context/CarrouselContext';
 import CertificationsProvider from './context/CertificationsContext';
+import SideBarProvider from './context/SideBarContext';
 
 function App() {
 
@@ -23,7 +24,11 @@ function App() {
     <div className='app-container'>
 
       <HeaderProvider>
-        <Headers/>
+
+        <SideBarProvider>
+          <Headers/>
+        </SideBarProvider>
+
         <FloatingButtons/>
         <div className='body-container'>
           <ToastContainer />
