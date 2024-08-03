@@ -51,34 +51,27 @@
   color: #544f4e;
 }
 
-
-/* estilos para responsividade */
-.menuHeader{
-  font-size: 3em;
-  font-weight: 400;
-}
-
 .container-title-logo > span{
   font-size: 0.9em;
 }
 
-
 /* responsividade */
 
-@media screen and (max-width: 1090px){
+/* icone de menu */
+.menuHeader {
+  font-size: 3em;
+  font-weight: 400;
 
-  /* .container-photo-logo{
-    display: none;
-  } */
+  padding: 3px;
+  border-radius: 50%;
 
-/*   .container-title-logo{
-    display: none;
-  }
- */
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
 }
 
-@media screen and (max-width: 1035px){
-
-  
-
+.menuHeader:hover {
+  background-color: #f0f2f5;
+  color: #fb544e;
 }
+
+

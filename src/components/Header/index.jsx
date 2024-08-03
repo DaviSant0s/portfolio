@@ -4,18 +4,22 @@ import Button from '../Button';
 import NavHeader from '../NavHeader';
 import DarkModeBtn from '../DarkModeBtn'
 import { useMediaQuery } from 'react-responsive';
+import { useState } from 'react';
 
 export default function Header() {
-
+  // responsividade
   const isTabletOrMobile = useMediaQuery({query: '(max-width: 1100px)'});
   const Mobile = useMediaQuery({query: '(max-width: 500px)'});
   const miniMobile = useMediaQuery({query: '(max-width: 410px)'});
+
+  // estados
+  const [ menuEnabled, setMenuEnabled ] = useState(false);
   
   return (
     <header className='header-container-scroll'>
       <div className='header-content-scroll'>
         <div className='logo-and-buttons-header-scroll'>
-          <Logo/>
+          <Logo  menuEnabled={menuEnabled} setMenuEnabled={setMenuEnabled}/>
 
           {!isTabletOrMobile &&
           
