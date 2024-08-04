@@ -23,7 +23,7 @@ export default function Footer() {
 
         <nav className='navigation-footer' >
 
-          <Link to='id_header' smooth={true} className='Link-footer'>
+          <Link to='id_home' smooth={true} offset={-80} duration={700} className='Link-footer'>
             <span>Início</span>
           </Link>
 
@@ -43,7 +43,7 @@ export default function Footer() {
             <span>Experiências</span>
           </Link>
 
-          <Link to=''  className='Link-footer'>
+          <Link to='id_contact' smooth={true} offset={-79} duration={700}  className='Link-footer'>
             <span>Contato</span>
           </Link>
 
