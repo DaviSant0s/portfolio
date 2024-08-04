@@ -1,47 +1,48 @@
 import { Link } from 'react-scroll';
-import useScrollAnimationHeader from '../../hooks/header/useScrollAnimationHeader';
 import './styles.css';
+import useScrollAnimationSideBar from '../../hooks/header/useScrollAnimationSideBar';
 
 
-export default function NavHeader({ styles={} }) {
-  useScrollAnimationHeader()
+export default function NavHeaderSideBar() {
+
+  useScrollAnimationSideBar();
 
   return (
-    <nav style={styles} className='nav-header'>
+    <nav className='nav-header-sideBar'>
 
       <Link to='id_home' smooth={true} offset={-80} className='Link'>
         <div 
-          className='home link-page'
+          className='home_sideBar link-page'
         >Início</div>
       </Link>
 
       <Link to='id_certifications' smooth={true} offset={-79} duration={700} className='Link'>
         <div 
-          className='certifications link-page'
+          className='certifications_sideBar link-page'
         >Certificações</div>
       </Link>
 
       <Link to='id_skills' smooth={true} offset={-79} duration={700} className='Link'>
         <div 
-          className='skills link-page'
+          className='skills_sideBar link-page'
         >Habilidades</div>
       </Link>
 
       <Link to='id_projects' smooth={true} offset={-79} duration={700} className='Link'>
         <div 
-          className='projects link-page'
+          className='projects_sideBar link-page'
         >Projetos</div>
       </Link>
 
       <Link to='id_experience' smooth={true} offset={-79} duration={700} className='Link'>
         <div 
-          className='experiences link-page'
+          className='experiences_sideBar link-page'
         >Experiências</div>
       </Link>
 
       <Link to='id_contact'  smooth={true} offset={-79} duration={700} className='Link'>
         <div 
-          className='contact link-page'
+          className='contact_sideBar link-page'
         >Contato</div>
       </Link>
     </nav>

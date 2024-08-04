@@ -1,0 +1,71 @@
+:root {
+  --buttomBorderPage: #d3d3d3;
+}
+
+.nav-header-sideBar {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+
+  height: fit-content;
+}
+
+.nav-header-sideBar > .Link {
+  height: 100%;
+}
+
+.nav-header-sideBar .link-page {
+  position: relative;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 41px;
+  width: 150px;
+  
+  border-top: 3px solid var(--buttomBorderPage);
+  border-radius: 10px 10px 0px 0px;
+  
+  cursor: pointer;
+  
+  -webkit-user-select: none;
+  user-select: none;
+
+  transition:  margin, 0.15s ease-in-out;
+
+  border-left: 1px solid var(--buttomBorderPage);
+  border-right: 1px solid var(--buttomBorderPage);
+}
+
+.nav-header-sideBar .link-page:hover {
+  background-color: rgba(255, 241, 227, 0.688);
+
+  border-right: 1px solid rgba(251, 84, 78, 0.3);
+  border-top: 3px solid rgba(251, 84, 78, 0.3);
+  border-left: 1px solid rgba(251, 84, 78, 0.3);
+  border-right: 1px solid rgba(251, 84, 78, 0.3);
+  
+  z-index: 2;
+
+}
+
+/* classes de animações de scrolls */
+
+#homeAnimation_sideBar, #certificationsAnimation_sideBar, 
+#skillsAnimation_sideBar, #projectsAnimation_sideBar, 
+#experiencesAnimation_sideBar, #contactAnimation_sideBar {
+  background-color: rgba(255, 241, 227, 0.688);
+
+  border-right: 1px solid rgba(251, 84, 78, 0.3);
+  border-left: 1px solid rgba(251, 84, 78, 0.3);
+  border-top: 3px solid rgba(251, 84, 78, 0.3);
+
+  transform: scale(1.03);
+
+  font-weight: 500;
+}

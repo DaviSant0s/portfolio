@@ -1,8 +1,11 @@
 import { useMediaQuery } from 'react-responsive'
 import photo from '../../assets/img-perfil.jpeg'
 import './styles.css';
+import { useSideBar } from '../../context/SideBarContext';
 
-export default function Logo({ menuEnabled, setMenuEnabled }) {
+export default function Logo({ sideBar=false }) {
+
+  const { setMenuEnabled } = useSideBar();
 
   const isTabletOrMobile = useMediaQuery({query: '(max-width: 1100px)'});
   
@@ -13,15 +16,15 @@ export default function Logo({ menuEnabled, setMenuEnabled }) {
         {/* se não couber o nav vai desaparecer a foto e aparecer as barras */}
       
         {
-          (isTabletOrMobile) && 
+          (isTabletOrMobile && !sideBar) && 
           <span onClick={() => setMenuEnabled(true)} className="material-symbols-outlined menuHeader">menu</span>
         }
 
-        {/* {
-          (isTabletOrMobile && menuEnabled) && 
-          <span onClick={() => setMenuEnabled(s => !s)} className="material-symbols-outlined menuHeader">close</span>
+        {
+          (isTabletOrMobile && sideBar) && 
+          <span onClick={() => setMenuEnabled(false)} className="material-symbols-outlined menuHeader">close</span>
         }
- */}
+
         {!isTabletOrMobile && 
           <div className='container-photo-logo' style={{width: '40px', height: '40px'}}>
             <img src={photo} alt=""/>
@@ -30,7 +33,7 @@ export default function Logo({ menuEnabled, setMenuEnabled }) {
 
       <div  className='container-title-logo'>
         <h1/*  style={{fontSize: '2em'}} */>Portfólio</h1>
-        <span /* style={{fontSize: '1em'}} */>Davi Santos</span>
+        <span>Davi Santos</span>
       </div>
     </div>
   )

@@ -28,7 +28,7 @@ export default function Header() {
 
       <div className='header-content-scroll'>
         <div className='logo-and-buttons-header-scroll'>
-          <Logo  menuEnabled={menuEnabled} setMenuEnabled={setMenuEnabled}/>
+          <Logo/>
 
           {!isTabletOrMobile &&
           

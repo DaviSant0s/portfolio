@@ -2,6 +2,8 @@ import { useState } from 'react';
 import './styles.css';
 import { useEffect } from 'react';
 import { useRef } from 'react';
+import NavHeaderSideBar from '../NavHeaderSideBar';
+import Logo from '../Logo';
 
 export default function SideBar({ menuEnabled, setMenuEnabled }) {
 
@@ -32,8 +34,13 @@ export default function SideBar({ menuEnabled, setMenuEnabled }) {
     <div style={{width: `${menuEnabled ? '100vh' : '0'}`}} onClick={handeClickSideBarOut} className='background-sidebar'>
 
       <div ref={sideBar_Ref} style={animacao} className='sideBar-container'>
+        <div className='title-sideBar'>
+          
+          <Logo sideBar={true}/>
 
-        <span onClick={() => setMenuEnabled(false)} className="material-symbols-outlined closeSideBar">close</span>
+        </div>
+
+        <NavHeaderSideBar/>
 
       </div>
 
