@@ -1,14 +1,30 @@
 import { Link } from 'react-scroll';
 import SocialsGroup from '../../components/SocialsGroup';
 import './styles.css';
+import { useMediaQuery } from 'react-responsive';
 
 export default function Home() {
+
+  const mobileOrTablet = useMediaQuery({query: '(max-width: 661px)'});
+  const mobile = useMediaQuery({query: '(max-width: 535px)'});
 
   return (
     <div id='id_home' className='home-container defaultHome'>
 
       <div className='home-content'>
-        <h1>Desenvolvedor <span className='title-style-highlight'>Fullstack</span></h1>
+
+        {!mobileOrTablet &&
+          <h1>Desenvolvedor <span id='title-style-highlight'>Fullstack</span></h1>
+        
+        }
+
+        {mobileOrTablet &&
+          <div className='mobile-title-home-container'>
+            <h1>Desenvolvedor</h1>
+            <h1 id='title-style-highlight'>Fullstack</h1>
+          </div>
+        }
+
 
         <p>
           Meu nome é <strong>Davi Santos</strong>, tenho 24 anos, sou uma pessoa 
@@ -16,9 +32,15 @@ export default function Home() {
           coisas novas relacionadas à programação, engenharia e desenvolvimento pessoal. 
         </p>
 
-        <p>
-          Estou sempre buscando novos aprendizados  e desafios para crescer profissionalmente, assim, estando em constante evolução.
-        </p>
+       {!mobile &&
+
+          <p>
+            Estou sempre buscando novos aprendizados  e desafios para crescer profissionalmente, assim, estando em constante evolução.
+          </p>
+        
+        }
+
+
         <SocialsGroup/>
       </div>
 

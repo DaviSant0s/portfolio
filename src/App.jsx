@@ -32,9 +32,9 @@ function App() {
         <FloatingButtons/>
         <div className='body-container'>
           <ToastContainer />
-          <Home/>
+         <Home/>
 
-          <CertificationsProvider>
+            <CertificationsProvider>
             <Certifications/>
           </CertificationsProvider>
           
@@ -49,7 +49,7 @@ function App() {
           <Contact/>
         </div>
 
-        <Footer/>
+        {/* <Footer/> */}
       </HeaderProvider>
 
     </div>

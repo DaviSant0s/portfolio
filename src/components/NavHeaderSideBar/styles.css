@@ -53,6 +53,8 @@
   
   z-index: 2;
 
+  transform: scale(1.03);
+
 }
 
 /* classes de animações de scrolls */
@@ -66,7 +68,7 @@
   border-left: 1px solid rgba(251, 84, 78, 0.3);
   border-top: 3px solid rgba(251, 84, 78, 0.3);
 
-  transform: scale(1.03);
-
   font-weight: 500;
+
+  transform: scale(1.03);
 }
