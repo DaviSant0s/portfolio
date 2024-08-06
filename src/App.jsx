@@ -49,7 +49,7 @@ function App() {
           <Contact/>
         </div>
 
-        {/* <Footer/> */}
+        <Footer/>
       </HeaderProvider>
 
     </div>
