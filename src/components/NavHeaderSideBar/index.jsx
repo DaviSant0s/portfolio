@@ -21,42 +21,60 @@ export default function NavHeaderSideBar() {
         <div 
           className='home_sideBar link-page'
           onClick={handleClickCloseSideBar}
-        >Início</div>
+        >
+          <span class="material-symbols-outlined">home</span>
+          <span>Início</span>
+          </div>
       </Link>
 
       <Link to='id_certifications' smooth={true} offset={-79} duration={700} className='Link'>
         <div 
           className='certifications_sideBar link-page'
           onClick={handleClickCloseSideBar}
-        >Certificações</div>
+        >
+          <span class="material-symbols-outlined">verified</span>
+          <span>Certificações</span>
+          </div>
       </Link>
 
       <Link to='id_skills' smooth={true} offset={-79} duration={700} className='Link'>
         <div 
           className='skills_sideBar link-page'
           onClick={handleClickCloseSideBar}
-        >Habilidades</div>
+        >
+          <span class="material-symbols-outlined">emoji_objects</span>
+          <span>Habilidades</span>
+        </div>
       </Link>
 
       <Link to='id_projects' smooth={true} offset={-79} duration={700} className='Link'>
         <div 
           className='projects_sideBar link-page'
           onClick={handleClickCloseSideBar}
-        >Projetos</div>
+        >
+          <span class="material-symbols-outlined">folder_open</span>
+          <span>Projetos</span>
+        </div>
       </Link>
 
       <Link to='id_experience' smooth={true} offset={-79} duration={700} className='Link'>
         <div 
           className='experiences_sideBar link-page'
           onClick={handleClickCloseSideBar}
-        >Experiências</div>
+        >
+          <span class="material-symbols-outlined">badge</span>
+          <span>Experiências</span>
+        </div>
       </Link>
 
       <Link to='id_contact'  smooth={true} offset={-79} duration={700} className='Link'>
         <div 
           className='contact_sideBar link-page'
           onClick={handleClickCloseSideBar}
-        >Contato</div>
+        >
+          <span class="material-symbols-outlined">contact_page</span>
+          <span>Contato</span>
+        </div>
       </Link>
     </nav>
   )

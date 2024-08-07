@@ -31,7 +31,7 @@ export default function SideBar({ menuEnabled, setMenuEnabled }) {
   }
 
   return (
-    <div style={{width: `${menuEnabled ? '100vh' : '0'}`}} onClick={handeClickSideBarOut} className='background-sidebar'>
+    <div style={{width: `${menuEnabled ? '100vw' : '0'}`}} onClick={handeClickSideBarOut} className='background-sidebar'>
 
       <div ref={sideBar_Ref} style={animacao} className='sideBar-container'>
         <div className='title-sideBar'>

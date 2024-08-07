@@ -9,28 +9,36 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
-  width: 100%;
 
+  width: 100%;
   height: fit-content;
+
+  margin-top: 10px;
 }
 
 .nav-header-sideBar > .Link {
   height: 100%;
+  width: 90%;
 }
 
 .nav-header-sideBar .link-page {
   position: relative;
   z-index: 0;
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
+  gap: 5px;
 
-  height: 41px;
-  width: 150px;
-  width: 155px;
+  font-weight: 600;
+
+  height: 35px;
+  width: 100%;
+
+  padding-left: 10px;
+  padding-bottom: 20px;
+  padding-top: 20px;
   
-  border-top: 3px solid var(--buttomBorderPage);
-  border-radius: 10px 10px 0px 0px;
+  border-radius: 8px;
   
   cursor: pointer;
   
@@ -39,11 +47,21 @@
 
   transition:  margin, 0.15s ease-in-out;
 
-  border-left: 1px solid var(--buttomBorderPage);
-  border-right: 1px solid var(--buttomBorderPage);
 }
 
-.nav-header-sideBar .link-page:hover {
+.nav-header-sideBar .link-page:hover{
+  background-color: #FFF2E6;
+}
+
+.nav-header-sideBar .link-page:hover > span{
+  color: #FB544E;
+}
+
+/* .nav-header-sideBar .link-page:hover > span{
+  color: #FB544E;
+} */
+
+/* .nav-header-sideBar .link-page:hover {
   background-color: rgba(255, 241, 227, 0.688);
 
   border-right: 1px solid rgba(251, 84, 78, 0.3);
@@ -56,19 +74,19 @@
   transform: scale(1.03);
 
 }
-
+ */
 /* classes de animações de scrolls */
 
 #homeAnimation_sideBar, #certificationsAnimation_sideBar, 
 #skillsAnimation_sideBar, #projectsAnimation_sideBar, 
 #experiencesAnimation_sideBar, #contactAnimation_sideBar {
-  background-color: rgba(255, 241, 227, 0.688);
 
-  border-right: 1px solid rgba(251, 84, 78, 0.3);
-  border-left: 1px solid rgba(251, 84, 78, 0.3);
-  border-top: 3px solid rgba(251, 84, 78, 0.3);
+  background-color: #FFF2E6;
 
-  font-weight: 500;
+}
 
-  transform: scale(1.03);
+#homeAnimation_sideBar > span, #certificationsAnimation_sideBar > span, 
+#skillsAnimation_sideBar > span, #projectsAnimation_sideBar > span, 
+#experiencesAnimation_sideBar > span, #contactAnimation_sideBar > span{
+  color: #FB544E;
 }
