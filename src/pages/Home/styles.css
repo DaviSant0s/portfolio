@@ -34,6 +34,9 @@
 
   line-height: 100%;
   color: #3C3B3B;
+
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .home-content > p {

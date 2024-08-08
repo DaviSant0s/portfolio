@@ -1,4 +1,5 @@
-import './styles.css'
+import { Link } from 'react-scroll';
+import './styles.css';
 
 export default function SocialsGroup() {
   return (
@@ -15,9 +16,10 @@ export default function SocialsGroup() {
           <i className='bx bxl-whatsapp'/>
         </a>
 
-        <a href="https://api.whatsapp.com/send/?phone=53999322366&text=Ol%C3%A1%2C%20tudo%20bem%20?" target='_blank'>
+        <Link to='id_contact'  smooth={true} offset={-79} duration={700} >
           <i className='bx bxl-gmail'></i>
-        </a>
+        </Link>
+
     </div>
   )
 }
