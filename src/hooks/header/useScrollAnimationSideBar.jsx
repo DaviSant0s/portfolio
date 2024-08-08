@@ -217,10 +217,6 @@ export default function useScrollAnimationSideBar() {
       }
     }
 
-
-
-
-
     document.addEventListener('scroll', animationHeader);
 
     // ouvintes de cliques para cada botão

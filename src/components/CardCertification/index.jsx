@@ -1,6 +1,7 @@
 import './styles.css';
 import ModalCertification from '../ModalCertification';
 import { useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
 
 export default function CardCertification(
   {
@@ -20,9 +21,11 @@ export default function CardCertification(
 
   const [ isOpen, setIsOpen ] = useState(false);
 
+  const miniMobile = useMediaQuery({query: '(max-width: 390px)'});
+
   
   return (
-    <>
+    <div className='conatiner-certification-total'>
       <div className='for-background-status'>
 
         <div style={status ? {backgroundColor: '#348C34'} : {backgroundColor: '#b9b85c'}} className='background-diagonal'></div>
@@ -34,16 +37,20 @@ export default function CardCertification(
             </div>
           </div>
           <div className='cardCertification-content'>
-            <div className='image-container-cardCertification'>
-              <div className='image-content-cardCertification'>
-                {img &&
-                  <img style={style_icone} src={img} alt="" />
-                }
-                {!img &&
-                  <i style={style_icone} className={icon} />
-                }
+            {!miniMobile && 
+
+              <div className='image-container-cardCertification'>
+                <div className='image-content-cardCertification'>
+                  {img &&
+                    <img style={style_icone} src={img} alt="" />
+                  }
+                  {!img &&
+                    <i style={style_icone} className={icon} />
+                  }
+                </div>
               </div>
-            </div>
+
+            }
             <div className='description-cardCertification-container'>
               <h1 style={style_title}>{name}</h1>
               <div className='description'>{description}</div>
@@ -67,9 +74,9 @@ export default function CardCertification(
                     <span className="material-symbols-outlined">ios_share</span>
                   </div>
                 </a>
-                <div onClick={() => setIsOpen(true)} className='view-btn'>
+                {/* <div onClick={() => setIsOpen(true)} className='view-btn'>
                   <p>Ementa</p>
-                </div>
+                </div> */}
                 
               </div>
             </div>
@@ -78,6 +85,6 @@ export default function CardCertification(
       </div>
 
       <ModalCertification isOpen={isOpen} setIsOpen={setIsOpen} status={status}/>
-    </>
+    </div>
   )
 }

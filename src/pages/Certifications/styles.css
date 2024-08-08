@@ -1,8 +1,6 @@
 .certifications-container{
   background-color: #f9fafb;
   position: relative;
-
-  
 }
 
 .certifications-content {
@@ -11,9 +9,9 @@
   flex-direction: column;
   
   color: #595554;
-  
-  padding-left: calc((100vw - 1300px) / 2 );
-  padding-right: calc((100vw - 1300px) / 2 );
+
+  width: var(--sectionWidth);
+  margin: auto;
   
   padding-top: 20px;
 }
@@ -98,16 +96,37 @@
 
 /* media queries */
 
-@media screen and (max-width: 1115px){
+/* responsividade da largura da seção */
+@media screen and (max-width: 1330px){
+
+  .certifications-content {
+    width: 95%;
+  }
+
+}
+
+@media screen and (max-width: 1190px){
   .cards-certifications-grid {
     width: 740px;
     grid-template-columns: 350px 350px;
   }
 }
 
-@media screen and (max-width: 745px){
+@media screen and (max-width: 790px){
   .cards-certifications-grid {
     width: 370px;
     grid-template-columns: 350px;
+  }
+}
+
+/* responsividade para os cards quando tiver no celular pequeno */
+@media screen and (max-width: 390px){
+  .cards-certifications-grid {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    padding-right: 10px;
   }
 }
