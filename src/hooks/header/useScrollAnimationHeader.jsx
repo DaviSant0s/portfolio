@@ -31,6 +31,9 @@ export default function useScrollAnimationHeader() {
     // função que aplica as animações
     const animationHeader = () => {
 
+      //reseta foco padrão
+      home.classList.remove('default-focus-header');
+
       // posição do mouse
       const position = window.scrollY;
 

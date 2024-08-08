@@ -32,7 +32,7 @@ export default function Logo({ sideBar=false }) {
         }
 
       <div  className='container-title-logo'>
-        <h1/*  style={{fontSize: '2em'}} */>Portfólio</h1>
+        <h1>Portfólio</h1>
         <span>Davi Santos</span>
       </div>
     </div>

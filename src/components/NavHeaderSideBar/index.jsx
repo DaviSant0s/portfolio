@@ -19,10 +19,10 @@ export default function NavHeaderSideBar() {
 
       <Link to='id_home' smooth={true} offset={-80} className='Link'>
         <div 
-          className='home_sideBar link-page'
+          className='home_sideBar link-page default-focus-sidebar'
           onClick={handleClickCloseSideBar}
         >
-          <span class="material-symbols-outlined">home</span>
+          <span className="material-symbols-outlined">home</span>
           <span>Início</span>
           </div>
       </Link>
@@ -32,7 +32,7 @@ export default function NavHeaderSideBar() {
           className='certifications_sideBar link-page'
           onClick={handleClickCloseSideBar}
         >
-          <span class="material-symbols-outlined">verified</span>
+          <span className="material-symbols-outlined">verified</span>
           <span>Certificações</span>
           </div>
       </Link>
@@ -42,7 +42,7 @@ export default function NavHeaderSideBar() {
           className='skills_sideBar link-page'
           onClick={handleClickCloseSideBar}
         >
-          <span class="material-symbols-outlined">emoji_objects</span>
+          <span className="material-symbols-outlined">emoji_objects</span>
           <span>Habilidades</span>
         </div>
       </Link>
@@ -52,7 +52,7 @@ export default function NavHeaderSideBar() {
           className='projects_sideBar link-page'
           onClick={handleClickCloseSideBar}
         >
-          <span class="material-symbols-outlined">folder_open</span>
+          <span className="material-symbols-outlined">folder_open</span>
           <span>Projetos</span>
         </div>
       </Link>
@@ -62,7 +62,7 @@ export default function NavHeaderSideBar() {
           className='experiences_sideBar link-page'
           onClick={handleClickCloseSideBar}
         >
-          <span class="material-symbols-outlined">badge</span>
+          <span className="material-symbols-outlined">badge</span>
           <span>Experiências</span>
         </div>
       </Link>
@@ -72,7 +72,7 @@ export default function NavHeaderSideBar() {
           className='contact_sideBar link-page'
           onClick={handleClickCloseSideBar}
         >
-          <span class="material-symbols-outlined">contact_page</span>
+          <span className="material-symbols-outlined">contact_page</span>
           <span>Contato</span>
         </div>
       </Link>

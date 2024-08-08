@@ -27,6 +27,17 @@ export default function Home() {
 
 
         <p>
+          Seja bem-vindo ao meu espaço virtual, onde compartilho minhas experiências, projetos e as mais recentes descobertas no mundo da tecnologia.
+        </p>
+
+       {/* {!mobile &&
+
+          <p>
+            Estou sempre buscando novos aprendizados  e desafios para crescer profissionalmente, assim, estando em constante evolução.
+          </p>
+        
+        } */}
+        {/* <p>
           Meu nome é <strong>Davi Santos</strong>, tenho 24 anos, sou uma pessoa 
           bastante dedicada aos estudos, focado e sempre aprendendo 
           coisas novas relacionadas à programação, engenharia e desenvolvimento pessoal. 
@@ -38,7 +49,7 @@ export default function Home() {
             Estou sempre buscando novos aprendizados  e desafios para crescer profissionalmente, assim, estando em constante evolução.
           </p>
         
-        }
+        } */}
 
 
         <SocialsGroup/>

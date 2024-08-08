@@ -34,6 +34,7 @@ export default function Skills() {
           <SkillsCard name={'git'} image={git}/>
           <SkillsCard name={'github'} image={github} style_image={{width: '60px'}}/>
           <SkillsCard name={'wordpress'} image={wordpress} style_image={{width: '60px'}}/>
+          <SkillsCard name={'wordpress'} image={wordpress} style_image={{width: '60px'}}/>
 
       </div>
     </div>

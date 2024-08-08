@@ -23,10 +23,8 @@ export default function SideBar({ menuEnabled, setMenuEnabled }) {
   }, [menuEnabled])
 
   const handeClickSideBarOut = (e) => {
-    console.log(menuEnabled)
     if(!sideBar_Ref.current.contains(e.target)) {
       setMenuEnabled(false)
-      console.log(menuEnabled)
     }
   }
 

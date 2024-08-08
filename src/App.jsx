@@ -17,8 +17,11 @@ import './App.css';
 import CarouselProvider from './context/CarrouselContext';
 import CertificationsProvider from './context/CertificationsContext';
 import SideBarProvider from './context/SideBarContext';
+import { useMediaQuery } from 'react-responsive';
 
 function App() {
+
+  const isTabletOrMobile = useMediaQuery({query: '(max-width: 1100px)'});
 
   return (
     <div className='app-container'>
@@ -29,7 +32,11 @@ function App() {
           <Headers/>
         </SideBarProvider>
 
-        <FloatingButtons/>
+        {!isTabletOrMobile &&
+        
+          <FloatingButtons/>
+        
+        }
         <div className='body-container'>
           <ToastContainer />
          <Home/>

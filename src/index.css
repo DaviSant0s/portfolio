@@ -98,3 +98,22 @@ h2 {
   animation-iteration-count: 1;
 
 }
+
+/*foco padrão da sidebar*/
+.default-focus-sidebar{
+  background-color: #FFF2E6;
+}
+
+.default-focus-sidebar > span{
+  color: #FB544E;
+}
+
+/*foco padrão do header*/
+.default-focus-header{
+  background-color: rgba(255, 241, 227, 0.688); 
+  border-right: 1px solid rgba(251, 84, 78, 0.3);
+  border-left: 1px solid rgba(251, 84, 78, 0.3);
+  border-top: 3px solid rgba(251, 84, 78, 0.3) !important;
+
+  margin-right: 5px !important;
+}

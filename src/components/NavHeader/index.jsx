@@ -11,7 +11,7 @@ export default function NavHeader({ styles={} }) {
 
       <Link to='id_home' smooth={true} offset={-80} className='Link'>
         <div 
-          className='home link-page'
+          className='home link-page default-focus-header'
         >Início</div>
       </Link>
 

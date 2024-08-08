@@ -31,6 +31,9 @@ export default function useScrollAnimationSideBar() {
     // função que aplica as animações
     const animationHeader = () => {
 
+      //reseta foco padrão
+      home.classList.remove('default-focus-sidebar');
+
       // posição do mouse
       const position = window.scrollY;
 
