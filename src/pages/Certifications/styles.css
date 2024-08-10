@@ -116,6 +116,12 @@
   .cards-certifications-grid {
     width: 370px;
     grid-template-columns: 350px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    width: 200px;
   }
 }
 
@@ -128,5 +134,11 @@
     gap: 20px;
 
     padding-right: 10px;
+  }
+}
+
+@media screen and (max-width: 280px){
+  .cards-certifications-grid{
+    min-width: 260px;
   }
 }
