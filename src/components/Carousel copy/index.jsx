@@ -7,7 +7,6 @@ import { useCarousel } from '../../context/CarrouselContext/index.jsx';
 import './styles.css';
 import { useMediaQuery } from 'react-responsive';
 import CarouselChangeMobile from '../CarouselChangeMobile/index.jsx';
-import ArrowSlide from '../ArrowSlide/index.jsx';
 
 
 // gap entre os cards
@@ -18,19 +17,9 @@ export default function Carousel() {
   const mobileOrTablet_max_1020px = useMediaQuery({query: '(max-width: 1020px)'});
   const mobileOrTablet_min_1020px = useMediaQuery({query: '(min-width: 1021px)'});
   const mobile_max_690px = useMediaQuery({query: '(max-width: 690px)'});
-  const miniMobile_min_450px = useMediaQuery({query: '(min-width: 450px)'});
-  const miniMobile_max_450px = useMediaQuery({query: '(max-width: 450px)'});
-  const miniMobile_max_440px = useMediaQuery({query: '(max-width: 440px)'});
-  const miniMobile_max_430px = useMediaQuery({query: '(max-width: 430px)'});
-  const miniMobile_max_420px = useMediaQuery({query: '(max-width: 420px)'});
-  const miniMobile_max_410px = useMediaQuery({query: '(max-width: 410px)'});
-  const miniMobile_max_400px = useMediaQuery({query: '(max-width: 400px)'});
-  const miniMobile_max_390px = useMediaQuery({query: '(max-width: 390px)'});
-  const miniMobile_max_380px = useMediaQuery({query: '(max-width: 380px)'});
-  const miniMobile_max_370px = useMediaQuery({query: '(max-width: 370px)'});
+  const miniMobile_min_360px = useMediaQuery({query: '(min-width: 360px)'});
   const miniMobile_max_360px = useMediaQuery({query: '(max-width: 360px)'});
-  const miniMobile_max_350px = useMediaQuery({query: '(max-width: 350px)'});
-  const miniMobile_max_340px = useMediaQuery({query: '(max-width: 340px)'});
+  const miniMobile_max_310px = useMediaQuery({query: '(max-width: 310px)'});
 
   /* fim */
 
@@ -188,72 +177,22 @@ export default function Carousel() {
       setNumberVisibleCards(s => 1)
     }
 
-    // diminui a largura para 290px
-    if(miniMobile_max_450px){
-      setCardSize_width(s => 290)
-    }
-    
-    // diminui a largura para 280px
-    if(miniMobile_max_440px){
-      setCardSize_width(s => 280)
-    }
-
-    // diminui a largura para 270px
-    if(miniMobile_max_430px){
-      setCardSize_width(s => 270)
-    }
-
-    // diminui a largura para 260px
-    if(miniMobile_max_420px){
-      setCardSize_width(s => 260)
-    }
-
     // diminui a largura para 250px
-    if(miniMobile_max_410px){
+    if(miniMobile_max_360px){
       setCardSize_width(s => 250)
     }
-
-    // diminui a largura para 240px
-    if(miniMobile_max_400px){
-      setCardSize_width(s => 240)
-    }
-
-    // diminui a largura para 230px
-    if(miniMobile_max_390px){
-      setCardSize_width(s => 230)
-    }
-    // diminui a largura para 220px
-    if(miniMobile_max_380px){
-      setCardSize_width(s => 220)
-    }
-
-    // diminui a largura para 210px
-    if(miniMobile_max_370px){
-      setCardSize_width(s => 210)
-    }
-
+    
     // diminui a largura para 200px
-    if(miniMobile_max_360px){
+    if(miniMobile_max_310px){
       setCardSize_width(s => 200)
     }
-
-    // diminui a largura para 190px
-    if(miniMobile_max_350px){
-      setCardSize_width(s => 190)
-    }
-    // diminui a largura para 180px
-    if(miniMobile_max_340px){
-      setCardSize_width(s => 180)
-    }
-
-    
     
     // volta a largura para para a largura original
-    if(miniMobile_min_450px) {
+    if(miniMobile_min_360px) {
       setCardSize_width(s => 300)
     }
 
-  }, [mobileOrTablet_max_1020px, mobileOrTablet_min_1020px, mobile_max_690px, miniMobile_max_450px, miniMobile_min_450px, miniMobile_max_440px, miniMobile_max_430px, miniMobile_max_420px, miniMobile_max_410px, miniMobile_max_400px, miniMobile_max_390px, miniMobile_max_380px, miniMobile_max_370px, miniMobile_max_360px, miniMobile_max_350px, miniMobile_max_340px])
+  }, [mobileOrTablet_max_1020px, mobileOrTablet_min_1020px, mobile_max_690px, miniMobile_max_360px, miniMobile_min_360px, miniMobile_max_310px])
 
   
   return (
@@ -281,34 +220,20 @@ export default function Carousel() {
         />
       }
 
-      <div className='carousel-content'>
+      <div ref={Ref_wrapperCarousel} className='wrapper-carousel' style={{width: `${carouselWidth}px`}}>
 
-        {mobile_max_690px &&
-          <>
-            <div className='left_arrow_change'>
-              <ArrowSlide direction='left' func_handle={handleClickScrollToLeft} style={arrowStyleLeft}/>
-            </div>
-
-            <div className='right_arrow_change'>
-              <ArrowSlide direction='right' func_handle={handleClickScrollToRight} style={arrowStyleRight}/>
-            </div>
-          </>
-        }
-
-        <div ref={Ref_wrapperCarousel} className='wrapper-carousel' style={{width: `${carouselWidth}px`, height: `${cardSize_height}px`}}>
-          {toggleData.map((project, index) => (
-            <div key={index}>
-              <CarouselCard
-                img={project.img}
-                stacks={project.stacks}
-                link={project.link}
-                github={project.github}
-                name={project.name}
-              />
-            </div>
-          ))}
-        
-        </div>
+        {toggleData.map((project, index) => (
+          <div key={index}>
+            <CarouselCard
+              img={project.img}
+              stacks={project.stacks}
+              link={project.link}
+              github={project.github}
+              name={project.name}
+            />
+          </div>
+        ))}
+          
       </div>
     </div>
   )

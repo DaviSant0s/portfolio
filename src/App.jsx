@@ -28,9 +28,9 @@ function App() {
 
       <HeaderProvider>
 
-        <SideBarProvider>
+        {/* <SideBarProvider>
           <Headers/>
-        </SideBarProvider>
+        </SideBarProvider> */}
 
         {!isTabletOrMobile &&
         
@@ -39,24 +39,25 @@ function App() {
         }
         <div className='body-container'>
           <ToastContainer />
-         <Home/>
 
-            <CertificationsProvider>
+          <Home/>
+
+          {/* <CertificationsProvider>
             <Certifications/>
-          </CertificationsProvider>
+          </CertificationsProvider> */}
           
 
-          <Skills/>
+          {/* <Skills/> */}
 
           <CarouselProvider>
             <Projects/>
           </CarouselProvider>
           
-          <Experience/>
-          <Contact/>
+          {/* <Experience/>
+          <Contact/> */}
         </div>
 
-        <Footer/>
+        {/* <Footer/> */}
       </HeaderProvider>
 
     </div>

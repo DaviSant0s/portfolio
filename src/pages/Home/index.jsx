@@ -6,7 +6,6 @@ import { useMediaQuery } from 'react-responsive';
 export default function Home() {
 
   const mobileOrTablet = useMediaQuery({query: '(max-width: 661px)'});
-  const mobile = useMediaQuery({query: '(max-width: 535px)'});
 
   return (
     <div id='id_home' className='home-container defaultHome'>

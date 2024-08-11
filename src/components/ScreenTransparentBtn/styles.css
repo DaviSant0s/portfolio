@@ -16,7 +16,7 @@
   background-color: rgba(0, 0, 0, 0.444);
   backdrop-filter: blur(10px);
 
-  height: 0;
+  height: 100%;
   opacity: 1;
   transition: all .5s ease;
 
@@ -26,34 +26,42 @@
 .screenTransparentTabletBtn > h1 {
   color: white;
   font-family: sora;
-  font-size: 1.3em;
-  margin-bottom: 5px;
   text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.317);
 }
 
 
 /* botão */
 
-.screenTransparentTabletBtn > a > button {
-  padding-top: 5px;
-  padding-bottom: 5px;
+.screenTransparentTabletBtn > button {
 
   width: 130px;
+  height: 28.4px;
 
   background-color: #ffffff10;
-  color: white;
-  font-weight: 400;
-
-  border: 2px solid #ffffff30;
+  
   border: 1px solid #ffffff76;
   border-radius: 3px;
-
+  
   transition: all .3s ease;
   cursor: pointer;
-
+  
 }
 
-.screenTransparentTabletBtn > a > button:hover {
+.screenTransparentTabletBtn > button > a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-decoration: none;
+  font-weight: 400;
+  line-height: 100%;
+  color: white;
+
+  height: 100%;
+  width: 100%;
+}
+
+.screenTransparentTabletBtn > button:hover {
   transform: scale(1.05);
   background-color: #ffffff1d;
 }
@@ -64,24 +72,20 @@
 .screenTransparentTabletBtn > .technologies-container {
   display: flex;
   align-items: center;
-
   gap: 5px;
-  margin-top: 10px;
-
   height: fit-content;
 
 }
 
 .screenTransparentTabletBtn .technologies-background {
   width: fit-content;
-  height: 20px;
-  border-radius: 3px;
+  height: fit-content;
   filter: drop-shadow(0px 0px 10px rgba(76, 76, 76, 0.722));
 
   overflow: hidden;
 }
 
 .screenTransparentTabletBtn .technologies-background > img{
-  height: 100%;
+  height: 20px;
   object-fit: cover;
 }

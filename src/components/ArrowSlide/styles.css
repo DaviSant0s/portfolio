@@ -1,0 +1,24 @@
+.arrowSlide-container{
+  width: fit-content;
+  height: fit-content;
+
+  transition: transform .3s ease;
+}
+
+.arrowSlide-container:hover{
+  transform: scale(1.1);
+}
+
+.arrowSlide{
+  border: 2px solid #FB544E;
+  border-radius: 50px;
+  
+  font-weight: 200;
+  font-size: 1.8em;
+  color: #FB544E;
+
+  cursor: pointer;
+
+  -webkit-user-select: none;
+  user-select: none;
+}

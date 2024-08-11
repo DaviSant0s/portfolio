@@ -2,14 +2,9 @@
   position: relative;
   width: 950px;
 
-  /* background-color: green; */
+  background-color: green;
 }
 
-.carousel-content{
-  position: relative;
-  width: 100%;
-  /* background-color: blue; */
-}
 .wrapper-carousel {
   display: flex;
   flex-direction: row;
@@ -27,7 +22,7 @@
     scrollbar-width: none;
     height: 380px;
 
-  /* background-color: yellow; */
+  background-color: yellow;
 }
 
 .wrapper-carousel::-webkit-scrollbar {
@@ -36,23 +31,4 @@
 
 .noSmooth {
   scroll-behavior: auto;
-}
-
-
-/* para tela mobile */
-
-.left_arrow_change, .right_arrow_change{
-  position: absolute;
-  z-index: 9999999999999999999999999999999999999999999;
-  top: 50%;
-
-  transform: translateY(-50%)
-}
-
-.left_arrow_change{
-  left: -40px;
-}
-
-.right_arrow_change{
-  right: -40px;
 }

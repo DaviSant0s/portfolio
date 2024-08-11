@@ -8,6 +8,8 @@
 
   margin-top: var(--heightHeaderScroll);
 
+  /* background-color: #4efb57; */
+
 }
 
 .home-content {
@@ -24,6 +26,8 @@
   padding-right: 10px;
 
   margin: auto;
+
+  /* background-color: aqua; */
 }
 
 .home-content h1 {

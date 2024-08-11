@@ -18,6 +18,10 @@
   bottom: 8px;
   left: 6px;
   right: 7px;
+  /* top: 8px;
+  bottom: 8px;
+  left: 6px;
+  right: 7px; */
 
   border-radius: 8px;
   background-color: black;
@@ -38,7 +42,8 @@
   border-radius: 9px;
 
   background-color: transparent;
-  border: 1px solid black;
+  border: 2px solid black;
+  outline: 2px solid black;
   
   pointer-events: none;
 }

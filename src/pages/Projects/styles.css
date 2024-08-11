@@ -1,14 +1,26 @@
 .projects-container {
+  
+  background-color: #f9fafb;
+  
+  /* background-color: red; */
+}
+
+.projects-content{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  background-color: #f9fafb;
-  
+  width: var(--sectionWidth);
+  margin: auto;
+
+  overflow: auto;
+
+  /* background-color: rgb(207, 207, 207); */
+
 }
 
-.projects-container > h1 {
+.projects-content > h1 {
   line-height: 100%;
   margin-bottom: 40px;
 }
@@ -19,5 +31,12 @@
   margin-top: 70px;
 }
 
+@media screen and (max-width: 1330px){
+
+  .projects-content {
+    width: 95%;
+  }
+
+}
 
 
