@@ -25,10 +25,29 @@
   margin-bottom: 40px;
 }
 
+.carousel-and-githubCalendar-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 70px;
+
+  width: fit-content;
+
+  /* background-color: aqua; */
+}
+
 .gitHubCalendar-container {
   display: flex;
   justify-content: center;
-  margin-top: 70px;
+
+  width: 100%;
+
+}
+
+.gitHubCalendar-container svg{
+  width: 100%;
+  height: auto;
 }
 
 @media screen and (max-width: 1330px){

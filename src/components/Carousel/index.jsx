@@ -38,6 +38,8 @@ export default function Carousel() {
   
   const {toggleData} = useCarousel();
   const {cardSize_width, setCardSize_width, cardSize_height} = useCarousel();
+
+  const { setWidthCarrouselGlobal } = useCarousel();
   
   /* fim */
 
@@ -93,6 +95,8 @@ export default function Carousel() {
 
   const defineNumbercardsVisible = () => {
    const width = 20 + (numberVisibleCards * cardWidth) + (numberVisibleCards * gap);
+   // atualiza no contexto global para outras partes saberem a largura do carrossel
+   setWidthCarrouselGlobal(width)
    return width;
   }
 

@@ -21,6 +21,8 @@ export default function CarouselProvider({ children }) {
   const [ cardSize_width, setCardSize_width ] = useState(width)
   const [ cardSize_height, setCardSize_height ] = useState(height)
 
+  const [ widthCarrouselGlobal, setWidthCarrouselGlobal ] = useState(0);
+
   useEffect(() => {
     if(toggleCarousel === 'frontend'){
       setToggleData(s => data.dataFrontend)
@@ -47,7 +49,9 @@ export default function CarouselProvider({ children }) {
         toggleCarousel, setToggleCarousel,
         toggleData,
         cardSize_width, setCardSize_width,
-        cardSize_height, setCardSize_height
+        cardSize_height, setCardSize_height,
+        
+        widthCarrouselGlobal, setWidthCarrouselGlobal
       }}>
       {children}
     </GlobalCarouselContext.Provider>
