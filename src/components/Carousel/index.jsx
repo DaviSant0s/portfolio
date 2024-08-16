@@ -8,6 +8,7 @@ import './styles.css';
 import { useMediaQuery } from 'react-responsive';
 import CarouselChangeMobile from '../CarouselChangeMobile/index.jsx';
 import ArrowSlide from '../ArrowSlide/index.jsx';
+import CountCardsCarousel from '../CountCardsCarousel/index.jsx';
 
 
 // gap entre os cards
@@ -311,9 +312,13 @@ export default function Carousel() {
               />
             </div>
           ))}
+
         
         </div>
       </div>
+      {mobile_max_690px &&
+        <CountCardsCarousel views={views} totalViews={totalViews}/>
+      }
     </div>
   )
 }

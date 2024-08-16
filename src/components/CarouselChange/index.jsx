@@ -37,7 +37,7 @@ export default function CarouselChange({ views, totalViews, handleClickScrollToL
           className={`${toggleCarousel === 'frontend' ? 'selected' : 'notSelected'}`}
           onClick={() => handleClickToggleCarousel('frontend')}
           >
-            Frontend
+            frontend
             <div></div>
           </h1>
 
@@ -45,7 +45,7 @@ export default function CarouselChange({ views, totalViews, handleClickScrollToL
           className={`${toggleCarousel === 'backend' ? 'selected' : 'notSelected'}`}
           onClick={() => handleClickToggleCarousel('backend')}
           >
-            Backend
+            backend
             <div></div>
           </h1>
 
@@ -53,7 +53,7 @@ export default function CarouselChange({ views, totalViews, handleClickScrollToL
           className={`${toggleCarousel === 'fullstack' ? 'selected' : 'notSelected'}`}
           onClick={() => handleClickToggleCarousel('fullstack')}
           >
-            Fullstack
+            fullstack
             <div></div>
           </h1>
 

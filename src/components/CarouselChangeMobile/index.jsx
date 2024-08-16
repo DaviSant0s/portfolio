@@ -1,13 +1,12 @@
-import { useMediaQuery } from 'react-responsive';
 import { useCarousel } from '../../context/CarrouselContext';
 import './styles.css';
+import BtnFilterSlide from '../BtnFilterSlide';
 
-export default function CarouselChangeMobile({ views, totalViews, handleClickScrollToLeft,    handleClickScrollToRight, arrowStyleLeft, arrowStyleRight}) {
-
-  // responsividade
-  const mobile_max_690px = useMediaQuery({query: '(max-width: 690px)'});
+export default function CarouselChangeMobile() {
 
   const { toggleCarousel, setToggleCarousel } = useCarousel();
+
+  const {cardSize_width} = useCarousel();
 
   const handleClickToggleCarousel = (carouselName) => {
     if(carouselName === 'frontend'){
@@ -28,43 +27,30 @@ export default function CarouselChangeMobile({ views, totalViews, handleClickScr
   }
 
   return (
-    <div className='carouselChange-container'>
-      {/* <div className='optionsSlides-container'>
-        <div className='optionsSlides'>
+    <div className='carouselChangeMobile-container'>
+      <BtnFilterSlide 
+        fontSize={11.2 * cardSize_width/300}
+        handleClick={handleClickToggleCarousel}
+        filterName='frontend'
+        selected={toggleCarousel === 'frontend' ? true : false}>
+        Frontend
+      </BtnFilterSlide>
 
-          <h1 
-          className={`${toggleCarousel === 'frontend' ? 'selected' : 'notSelected'}`}
-          onClick={() => handleClickToggleCarousel('frontend')}
-          >
-            Frontend
-            <div></div>
-          </h1>
-
-          <h1 
-          className={`${toggleCarousel === 'backend' ? 'selected' : 'notSelected'}`}
-          onClick={() => handleClickToggleCarousel('backend')}
-          >
-            Backend
-            <div></div>
-          </h1>
-
-          <h1 
-          className={`${toggleCarousel === 'fullstack' ? 'selected' : 'notSelected'}`}
-          onClick={() => handleClickToggleCarousel('fullstack')}
-          >
-            Fullstack
-            <div></div>
-          </h1>
-
-        </div>
-      </div>
-      <div className='btns-carouselChange-container'>
-        <span className='count-cards'>{views} de {totalViews}</span>
-        <div className='btns-carouselChange'>
-          
-
-        </div>
-      </div> */}
+      <BtnFilterSlide
+        fontSize={11.2 * cardSize_width/300}
+        handleClick={handleClickToggleCarousel}
+        filterName='backend'
+        selected={toggleCarousel === 'backend' ? true : false}>
+        Backend
+      </BtnFilterSlide>
+      
+      <BtnFilterSlide
+        fontSize={11.2 * cardSize_width/300}
+        handleClick={handleClickToggleCarousel}
+        filterName='fullstack'
+        selected={toggleCarousel === 'fullstack' ? true : false}>
+        Fullstack
+      </BtnFilterSlide>
     </div>
   )
 }

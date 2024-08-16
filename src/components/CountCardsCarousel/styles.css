@@ -1,0 +1,10 @@
+.countCardsCarousel-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-weight: bold;
+  color: #3e3d3d;
+  
+  margin-top: 10px;
+}
