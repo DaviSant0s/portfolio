@@ -1,4 +1,8 @@
 .experience-container {
+  background-color: white;
+}
+
+.experience-content{
   position: relative;
   display: flex;
   flex-direction: column;
@@ -6,11 +10,8 @@
   align-items: center;
   padding-top: 20px;
 
-  background-color: white;
-}
-
-.experience-content{
   width: var(--sectionWidth);
+  margin: auto;
 }
 
 
