@@ -8,18 +8,32 @@
 
   background-color: white;
 }
-.experience-container > h1 {
+
+.experience-content{
+  width: var(--sectionWidth);
+}
+
+
+.experience-container > .experience-content > h1 {
   text-align: center;
   line-height: 100%;
   margin-bottom: 40px;
 }
 
-.experience-container > .experience-content {
+.experience-container .experiences {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 
   background-color: transparent;
+}
+
+@media screen and (max-width: 1330px){
+
+  .experience-content {
+    width: 95%;
+  }
+
 }
 

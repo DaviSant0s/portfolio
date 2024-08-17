@@ -3,13 +3,11 @@
 
   padding-left: 35px;
 
-  width: fit-content;
+  width: 100%;
   height: fit-content;
 
   border-left: 2px solid #fb544eab;
   padding-bottom: 10px;
-
-  background-color: transparent;
 }
 
 .icon-card-experience {

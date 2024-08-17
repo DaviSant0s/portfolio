@@ -1,6 +1,5 @@
 .experienceContainer-container {
-  width: fit-content;
-  background-color: transparent;
+  width: 556.6px;
 }
 
 .experienceContainer-container > h2 {
@@ -10,7 +9,7 @@
 }
 
 .timeline-experienceContainer {
-  width: fit-content;
+  width: 100%;
   padding-left: 20px;
   margin-top: 20px;
 

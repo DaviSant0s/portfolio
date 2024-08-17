@@ -1,12 +1,13 @@
 .miniCardExp-container {
   width: 500px;
+  width: 100%;
   height: 200px;
   height: fit-content;
 
-  /* border: 2px solid #e8e8e8; */
   border-radius: 10px;
 
   background-color: #eef0f3;
+
 }
 
 .exp-details-container{
@@ -24,7 +25,6 @@
 
   height: 100%;
   width: 100%;
-  /* background-color: rgba(200, 31, 31, 0.169); */
 }
 
 .exp-duration, .exp-name-institution, .exp-description {
@@ -88,4 +88,11 @@
 
   color: #E36209;
   line-height: 100%;
+}
+
+
+@media screen and (max-width: 500px) {
+  .exp-details-logo{
+    display: none;
+  }
 }
