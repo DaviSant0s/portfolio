@@ -161,53 +161,57 @@ export default function Contact() {
               placeholder='Sua mensagem...'/>
             </div>
 
+            <button 
+              className='btn-submit-form-contact' 
+              type="submit" 
+              form='form-contact'>{removeLoading ? <Loading/> : 'Enviar' }
+            </button>
+
           </form>
           <div className='social-container-contact'>
 
-            <div className='email-social-contact social-contact'>
-              <img src={gmail} alt="" />
-              <span>E-mail</span>
-              <p>
-                daviir17@gmail.com
-                <span
-            
-                  onClick={() => handleContactCopy('email')}
-                  className="material-symbols-outlined copy-icon-contact"
-                >
-                  {!contactCopiedGmail &&
-                    'content_copy'
-                  }
-                  {contactCopiedGmail &&
-                    'check'
-                  }
-                </span>
-              </p>
-            </div>
-            <div className='whatsapp-social-contact social-contact'>
-              <img src={whatsapp} alt="" />
-              <span>Whatsapp</span>
-              <p>
-                (53) 99932-2366
-                <span
-                  onClick={() => handleContactCopy('whats')}
-                  className="material-symbols-outlined copy-icon-contact"
+            <div className='social-content-contact'>
+              <div className='email-social-contact social-contact'>
+                <img src={gmail} alt="" />
+                <span>E-mail</span>
+                <p>
+                  daviir17@gmail.com
+                  <span
+              
+                    onClick={() => handleContactCopy('email')}
+                    className="material-symbols-outlined copy-icon-contact"
                   >
-                  {!contactCopiedWhats &&
-                    'content_copy'
-                  }
-                  {contactCopiedWhats &&
-                    'check'
-                  }
-                </span>
-              </p>
+                    {!contactCopiedGmail &&
+                      'content_copy'
+                    }
+                    {contactCopiedGmail &&
+                      'check'
+                    }
+                  </span>
+                </p>
+              </div>
+              <div className='whatsapp-social-contact social-contact'>
+                <img src={whatsapp} alt="" />
+                <span>Whatsapp</span>
+                <p>
+                  (53) 99932-2366
+                  <span
+                    onClick={() => handleContactCopy('whats')}
+                    className="material-symbols-outlined copy-icon-contact"
+                    >
+                    {!contactCopiedWhats &&
+                      'content_copy'
+                    }
+                    {contactCopiedWhats &&
+                      'check'
+                    }
+                  </span>
+                </p>
+              </div>
             </div>
             
           </div>
         </div>
-        <button 
-          className='btn-submit-form-contact' 
-          type="submit" 
-          form='form-contact'>{removeLoading ? <Loading/> : 'Enviar' }</button>
       </div>
 
     </div>

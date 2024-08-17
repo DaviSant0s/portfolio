@@ -28,9 +28,9 @@ function App() {
 
       <HeaderProvider>
 
-        {/* <SideBarProvider>
+        <SideBarProvider>
           <Headers/>
-        </SideBarProvider> */}
+        </SideBarProvider>
 
         {!isTabletOrMobile &&
         
@@ -53,8 +53,8 @@ function App() {
             <Projects/>
           </CarouselProvider>
           
-          {/* <Experience/>
-          <Contact/> */}
+          <Experience/>
+          <Contact/>
         </div>
 
         <Footer/>

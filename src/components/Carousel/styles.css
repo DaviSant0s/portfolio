@@ -43,7 +43,7 @@
 
 .left_arrow_change, .right_arrow_change{
   position: absolute;
-  z-index: 9999999999999999999999999999999999999999999;
+  z-index: 9;
   top: 50%;
 
   transform: translateY(-50%)
