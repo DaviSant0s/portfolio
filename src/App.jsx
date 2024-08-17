@@ -42,12 +42,12 @@ function App() {
 
           <Home/>
 
-          {/* <CertificationsProvider>
+          <CertificationsProvider>
             <Certifications/>
-          </CertificationsProvider> */}
+          </CertificationsProvider>
           
 
-          {/* <Skills/> */}
+          <Skills/>
 
           <CarouselProvider>
             <Projects/>
@@ -57,7 +57,7 @@ function App() {
           <Contact/> */}
         </div>
 
-        {/* <Footer/> */}
+        <Footer/>
       </HeaderProvider>
 
     </div>

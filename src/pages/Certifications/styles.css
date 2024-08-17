@@ -1,12 +1,14 @@
 .certifications-container{
   background-color: #f9fafb;
   position: relative;
+
 }
 
 .certifications-content {
   position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   
   color: #595554;
 
@@ -14,6 +16,7 @@
   margin: auto;
   
   padding-top: 20px;
+
 }
 
 
@@ -36,6 +39,7 @@
   padding-top: 6px;
   padding-left: 10px;
   margin: auto;
+
 }
 
 
@@ -121,7 +125,6 @@
     flex-direction: column;
     gap: 20px;
 
-    width: 200px;
   }
 }
 

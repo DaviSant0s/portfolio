@@ -1,7 +1,5 @@
 .footer-container{
   width: 100%; 
-  padding-left: calc((100vw - 1300px) / 2 );
-  padding-right: calc((100vw - 1300px) / 2 );
   background-color: #e8ebed;
 }
 
@@ -12,8 +10,10 @@
   align-items: center;
   gap: 15px;
   
-  width: 100%;
-  height: 300px;
+  min-height: 300px;
+
+  width: var(--sectionWidth);
+  margin: auto;
 
 }
 
@@ -55,7 +55,9 @@
 
 .navigation-footer{
   display: flex;
+  align-items: center;
   gap: 15px;
+  height: fit-content;
 }
 
 .Link-footer > span {
@@ -72,4 +74,29 @@
 
 .author-footer{
   font-weight: 300;
+}
+
+@media screen and (max-width: 1330px){
+
+  .footer-content {
+    width: 95%;
+  }
+
+}
+
+@media screen and (max-width: 640px){
+
+  .footer-content {
+    padding: 40px 0 40px 0;
+  }
+
+  .navigation-footer{
+    flex-direction: column;
+  }
+
+  .author-footer{
+    margin-top: 20px;
+    margin-bottom: 0px;
+  }
+
 }
