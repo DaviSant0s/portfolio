@@ -20,6 +20,7 @@
   width: 100%;
 }
 
+
 @media screen and (max-width: 1115px){
   .filterField-container {
     width: 740px;
@@ -29,5 +30,18 @@
 @media screen and (max-width: 745px){
   .filterField-container {
     width: 370px;
+  }
+}
+
+@media screen and (max-width: 390px){
+  .filterField-container{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 280px){
+
+  .filterField-container{
+    min-width: 260px;
   }
 }

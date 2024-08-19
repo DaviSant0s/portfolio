@@ -37,7 +37,7 @@ export default function Certifications() {
           Certificações
         </h1>
 
-       {/*  <FilterField/> */}
+        <FilterField/>
 
         <div className={`cards-certifications-grid ${moreCardsBool ? 'cards-certifications-grid-viwMore-true' : 'cards-certifications-grid-viwMore-false'}`}
 

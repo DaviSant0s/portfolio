@@ -9,7 +9,7 @@ import estudonauta from '../../assets/companies/estudonauta.jpg';
 export const certifications = [
   {
     id: -2,
-    type: 'database',
+    type: 'banco de dados',
     status: false,
     name: 'Banco de Dados e SQL',
     icon: "bx bxl-javascript",
@@ -23,7 +23,7 @@ export const certifications = [
   },
   {
     id: -1,
-    type: 'back',
+    type: 'backend',
     status: false,
     name: 'Node.js',
     icon: "",
@@ -38,7 +38,7 @@ export const certifications = [
   
   {
     id: 0,
-    type: 'languages',
+    type: 'linguagens',
     status: true,
     name: 'Javascript',
     icon: "bx bxl-javascript",
@@ -52,7 +52,7 @@ export const certifications = [
   },
   {
     id: 1,
-    type: 'front',
+    type: 'frontend',
     status: true,
     name: 'React + Next.js',
     icon: "bx bxl-react",
@@ -66,7 +66,7 @@ export const certifications = [
   },
   {
     id: 2,
-    type: 'front',
+    type: 'frontend',
     status: true,
     name: 'HTML5 e CSS3',
     icon: "bx bxl-html5",
@@ -80,7 +80,7 @@ export const certifications = [
   },
   {
     id: 3,
-    type: 'back',
+    type: 'backend',
     status: true,
     name: 'Backend',
     icon: "bx bxl-nodejs",
@@ -94,7 +94,7 @@ export const certifications = [
   },
   {
     id: 4,
-    type: 'languages',
+    type: 'linguagens',
     status: true,
     name: 'Python',
     icon: "bx bxl-python",
@@ -110,7 +110,7 @@ export const certifications = [
   
   {
     id: 5,
-    type: 'others',
+    type: 'outros',
     status: true,
     name: 'git',
     icon: "bx bxl-git",
@@ -126,7 +126,7 @@ export const certifications = [
 
   {
     id: 6,
-    type: 'others',
+    type: 'outros',
     status: true,
     name: 'git',
     icon: "bx bxl-git",
@@ -142,7 +142,7 @@ export const certifications = [
 
   {
     id: 7,
-    type: 'front',
+    type: 'frontend',
     status: true,
     name: 'React',
     icon: "bx bxl-react",
@@ -157,7 +157,7 @@ export const certifications = [
   },
   {
     id: 8,
-    type: 'others',
+    type: 'outros',
     status: true,
     name: 'Git + GitHub',
     icon: "bx bxl-github",
@@ -172,7 +172,7 @@ export const certifications = [
   },
   {
     id: 9,
-    type: 'others',
+    type: 'outros',
     status: true,
     name: 'Wordpress',
     icon: "bx bxl-wordpress",
@@ -187,7 +187,7 @@ export const certifications = [
   },
   {
     id: 10,
-    type: 'languages',
+    type: 'linguagens',
     status: true,
     name: 'Algoritmo + visualG',
     icon: '',

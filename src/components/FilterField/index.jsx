@@ -1,5 +1,6 @@
 import { useCertification } from '../../context/CertificationsContext';
 import FilterCertificationsBtn from '../FilterCertificationsBtn';
+import InputSelect from '../InputSelect';
 import './styles.css';
 
 export default function FilterField() {
@@ -7,28 +8,28 @@ export default function FilterField() {
   const { setFilterCards } = useCertification();
 
   const handleClickFilter = (type) => {
-    if(type === 'all') {
+    if(type === 'tudo') {
       setFilterCards('all');
       return;
     };
 
-    if(type === 'back') { 
-      setFilterCards('back');
+    if(type === 'backend') { 
+      setFilterCards('backend');
       return;
     };
 
-    if(type === 'front') {
-      setFilterCards('front');
+    if(type === 'frontend') {
+      setFilterCards('frontend');
       return;
     };
 
-    if(type === 'languages') {
-      setFilterCards('languages');
+    if(type === 'linguagens') {
+      setFilterCards('linguagens');
       return;
     };
 
-    if(type === 'database') {
-      setFilterCards('database');
+    if(type === 'banco de dados') {
+      setFilterCards('banco de dados');
       return;
     };
 
@@ -37,8 +38,8 @@ export default function FilterField() {
       return;
     };
 
-    if(type === 'others') {
-      setFilterCards('others');
+    if(type === 'outros') {
+      setFilterCards('outros');
       return;
     };
   }
@@ -46,13 +47,8 @@ export default function FilterField() {
   return (
     <div className='filterField-container'>
       <div className='filterField-content'>
-          <FilterCertificationsBtn handleClick={handleClickFilter} type='all' name={'Tudo'}/>
-          <FilterCertificationsBtn handleClick={handleClickFilter} type='back'name={'Backend'}/>
-          <FilterCertificationsBtn handleClick={handleClickFilter} type='front' name={'Frontend'}/>
-          <FilterCertificationsBtn handleClick={handleClickFilter} type='languages' name={'Linguagens'}/>
-          <FilterCertificationsBtn handleClick={handleClickFilter} type='database' name={'Banco de dados'}/>
-          <FilterCertificationsBtn handleClick={handleClickFilter} type='softskills' name={'Soft Skills'}/>
-          <FilterCertificationsBtn handleClick={handleClickFilter} type='others' name={'Outros'}/>
+
+        <InputSelect width={'100%'} options={['Tudo', 'Backend', 'Frontend', 'Linguagens', 'Banco de dados', 'Soft Skills', 'Outros']} handle_function={handleClickFilter}/>
       </div>
     </div>
   )

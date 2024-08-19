@@ -1,0 +1,143 @@
+:root {
+    --heightBodyli: 35px;
+}
+
+.inputSelect-container{
+    position: relative;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* width: 140px; */
+    height: 32px;
+    
+    background-color: transparent;
+    
+} 
+
+.inputSelect-content{
+    display: grid;
+    grid-template-columns: 1fr 40px;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+    
+    border-radius: 8px ;
+    outline: 1px solid #c6c6c69f;
+    box-shadow: 0px 0px 10px #d1d3d5;
+
+}
+
+.inputSelect-name-selected, .inputSelect-icon-arrow-container{
+    height: 100%;
+    color: #444546;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer;
+}
+
+.inputSelect-name-selected{
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding-left: 10px;
+    font-size: 0.8em;
+    overflow-x: hidden;
+}
+
+@keyframes clickArrowContainer {
+    0% {
+        background-color: #d1d3d5df;
+    }
+
+    100% {
+        background-color: #dcdee0;
+    }
+}
+
+.inputSelect-icon-arrow-container{
+    background-color: #d1d3d5df;
+    
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+
+    transition: background-color 0.2s ease-out;
+
+    animation-duration: 6s;
+    animation-timing-function: ease-in-out;
+}
+
+.inputSelect-icon-arrow-container:hover{
+    background-color: #b2b4b5d1;
+}
+
+.inputSelect-arrow{
+    background-color: transparent;
+    position: absolute;
+    font-size: 1em;
+}
+
+
+.inputSelect-arrow-up{
+    top: 3px;
+}
+
+.inputSelect-arrow-down{
+    bottom: 3px;
+}
+
+.inputSelect-body-container{
+    position: absolute;
+    min-width: 100%;
+    height: calc(var(--heightBodyli) * 4);
+    top: calc(100% + 6px) ;
+    background-color: white;
+    border: 1px solid #c6c6c69f;
+    box-shadow: 0px 0px 10px #d1d3d5;
+    
+    overflow-y: auto;
+    
+}
+
+.inputSelect-body-container > ul{
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.inputSelect-body-container > ul > li {
+    position: relative;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    
+    list-style-type: none;
+    cursor: pointer;
+    height: var(--heightBodyli);
+    padding: 0px 5px 0px 5px;
+    font-size: 0.9em;
+    color: #444546;
+
+    -webkit-user-select: none;
+    user-select: none;
+
+    border-bottom: 1.5px solid #c6c6c69f;
+
+    transition: background-color 0.15s ease-out;
+}
+
+.inputSelect-body-container > ul > li:hover{
+    background-color: #d1d3d583;
+
+}
+
+
+
+
