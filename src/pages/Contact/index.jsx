@@ -124,92 +124,83 @@ export default function Contact() {
     <div id='id_contact' className='contact-container defaultPages'>
 
       <div className='contact-content'>
-        <h1 id='id_title_contact'>
-          Contatos
-          {/* <div style={animationTitle} className='animationTitle'></div> */}
-        </h1>
-        <div className='input-and-social-container-contact'>
-          <form id='form-contact' method="post" onSubmit={handleSendEmail}>
-
-            <div className='name-input-contact-container input-contact'>
-
-              <input 
-              value={name_sendEmails} 
-              onChange={e => setName_sendEmails(e.target.value)}
-              type="text" 
-              name="name-input-contact" 
-              placeholder='Digite seu nome e sobrenome'/>
-
-            </div>
-
-            <div className='email-input-contact-container input-contact'>
-
-              <input 
-              value={email_sendEmails} 
-              onChange={e => setEmail_sendEmails(e.target.value)}
-              type="email" 
-              name="email-input-contact" 
-              placeholder='Digite seu e-mail'/>
-
-            </div>
-
-            <div className='message-input-contact-container input-contact'>
-              <textarea 
-              value={message_sendEmails} 
-              onChange={e => setMessage_sendEmails(e.target.value)}
-              name="message-input-contact" 
-              placeholder='Sua mensagem...'/>
-            </div>
-
-            <button 
-              className='btn-submit-form-contact' 
-              type="submit" 
-              form='form-contact'>{removeLoading ? <Loading/> : 'Enviar' }
-            </button>
-
-          </form>
-          <div className='social-container-contact'>
-
-            <div className='social-content-contact'>
-              <div className='email-social-contact social-contact'>
-                <img src={gmail} alt="" />
-                <span>E-mail</span>
-                <p>
-                  daviir17@gmail.com
-                  <span
-              
-                    onClick={() => handleContactCopy('email')}
-                    className="material-symbols-outlined copy-icon-contact"
-                  >
-                    {!contactCopiedGmail &&
-                      'content_copy'
-                    }
-                    {contactCopiedGmail &&
-                      'check'
-                    }
-                  </span>
-                </p>
+        <div className='title-input-social-container'>
+          <h1 id='id_title_contact'>
+            Contatos
+          </h1>
+          <div className='input-and-social-container-contact'>
+            <form id='form-contact' method="post" onSubmit={handleSendEmail}>
+              <div className='name-input-contact-container input-contact'>
+                <input
+                value={name_sendEmails}
+                onChange={e => setName_sendEmails(e.target.value)}
+                type="text"
+                name="name-input-contact"
+                placeholder='Digite seu nome e sobrenome'/>
               </div>
-              <div className='whatsapp-social-contact social-contact'>
-                <img src={whatsapp} alt="" />
-                <span>Whatsapp</span>
-                <p>
-                  (53) 99932-2366
-                  <span
-                    onClick={() => handleContactCopy('whats')}
-                    className="material-symbols-outlined copy-icon-contact"
+              <div className='email-input-contact-container input-contact'>
+                <input
+                value={email_sendEmails}
+                onChange={e => setEmail_sendEmails(e.target.value)}
+                type="email"
+                name="email-input-contact"
+                placeholder='Digite seu e-mail'/>
+              </div>
+              <div className='message-input-contact-container input-contact'>
+                <textarea
+                value={message_sendEmails}
+                onChange={e => setMessage_sendEmails(e.target.value)}
+                name="message-input-contact"
+                placeholder='Sua mensagem...'/>
+              </div>
+              <button
+                className='btn-submit-form-contact'
+                type="submit"
+                form='form-contact'>{removeLoading ? <Loading/> : 'Enviar' }
+              </button>
+            </form>
+            <div className='social-container-contact'>
+              <div className='social-content-contact'>
+                <div className='email-social-contact social-contact'>
+                  <img src={gmail} alt="" />
+                  <span>E-mail</span>
+                  <p>
+                    daviir17@gmail.com
+                    <span
+          
+                      onClick={() => handleContactCopy('email')}
+                      className="material-symbols-outlined copy-icon-contact"
                     >
-                    {!contactCopiedWhats &&
-                      'content_copy'
-                    }
-                    {contactCopiedWhats &&
-                      'check'
-                    }
-                  </span>
-                </p>
+                      {!contactCopiedGmail &&
+                        'content_copy'
+                      }
+                      {contactCopiedGmail &&
+                        'check'
+                      }
+                    </span>
+                  </p>
+                </div>
+                <div className='whatsapp-social-contact social-contact'>
+                  <img src={whatsapp} alt="" />
+                  <span>Whatsapp</span>
+                  <p>
+                    (53) 99932-2366
+                    <span
+                      onClick={() => handleContactCopy('whats')}
+                      className="material-symbols-outlined copy-icon-contact"
+                      >
+                      {!contactCopiedWhats &&
+                        'content_copy'
+                      }
+                      {contactCopiedWhats &&
+                        'check'
+                      }
+                    </span>
+                  </p>
+                </div>
               </div>
+          
             </div>
-            
           </div>
         </div>
       </div>

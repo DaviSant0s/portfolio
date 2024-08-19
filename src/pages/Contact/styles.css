@@ -6,17 +6,18 @@
 }
 
 .contact-content {
-  width: 70%;
-  /* min-width: 500px; */
-
   width: var(--sectionWidth);
-
-  /* background-color: black; */
 }
 
-.contact-content > h1 {
+.title-input-social-container{
+
+  width: 70%;
+  margin: auto;
+}
+
+.contact-content > .title-input-social-container > h1 {
   text-align: start;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   line-height: 100%;
 }
 
@@ -27,8 +28,6 @@
   gap: 30px;
 
   width: 100%;
-
-  /* background-color: red; */
 }
 
 /* FORM DOS INPUTS */
@@ -37,8 +36,6 @@
   flex-direction: column;
   gap: 10px;
   width: 60%;
-
-  /* background-color: yellow; */
 }
 
 /* inputs do form */
@@ -249,8 +246,8 @@
 
 @media screen and (max-width: 850px) {
 
-  .contact-content{
-    /* width: 100%; */
+  .title-input-social-container{
+    width: 100%;
   }
 
   .input-and-social-container-contact{
@@ -270,6 +267,12 @@
 
   .social-container-contact{
     width: 100%;
+  }
+
+  .contact-content > .title-input-social-container > h1{
+    width: 97%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
