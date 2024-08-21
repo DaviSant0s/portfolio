@@ -56,14 +56,14 @@ export default function InputSelect({width, height, radius=10, options=[], id, h
 
           <div 
             className='inputSelect-name-selected' 
-            style={{borderRadius: `${radius}px ${radius}px ${radius}px ${radius}px`}}
+            style={{borderRadius: `${radius}px 0px 0px ${radius}px`}}
           >
             {selectOption}
           </div>
 
           <div 
             className='inputSelect-icon-arrow-container' 
-            style={{ borderRadius: `0px ${radius}px ${radius}px 0px`}}
+            style={{ borderRadius: `0px 0px 0px 0px`}}
           >
               <span 
               className="material-symbols-outlined inputSelect-arrow inputSelect-arrow-up">
