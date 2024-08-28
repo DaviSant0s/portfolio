@@ -11,7 +11,7 @@ export default function ExperienceContainer() {
         <ExperienceCard 
           logo={bytelogo} 
           institution={'Byte Jr. | Empresa Júnior de TI'} 
-          description={'Desenvolvedor Fron-End, responsável por desenvolver aplicações web'}
+          description={'Atuei como desenvolvedor frontend, utilizando JavaScript, Node.js, React, HTML e CSS. Fui responsável pelo desenvolvimento de aplicações web, garantindo a criação de interfaces interativas e funcionais, alinhadas às melhores práticas de desenvolvimento.'}
           position={'Desenvolvedor Front-end'}
         />
         <ExperienceCard 
