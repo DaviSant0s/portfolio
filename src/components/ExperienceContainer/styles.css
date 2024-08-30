@@ -15,3 +15,9 @@
 
   background-color: transparent;
 }
+
+@media (max-width: 370px){
+  .timeline-experienceContainer{
+    padding-left: 0px;
+  }
+}

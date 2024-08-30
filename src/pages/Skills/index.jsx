@@ -13,6 +13,7 @@ import node from '../../assets/node.png';
 import c from '../../assets/c.png';
 import git from '../../assets/git.png';
 import wordpress from '../../assets/wordpress.webp';
+import mongoDB from '../../assets/mongodb.svg';
 
 export default function Skills() {
 
@@ -29,11 +30,11 @@ export default function Skills() {
           <SkillsCard name={'node'} image={node} style_image={{width: '60px'}}/>
           <SkillsCard name={'sql'} image={sql}/>
           <SkillsCard name={'mysql'} image={mysql}/>
+          <SkillsCard name={'mongoDB'} image={mongoDB} style_image={{width: '60px'}}/>
           <SkillsCard name={'html'} image={html}/>
           <SkillsCard name={'css'} image={css}/>
           <SkillsCard name={'git'} image={git}/>
           <SkillsCard name={'github'} image={github} style_image={{width: '60px'}}/>
-          <SkillsCard name={'wordpress'} image={wordpress} style_image={{width: '60px'}}/>
           <SkillsCard name={'wordpress'} image={wordpress} style_image={{width: '60px'}}/>
 
       </div>
