@@ -67,18 +67,18 @@ export default function CardCertification(
                 <span className='title'>Conclusão:</span>
                 <p className='name'>{conclusion}</p>
               </div>
-              <div className='container-credential-btns'>
+              {/* <div className='container-credential-btns'>
                 <a className='link-credential-btn' target='_blank' href={link_credential}>
                   <div className='credential-btn'>
                     <p>Exibir credencial</p>
                     <span className="material-symbols-outlined">ios_share</span>
                   </div>
                 </a>
-                {/* <div onClick={() => setIsOpen(true)} className='view-btn'>
+                <div onClick={() => setIsOpen(true)} className='view-btn'>
                   <p>Ementa</p>
-                </div> */}
+                </div>
                 
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

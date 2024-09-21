@@ -3,14 +3,44 @@ import cursoEmVideo from '../../assets/companies/curso-em-video.jpg';
 import telos from '../../assets/companies/telos.jpeg';
 import microsoft from '../../assets/companies/microsoft.png';
 import estudonauta from '../../assets/companies/estudonauta.jpg';
-
-
+import alura from '../../assets/companies/alura.png';
 
 export const certifications = [
+
+  {
+    id: -4,
+    type: 'linguagens',
+    status: false,
+    name: 'JAVA',
+    icon: "bx bxl-javascript",
+    img: alura,
+    description: 'Aplicando Orientação à Objetos',
+    institution: 'Alura',
+    conclusion: '2024',
+    duration: '10 horas',
+    link_institution: 'https://www.alura.com.br/curso-online-java-aplicando-orientacao-objetos',
+    style_icone: {borderRadius: '3px'},
+  },
+
+  {
+    id: -3,
+    type: 'linguagens',
+    status: true,
+    name: 'JAVA: primeira aplicação',
+    icon: "bx bxl-javascript",
+    img: alura,
+    description: 'Condicionais, repetição, ecossistema, tipos de dados... ',
+    institution: 'Alura',
+    conclusion: '2024',
+    duration: '8 horas',
+    link_institution: 'https://www.alura.com.br/curso-online-java-criando-primeira-aplicacao',
+    style_icone: {borderRadius: '3px'},
+  },
+  
   {
     id: -2,
     type: 'banco de dados',
-    status: false,
+    status: true,
     name: 'Banco de Dados e SQL',
     icon: "bx bxl-javascript",
     img: udemy,
@@ -24,7 +54,7 @@ export const certifications = [
   {
     id: -1,
     type: 'backend',
-    status: false,
+    status: true,
     name: 'Node.js',
     icon: "",
     img: udemy,
