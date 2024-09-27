@@ -4,6 +4,11 @@
   margin: auto;
 }
 
+.app-container{
+  position: relative;
+}
+
 .toast-message {
   top: 70px;
 }
+

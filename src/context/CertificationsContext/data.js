@@ -8,9 +8,24 @@ import alura from '../../assets/companies/alura.png';
 export const certifications = [
 
   {
+    id: -5,
+    type: 'outros',
+    status: false,
+    name: 'Tailwind CSS',
+    icon: "bx bxl-javascript",
+    img: udemy,
+    description: 'Do zero ao avançado + Projetos',
+    institution: 'Udemy',
+    conclusion: '2024',
+    duration: '6 horas',
+    link_institution: 'https://www.udemy.com/course/tailwind-completo/?couponCode=24T4MT92724B',
+    style_icone: {borderRadius: '3px'},
+  },
+
+  {
     id: -4,
     type: 'linguagens',
-    status: false,
+    status: true,
     name: 'JAVA',
     icon: "bx bxl-javascript",
     img: alura,
