@@ -9,6 +9,7 @@
 }
 
 .toast-message {
-  top: 70px;
+  /* + 25px do avisos */
+  top: 95px;
 }
 
