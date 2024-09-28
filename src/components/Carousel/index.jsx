@@ -16,8 +16,9 @@ const gap = 10;
 
 export default function Carousel() {
   /* responsividade */
+  const computer_max_1340px = useMediaQuery({query: '(max-width: 1339px)'});
+  const computer_min_1340px = useMediaQuery({query: '(min-width: 1340px)'});
   const mobileOrTablet_max_1020px = useMediaQuery({query: '(max-width: 1020px)'});
-  const mobileOrTablet_min_1020px = useMediaQuery({query: '(min-width: 1021px)'});
   const mobile_max_690px = useMediaQuery({query: '(max-width: 690px)'});
   const miniMobile_min_450px = useMediaQuery({query: '(min-width: 450px)'});
   const miniMobile_max_450px = useMediaQuery({query: '(max-width: 450px)'});
@@ -48,7 +49,7 @@ export default function Carousel() {
   const Ref_wrapperCarousel = useRef(null);
 
   // estado que armazena o numero de cards visíveis
-  const [ numberVisibleCards, setNumberVisibleCards ] = useState(3);
+  const [ numberVisibleCards, setNumberVisibleCards ] = useState(4);
 
   // estado da largura do carrossel
   const [ carouselWidth, setCarouselWidth ] = useState(0); // 950
@@ -178,8 +179,14 @@ export default function Carousel() {
 
   /* responsividade */
   useEffect(() => {
+
+    // 4 cards visiveis
+    if(computer_min_1340px){
+      setNumberVisibleCards(s => 4)
+    }
+
     // 3 cards visiveis
-    if(mobileOrTablet_min_1020px){
+    if(computer_max_1340px){
       setNumberVisibleCards(s => 3)
     }
 
@@ -188,7 +195,7 @@ export default function Carousel() {
       setNumberVisibleCards(s => 2)
     }
 
-    // 3 cards visiveis
+    // 1 cards visiveis
     if(mobile_max_690px){
       setNumberVisibleCards(s => 1)
     }
@@ -258,7 +265,7 @@ export default function Carousel() {
       setCardSize_width(s => 300)
     }
 
-  }, [mobileOrTablet_max_1020px, mobileOrTablet_min_1020px, mobile_max_690px, miniMobile_max_450px, miniMobile_min_450px, miniMobile_max_440px, miniMobile_max_430px, miniMobile_max_420px, miniMobile_max_410px, miniMobile_max_400px, miniMobile_max_390px, miniMobile_max_380px, miniMobile_max_370px, miniMobile_max_360px, miniMobile_max_350px, miniMobile_max_340px])
+  }, [computer_max_1340px, computer_min_1340px, mobileOrTablet_max_1020px, mobile_max_690px, miniMobile_max_450px, miniMobile_min_450px, miniMobile_max_440px, miniMobile_max_430px, miniMobile_max_420px, miniMobile_max_410px, miniMobile_max_400px, miniMobile_max_390px, miniMobile_max_380px, miniMobile_max_370px, miniMobile_max_360px, miniMobile_max_350px, miniMobile_max_340px])
 
   
   return (

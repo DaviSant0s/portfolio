@@ -16,8 +16,8 @@
   background-color: rgba(0, 0, 0, 0.444);
   backdrop-filter: blur(10px);
 
-  height: 100%;
-  opacity: 1;
+  height: 0%;
+  opacity: 0.5;
   transition: all .5s ease;
 
   overflow: hidden;
