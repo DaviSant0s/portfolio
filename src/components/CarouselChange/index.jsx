@@ -31,7 +31,7 @@ export default function CarouselChange({ views, totalViews, handleClickScrollToL
   return (
     <div className='carouselChange-container'>
       <div className='optionsSlides-container'>
-        <div className='optionsSlides'>
+        {/* <div className='optionsSlides'>
 
           <h1 
           className={`${toggleCarousel === 'frontend' ? 'selected' : 'notSelected'}`}
@@ -57,7 +57,7 @@ export default function CarouselChange({ views, totalViews, handleClickScrollToL
             <div></div>
           </h1>
 
-        </div>
+        </div> */}
       </div>
       <div className='btns-carouselChange-container'>
         <span className='count-cards'>{views} de {totalViews}</span>
