@@ -18,6 +18,12 @@ import crud from '../../assets/crud.png';
 import api from '../../assets/api.png';
 import dataStructure from '../../assets/dataStructure.png';
 import bigO from '../../assets/bigO.jpeg';
+import POO from '../../assets/oo.png';
+import express from '../../assets/express.svg';
+import postman from '../../assets/postman.svg';
+import tailwindcss from '../../assets/tailwindcss.svg';
+import insomnia from '../../assets/insomnia.svg';
+import java from '../../assets/java.svg';
 
 export default function Skills() {
 
@@ -29,22 +35,28 @@ export default function Skills() {
         </h1>
         <div className='skills-content-content'>
             <SkillsCard name={'Javascript'} image={javascript} style_image={{borderRadius: '4px'}}/>
-            <SkillsCard name={'python'} image={python}/>
-            <SkillsCard name={'c'} image={c}/>
-            <SkillsCard name={'react'} image={react}/>
-            <SkillsCard name={'node'} image={node} style_image={{width: '60px'}}/>
-            <SkillsCard name={'sql'} image={sql}/>
-            <SkillsCard name={'mysql'} image={mysql}/>
+            <SkillsCard name={'Python'} image={python}/>
+            <SkillsCard name={'C'} image={c}/>
+            <SkillsCard name={'Java'} image={java} style_image={{width: '40px'}}/>
+            <SkillsCard name={'React'} image={react}/>
+            <SkillsCard name={'Node'} image={node} style_image={{width: '60px'}}/>
+            <SkillsCard name={'Sql'} image={sql}/>
+            <SkillsCard name={'MySQL'} image={mysql}/>
             <SkillsCard name={'mongoDB'} image={mongoDB} style_image={{width: '60px'}}/>
             <SkillsCard name={'html'} image={html}/>
             <SkillsCard name={'css'} image={css}/>
             <SkillsCard name={'git'} image={git}/>
             <SkillsCard name={'github'} image={github} style_image={{width: '60px'}}/>
-            <SkillsCard name={'wordpress'} image={wordpress} style_image={{width: '60px'}}/>
-            <SkillsCard name={'crud'} image={crud} style_image={{width: '80px'}}/>
-            <SkillsCard name={'api'} image={api} style_image={{width: '40px'}}/>
+            <SkillsCard name={'Wordpress'} image={wordpress} style_image={{width: '60px'}}/>
+            <SkillsCard name={'CRUD'} image={crud} style_image={{width: '80px'}}/>
+            <SkillsCard name={'API REST'} image={api} style_image={{width: '40px'}}/>
             <SkillsCard name={'Estrutura de Dados'} image={dataStructure} style_image={{width: '40px'}}/>
-            <SkillsCard name={'Notação Big O'} image={bigO} style_image={{width: '60px'}}/>
+            <SkillsCard name={'Notação Big O'} image={bigO} style_image={{width: '40px'}}/>
+            <SkillsCard name={'POO'} image={POO} style_image={{width: '60px'}}/>
+            <SkillsCard name={'Express'} image={express} style_image={{width: '70px'}}/>
+            <SkillsCard name={'Postman'} image={postman} style_image={{width: '40px'}}/>
+            <SkillsCard name={'Tailwind'} image={tailwindcss} style_image={{width: '40px'}}/>
+            <SkillsCard name={'Insomnia'} image={insomnia} style_image={{width: '40px'}}/>
         </div>
       </div>
     </div>

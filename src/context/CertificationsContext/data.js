@@ -8,6 +8,20 @@ import alura from '../../assets/companies/alura.png';
 export const certifications = [
 
   {
+    id: -6,
+    type: 'linguagens',
+    status: false,
+    name: 'JAVA',
+    icon: "bx bxl-javascript",
+    img: alura,
+    description: 'Trabalhando com Listas e Coleções de Dados',
+    institution: 'Alura',
+    conclusion: '2024',
+    duration: '8 horas',
+    link_institution: 'https://www.alura.com.br/curso-online-java-listas-colecoes-dados',
+    style_icone: {borderRadius: '3px'},
+  },
+  {
     id: -5,
     type: 'outros',
     status: false,
