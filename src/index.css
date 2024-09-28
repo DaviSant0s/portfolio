@@ -52,21 +52,12 @@ h2 {
 /* configuração padrão das páginas */
 
 .defaultHome {
-  /* padding-left: calc((100vw - 1300px) / 2 );
-  padding-right: calc((100vw - 1300px) / 2 ); */
-
   width: 100%;
   height: calc(var(--heighBody));
 }
 
 .defaultPages {
-  /* padding-left: calc((100vw - 1300px) / 2 );
-  padding-right: calc((100vw - 1300px) / 2 ); */
-
-  /* min-height: calc(var(--heighBody)); */
-
   height: min-content;
-
   padding-top: 40px;
   padding-bottom: 40px;
 }
