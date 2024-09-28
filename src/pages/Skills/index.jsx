@@ -24,6 +24,7 @@ import postman from '../../assets/postman.svg';
 import tailwindcss from '../../assets/tailwindcss.svg';
 import insomnia from '../../assets/insomnia.svg';
 import java from '../../assets/java.svg';
+import typescript from '../../assets/typescript.png';
 
 export default function Skills() {
 
@@ -35,6 +36,7 @@ export default function Skills() {
         </h1>
         <div className='skills-content-content'>
             <SkillsCard name={'Javascript'} image={javascript} style_image={{borderRadius: '4px'}}/>
+            <SkillsCard name={'Typescript'} image={typescript} style_image={{borderRadius: '4px'}}/>
             <SkillsCard name={'Python'} image={python}/>
             <SkillsCard name={'C'} image={c}/>
             <SkillsCard name={'Java'} image={java} style_image={{width: '40px'}}/>
@@ -50,13 +52,13 @@ export default function Skills() {
             <SkillsCard name={'Wordpress'} image={wordpress} style_image={{width: '60px'}}/>
             <SkillsCard name={'CRUD'} image={crud} style_image={{width: '80px'}}/>
             <SkillsCard name={'API REST'} image={api} style_image={{width: '40px'}}/>
-            <SkillsCard name={'Estrutura de Dados'} image={dataStructure} style_image={{width: '40px'}}/>
-            <SkillsCard name={'Notação Big O'} image={bigO} style_image={{width: '40px'}}/>
             <SkillsCard name={'POO'} image={POO} style_image={{width: '60px'}}/>
             <SkillsCard name={'Express'} image={express} style_image={{width: '70px'}}/>
             <SkillsCard name={'Postman'} image={postman} style_image={{width: '40px'}}/>
             <SkillsCard name={'Tailwind'} image={tailwindcss} style_image={{width: '40px'}}/>
             <SkillsCard name={'Insomnia'} image={insomnia} style_image={{width: '40px'}}/>
+            <SkillsCard name={'Estrutura de Dados'} image={dataStructure} style_image={{width: '40px'}}/>
+            <SkillsCard name={'Notação Big O'} image={bigO} style_image={{width: '40px'}}/>
         </div>
       </div>
     </div>
