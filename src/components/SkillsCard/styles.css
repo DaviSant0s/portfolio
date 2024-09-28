@@ -52,6 +52,9 @@
 
   width: 72px;
   height: 100%;
+
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .image-skill > img {
