@@ -45,7 +45,7 @@ export default function Header() {
             
               <div className='contact-btn-scroll'>
 
-                  <a className='curriculum-btn-scroll' href="https://drive.google.com/file/d/1AaTJnOeB8A_r5kk-BEOOfX9RNrUxeWas/view?usp=sharing" target='_blank'>
+                  <a className='curriculum-btn-scroll' href="https://drive.google.com/file/d/1IuNOTjws3xQJGblCDFa7Pes9kbfc7SLl/view?usp=sharing" target='_blank'>
                     <Button name={'Currículo'} icon={'file_download'}/>
                   </a>
                 
