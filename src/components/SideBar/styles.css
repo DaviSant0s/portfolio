@@ -9,6 +9,10 @@
 
   width: 100vw;
   height: 100vh;
+
+  /* adaptado para avisos */
+  margin-top: 25px;
+
 }
 
 .sideBar-container{
