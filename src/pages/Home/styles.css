@@ -7,10 +7,6 @@
   background-color: var(--mainColor);
 
   margin-top: var(--heightHeaderScroll);
-
-  /* darkmode*/
-  background-color: #272727;
-
 }
 
 .home-content {
