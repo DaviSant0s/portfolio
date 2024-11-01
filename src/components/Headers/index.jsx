@@ -8,7 +8,7 @@ export default function Headers() {
 
   return (
     <div className='headers-container'>
-      <Aviso/>
+      {/* <Aviso/> */}
       <Header/>
     </div>
   )
