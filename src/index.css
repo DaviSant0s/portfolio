@@ -19,7 +19,6 @@
   --heighBody: calc(100vh - var(--heightHeaderScroll));
   --sectionWidth: 1295px;
   --mainColor: #ffffff;
-   
 }
 
 /* cor padrão do título */
