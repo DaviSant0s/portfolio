@@ -56,25 +56,6 @@
 .nav-header-sideBar .link-page:hover > span{
   color: #FB544E;
 }
-
-/* .nav-header-sideBar .link-page:hover > span{
-  color: #FB544E;
-} */
-
-/* .nav-header-sideBar .link-page:hover {
-  background-color: rgba(255, 241, 227, 0.688);
-
-  border-right: 1px solid rgba(251, 84, 78, 0.3);
-  border-top: 3px solid rgba(251, 84, 78, 0.3);
-  border-left: 1px solid rgba(251, 84, 78, 0.3);
-  border-right: 1px solid rgba(251, 84, 78, 0.3);
-  
-  z-index: 2;
-
-  transform: scale(1.03);
-
-}
- */
 /* classes de animações de scrolls */
 
 #homeAnimation_sideBar, #certificationsAnimation_sideBar, 

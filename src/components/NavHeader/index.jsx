@@ -3,46 +3,47 @@ import useScrollAnimationHeader from '../../hooks/header/useScrollAnimationHeade
 import './styles.css';
 
 
-export default function NavHeader({ styles={} }) {
+export default function NavHeader() {
+  
   useScrollAnimationHeader()
 
   return (
-    <nav style={styles} className='nav-header'>
+    <nav className='nav-header'>
 
       <Link to='id_home' smooth={true} offset={-80} className='Link'>
         <div 
           className='home link-page default-focus-header'
-        >Início</div>
+        >HOME</div>
       </Link>
 
       <Link to='id_certifications' smooth={true} offset={-79} duration={700} className='Link'>
         <div 
           className='certifications link-page'
-        >Certificações</div>
+        >CERTIFICAÇÕES</div>
       </Link>
 
       <Link to='id_skills' smooth={true} offset={-79} duration={700} className='Link'>
         <div 
           className='skills link-page'
-        >Habilidades</div>
+        >HABILIDADES</div>
       </Link>
 
       <Link to='id_projects' smooth={true} offset={-79} duration={700} className='Link'>
         <div 
           className='projects link-page'
-        >Projetos</div>
+        >PROJETOS</div>
       </Link>
 
       <Link to='id_experience' smooth={true} offset={-79} duration={700} className='Link'>
         <div 
           className='experiences link-page'
-        >Experiências</div>
+        >EXPERIÊNCIAS</div>
       </Link>
 
       <Link to='id_contact'  smooth={true} offset={-79} duration={700} className='Link'>
         <div 
           className='contact link-page'
-        >Contato</div>
+        >CONTATO</div>
       </Link>
     </nav>
   )

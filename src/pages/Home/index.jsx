@@ -2,6 +2,7 @@ import { Link } from 'react-scroll';
 import SocialsGroup from '../../components/SocialsGroup';
 import './styles.css';
 import { useMediaQuery } from 'react-responsive';
+import perfil from '../../assets/photos/perfil.png';
 
 export default function Home() {
 

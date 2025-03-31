@@ -18,6 +18,7 @@ import CarouselProvider from './context/CarrouselContext';
 import CertificationsProvider from './context/CertificationsContext';
 import SideBarProvider from './context/SideBarContext';
 import { useMediaQuery } from 'react-responsive';
+import DarkmodeProvider from './context/darkmodeContext';
 
 function App() {
 
@@ -25,40 +26,41 @@ function App() {
 
   return (
     <div className='app-container'>
+      <DarkmodeProvider>
+        <HeaderProvider>
 
-      <HeaderProvider>
+          <SideBarProvider>
+            <Headers/>
+          </SideBarProvider>
 
-        <SideBarProvider>
-          <Headers/>
-        </SideBarProvider>
-
-        {!isTabletOrMobile &&
-        
-          <FloatingButtons/>
-        
-        }
-        <div className='body-container'>
-          <ToastContainer />
-
-          <Home/>
-
-          <CertificationsProvider>
-            <Certifications/>
-          </CertificationsProvider>
+          {!isTabletOrMobile &&
           
-
-          <Skills/>
-
-          <CarouselProvider>
-            <Projects/>
-          </CarouselProvider>
+            <FloatingButtons/>
           
-          <Experience/>
-          <Contact/>
-        </div>
+          }
+          <div className='body-container'>
+            <ToastContainer />
 
-        <Footer/>
-      </HeaderProvider>
+            <Home/>
+
+            <CertificationsProvider>
+              <Certifications/>
+            </CertificationsProvider>
+            
+
+            <Skills/>
+
+            <CarouselProvider>
+              <Projects/>
+            </CarouselProvider>
+            
+            <Experience/>
+            <Contact/>
+          </div>
+
+          <Footer/>
+        </HeaderProvider>
+      </DarkmodeProvider>
 
     </div>
 

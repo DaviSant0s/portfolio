@@ -18,7 +18,29 @@
   --heightHeaderScroll: 80px;
   --heighBody: calc(100vh - var(--heightHeaderScroll));
   --sectionWidth: 1295px;
-  --mainColor: #ffffff;
+  --mainColor: #07090e;
+}
+
+/* Light Mode #f0f0f0*/ 
+.light-mode {
+  --mainColor: white;
+  --headerBackground: white;
+  --colorTitleHome: white;
+
+  --HeaderBox-shadow: 0px 1px 6px #ccc8c8;
+  --HeaderBorder-bottom: 1px solid #e4e2e2;
+  --HeadercontactBtnBorder-right: 1px solid #e8e8e8;
+}
+
+/* Dark Mode */
+.dark-mode {
+  --mainColor: #07090e;
+  --headerBackground: #07090e;
+  --colorTitleHome: black;
+
+  --HeaderBox-shadow: 0px 1px 6px #ccc8c800;
+  --HeaderBorder-bottom: 1px solid #e4e2e200;
+  --HeadercontactBtnBorder-right: 1px solid #e8e8e8;
 }
 
 /* cor padrão do título */
@@ -100,10 +122,6 @@ h2 {
 
 /*foco padrão do header*/
 .default-focus-header{
-  background-color: rgba(255, 241, 227, 0.688); 
-  border-right: 1px solid rgba(251, 84, 78, 0.3);
-  border-left: 1px solid rgba(251, 84, 78, 0.3);
-  border-top: 3px solid rgba(251, 84, 78, 0.3) !important;
-
-  margin-right: 5px !important;
+  color: black;
+  transform: scale(1.05);
 }

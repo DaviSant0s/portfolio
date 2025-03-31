@@ -1,9 +1,13 @@
 import { useMediaQuery } from 'react-responsive'
-import photo from '../../assets/img-perfil.jpeg'
+import logoDark from '../../assets/logos/ds-dark.png';
+import logoLight from '../../assets/logos/ds.png';
 import './styles.css';
 import { useSideBar } from '../../context/SideBarContext';
+import { useDarkmode } from '../../context/darkmodeContext'
 
 export default function Logo({ sideBar=false }) {
+
+  const { darkMode, setDarkMode } = useDarkmode();
 
   const { setMenuEnabled } = useSideBar();
 
@@ -12,8 +16,6 @@ export default function Logo({ sideBar=false }) {
 
   return (
     <div className='logo-container'>
-
-        {/* se não couber o nav vai desaparecer a foto e aparecer as barras */}
       
         {
           (isTabletOrMobile && !sideBar) && 
@@ -25,16 +27,17 @@ export default function Logo({ sideBar=false }) {
           <span onClick={() => setMenuEnabled(false)} className="material-symbols-outlined menuHeader">close</span>
         }
 
-        {!isTabletOrMobile && 
-          <div className='container-photo-logo' style={{width: '40px', height: '40px'}}>
-            <img src={photo} alt=""/>
+        {!isTabletOrMobile && darkMode && 
+          <div className='container-photo-logo'>
+            <img src={logoDark} alt=""/>
           </div>
         }
 
-      <div  className='container-title-logo'>
-        <h1>Portfólio</h1>
-        <span>Davi Santos</span>
-      </div>
+        {!isTabletOrMobile && !darkMode && 
+          <div className='container-photo-logo'>
+            <img src={logoLight} alt=""/>
+          </div>
+        }
     </div>
   )
 }

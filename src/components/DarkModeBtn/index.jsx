@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import './styles.css';
+import { useDarkmode } from '../../context/darkmodeContext';
 
 export default function DarkModeBtn({ styles_container={} }) {
 
     /* estados para a animação do darkmode */
-    const [ darkMode, setDarkMode ] = useState(false);
+    const { darkMode, setDarkMode } = useDarkmode();
+
     const [ animacaoDarkModeRotate, setAnimacaoDarkModeRotate ] = useState({});
     const [ animacaoDarkModeTranslate, setAnimacaoDarkModeTranslate ] = useState({});
     
@@ -17,6 +19,18 @@ export default function DarkModeBtn({ styles_container={} }) {
       } else{
         setAnimacaoDarkModeRotate({});
         setAnimacaoDarkModeTranslate({});
+      }
+    }, [darkMode]);
+
+
+    // Atualiza a classe do body sempre que o tema mudar
+    useEffect(() => {
+      if (darkMode) {
+        document.body.classList.add('dark-mode');
+        document.body.classList.remove('light-mode');
+      } else {
+        document.body.classList.add('light-mode');
+        document.body.classList.remove('dark-mode');
       }
     }, [darkMode]);
 

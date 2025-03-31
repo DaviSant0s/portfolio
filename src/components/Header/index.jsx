@@ -32,11 +32,8 @@ export default function Header() {
 
           {!isTabletOrMobile &&
           
-            <div className='navHeaderAnimationBug-container-scroll'>
-
               <NavHeader/>
 
-            </div>
           }
 
           <div className='btns-header-scroll'>
