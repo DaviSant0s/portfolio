@@ -1,16 +1,12 @@
-import Footer from '../Footer';
-import Header from '../Header';
+import clsx from 'clsx';
 
 type LayoutProps = {
   children: React.ReactNode;
+  className?: string;
 };
 
-export default function Layout({ children }: LayoutProps) {
+export default function Layout({ children, className }: LayoutProps) {
   return (
-    <>
-      <Header />
-      <main className="">{children}</main>
-      <Footer />
-    </>
+    <div className={clsx('max-w-7xl m-auto px-5', className)}>{children}</div>
   );
 }
