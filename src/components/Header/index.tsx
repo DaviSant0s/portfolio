@@ -4,7 +4,7 @@ import { Button } from '../ui/button';
 
 export default function Header() {
   return (
-    <header className="w-full h-14 border-b">
+    <header className="w-full h-14 border-b bg-white">
       <Layout className="h-full">
         <div className="w-full h-full">
           <nav className="w-full h-full flex items-center justify-between gap-5">
@@ -17,7 +17,7 @@ export default function Header() {
               <NavLink to="/">Serviços</NavLink>
               <NavLink to="/">Portfólio</NavLink>
             </div>
-            <Button variant={'default'}>Contato</Button>
+            <div><Button variant={'default'}>Contato</Button></div>
           </nav>
         </div>
       </Layout>

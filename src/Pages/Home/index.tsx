@@ -1,10 +1,13 @@
 import Layout from "@/components/Layout";
 
+import home_image from '../../assets/home-image.png'
+
 export default function Home() {
+
   return (
-    <Layout>
-      <div className="bg-red-600">
-        home
+    <Layout urlImage={home_image}>
+      <div className="min-h-[500px]">
+        
       </div>
     </Layout>
   )
