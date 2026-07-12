@@ -6,11 +6,12 @@ export default function useResizeObserver(id_or_class) {
 
   useEffect(() => {
     const element = document.querySelector(id_or_class);
+    if (!element) return;
   
     const obs = new ResizeObserver(e => {
       const height = e[0].target.offsetHeight;
       
-      setHeightElement(s => height);
+      setHeightElement(height);
 
     });
   

@@ -12,7 +12,7 @@ export default function CertificationsProvider({ children }) {
 
     setFilteredData(dataCertifications.filter(item => item.type === filterCards || filterCards === 'all'));
 
-   }, [filterCards]);
+   }, [dataCertifications, filterCards]);
 
   return (
     <GlobalCertificationsContext.Provider value={{

@@ -38,10 +38,13 @@ export default function Carousel() {
 
   /* contexto global */
   
-  const {toggleData} = useCarousel();
-  const {cardSize_width, setCardSize_width, cardSize_height} = useCarousel();
-
-  const { setWidthCarrouselGlobal } = useCarousel();
+  const {
+    toggleData,
+    cardSize_width,
+    setCardSize_width,
+    cardSize_height,
+    setWidthCarrouselGlobal,
+  } = useCarousel();
   
   /* fim */
 
@@ -54,14 +57,8 @@ export default function Carousel() {
   // estado da largura do carrossel
   const [ carouselWidth, setCarouselWidth ] = useState(0); // 950
 
-  // estado da largura do card
-  const [ cardWidth, setCardWidth ] = useState(cardSize_width);
-
-  // numero de cards
-  const [ numberOfCards, setNumberOfCards ] = useState(toggleData.length);
-
-  // estado da largura escondida
-  const [ hiddenWidth, setHiddenWidth ] = useState(0);
+  const cardWidth = cardSize_width;
+  const numberOfCards = toggleData.length;
 
   // estado da largura visivel
   const [ visibleWidth, setVisibleWidth ] = useState(0);
@@ -72,45 +69,29 @@ export default function Carousel() {
   // numero de partes visiveis já passadas
   const [ views, setViews ] = useState(1);
 
-  //Funçao calcula o quanto o scroll vai ter que percorrer na barra de rolage (tamanho total menos o que ta visivel)
-  const func_hiddenWidth = () => {
-    return (numberOfCards * cardWidth) + ((numberOfCards - 1) * gap) - carouselWidth
-  }
-
-  // calculo da largura visível
-  const func_visibleWidth = (a=1) => {
-    let b = a;
-
-    // controla quando o numero de cards visiveis for 1, daí muda de 1 em 1
-    if(numberVisibleCards === 1){
-      b = 0;
-    }
-
-    return (cardWidth * (numberVisibleCards - b)) + (gap * (numberVisibleCards - b));
-  }
-
-  // função que calcula o numero de vezes que eu tenho que clicar para ver todos os slides
-  const func_totalViews = () => {
-    const total = Math.floor((hiddenWidth/visibleWidth) + 1);
-    return total + 1;
-  }
-
-  const defineNumbercardsVisible = () => {
-   const width = 20 + (numberVisibleCards * cardWidth) + (numberVisibleCards * gap);
-   // atualiza no contexto global para outras partes saberem a largura do carrossel
-   setWidthCarrouselGlobal(width)
-   return width;
-  }
-
   // efeito que define a largura escondida, largura visivel e total de partes visiveis
   useEffect(() => {
+    let visibleCardsDiscount = 1;
+    if (numberVisibleCards === 1) {
+      visibleCardsDiscount = 0;
+    }
 
-    setCarouselWidth(defineNumbercardsVisible());
-    setHiddenWidth(func_hiddenWidth());
-    setVisibleWidth(func_visibleWidth());
-    seTotalViews(func_totalViews);
+    const nextCarouselWidth = 20 + (numberVisibleCards * cardWidth) + (numberVisibleCards * gap);
+    const nextHiddenWidth = Math.max(
+      (numberOfCards * cardWidth) + ((numberOfCards - 1) * gap) - nextCarouselWidth,
+      0,
+    );
+    const nextVisibleWidth =
+      (cardWidth * (numberVisibleCards - visibleCardsDiscount)) +
+      (gap * (numberVisibleCards - visibleCardsDiscount));
+    const nextTotalViews =
+      nextVisibleWidth > 0 ? Math.floor(nextHiddenWidth / nextVisibleWidth) + 2 : 1;
 
-  }, [numberOfCards, cardWidth, carouselWidth, numberVisibleCards, hiddenWidth, visibleWidth ]);
+    setWidthCarrouselGlobal(nextCarouselWidth);
+    setCarouselWidth(nextCarouselWidth);
+    setVisibleWidth(nextVisibleWidth);
+    seTotalViews(nextTotalViews);
+  }, [numberOfCards, cardWidth, numberVisibleCards, setWidthCarrouselGlobal]);
 
   // controlam o sestido das setas qunado estano inicio ou no limite da barra de rolagem
   const [ arrowStyleLeft, setArrowStyleLeft] = useState({});
@@ -158,12 +139,6 @@ export default function Carousel() {
 
   // vai recalcular os valores quando os dados mudarem
   useEffect(() => {
-    // recalcula a quantidade de cards
-    setNumberOfCards(toggleData.length);
-    // recalcula a largura do conteudo escondido
-    setHiddenWidth(func_hiddenWidth());
-    // recalcula a quantidade de partes visiveis para passar
-    seTotalViews(func_totalViews);
     // zera a contagem de visualizações passadas
     setViews(1);
     
@@ -173,99 +148,95 @@ export default function Carousel() {
 
   }, [toggleData]);
 
-  useEffect(() => {
-    setCardWidth(s => cardSize_width)
-  }, [cardSize_width])
-
   /* responsividade */
   useEffect(() => {
 
     // 4 cards visiveis
     if(computer_min_1340px){
-      setNumberVisibleCards(s => 4)
+      setNumberVisibleCards(4)
     }
 
     // 3 cards visiveis
     if(computer_max_1340px){
-      setNumberVisibleCards(s => 3)
+      setNumberVisibleCards(3)
     }
 
     // 2 cards visiveis
     if(mobileOrTablet_max_1020px){
-      setNumberVisibleCards(s => 2)
+      setNumberVisibleCards(2)
     }
 
     // 1 cards visiveis
     if(mobile_max_690px){
-      setNumberVisibleCards(s => 1)
+      setNumberVisibleCards(1)
     }
 
     // diminui a largura para 290px
     if(miniMobile_max_450px){
-      setCardSize_width(s => 290)
+      setCardSize_width(290)
     }
     
     // diminui a largura para 280px
     if(miniMobile_max_440px){
-      setCardSize_width(s => 280)
+      setCardSize_width(280)
     }
 
     // diminui a largura para 270px
     if(miniMobile_max_430px){
-      setCardSize_width(s => 270)
+      setCardSize_width(270)
     }
 
     // diminui a largura para 260px
     if(miniMobile_max_420px){
-      setCardSize_width(s => 260)
+      setCardSize_width(260)
     }
 
     // diminui a largura para 250px
     if(miniMobile_max_410px){
-      setCardSize_width(s => 250)
+      setCardSize_width(250)
     }
 
     // diminui a largura para 240px
     if(miniMobile_max_400px){
-      setCardSize_width(s => 240)
+      setCardSize_width(240)
     }
 
     // diminui a largura para 230px
     if(miniMobile_max_390px){
-      setCardSize_width(s => 230)
+      setCardSize_width(230)
     }
     // diminui a largura para 220px
     if(miniMobile_max_380px){
-      setCardSize_width(s => 220)
+      setCardSize_width(220)
     }
 
     // diminui a largura para 210px
     if(miniMobile_max_370px){
-      setCardSize_width(s => 210)
+      setCardSize_width(210)
     }
 
     // diminui a largura para 200px
     if(miniMobile_max_360px){
-      setCardSize_width(s => 200)
+      setCardSize_width(200)
     }
 
     // diminui a largura para 190px
     if(miniMobile_max_350px){
-      setCardSize_width(s => 190)
+      setCardSize_width(190)
     }
     // diminui a largura para 180px
     if(miniMobile_max_340px){
-      setCardSize_width(s => 180)
+      setCardSize_width(180)
     }
 
     
     
     // volta a largura para para a largura original
     if(miniMobile_min_450px) {
-      setCardSize_width(s => 300)
+      setCardSize_width(300)
     }
 
-  }, [computer_max_1340px, computer_min_1340px, mobileOrTablet_max_1020px, mobile_max_690px, miniMobile_max_450px, miniMobile_min_450px, miniMobile_max_440px, miniMobile_max_430px, miniMobile_max_420px, miniMobile_max_410px, miniMobile_max_400px, miniMobile_max_390px, miniMobile_max_380px, miniMobile_max_370px, miniMobile_max_360px, miniMobile_max_350px, miniMobile_max_340px])
+  }, [computer_max_1340px, computer_min_1340px, mobileOrTablet_max_1020px, mobile_max_690px, miniMobile_max_450px, miniMobile_min_450px, miniMobile_max_440px, miniMobile_max_430px, miniMobile_max_420px, miniMobile_max_410px, miniMobile_max_400px, miniMobile_max_390px, miniMobile_max_380px, miniMobile_max_370px, miniMobile_max_360px, miniMobile_max_350px, miniMobile_max_340px, setCardSize_width])
 
   
   return (

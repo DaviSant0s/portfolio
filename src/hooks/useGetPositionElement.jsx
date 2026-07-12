@@ -7,11 +7,12 @@ export default function useGetPositionElement(id_or_class) {
 
   useEffect(() => {
     const element = document.querySelector(id_or_class);
+    if (!element) return;
+
     const positinElement = element.getBoundingClientRect();
 
     setPosition(positinElement.y);
-
-  }, [id_or_class, position, scrollPosition]);
+  }, [id_or_class, scrollPosition]);
 
   return position;
 }

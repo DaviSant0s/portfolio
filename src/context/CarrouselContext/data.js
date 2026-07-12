@@ -3,7 +3,6 @@ import css from '../../assets/css1.png';
 import scss from '../../assets/scss.png';
 import html from '../../assets/html1.png';
 import react from '../../assets/react.png';
-import linkedin from '../../assets/node2.png';
 import javascript from '../../assets/javascript.png';
 
 
@@ -15,7 +14,6 @@ import project4 from '../../assets/projects/socialscreen.png'
 import project5 from '../../assets/projects/mediascreen.png'
 import project6 from '../../assets/projects/meusitescreen.png'
 import project7 from '../../assets/projects/loginscreen.png'
-import project8 from '../../assets/projects/siteCscreen.png'
 import project10 from '../../assets/projects/finance.png'
 
 
@@ -83,18 +81,10 @@ const dataFrontend = [
 
 const dataBackend = [
   {
-    img: project9
+    name: 'API de autenticação',
+    img: project9,
+    github: 'https://github.com/DaviSant0s',
   },
-  {
-    img: project9
-  },
-  {
-    img: project9
-  },
-  {
-    img: project9
-  },
-  
 ];
 
 const dataFullstack = [

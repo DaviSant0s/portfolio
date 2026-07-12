@@ -17,17 +17,31 @@ export default function Logo({ sideBar=false }) {
       
         {
           (isTabletOrMobile && !sideBar) && 
-          <span onClick={() => setMenuEnabled(true)} className="material-symbols-outlined menuHeader">menu</span>
+          <button
+            type="button"
+            onClick={() => setMenuEnabled(true)}
+            aria-label="Abrir menu de navegação"
+            className="menuHeader"
+          >
+            <span className="material-symbols-outlined">menu</span>
+          </button>
         }
 
         {
           (isTabletOrMobile && sideBar) && 
-          <span onClick={() => setMenuEnabled(false)} className="material-symbols-outlined menuHeader">close</span>
+          <button
+            type="button"
+            onClick={() => setMenuEnabled(false)}
+            aria-label="Fechar menu de navegação"
+            className="menuHeader"
+          >
+            <span className="material-symbols-outlined">close</span>
+          </button>
         }
 
         {!isTabletOrMobile && 
           <div className='container-photo-logo' style={{width: '40px', height: '40px'}}>
-            <img src={photo} alt=""/>
+            <img src={photo} alt="Foto de perfil de Davi Santos"/>
           </div>
         }
 

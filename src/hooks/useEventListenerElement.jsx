@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 
-export default function useEventListenerElement(event, handle, element_Ref, array_dependence=[]) {
-
+export default function useEventListenerElement(event, handle, element_Ref) {
   useEffect(() => {
 
     const component = element_Ref.current;
@@ -16,5 +15,5 @@ export default function useEventListenerElement(event, handle, element_Ref, arra
       component.removeEventListener(event, handle);
     };
 
-  }, array_dependence);
+  }, [event, handle, element_Ref]);
 }

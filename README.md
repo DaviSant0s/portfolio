@@ -1,8 +1,46 @@
-# React + Vite
+# Portfólio | Davi Santos
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portfólio pessoal desenvolvido com React e Vite para apresentar projetos, certificações, habilidades, experiência e formas de contato.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React 18
+- Vite
+- CSS modularizado por componente
+- EmailJS para o formulário de contato
+
+## Rodando localmente
+
+```bash
+npm install
+npm run dev
+```
+
+## Scripts
+
+```bash
+npm run dev
+npm run build
+npm run lint
+npm run preview
+```
+
+## Variáveis de ambiente
+
+Crie um arquivo `.env` na raiz do projeto com:
+
+```env
+VITE_SERVICE_ID=
+VITE_TEMPLATE_ID=
+VITE_PUBLIC_KEY=
+```
+
+Sem essas variáveis o formulário de contato continua aparecendo, mas o envio fica desativado.
+
+## Melhorias recentes
+
+- Configuração de lint com ESLint
+- Ajustes de semântica e acessibilidade
+- Links externos com atributos de segurança
+- Correções em hooks e efeitos
+- Metadados melhores para apresentação do projeto

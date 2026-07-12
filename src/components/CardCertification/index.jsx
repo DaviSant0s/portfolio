@@ -14,7 +14,6 @@ export default function CardCertification(
     conclusion, 
     duration, 
     link_institution='', 
-    link_credential='' , 
     style_icone={}, 
     style_title={}
   }) {
@@ -42,7 +41,7 @@ export default function CardCertification(
               <div className='image-container-cardCertification'>
                 <div className='image-content-cardCertification'>
                   {img &&
-                    <img style={style_icone} src={img} alt="" />
+                    <img style={style_icone} src={img} alt={`Instituição ${institution}`} />
                   }
                   {!img &&
                     <i style={style_icone} className={icon} />
@@ -57,7 +56,7 @@ export default function CardCertification(
       
               <div className='data-cardCertification-container'>
                 <span className='title'>Instituição:</span>
-                <p className='name institution-name'><a target='_blank' href={link_institution}>{institution}</a></p>
+                <p className='name institution-name'><a target='_blank' rel='noreferrer' href={link_institution}>{institution}</a></p>
               </div>
               <div className='data-cardCertification-container'>
                 <span className='title'>Duração:</span>

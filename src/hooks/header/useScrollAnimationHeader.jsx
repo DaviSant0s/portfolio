@@ -25,9 +25,6 @@ export default function useScrollAnimationHeader() {
     const skillsHight = certificationHight + height.skills;
     const projectsHight = skillsHight + height.projects;
     const experienceHight = projectsHight + height.experience;
-    const contactHight = experienceHight + height.contact;
-    
-
     // função que aplica as animações
     const animationHeader = () => {
 

@@ -6,6 +6,7 @@ import { useCarousel } from '../../context/CarrouselContext';
 
 export default function Projects() {
   const { widthCarrouselGlobal } = useCarousel();
+  const currentYear = new Date().getFullYear();
 
   return (
     <div id='id_projects' className='projects-container defaultPages'>
@@ -14,7 +15,7 @@ export default function Projects() {
         <div style={{width: `${widthCarrouselGlobal}px`, gap: `${70*widthCarrouselGlobal/950}px`}}  className='carousel-and-githubCalendar-container'>
           <Carousel/>
           <div className='gitHubCalendar-container'>
-            <GitHubCalendar username="DaviSant0s" year={2024} colorScheme='light'/>
+            <GitHubCalendar username="DaviSant0s" year={currentYear} colorScheme='light'/>
           </div>
         </div>
       </div>

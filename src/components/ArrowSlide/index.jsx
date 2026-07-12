@@ -5,15 +5,25 @@ export default function ArrowSlide({ direction='right', func_handle,  style={}})
     <div style={style} className='arrowSlide-container'>
 
       {direction === 'left' &&
-        <span onClick={func_handle} className="material-symbols-outlined arrowSlide arrowSlide_left">
-          chevron_left
-        </span>
+        <button
+          type="button"
+          onClick={func_handle}
+          aria-label="Ver projetos anteriores"
+          className="arrowSlide arrowSlide_left"
+        >
+          <span className="material-symbols-outlined">chevron_left</span>
+        </button>
       }
 
       {direction === 'right' &&
-        <span onClick={func_handle} className="material-symbols-outlined arrowSlide arrowSlide_right">
-          chevron_right
-        </span>
+        <button
+          type="button"
+          onClick={func_handle}
+          aria-label="Ver próximos projetos"
+          className="arrowSlide arrowSlide_right"
+        >
+          <span className="material-symbols-outlined">chevron_right</span>
+        </button>
       }
 
     </div>

@@ -6,7 +6,7 @@ export default function SkillsCard({ image, name, style_image }) {
         <div className='skillCard-content'>
           <div className='skillCard-content-content'>
             <div className='image-skill'>
-                <img style={style_image} src={image} alt="" />
+                <img style={style_image} src={image} alt={name} />
             </div>
           </div>
           <p>{name}</p>

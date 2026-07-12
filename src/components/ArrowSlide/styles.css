@@ -10,15 +10,32 @@
 }
 
 .arrowSlide{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  appearance: none;
+  background: transparent;
   border: 2px solid #FB544E;
   border-radius: 50px;
   
   font-weight: 200;
   font-size: 1.8em;
   color: #FB544E;
+  line-height: 1;
 
   cursor: pointer;
 
   -webkit-user-select: none;
   user-select: none;
+}
+
+.arrowSlide > span {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: 1;
+}
+
+.arrowSlide:focus-visible {
+  outline: 3px solid rgba(251, 84, 78, 0.2);
+  outline-offset: 2px;
 }

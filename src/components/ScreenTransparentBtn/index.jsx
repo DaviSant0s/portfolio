@@ -12,23 +12,28 @@ export default function ScreenTransparentBtn({ styles={}, link, github, name, st
     >
       <h1 style={{fontSize: `${(20.8*cardSize_width)/287}px`, marginBottom: `${(5*cardSize_width)/287}px`}}>{name}</h1>
       {link && 
-
-        <button
-          style={{fontSize: `${(13*cardSize_width)/287}px`, width: `${(130*cardSize_width)/287}px`, height: `${(28.4*cardSize_width)/287}px`}}>
-
-            <a href={link} target='_blank'>Site</a>
-
-        </button>
+        <a
+          className='project-link-btn'
+          href={link}
+          target='_blank'
+          rel='noreferrer'
+          style={{fontSize: `${(13*cardSize_width)/287}px`, width: `${(130*cardSize_width)/287}px`, height: `${(28.4*cardSize_width)/287}px`}}
+        >
+          Site
+        </a>
 
       }
 
       {github &&
-        <button 
-          style={{fontSize: `${(13*cardSize_width)/287}px`, width: `${(130*cardSize_width)/287}px`, height: `${(28.4*cardSize_width)/287}px`}}>
-
-          <a href={github} target='_blank'>GitHub</a>
-
-        </button>
+        <a
+          className='project-link-btn'
+          href={github}
+          target='_blank'
+          rel='noreferrer'
+          style={{fontSize: `${(13*cardSize_width)/287}px`, width: `${(130*cardSize_width)/287}px`, height: `${(28.4*cardSize_width)/287}px`}}
+        >
+          GitHub
+        </a>
 
       }
       <div style={{marginTop: `${(10*cardSize_width)/287}px`}} className='technologies-container'>
@@ -37,7 +42,7 @@ export default function ScreenTransparentBtn({ styles={}, link, github, name, st
         {stacks.map((logo, index) => (
 
           <div key={index} className='technologies-background'>
-            <img style={{height: `${(20*cardSize_width)/287}px`}} src={logo} alt="" />
+            <img style={{height: `${(20*cardSize_width)/287}px`}} src={logo} alt="Tecnologia do projeto" />
           </div>
 
         ))}
@@ -47,4 +52,3 @@ export default function ScreenTransparentBtn({ styles={}, link, github, name, st
     </div>
   )
 }
-

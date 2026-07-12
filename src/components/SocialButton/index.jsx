@@ -5,7 +5,7 @@ export default function SocialButton({ type, btn_style={} }) {
   return (
     <>
       {type === 'github' && 
-        <a href="https://github.com/DaviSant0s" target='_blank' className='link-github socialButton-link'>
+        <a href="https://github.com/DaviSant0s" target='_blank' rel='noreferrer' className='link-github socialButton-link'>
           <div 
             style={btn_style} 
             className='github socialButton-contact'
@@ -18,7 +18,7 @@ export default function SocialButton({ type, btn_style={} }) {
       }
           
       {type === 'linkedin' && 
-        <a href="https://www.linkedin.com/in/davisantoss/" target='_blank' className='link-linkedin socialButton-link'>
+        <a href="https://www.linkedin.com/in/davisantoss/" target='_blank' rel='noreferrer' className='link-linkedin socialButton-link'>
           <div 
             style={btn_style} 
             className='linkedin socialButton-contact'

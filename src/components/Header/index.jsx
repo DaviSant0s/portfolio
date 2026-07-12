@@ -19,8 +19,8 @@ export default function Header() {
 
   // faz com que o side bar feche uando mudar a mediaquery
   useEffect(() => {
-    setMenuEnabled(s=>false)
-  }, [isTabletOrMobile])
+    setMenuEnabled(false)
+  }, [isTabletOrMobile, setMenuEnabled])
   
   
   return (
@@ -45,8 +45,13 @@ export default function Header() {
             
               <div className='contact-btn-scroll'>
 
-                  <a className='curriculum-btn-scroll' href="https://drive.google.com/file/d/186QiKzScSw8rHyrKlm4UMyCKWL9a_5mh/view?usp=sharing" target='_blank'>
-                    <Button name={'Currículo'} icon={'file_download'}/>
+                  <a
+                    className='curriculum-btn-scroll'
+                    href="https://drive.google.com/file/d/186QiKzScSw8rHyrKlm4UMyCKWL9a_5mh/view?usp=sharing"
+                    target='_blank'
+                    rel='noreferrer'
+                  >
+                    <Button as='span' name={'Currículo'} icon={'file_download'}/>
                   </a>
                 
               </div>

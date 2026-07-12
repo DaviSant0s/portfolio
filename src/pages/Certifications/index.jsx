@@ -2,15 +2,12 @@ import CardCertification from '../../components/CardCertification';
 import { useState } from 'react';
 import Button from '../../components/Button';
 import { Link } from 'react-scroll';
-import FilterField from '../../components/FilterField';
 import { useCertification } from '../../context/CertificationsContext';
 import './styles.css';
 
 export default function Certifications() {
 
-  const { filterCards, filteredData } = useCertification();
-
-  // fim
+  const { filteredData } = useCertification();
 
   const [ moreCardsBool, setMoreCardsBool ] = useState(false);
 
@@ -64,7 +61,6 @@ export default function Certifications() {
                 conclusion={data.conclusion}
                 duration={data.duration}
                 link_institution={data.link_institution}
-                link_credential={data.link_credential}
                 style_icone={data.style_icone}
                 status={data.status}
               />
@@ -106,6 +102,7 @@ export default function Certifications() {
               duration={300}>
             
                   <Button
+                    as='span'
                     handleClick={handleClickBtnLessCardsBool}
                     name='Ver menos'
                     icon={'expand_less'}

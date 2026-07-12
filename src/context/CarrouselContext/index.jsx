@@ -25,21 +25,21 @@ export default function CarouselProvider({ children }) {
 
   useEffect(() => {
     if(toggleCarousel === 'frontend'){
-      setToggleData(s => data.dataFrontend)
+      setToggleData(data.dataFrontend)
     }
 
     if(toggleCarousel === 'backend'){
-      setToggleData(s => data.dataBackend)
+      setToggleData(data.dataBackend)
     }
 
     if(toggleCarousel === 'fullstack'){
-      setToggleData(s => data.dataFullstack)
+      setToggleData(data.dataFullstack)
     }
 
   }, [toggleCarousel])
 
   useEffect(() => {
-    setCardSize_height(s => calcHeight(cardSize_width));
+    setCardSize_height(calcHeight(cardSize_width));
   }, [cardSize_width])
 
 

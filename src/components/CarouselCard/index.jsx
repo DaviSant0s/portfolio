@@ -9,7 +9,7 @@ export default function CarouselCard({ img, link, github, name, stacks }) {
   return (
     <div style={{width: `${cardSize_width}px`, height: `${cardSize_height}px`}} className='carouselCard-container'>
       <TabletContainer link={link} github={github} name={name} stacks={stacks}>
-        <img className='screenImage' src={img} alt="" />
+        <img className='screenImage' src={img} alt={`Prévia do projeto ${name}`} />
       </TabletContainer>
     </div>
   );

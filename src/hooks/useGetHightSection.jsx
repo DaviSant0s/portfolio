@@ -15,23 +15,30 @@ export default function useGetHightSection() {
 
   /* efeito que armazena as alturas de cada pagina no estado RizeElement */
   useEffect(() => {
-
-    if(resize_height_home && resize_height_certifications && resize_height_skills & resize_height_projects && resize_height_experience && resize_height_contacts){
-      setResizeElement(s => {
-        return {
-          home: resize_height_home,
-          certifications: resize_height_certifications,
-          skills: resize_height_skills,
-          projects: resize_height_projects,
-          experience: resize_height_experience,
-          contact: resize_height_contacts
-        }
+    if (
+      resize_height_home &&
+      resize_height_certifications &&
+      resize_height_skills &&
+      resize_height_projects &&
+      resize_height_experience &&
+      resize_height_contacts
+    ) {
+      setResizeElement({
+        home: resize_height_home,
+        certifications: resize_height_certifications,
+        skills: resize_height_skills,
+        projects: resize_height_projects,
+        experience: resize_height_experience,
+        contact: resize_height_contacts,
       });
     }
-
-  }, [resize_height_home, resize_height_certifications, 
-      resize_height_skills, resize_height_projects, resize_height_experience, resize_height_contacts
-
+  }, [
+    resize_height_home,
+    resize_height_certifications,
+    resize_height_skills,
+    resize_height_projects,
+    resize_height_experience,
+    resize_height_contacts,
   ]);
 
   return resizeElement;

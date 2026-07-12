@@ -20,7 +20,6 @@ export default function AnimationProvider({ children }) {
   const [ animationContact, setAnimationContact ] = useState({});
 
   // customHook que retorna a posição do elemento na tela em relação a viewport
-  const positionHome = useGetPositionElement('#id_home'); // não usando no momento
   const positionCertifications = useGetPositionElement('#id_title_certifications');
   const positionSkills = useGetPositionElement('#id_title_skills');
   const positionProjects = useGetPositionElement('#id_title_projects');
@@ -32,33 +31,33 @@ export default function AnimationProvider({ children }) {
     if(positionCertifications){
 
       if(viewd(positionCertifications)) {
-        setAnimationCertification(s => animation);
+        setAnimationCertification(animation);
       } else {
-        setAnimationCertification(s => ({}));
+        setAnimationCertification({});
       }
 
       if(viewd(positionSkills)) {
-        setAnimationSkills(s => animation);
+        setAnimationSkills(animation);
       } else {
-        setAnimationSkills(s => ({}));
+        setAnimationSkills({});
       }
 
       if(viewd(positionProjects)) {
-        setAnimationProjects(s => animation);
+        setAnimationProjects(animation);
       } else {
-        setAnimationProjects(s => ({}))
+        setAnimationProjects({})
       }
 
       if(viewd(positionExperience)) {
-        setAnimationExperience(s => animation);
+        setAnimationExperience(animation);
       } else {
-        setAnimationExperience(s => ({}));
+        setAnimationExperience({});
       }
 
       if(viewd(positionContact)) {
-        setAnimationContact(s => animation);
+        setAnimationContact(animation);
       } else {
-        setAnimationContact(s => ({}));
+        setAnimationContact({});
       }
 
     }

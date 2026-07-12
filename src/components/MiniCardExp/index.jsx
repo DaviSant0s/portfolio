@@ -10,7 +10,7 @@ export default function MiniCardExp({ logo, institution, description, position, 
           <p className='exp-description'>{description}</p>
         </div>
         <div className='exp-details-logo'>
-          <img src={logo} alt="" />
+          <img src={logo} alt={`Logo de ${institution}`} />
         </div>
 
       </div>

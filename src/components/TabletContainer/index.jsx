@@ -7,7 +7,7 @@ import { useCarousel } from '../../context/CarrouselContext';
 export default function TabletContainer({ children, link, github, name, stacks}) {
 
   const [ stylesScreenTransparent, setStylesScreenTransparent ] = useState({});
-  const {cardSize_width, setCardSize_width, cardSize_height} = useCarousel();
+  const { cardSize_width } = useCarousel();
 
   const handleMouseEnterScreenTransparent = () => {
     setStylesScreenTransparent({
@@ -28,7 +28,7 @@ export default function TabletContainer({ children, link, github, name, stacks})
       onMouseLeave={handleMouseLeaveScreenTransparent}
       className='tabletContainer'
     >
-      <img src={tablet} alt="" />
+      <img src={tablet} alt="Moldura de tablet do projeto" />
       <div 
 
       style={{

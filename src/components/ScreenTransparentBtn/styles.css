@@ -32,7 +32,7 @@
 
 /* botão */
 
-.screenTransparentTabletBtn > button {
+.screenTransparentTabletBtn > .project-link-btn {
 
   width: 130px;
   height: 28.4px;
@@ -44,10 +44,6 @@
   
   transition: all .3s ease;
   cursor: pointer;
-  
-}
-
-.screenTransparentTabletBtn > button > a{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -57,13 +53,17 @@
   line-height: 100%;
   color: white;
 
-  height: 100%;
-  width: 100%;
+  appearance: none;
 }
 
-.screenTransparentTabletBtn > button:hover {
+.screenTransparentTabletBtn > .project-link-btn:hover {
   transform: scale(1.05);
   background-color: #ffffff1d;
+}
+
+.screenTransparentTabletBtn > .project-link-btn:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.3);
+  outline-offset: 2px;
 }
 
 
