@@ -1,47 +1,22 @@
-import { useState } from 'react';
+import * as Dialog from '@radix-ui/react-dialog';
 import './styles.css';
-import { useEffect } from 'react';
-import { useRef } from 'react';
 import NavHeaderSideBar from '../NavHeaderSideBar';
 import Logo from '../Logo';
 
-export default function SideBar({ menuEnabled, setMenuEnabled }) {
-
-  const sideBar_Ref = useRef();
-  const [ animacao, setAnimacao ] = useState({});
-
-  useEffect(() => {
-    if(menuEnabled){
-      setAnimacao({
-        transform: 'translate(100%)', 
-        boxShadow: '0px 0px 20px #6b7a89',
-      })
-    }else {
-      setAnimacao({})
-    }
-
-  }, [menuEnabled])
-
-  const handeClickSideBarOut = (e) => {
-    if(!sideBar_Ref.current.contains(e.target)) {
-      setMenuEnabled(false)
-    }
-  }
-
+export default function SideBar() {
   return (
-    <div style={{width: `${menuEnabled ? '100vw' : '0'}`}} onClick={handeClickSideBarOut} className='background-sidebar'>
-
-      <div ref={sideBar_Ref} style={animacao} className='sideBar-container'>
+    <Dialog.Portal>
+      <Dialog.Overlay className='background-sidebar' />
+      <Dialog.Content className='sideBar-container'>
+        <Dialog.Title className='sideBar-sr-only'>Menu de navegacao</Dialog.Title>
+        <Dialog.Description className='sideBar-sr-only'>
+          Use este painel para navegar pelas secoes do portfolio.
+        </Dialog.Description>
         <div className='title-sideBar'>
-          
           <Logo sideBar={true}/>
-
         </div>
-
         <NavHeaderSideBar/>
-
-      </div>
-
-    </div>
+      </Dialog.Content>
+    </Dialog.Portal>
   )
 }

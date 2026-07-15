@@ -1,3 +1,4 @@
+import * as Dialog from '@radix-ui/react-dialog';
 import Logo from '../Logo';
 import './styles.css';
 import Button from '../Button';
@@ -24,55 +25,57 @@ export default function Header() {
   
   
   return (
-    <header className='header-container-scroll'>
+    <Dialog.Root open={menuEnabled} onOpenChange={setMenuEnabled}>
+      <header className='header-container-scroll'>
 
-      <div className='header-content-scroll'>
-        <div className='logo-and-buttons-header-scroll'>
-          <Logo/>
+        <div className='header-content-scroll'>
+          <div className='logo-and-buttons-header-scroll'>
+            <Logo/>
 
-          {!isTabletOrMobile &&
-          
-            <div className='navHeaderAnimationBug-container-scroll'>
+            {!isTabletOrMobile &&
+            
+              <div className='navHeaderAnimationBug-container-scroll'>
 
-              <NavHeader/>
+                <NavHeader/>
+
+              </div>
+            }
+
+            <div className='btns-header-scroll'>
+
+              {!miniMobile &&
+              
+                <div className='contact-btn-scroll'>
+
+                    <a
+                      className='curriculum-btn-scroll'
+                      href="https://drive.google.com/file/d/186QiKzScSw8rHyrKlm4UMyCKWL9a_5mh/view?usp=sharing"
+                      target='_blank'
+                      rel='noreferrer'
+                    >
+                      <Button as='span' name={'Currículo'} icon={'file_download'}/>
+                    </a>
+                  
+                </div>
+              
+              }
+
+              {(!Mobile || miniMobile) &&
+                <DarkModeBtn styles_container={{marginTop: '0px'}}/>
+              }
+
 
             </div>
-          }
-
-          <div className='btns-header-scroll'>
-
-            {!miniMobile &&
             
-              <div className='contact-btn-scroll'>
-
-                  <a
-                    className='curriculum-btn-scroll'
-                    href="https://drive.google.com/file/d/186QiKzScSw8rHyrKlm4UMyCKWL9a_5mh/view?usp=sharing"
-                    target='_blank'
-                    rel='noreferrer'
-                  >
-                    <Button as='span' name={'Currículo'} icon={'file_download'}/>
-                  </a>
-                
-              </div>
-            
-            }
-
-            {(!Mobile || miniMobile) &&
-              <DarkModeBtn styles_container={{marginTop: '0px'}}/>
-            }
-
-
           </div>
           
         </div>
         
-      </div>
-      
-      {isTabletOrMobile &&
-        <SideBar menuEnabled={menuEnabled} setMenuEnabled={setMenuEnabled}/>
-      }
+        {isTabletOrMobile &&
+          <SideBar/>
+        }
 
-    </header>
+      </header>
+    </Dialog.Root>
   );
 }
