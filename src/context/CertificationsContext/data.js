@@ -260,3 +260,34 @@ export const certifications = [
     style_icone: {borderRadius: '3px'},
   }
 ];
+
+export const certificationFilters = [
+  { key: 'all', label: 'Tudo' },
+  { key: 'backend', label: 'Backend' },
+  { key: 'frontend', label: 'Frontend' },
+  { key: 'linguagens', label: 'Linguagens' },
+  { key: 'banco de dados', label: 'Banco de dados' },
+  { key: 'softskills', label: 'Soft Skills' },
+  { key: 'outros', label: 'Outros' },
+];
+
+const certificationFilterAliases = {
+  all: 'all',
+  tudo: 'all',
+  backend: 'backend',
+  frontend: 'frontend',
+  linguagens: 'linguagens',
+  'banco de dados': 'banco de dados',
+  softskills: 'softskills',
+  'soft skills': 'softskills',
+  outros: 'outros',
+};
+
+export function normalizeCertificationFilter(filterValue) {
+  const normalizedValue = String(filterValue ?? '')
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, ' ');
+
+  return certificationFilterAliases[normalizedValue] ?? 'all';
+}

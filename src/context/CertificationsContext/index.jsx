@@ -1,10 +1,14 @@
-import { createContext, useContext, useMemo, useState } from "react"
-import { certifications } from "./data";
+import { createContext, useCallback, useContext, useMemo, useState } from "react"
+import { certificationFilters, certifications, normalizeCertificationFilter } from "./data";
 
 export const GlobalCertificationsContext = createContext();
 
 export default function CertificationsProvider({ children }) {
-  const [ filterCards, setFilterCards ] = useState('all');
+  const [ filterCards, setFilterCardsState ] = useState('all');
+
+  const setFilterCards = useCallback((nextFilter) => {
+    setFilterCardsState(normalizeCertificationFilter(nextFilter));
+  }, []);
 
   const filteredData = useMemo(() => {
     if (filterCards === 'all') {
@@ -17,8 +21,9 @@ export default function CertificationsProvider({ children }) {
   const value = useMemo(() => ({
     filterCards,
     setFilterCards,
+    certificationFilters,
     filteredData,
-  }), [filterCards, filteredData]);
+  }), [filterCards, setFilterCards, filteredData]);
 
   return (
     <GlobalCertificationsContext.Provider value={value}>
