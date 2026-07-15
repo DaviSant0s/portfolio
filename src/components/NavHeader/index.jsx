@@ -41,7 +41,7 @@ export default function NavHeader({ styles={} }) {
             {...linkProps}
           >
             <m.div
-              className='link-page'
+              className={`link-page ${isActive ? 'is-active' : ''}`}
               variants={itemVariants}
               initial={false}
               animate={itemState}
