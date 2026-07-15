@@ -3,30 +3,63 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 60px;
-  height: 41px;
-  
-  margin-top: 6px;
-  margin-left: 10px;
+  width: fit-content;
+  height: fit-content;
 }
 
 .dark-mode-content {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
-  
-  padding-left: 5px;
-  padding-right: 5px;
-  
-  width: 82px;
-  height: 31px;
+
+  position: relative;
+  padding: 4px;
+
+  width: 72px;
+  height: 38px;
   appearance: none;
-  border-radius: 20px 20px 20px 20px;
+  border-radius: 999px;
   border: 1px solid var(--color-toggle-track-border);
-  box-shadow: inset 0px 0px 6px var(--color-toggle-track-shadow);
+  box-shadow:
+    inset 0px 1px 6px var(--color-toggle-track-shadow),
+    0px 6px 14px var(--color-shadow-soft);
   background: var(--color-toggle-track);
   
   cursor: pointer;
+  overflow: hidden;
+
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+}
+
+.dark-mode-content::before,
+.dark-mode-content::after {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Material Icons';
+  font-size: 0.95rem;
+  line-height: 1;
+  pointer-events: none;
+  opacity: 0.78;
+}
+
+.dark-mode-content::before {
+  content: 'light_mode';
+  left: 10px;
+  color: var(--color-toggle-icon-sun);
+}
+
+.dark-mode-content::after {
+  content: 'dark_mode';
+  right: 10px;
+  color: var(--color-toggle-icon-moon);
+}
+
+.dark-mode-content:hover {
+  border-color: var(--color-accent-soft);
+  box-shadow:
+    inset 0px 1px 6px var(--color-toggle-track-shadow),
+    0px 8px 18px var(--color-shadow-md);
 }
 
 .dark-mode-content:focus-visible {
@@ -35,11 +68,16 @@
 }
 
 .circle-mode {
-  width: 25px;
-  height: 25px;
+  position: relative;
+  z-index: 1;
+  width: 30px;
+  height: 30px;
   background-color: var(--color-toggle-knob);
   border-radius: 50%;
   border: 1px solid var(--color-toggle-knob-border);
+  box-shadow:
+    0px 6px 12px var(--color-shadow-soft),
+    inset 0px 1px 0px var(--color-surface-glint);
 }
 
 .mode {
@@ -51,7 +89,7 @@
   height: 100%;
   border-radius: 50%;
   
-  font-size: 1.1em;
+  font-size: 1rem;
   
   cursor: pointer;
 
@@ -61,9 +99,10 @@
 
 .darkMode {
   color: var(--color-toggle-icon-moon);
-  font-size: 1.1em;
+  font-size: 1rem;
 }
 
 .lightMode{
   color: var(--color-toggle-icon-sun);
+  font-size: 1rem;
 }

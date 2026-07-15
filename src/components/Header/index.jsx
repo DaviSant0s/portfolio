@@ -12,7 +12,6 @@ import { useEffect } from 'react';
 export default function Header() {
   // responsividade
   const isTabletOrMobile = useMediaQuery({query: '(max-width: 1100px)'});
-  const Mobile = useMediaQuery({query: '(max-width: 500px)'});
   const miniMobile = useMediaQuery({query: '(max-width: 410px)'});
 
   // estados globais
@@ -60,8 +59,10 @@ export default function Header() {
               
               }
 
-              {(!Mobile || miniMobile) &&
-                <DarkModeBtn styles_container={{marginTop: '0px'}}/>
+              {!isTabletOrMobile &&
+                <div className='theme-toggle-header'>
+                  <DarkModeBtn/>
+                </div>
               }
 
 

@@ -4,6 +4,7 @@ import * as m from 'motion/react-m';
 import './styles.css';
 import NavHeaderSideBar from '../NavHeaderSideBar';
 import Logo from '../Logo';
+import DarkModeBtn from '../DarkModeBtn';
 import { useSideBar } from '../../context/SideBarContext';
 
 export default function SideBar() {
@@ -45,6 +46,15 @@ export default function SideBar() {
                 <Logo sideBar={true}/>
               </div>
               <NavHeaderSideBar/>
+              <div className='sidebar-preferences'>
+                <div className='sidebar-theme-toggle'>
+                  <div className='sidebar-theme-copy'>
+                    <span className='sidebar-theme-title'>Tema visual</span>
+                    <span className='sidebar-theme-description'>Alternar entre modo claro e escuro</span>
+                  </div>
+                  <DarkModeBtn/>
+                </div>
+              </div>
             </m.div>
           </Dialog.Content>
         </Dialog.Portal>

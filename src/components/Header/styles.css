@@ -54,6 +54,13 @@
   height: 100%;
 }
 
+.theme-toggle-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+}
+
 .contact-btn-scroll {
   display: flex;
   justify-content: center;
@@ -76,5 +83,4 @@
   .contact-btn-scroll{
     border-right: none;
   }
-  
 }

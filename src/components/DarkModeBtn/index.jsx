@@ -6,6 +6,7 @@ import './styles.css';
 export default function DarkModeBtn({ styles_container={} }) {
   const { isDarkMode, toggleTheme } = useTheme();
   const prefersReducedMotion = useReducedMotion();
+  const knobOffset = 30;
   const knobTransition = prefersReducedMotion
     ? { duration: 0 }
     : { type: 'spring', stiffness: 520, damping: 34 };
@@ -26,7 +27,7 @@ export default function DarkModeBtn({ styles_container={} }) {
         <m.div
           className='circle-mode'
           animate={{
-            x: isDarkMode ? 25 : 0,
+            x: isDarkMode ? knobOffset : 0,
           }}
           transition={knobTransition}
         >

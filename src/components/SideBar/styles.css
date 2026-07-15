@@ -60,6 +60,42 @@
   border: 0;
 }
 
+.sidebar-preferences {
+  width: 100%;
+  margin-top: auto;
+  padding: 18px 14px 0;
+}
+
+.sidebar-theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 14px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 18px;
+  background: var(--color-surface-soft);
+}
+
+.sidebar-theme-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.sidebar-theme-title {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--color-text-strong);
+}
+
+.sidebar-theme-description {
+  font-size: 0.82rem;
+  line-height: 1.35;
+  color: var(--color-text-muted);
+}
+
 @media screen and (max-width: 420px) {
   .sideBar-container {
     width: min(86vw, 320px);
