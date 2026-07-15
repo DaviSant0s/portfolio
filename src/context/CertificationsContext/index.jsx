@@ -1,25 +1,27 @@
-import { createContext, useContext, useEffect, useState } from "react"
+import { createContext, useContext, useMemo, useState } from "react"
 import { certifications } from "./data";
 
 export const GlobalCertificationsContext = createContext();
 
 export default function CertificationsProvider({ children }) {
-   const [ filterCards, setFilterCards ] = useState('all');
-   const [ filteredData, setFilteredData ] = useState([]);
-   const [ dataCertifications, setDataCertifications ] = useState(certifications);
+  const [ filterCards, setFilterCards ] = useState('all');
 
-   useEffect(() => {
+  const filteredData = useMemo(() => {
+    if (filterCards === 'all') {
+      return certifications;
+    }
 
-    setFilteredData(dataCertifications.filter(item => item.type === filterCards || filterCards === 'all'));
+    return certifications.filter((item) => item.type === filterCards);
+  }, [filterCards]);
 
-   }, [dataCertifications, filterCards]);
+  const value = useMemo(() => ({
+    filterCards,
+    setFilterCards,
+    filteredData,
+  }), [filterCards, filteredData]);
 
   return (
-    <GlobalCertificationsContext.Provider value={{
-      filterCards, setFilterCards,
-      dataCertifications, setDataCertifications,
-      filteredData, setFilteredData,
-    }}>
+    <GlobalCertificationsContext.Provider value={value}>
       { children }
     </GlobalCertificationsContext.Provider>
   )

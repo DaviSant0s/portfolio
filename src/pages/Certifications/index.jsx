@@ -47,10 +47,10 @@ export default function Certifications() {
         
         >
 
-          {filteredData.map((data, index) => {
+          {filteredData.map((data) => {
 
             return(
-            <div key={index}>
+            <div key={data.id}>
               <CardCertification
                 icon={data.icon}
                 img={data.img}
