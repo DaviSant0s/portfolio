@@ -1,15 +1,19 @@
 import { useCertification } from '../../context/CertificationsContext';
 import './styles.css';
 
-export default function FilterCertificationsBtn( {name, handleClick, type} ){
+export default function FilterCertificationsBtn({ name, handleClick, type }) {
 
   const { filterCards } = useCertification();
+  const isSelected = filterCards === type;
 
   return (
-    <div 
-    onClick={() => handleClick(type)} 
-    className={`filterCertificationsBtn-conatiner ${filterCards === type ? 'selectedFilterCertifications' : 'notSelectedFilterCertifications'}`}>
+    <button
+      type='button'
+      onClick={() => handleClick(type)}
+      aria-pressed={isSelected}
+      className={`filterCertificationsBtn-conatiner ${isSelected ? 'selectedFilterCertifications' : 'notSelectedFilterCertifications'}`}
+    >
       {name}
-    </div>
+    </button>
   )
 }

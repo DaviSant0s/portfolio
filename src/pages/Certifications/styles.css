@@ -27,6 +27,17 @@
   text-align: center;
 }
 
+.certifications-filters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: min(100%, 860px);
+  margin: 0 auto 32px;
+  padding: 0 10px;
+}
+
 .cards-certifications-grid {
   width: 1110px;
   display: grid;
@@ -39,6 +50,22 @@
   padding-left: 10px;
   margin: auto;
 
+}
+
+.certifications-empty-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: min(100%, 720px);
+  min-height: 220px;
+  margin: 0 auto;
+  padding: 24px;
+  border: 1px solid var(--color-border);
+  border-radius: 18px;
+  background: var(--color-surface);
+  text-align: center;
+  color: var(--color-text-muted);
+  box-shadow: 0px 8px 18px var(--color-shadow-soft);
 }
 
 
@@ -116,6 +143,12 @@
 }
 
 @media screen and (max-width: 790px){
+  .certifications-filters {
+    justify-content: flex-start;
+    width: 370px;
+    margin-bottom: 28px;
+  }
+
   .cards-certifications-grid {
     width: 370px;
     grid-template-columns: 350px;
@@ -129,6 +162,10 @@
 
 /* responsividade para os cards quando tiver no celular pequeno */
 @media screen and (max-width: 390px){
+  .certifications-filters {
+    width: 100%;
+  }
+
   .cards-certifications-grid {
     width: 100%;
     display: flex;

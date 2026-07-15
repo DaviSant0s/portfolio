@@ -1,14 +1,15 @@
 import CardCertification from '../../components/CardCertification';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Button from '../../components/Button';
 import { Link } from 'react-scroll';
+import FilterCertificationsBtn from '../../components/FilterCertificationsBtn';
 import { useCertification } from '../../context/CertificationsContext';
 import useTrackActiveSection from '../../hooks/header/useTrackActiveSection';
 import './styles.css';
 
 export default function Certifications() {
 
-  const { filteredData } = useCertification();
+  const { certificationFilters, filterCards, filteredData, setFilterCards } = useCertification();
   const { ref } = useTrackActiveSection('certifications');
 
   const [ moreCardsBool, setMoreCardsBool ] = useState(false);
@@ -23,6 +24,10 @@ export default function Certifications() {
     }, 100)
   }
 
+  useEffect(() => {
+    setMoreCardsBool(false);
+  }, [filterCards]);
+
   return (
     <div ref={ref} className='certifications-container' id='id_certifications'>
       <div 
@@ -35,40 +40,59 @@ export default function Certifications() {
         <h1 id='id_title_certifications'>
           Certificações
         </h1>
-        <div className={`cards-certifications-grid ${moreCardsBool ? 'cards-certifications-grid-viwMore-true' : 'cards-certifications-grid-viwMore-false'}`}
-
-          style={{
-
-            height: `${filteredData.length <= 6 ? 'max-content' : ''}`,
-            width: `${filteredData.length === 1 ? '370px': (filteredData.length === 2 ? '740px' : '')}`
-          
-          }}
-        
-        
-        >
-
-          {filteredData.map((data) => {
-
-            return(
-            <div key={data.id}>
-              <CardCertification
-                icon={data.icon}
-                img={data.img}
-                name={data.name}
-                description={data.description}
-                institution={data.institution}
-                conclusion={data.conclusion}
-                duration={data.duration}
-                link_institution={data.link_institution}
-                style_icone={data.style_icone}
-                status={data.status}
-              />
-            </div>
-            );
-              
-          })}
-            
+        <div className='certifications-filters'>
+          {certificationFilters.map((filter) => (
+            <FilterCertificationsBtn
+              key={filter.key}
+              name={filter.label}
+              type={filter.key}
+              handleClick={setFilterCards}
+            />
+          ))}
         </div>
+
+        {filteredData.length > 0 &&
+          <div className={`cards-certifications-grid ${moreCardsBool ? 'cards-certifications-grid-viwMore-true' : 'cards-certifications-grid-viwMore-false'}`}
+
+            style={{
+
+              height: `${filteredData.length <= 6 ? 'max-content' : ''}`,
+              width: `${filteredData.length === 1 ? '370px': (filteredData.length === 2 ? '740px' : '')}`
+            
+            }}
+          
+          
+          >
+
+            {filteredData.map((data) => {
+
+              return(
+              <div key={data.id}>
+                <CardCertification
+                  icon={data.icon}
+                  img={data.img}
+                  name={data.name}
+                  description={data.description}
+                  institution={data.institution}
+                  conclusion={data.conclusion}
+                  duration={data.duration}
+                  link_institution={data.link_institution}
+                  style_icone={data.style_icone}
+                  status={data.status}
+                />
+              </div>
+              );
+                
+            })}
+              
+          </div>
+        }
+
+        {filteredData.length === 0 &&
+          <div className='certifications-empty-state'>
+            Nenhuma certificação encontrada nesta categoria ainda.
+          </div>
+        }
       </div>
 
       {filteredData.length > 6 && 
