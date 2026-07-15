@@ -1,11 +1,14 @@
 import gmail from '../../assets/social/gmail.webp';
 import whatsapp from '../../assets/social/whatsapp.png';
 import { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
 import { toast } from 'react-toastify';
 import emailjs from '@emailjs/browser';
 
 /* emailjs */
 import { EMAILJS_CONFIGURED, SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY } from '../../config';
+import { contactFormSchema } from '../../schemas/contactFormSchema';
 
 import './styles.css';
 import Loading from '../../components/Loading';
@@ -18,16 +21,21 @@ export default function Contact() {
   const [ contactCopiedGmail, setContactCopiedGmail ] = useState(false);
   const [ contactCopiedWhats, setContactCopiedWhats ] = useState(false);
   /* fim */
-
-  /* estados para envio de email pelo formulario */
-  const [ name_sendEmails, setName_sendEmails ] = useState('');
-  const [ email_sendEmails, setEmail_sendEmails ] = useState('');
-  const [ message_sendEmails, setMessage_sendEmails ] = useState('');
-  /* fim */
-
-  /* estado de loadind do emailjs */
-  const [ isSendingEmail, setIsSendingEmail ] = useState(false);
-  /* fim */
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm({
+    resolver: zodResolver(contactFormSchema),
+    defaultValues: {
+      name: '',
+      email: '',
+      message: '',
+    },
+    mode: 'onBlur',
+    reValidateMode: 'onChange',
+  });
 
   // função para reaproveitar o toast
   const toast_func = (type, msg, autoClose=null) => {
@@ -40,51 +48,33 @@ export default function Contact() {
   /* fim */
 
   /* função para envio de email */
-  const  handleSendEmail = async e => {
-    e.preventDefault();
-
+  const handleSendEmail = async (formData) => {
     if (!EMAILJS_CONFIGURED) {
       toast_func(toast.error, "Formulário temporariamente indisponível", 2500);
       return;
     }
 
-    if(name_sendEmails === '' || email_sendEmails === '' || message_sendEmails === '') {
-
-      toast_func(toast.warning, "Preencha todos os campos", 2000);
-
-      return;
-      
-    }
-
     try {
-
       const templateParams = {
-        from_name: name_sendEmails,
-        email: email_sendEmails, 
-        message: message_sendEmails
+        from_name: formData.name,
+        email: formData.email, 
+        message: formData.message
       }
-
-      setIsSendingEmail(true);
 
       await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
 
-      
-
-      setName_sendEmails('');
-      setEmail_sendEmails('');
-      setMessage_sendEmails('');
+      reset();
 
       toast_func(toast.success, "Email enviado!", 2000);
-
-      setIsSendingEmail(false);
       
-    } catch (err) {
-      setIsSendingEmail(false);
+    } catch {
       toast_func(toast.error, "Falha ao enviar e-mail", 2000);
-      
     }
-    
-  }
+  };
+
+  const handleInvalidSubmit = () => {
+    toast_func(toast.warning, "Revise os campos destacados", 2200);
+  };
 
   /* fim */
 
@@ -136,48 +126,67 @@ export default function Contact() {
             Contatos
           </h1>
           <div className='input-and-social-container-contact'>
-            <form id='form-contact' method="post" onSubmit={handleSendEmail}>
-              <div className='name-input-contact-container input-contact'>
+            <form
+              id='form-contact'
+              method="post"
+              noValidate
+              onSubmit={handleSubmit(handleSendEmail, handleInvalidSubmit)}
+            >
+              <div className={`name-input-contact-container input-contact ${errors.name ? 'has-error' : ''}`}>
                 <label className='sr-only' htmlFor='contact-name'>Nome completo</label>
                 <input
-                id='contact-name'
-                value={name_sendEmails}
-                onChange={e => setName_sendEmails(e.target.value)}
-                type="text"
-                name="name-input-contact"
-                autoComplete='name'
-                required
-                placeholder='Digite seu nome e sobrenome'/>
+                  id='contact-name'
+                  type="text"
+                  autoComplete='name'
+                  placeholder='Digite seu nome e sobrenome'
+                  aria-invalid={errors.name ? 'true' : 'false'}
+                  aria-describedby={errors.name ? 'contact-name-error' : undefined}
+                  {...register('name')}
+                />
+                {errors.name &&
+                  <span id='contact-name-error' className='field-error-message' role='alert'>
+                    {errors.name.message}
+                  </span>
+                }
               </div>
-              <div className='email-input-contact-container input-contact'>
+              <div className={`email-input-contact-container input-contact ${errors.email ? 'has-error' : ''}`}>
                 <label className='sr-only' htmlFor='contact-email'>Seu e-mail</label>
                 <input
-                id='contact-email'
-                value={email_sendEmails}
-                onChange={e => setEmail_sendEmails(e.target.value)}
-                type="email"
-                name="email-input-contact"
-                autoComplete='email'
-                required
-                placeholder='Digite seu e-mail'/>
+                  id='contact-email'
+                  type="email"
+                  autoComplete='email'
+                  placeholder='Digite seu e-mail'
+                  aria-invalid={errors.email ? 'true' : 'false'}
+                  aria-describedby={errors.email ? 'contact-email-error' : undefined}
+                  {...register('email')}
+                />
+                {errors.email &&
+                  <span id='contact-email-error' className='field-error-message' role='alert'>
+                    {errors.email.message}
+                  </span>
+                }
               </div>
-              <div className='message-input-contact-container input-contact'>
+              <div className={`message-input-contact-container input-contact ${errors.message ? 'has-error' : ''}`}>
                 <label className='sr-only' htmlFor='contact-message'>Mensagem</label>
                 <textarea
-                id='contact-message'
-                value={message_sendEmails}
-                onChange={e => setMessage_sendEmails(e.target.value)}
-                name="message-input-contact"
-                required
-                placeholder='Sua mensagem...'/>
+                  id='contact-message'
+                  placeholder='Sua mensagem...'
+                  aria-invalid={errors.message ? 'true' : 'false'}
+                  aria-describedby={errors.message ? 'contact-message-error' : undefined}
+                  {...register('message')}
+                />
+                {errors.message &&
+                  <span id='contact-message-error' className='field-error-message' role='alert'>
+                    {errors.message.message}
+                  </span>
+                }
               </div>
               <button
                 className='btn-submit-form-contact'
                 type="submit"
-                form='form-contact'
-                disabled={isSendingEmail}
+                disabled={isSubmitting}
               >
-                {isSendingEmail ? <Loading/> : 'Enviar' }
+                {isSubmitting ? <Loading/> : 'Enviar' }
               </button>
             </form>
             <div className='social-container-contact'>
