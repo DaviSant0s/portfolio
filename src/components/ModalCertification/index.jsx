@@ -1,3 +1,4 @@
+import * as Dialog from '@radix-ui/react-dialog';
 import Modal from '../Modal';
 import './styles.css'
 
@@ -11,9 +12,14 @@ export default function ModalCertification({ status, isOpen, setIsOpen }) {
         className='design-color-theme'
         style={{backgroundColor: `${status ? '#5cb85c' : '#b9b85c'}`}}
       >
+        <Dialog.Description className='modalCertification-sr-only'>
+          Conteudo programatico e ementa da certificacao selecionada.
+        </Dialog.Description>
         <div className='modal-content-CardCertification'>
           <div className='amount-content'>
-            <h1 className='title-content-modal'>Ementa</h1>
+            <Dialog.Title asChild>
+              <h1 className='title-content-modal'>Ementa</h1>
+            </Dialog.Title>
 
             <ul className='list-content-modal'>
               <li><strong>Instalação dos programas</strong>, como Node, Visual Studio Code e mais</li>
@@ -43,10 +49,15 @@ export default function ModalCertification({ status, isOpen, setIsOpen }) {
 
           </div>
 
-          <span
-            onClick={() => setIsOpen(false)}
-            className="material-symbols-outlined closeModal-btn"
-          > close </span>
+          <Dialog.Close asChild>
+            <button
+              type='button'
+              className='closeModal-btn'
+              aria-label='Fechar modal de ementa'
+            >
+              <span className="material-symbols-outlined">close</span>
+            </button>
+          </Dialog.Close>
 
         </div>
       </div>

@@ -1,37 +1,17 @@
-import { useEffect, useRef } from 'react';
+import * as Dialog from '@radix-ui/react-dialog';
 import './styles.css';
 
 export default function Modal({ children, isOpen, setIsOpen }) {
-  const Ref_modal_content = useRef();
-
-  useEffect(() => {
-
-    if(isOpen){
-      document.body.style.overflow = 'hidden';
-    }
-
-    return () => {
-      document.body.style.overflow = 'auto';
-    }
-    
-  }, [isOpen]);
-
-  const handeClickModalOut = (e) => {
-    if(!Ref_modal_content.current.contains(e.target)) {
-      setIsOpen(false);
-    }
-  }
-
   return (
-    <>
-      {isOpen &&
-        <div onClick={handeClickModalOut} className='modal-container'> 
-          <div ref={Ref_modal_content} className='modal-content'>
+    <Dialog.Root open={isOpen} onOpenChange={setIsOpen}>
+      <Dialog.Portal>
+        <Dialog.Overlay className='modal-container'>
+          <Dialog.Content className='modal-content'>
             {children}
-          </div>
-        </div>
-      }
-    </>
+          </Dialog.Content>
+        </Dialog.Overlay>
+      </Dialog.Portal>
+    </Dialog.Root>
   );
   
 }
