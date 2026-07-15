@@ -3,11 +3,13 @@ import { useState } from 'react';
 import Button from '../../components/Button';
 import { Link } from 'react-scroll';
 import { useCertification } from '../../context/CertificationsContext';
+import useTrackActiveSection from '../../hooks/header/useTrackActiveSection';
 import './styles.css';
 
 export default function Certifications() {
 
   const { filteredData } = useCertification();
+  const { ref } = useTrackActiveSection('certifications');
 
   const [ moreCardsBool, setMoreCardsBool ] = useState(false);
 
@@ -22,7 +24,7 @@ export default function Certifications() {
   }
 
   return (
-    <div className='certifications-container' id='id_certifications'>
+    <div ref={ref} className='certifications-container' id='id_certifications'>
       <div 
       className={`certifications-content ${moreCardsBool ? 'certifications-viewMore-true' : 'certifications-viewMore-false'}`}
 

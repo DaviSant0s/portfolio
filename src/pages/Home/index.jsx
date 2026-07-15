@@ -2,13 +2,15 @@ import { Link } from 'react-scroll';
 import SocialsGroup from '../../components/SocialsGroup';
 import './styles.css';
 import { useMediaQuery } from 'react-responsive';
+import useTrackActiveSection from '../../hooks/header/useTrackActiveSection';
 
 export default function Home() {
 
   const mobileOrTablet = useMediaQuery({query: '(max-width: 661px)'});
+  const { ref } = useTrackActiveSection('home');
 
   return (
-    <div id='id_home' className='home-container defaultHome'>
+    <div ref={ref} id='id_home' className='home-container defaultHome'>
 
       <div className='home-content'>
 

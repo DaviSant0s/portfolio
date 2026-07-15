@@ -8,6 +8,7 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-end;
+  gap: 4px;
   height: 41px;
 }
 
@@ -26,6 +27,8 @@
   padding-right: 10px;
   
   border-top: 3px solid var(--buttomBorderPage);
+  border-left: 1px solid var(--buttomBorderPage);
+  border-right: 1px solid var(--buttomBorderPage);
   border-radius: 10px 10px 0px 0px;
   
   cursor: pointer;
@@ -46,72 +49,11 @@
   z-index: 2;
 }
 
-.nav-header .home {
-  border-left: 1px solid var(--buttomBorderPage);
-  border-right: 1px solid var(--buttomBorderPage);
-}
-
-.nav-header .experiences {
-  border-left: 1px solid var(--buttomBorderPage);
-  border-right: 1px solid var(--buttomBorderPage);
-}
-
-.nav-header .projects{
-  border-left: 1px solid var(--buttomBorderPage);
-  border-right: 1px solid var(--buttomBorderPage);
-}
-
-.nav-header .certifications {
-  border-left: 1px solid var(--buttomBorderPage);
-  border-right: 1px solid var(--buttomBorderPage);
-}
-
-.nav-header .skills {
-  border-left: 1px solid var(--buttomBorderPage);
-  border-right: 1px solid var(--buttomBorderPage);
-}
-
-.nav-header .contact {
-  border-left: 1px solid var(--buttomBorderPage);
-  border-right: 1px solid var(--buttomBorderPage);
-}
-
-/* classes de animações de scrolls */
-#homeAnimation, #certificationsAnimation, 
-#skillsAnimation, #projectsAnimation, 
-#experiencesAnimation, #contactAnimation {
+.nav-header .link-page.is-active {
   background-color: rgba(255, 241, 227, 0.688);
 
   border-right: 1px solid rgba(251, 84, 78, 0.3);
   border-left: 1px solid rgba(251, 84, 78, 0.3);
   border-top: 3px solid rgba(251, 84, 78, 0.3);
-}
-
-
-#homeAnimation{
-  margin-right: 5px !important;
-}
-
-#certificationsAnimation{
-  margin-left: 4px; 
-  margin-right: 5px !important;
-}
-
-#skillsAnimation{
-  margin-left: 4px !important;
-  margin-right: 5px;
-}
-
-#projectsAnimation{
-  margin-left: 4px !important;
-  margin-right: 5px;
-}
-
-#experiencesAnimation{
-  margin-left: 4px !important;
-  margin-right: 5px;
-}
-
-#contactAnimation{
-  margin-left: 4px !important;
+  z-index: 2;
 }

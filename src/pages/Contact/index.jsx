@@ -9,8 +9,10 @@ import { EMAILJS_CONFIGURED, SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY } from '../../c
 
 import './styles.css';
 import Loading from '../../components/Loading';
+import useTrackActiveSection from '../../hooks/header/useTrackActiveSection';
 
 export default function Contact() {
+  const { ref } = useTrackActiveSection('contact');
   
   /* estados para a copia de contatos */
   const [ contactCopiedGmail, setContactCopiedGmail ] = useState(false);
@@ -126,7 +128,7 @@ export default function Contact() {
   /* fim */
 
   return (
-    <div id='id_contact' className='contact-container defaultPages'>
+    <div ref={ref} id='id_contact' className='contact-container defaultPages'>
 
       <div className='contact-content'>
         <div className='title-input-social-container'>

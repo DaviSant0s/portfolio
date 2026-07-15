@@ -1,5 +1,6 @@
 import './styles.css';
 import SkillsCard from '../../components/SkillsCard';
+import useTrackActiveSection from '../../hooks/header/useTrackActiveSection';
 
 import javascript from '../../assets/javascript.png';
 import python from '../../assets/python.png';
@@ -27,9 +28,10 @@ import java from '../../assets/java.svg';
 import typescript from '../../assets/typescript.png';
 
 export default function Skills() {
+  const { ref } = useTrackActiveSection('skills');
 
   return (
-    <div id='id_skills' className='skills-container defaultPages'>
+    <div ref={ref} id='id_skills' className='skills-container defaultPages'>
       <div className='skills-content'>
         <h1 id='id_title_skills'>
           Habilidades

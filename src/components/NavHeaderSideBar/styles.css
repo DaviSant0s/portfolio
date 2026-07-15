@@ -75,18 +75,10 @@
 
 }
  */
-/* classes de animações de scrolls */
-
-#homeAnimation_sideBar, #certificationsAnimation_sideBar, 
-#skillsAnimation_sideBar, #projectsAnimation_sideBar, 
-#experiencesAnimation_sideBar, #contactAnimation_sideBar {
-
+.nav-header-sideBar .link-page.is-active {
   background-color: #FFF2E6;
-
 }
 
-#homeAnimation_sideBar > span, #certificationsAnimation_sideBar > span, 
-#skillsAnimation_sideBar > span, #projectsAnimation_sideBar > span, 
-#experiencesAnimation_sideBar > span, #contactAnimation_sideBar > span{
+.nav-header-sideBar .link-page.is-active > span{
   color: #FB544E;
 }
