@@ -18,9 +18,9 @@ export default function NavHeader({ styles={} }) {
     active: { y: 0 },
   };
   const labelVariants = {
-    rest: { color: '#595554' },
-    hovered: { color: '#FB544E' },
-    active: { color: '#FB544E' },
+    rest: { color: 'var(--color-text)' },
+    hovered: { color: 'var(--color-accent)' },
+    active: { color: 'var(--color-accent)' },
   };
 
   return (

@@ -23,7 +23,7 @@
     border-radius: 8px ;
 
     outline: 1px solid transparent;
-    border: 1px solid #c6c6c69f;
+    border: 1px solid var(--color-border-muted);
 
     transition: all 0.18s ease-in-out;
     
@@ -32,14 +32,14 @@
 
 
 .inputSelect-content:hover{
-    box-shadow: 0px 0px 9px 0px rgb(222, 222, 222);
+    box-shadow: 0px 0px 9px 0px var(--color-shadow-soft);
     /* border: 1px solid #fc746fb9;
     outline: 2px solid rgb(252, 116, 111, 0.11); */
 }
 
 .inputSelect-name-selected, .inputSelect-icon-arrow-container{
     height: 100%;
-    color: #444546;
+    color: var(--color-text);
     -webkit-user-select: none;
     user-select: none;
     cursor: pointer;
@@ -57,16 +57,16 @@
 
 @keyframes clickArrowContainer {
     0% {
-        background-color: #d1d3d5df;
+        background-color: var(--color-input-arrow-bg);
     }
 
     100% {
-        background-color: #dcdee0;
+        background-color: var(--color-input-arrow-hover);
     }
 }
 
 .inputSelect-icon-arrow-container{
-    background-color: #d1d3d5df;
+    background-color: var(--color-input-arrow-bg);
     
     position: relative;
     display: flex;
@@ -82,7 +82,7 @@
 }
 
 .inputSelect-icon-arrow-container:hover{
-    background-color: #b2b4b5d1;
+    background-color: var(--color-input-arrow-hover);
 }
 
 .inputSelect-arrow{
@@ -105,9 +105,9 @@
     min-width: 100%;
     height: calc(var(--heightBodyli) * 4);
     top: calc(100% + 6px) ;
-    background-color: white;
-    border: 1px solid #c6c6c69f;
-    box-shadow: 0px 0px 10px #d1d3d5;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border-muted);
+    box-shadow: 0px 0px 10px var(--color-shadow-soft);
     
     overflow-y: auto;
     
@@ -131,21 +131,20 @@
     height: var(--heightBodyli);
     padding: 0px 5px 0px 5px;
     font-size: 0.9em;
-    color: #444546;
+    color: var(--color-text);
 
     -webkit-user-select: none;
     user-select: none;
 
-    border-bottom: 1.5px solid #c6c6c69f;
+    border-bottom: 1.5px solid var(--color-border-muted);
 
     transition: background-color 0.15s ease-out;
 }
 
 .inputSelect-body-container > ul > li:hover{
-    background-color: #d1d3d583;
+    background-color: var(--color-surface-strong);
 
 }
-
 
 
 

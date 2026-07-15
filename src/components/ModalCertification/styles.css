@@ -2,8 +2,8 @@
   padding-top: 12px;
   border-radius: 8px;
 
-  outline: 1px solid #E8E8E8;
-  box-shadow: 0px 24px 60px rgba(42, 51, 59, 0.18);
+  outline: 1px solid var(--color-border);
+  box-shadow: 0px 24px 60px var(--color-shadow-lg);
   overflow: hidden;
 }
 
@@ -20,7 +20,7 @@
   height: min(calc(var(--heighBody) * 0.8), calc(100dvh - 140px));
   min-height: 320px;
 
-  background-color: white;
+  background-color: var(--color-surface);
   border-radius: 0px 0px 8px 8px;
 
   padding-top: 10px;
@@ -54,7 +54,7 @@
   border-radius: 50%;
   border: none;
   appearance: none;
-  color: #595554;
+  color: var(--color-text);
 
   font-size: 2rem;
 
@@ -68,12 +68,12 @@
 }
 
 .closeModal-btn:hover {
-  background-color: #f0f2f5;
-  color: #fb544e;
+  background-color: var(--color-surface-strong);
+  color: var(--color-accent);
 }
 
 .closeModal-btn:focus-visible {
-  outline: 3px solid rgba(251, 84, 78, 0.2);
+  outline: 3px solid var(--color-accent-soft);
   outline-offset: 2px;
 }
 
@@ -83,8 +83,7 @@
   margin-bottom: 20px;
   font-size: 2em;
   line-height: 100%;
-  color: #4e4d4d;
-  color: #444444;
+  color: var(--color-text-strong);
 }
 
 .list-content-modal {

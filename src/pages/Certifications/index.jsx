@@ -92,7 +92,7 @@ export default function Certifications() {
                 btn_style={{
                   paddingLeft: '30px',
                   paddingRight: '40px',
-                  border: '2px solid #d6d6d6'
+                  border: '2px solid var(--color-border-strong)'
                 }}
               />
             }
@@ -108,7 +108,7 @@ export default function Certifications() {
                     handleClick={handleClickBtnLessCardsBool}
                     name='Ver menos'
                     icon={'expand_less'}
-                    btn_style={{paddingLeft: '30px', paddingRight: '40px', border: '2px solid #d6d6d6'}}
+                    btn_style={{paddingLeft: '30px', paddingRight: '40px', border: '2px solid var(--color-border-strong)'}}
                     icon_style={{fontWeight: '400', marginBottom: '-2px', fontSize: '1.5em'}}
                   />
 

@@ -23,9 +23,16 @@
 
   width: 16px;
   height: 16px;
-  background-color: #348C34;
   transform: rotate(45deg);
   
+}
+
+.background-diagonal.is-completed {
+  background-color: var(--color-success-strong);
+}
+
+.background-diagonal.is-in-progress {
+  background-color: var(--color-warning);
 }
 
 /* certification card container */
@@ -35,19 +42,18 @@
   
   width: 350px;
   
-  background-color: white;
-  background-color: #F9FAFB;
+  background-color: var(--color-surface-muted);
   border-radius: 8px;
-  border: 1px solid #E8E8E8;
-  box-shadow: 0px 6px 9px 0px rgb(222, 222, 222);
+  border: 1px solid var(--color-border);
+  box-shadow: 0px 6px 9px 0px var(--color-shadow-md);
   
   transition: all 0.18s ease-in-out;
 }
 
 /* certification card animation */
 .cardCertification-container:hover {
-  background-color: #FFCA9D;
-  border: 1px solid rgb(251, 84, 78, 0.2);
+  background-color: var(--color-surface-hover-strong);
+  border: 1px solid var(--color-accent-soft);
 }
 
 .status-container-cardCertification {
@@ -71,13 +77,21 @@
 
   border-radius: 2px 1px 1px 2px;
 
-  box-shadow: 0px 1px rgba(0, 0, 0, 0.095);
+  box-shadow: 0px 1px var(--color-shadow-soft);
 
+}
+
+.status-cardCertification.is-completed {
+  background-color: var(--color-success);
+}
+
+.status-cardCertification.is-in-progress {
+  background-color: var(--color-warning);
 }
 
 .status-cardCertification > span {
   line-height: 100%;
-  color: white;
+  color: var(--color-text-inverse);
 }
 
 .cardCertification-content {
@@ -232,23 +246,23 @@
 
   padding: 4px 10px 4px 10px;
   border-radius: 20px;
-  border: 1px solid #939393;
+  border: 1px solid var(--color-border-strong);
   
   transition: all 0.15s ease-in-out;
   cursor: pointer;
 }
 
 .cardCertification-container:hover .credential-btn {
-  border: 1px solid #595554;
+  border: 1px solid var(--color-text);
 }
 .cardCertification-container:hover .view-btn {
-  border: 1px solid #595554;
+  border: 1px solid var(--color-text);
 }
 
 .cardCertification-container:hover .credential-btn:hover, 
 .cardCertification-container:hover .view-btn:hover {
-  color: white;
-  background-color: #0270ad;
+  color: var(--color-text-inverse);
+  background-color: var(--color-info);
 
   border: 1px solid transparent;
   box-shadow: 0px 6px 9px 0px transparent;

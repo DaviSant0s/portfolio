@@ -6,13 +6,13 @@
   line-height: 100%;
   font-weight: 300;
   font-size: 11.2px;
-  color: #595554;
+  color: var(--color-text);
 
   padding: 5px 15px 6px 15px;
   border-radius: 6px;
 
-  border: 1px solid #e8e8e8;
-  background: white;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
   appearance: none;
 
   cursor: pointer;
@@ -24,13 +24,12 @@
 }
 
 .btnFilterSlide-container:focus-visible {
-  outline: 3px solid rgba(251, 84, 78, 0.2);
+  outline: 3px solid var(--color-accent-soft);
   outline-offset: 2px;
 }
 
 .selectedMobile{
-  background-color: #fb625d;
-  background-color: #fb625dcd;
+  background-color: var(--color-accent);
   font-weight: 400;
-  color: white;
+  color: var(--color-text-inverse);
 }

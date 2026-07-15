@@ -15,7 +15,7 @@
   padding-left: 20px;
   padding-right: 20px;
   
-  border: 2px solid #e8e8e8;
+  border: 2px solid var(--color-border);
   border-radius: 50px;
   
   cursor: pointer;
@@ -23,19 +23,19 @@
   -webkit-user-select: none;
   user-select: none;
   
-  background: linear-gradient(to top, #f2f2f2, white);
+  background: var(--color-neutral-gradient);
   
   
   transition: all 0.1s ease-in-out;
 }
 
 .socialButton-contact:hover{
-  border: 2px solid #d6d6d6;
+  border: 2px solid var(--color-border-strong);
 }
 
 .socialButton-contact  i{
   font-size: 1.5em;
-  color: black;
+  color: var(--color-icon-contrast);
 }
 
 .socialButton-contact .bxl-github {
@@ -51,7 +51,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #0063C1;
+  background-color: var(--color-brand-linkedin-strong);
   
   width: 20px;
   height: 20px;
@@ -67,7 +67,6 @@
 }
 
 .socialButton-contact .bxl-linkedin {
-  color: #F3F3F3;
+  color: var(--color-text-inverse);
   font-size: 0.9em;
 }
-

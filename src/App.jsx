@@ -3,6 +3,7 @@ import FloatingButtons from './components/FloatingButtons';
 import Footer from './components/Footer';
 import Headers from './components/Headers';
 import HeaderProvider from './context/HeaderContext';
+import { useTheme } from './context/ThemeContext';
 import Certifications from './pages/Certifications';
 import Contact from './pages/Contact';
 import Experience from './pages/Experience';
@@ -22,6 +23,7 @@ import { useMediaQuery } from 'react-responsive';
 function App() {
 
   const isTabletOrMobile = useMediaQuery({query: '(max-width: 1100px)'});
+  const { theme } = useTheme();
 
   return (
     <LazyMotion features={domAnimation}>
@@ -39,7 +41,7 @@ function App() {
           
           }
           <div className='body-container'>
-            <ToastContainer />
+            <ToastContainer theme={theme} />
 
             <Home/>
 

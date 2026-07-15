@@ -1,5 +1,5 @@
 .body-container{
-  background-color: white;
+  background-color: var(--color-bg);
   width: 100%;
   margin: auto;
 }
@@ -12,4 +12,3 @@
   /* + 25px do avisos */
   top: 95px;
 }
-

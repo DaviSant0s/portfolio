@@ -21,14 +21,14 @@ export default function NavHeaderSideBar() {
     active: { x: 0 },
   };
   const iconVariants = {
-    rest: { color: '#6f6866' },
-    hovered: { color: '#FB544E' },
-    active: { color: '#FB544E' },
+    rest: { color: 'var(--color-text-muted)' },
+    hovered: { color: 'var(--color-accent)' },
+    active: { color: 'var(--color-accent)' },
   };
   const labelVariants = {
-    rest: { color: '#575251' },
-    hovered: { color: '#FB544E' },
-    active: { color: '#FB544E' },
+    rest: { color: 'var(--color-text)' },
+    hovered: { color: 'var(--color-accent)' },
+    active: { color: 'var(--color-accent)' },
   };
 
   const handleClickCloseSideBar = (sectionName) => {

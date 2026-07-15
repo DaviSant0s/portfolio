@@ -6,7 +6,7 @@
   gap: 20px;
 
   padding: 5px 30px;
-  background-color: #f9fafb;
+  background-color: var(--color-surface-muted);
   border-radius: 10rem;
   margin-top: 10px;
 
@@ -19,7 +19,7 @@
 
 .socialsGroup-container .bx {
   font-size: 1.8em;
-  color: #7a7979;
+  color: var(--color-icon-default);
   transition: all 0.2s ease;
 
   cursor: pointer;
@@ -30,17 +30,17 @@
 }
 
 .socialsGroup-container > a > .bxl-linkedin:hover {
-  color: #0077B0;
+  color: var(--color-brand-linkedin);
 }
 
 .socialsGroup-container > a > .bxl-github:hover {
-  color: #171515;
+  color: var(--color-icon-contrast);
 }
 
 .socialsGroup-container > a > .bxl-whatsapp:hover {
-  color: #4BDC59;
+  color: var(--color-brand-whatsapp);
 }
 
 .socialsGroup-container > a > .bxl-gmail:hover {
-  color: #E34133;
+  color: var(--color-brand-gmail);
 }

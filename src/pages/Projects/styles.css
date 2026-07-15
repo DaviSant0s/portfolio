@@ -1,5 +1,5 @@
 .projects-container {
-  background-color: #f9fafb;
+  background-color: var(--color-bg-alt);
 }
 
 .projects-content{
@@ -48,4 +48,3 @@
   }
 
 }
-

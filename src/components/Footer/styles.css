@@ -1,6 +1,6 @@
 .footer-container{
   width: 100%; 
-  background-color: #e8ebed;
+  background-color: var(--color-footer-bg);
 }
 
 .footer-content{
@@ -27,8 +27,8 @@
   font-size: 2em;
   border-radius: 50%;
   padding: 10px;
-  color: white;
-  background-color: rgb(49, 49, 49);
+  color: var(--color-text-inverse);
+  background-color: var(--color-footer-icon-bg);
 
   cursor: pointer;
   border: 1px solid transparent;
@@ -37,8 +37,8 @@
 }
 
 .social-btns-footer > a > i:hover{
-  background-color: white;
-  border: 1px solid #9e9e9e;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border-strong);
 }
 
 .social-btns-footer > a > .bxl-linkedin:hover {
@@ -69,7 +69,7 @@
 }
 
 .Link-footer > span:hover {
-  color: #cd5955;
+  color: var(--color-accent);
 }
 
 .author-footer{

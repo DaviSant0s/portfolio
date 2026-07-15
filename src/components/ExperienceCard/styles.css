@@ -6,7 +6,7 @@
   width: 100%;
   height: fit-content;
 
-  border-left: 2px solid #fb544eab;
+  border-left: 2px solid var(--color-accent-soft);
   padding-bottom: 10px;
 }
 
@@ -22,13 +22,12 @@
   width: 30px;
   height: 30px;
 
-  border: 2px solid white;
-  outline: 1px solid #e8e8e8;
-  outline: 1px solid white;
+  border: 2px solid var(--color-surface);
+  outline: 1px solid var(--color-surface);
   border-radius: 50%;
 
-  background-color: #FB544E;
-  color: white;
+  background-color: var(--color-accent);
+  color: var(--color-text-inverse);
 
   font-size: 1.3em;
 

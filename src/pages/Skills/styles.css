@@ -1,5 +1,5 @@
 .skills-container {
-  background-color: white;
+  background-color: var(--color-bg);
 }
 
 .skills-content{

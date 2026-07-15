@@ -22,24 +22,24 @@
   height: 31px;
   appearance: none;
   border-radius: 20px 20px 20px 20px;
-  border: 1px solid #e8e8e8;
-  box-shadow: inset 0px 0px 6px #e3e3e3;
-  background: transparent;
+  border: 1px solid var(--color-toggle-track-border);
+  box-shadow: inset 0px 0px 6px var(--color-toggle-track-shadow);
+  background: var(--color-toggle-track);
   
   cursor: pointer;
 }
 
 .dark-mode-content:focus-visible {
-  outline: 3px solid rgba(251, 84, 78, 0.2);
+  outline: 3px solid var(--color-accent-soft);
   outline-offset: 2px;
 }
 
 .circle-mode {
   width: 25px;
   height: 25px;
-  background-color: white;
+  background-color: var(--color-toggle-knob);
   border-radius: 50%;
-  border: 1px solid #e3e3e3be;
+  border: 1px solid var(--color-toggle-knob-border);
 }
 
 .mode {
@@ -60,10 +60,10 @@
 }
 
 .darkMode {
-  color: white;
+  color: var(--color-toggle-icon-moon);
   font-size: 1.1em;
 }
 
 .lightMode{
-  color: darkorange;
+  color: var(--color-toggle-icon-sun);
 }

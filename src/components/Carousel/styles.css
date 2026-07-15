@@ -17,7 +17,7 @@
 
 .embla__viewport {
   overflow: hidden;
-  filter: drop-shadow(3px 3px 10px rgba(122, 122, 122, 0.722));
+  filter: drop-shadow(3px 3px 10px var(--color-shadow-md));
 }
 
 .embla__container {

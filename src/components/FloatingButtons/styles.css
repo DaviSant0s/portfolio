@@ -14,11 +14,11 @@
   height: fit-content;
   width: fit-content;
 
-  border: 1px solid #E8E8E8;
-  box-shadow: 0px 6px 9px 0px rgba(222, 222, 222, 0.235);
+  border: 1px solid var(--color-border);
+  box-shadow: 0px 6px 9px 0px var(--color-shadow-soft);
   border-radius: 15px;
 
-  background-color: white;
+  background-color: var(--color-surface);
 }
 
 .floatingButtons-container > a > i{
@@ -32,13 +32,13 @@
 }
 
 .floatingButtons-container > a > i.bxl-linkedin{
-  color: #0077B0;
+  color: var(--color-brand-linkedin);
 }
 .floatingButtons-container > a > i.bxl-whatsapp{
-  color: #4BDC59;
+  color: var(--color-brand-whatsapp);
 }
 
 .floatingButtons-container > a > i.bxl-github{
-  color: black;
+  color: var(--color-icon-contrast);
   opacity: 0.8;
 }

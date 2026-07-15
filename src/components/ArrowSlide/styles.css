@@ -20,12 +20,12 @@
   justify-content: center;
   appearance: none;
   background: transparent;
-  border: 2px solid #FB544E;
+  border: 2px solid var(--color-accent);
   border-radius: 50px;
   
   font-weight: 200;
   font-size: 1.8em;
-  color: #FB544E;
+  color: var(--color-accent);
   line-height: 1;
 
   cursor: pointer;
@@ -46,6 +46,6 @@
 }
 
 .arrowSlide:focus-visible {
-  outline: 3px solid rgba(251, 84, 78, 0.2);
+  outline: 3px solid var(--color-accent-soft);
   outline-offset: 2px;
 }

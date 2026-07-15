@@ -12,7 +12,7 @@
   overflow-y: auto;
   padding: clamp(40px, 8vh, 84px) 16px 24px;
 
-  background: rgba(15, 23, 42, 0.24);
+  background: var(--color-overlay);
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
   pointer-events: auto;

@@ -5,7 +5,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(15, 23, 42, 0.26);
+  background: var(--color-overlay-strong);
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
 }
@@ -26,11 +26,11 @@
   overflow-y: auto;
   padding-bottom: 18px;
 
-  background-color: #fff;
+  background-color: var(--color-surface);
   border-radius: 0 22px 22px 0;
   
-  border-right: 1px solid #ebe8e6;
-  box-shadow: 0px 24px 60px rgba(42, 51, 59, 0.22);
+  border-right: 1px solid var(--color-border);
+  box-shadow: 0px 24px 60px var(--color-shadow-lg);
   outline: none;
 }
 
@@ -44,8 +44,8 @@
   height: var(--heightHeaderScroll);
   width: 100%;
   padding: 0 14px;
-  border-bottom: 1px solid #f0ece9;
-  background: linear-gradient(180deg, #ffffff 0%, #fffaf7 100%);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface-gradient);
 }
 
 .sideBar-sr-only {

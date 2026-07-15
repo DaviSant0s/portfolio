@@ -27,11 +27,11 @@ export default function CardCertification(
     <div className='conatiner-certification-total'>
       <div className='for-background-status'>
 
-        <div style={status ? {backgroundColor: '#348C34'} : {backgroundColor: '#b9b85c'}} className='background-diagonal'></div>
+        <div className={`background-diagonal ${status ? 'is-completed' : 'is-in-progress'}`}></div>
         
         <div className='cardCertification-container'>
           <div className='status-container-cardCertification'>
-            <div style={status ? {backgroundColor: '#5cb85c'} : {backgroundColor: '#b9b85c'}} className='status-cardCertification'>
+            <div className={`status-cardCertification ${status ? 'is-completed' : 'is-in-progress'}`}>
               <span>{status ? 'Concluído': 'Fazendo'}</span>
             </div>
           </div>

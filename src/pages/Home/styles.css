@@ -32,7 +32,7 @@
   font-weight: 800;
 
   line-height: 100%;
-  color: #3C3B3B;
+  color: var(--color-text-strong);
 
   -webkit-user-select: none;
   user-select: none;
@@ -42,7 +42,7 @@
   max-width: 1100px;
   text-align: center;
   font-size: 20px;
-  color: #595554;
+  color: var(--color-text);
 }
 
 .mobile-title-home-container{
@@ -52,8 +52,8 @@
 }
 
 #title-style-highlight{
-  background-image: linear-gradient(to right, #FB544E, #95322E);
-  color: black;
+  background-image: linear-gradient(to right, var(--color-accent), var(--color-accent-strong));
+  color: var(--color-text-strong);
 
   background-clip: text;
   -webkit-background-clip: text;

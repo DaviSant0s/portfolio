@@ -36,7 +36,7 @@
 }
 
 .optionsSlideButton:focus-visible {
-  outline: 3px solid rgba(251, 84, 78, 0.2);
+  outline: 3px solid var(--color-accent-soft);
   outline-offset: 4px;
 }
 
@@ -63,7 +63,7 @@
 
 .count-cards {
   font-weight: bold;
-  color: #3e3d3d;
+  color: var(--color-text-strong);
 }
 
 .btns-carouselChange {
@@ -93,7 +93,7 @@
   height: 3px;
   margin-top: 7px;
 
-  background: linear-gradient(to right, #FB544E, #d54944, transparent 90%);
+  background: linear-gradient(to right, var(--color-accent), var(--color-accent-strong), transparent 90%);
   opacity: 0.8;
   border-radius: 2px;
 

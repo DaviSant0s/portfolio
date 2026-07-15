@@ -180,7 +180,7 @@ export const certifications = [
     duration: 'null',
     link_institution: 'https://learn.microsoft.com/pt-br/training/browse/',
     link_credential: 'https://drive.google.com/file/d/1hKURT3dkYVdj1A6jdXkFCl_AMrobokFh/view',
-    style_icone: {border: '1px solid #c7c6bf'},
+    style_icone: {border: '1px solid var(--color-border-muted)'},
   },
 
   {
@@ -196,7 +196,7 @@ export const certifications = [
     duration: 'null',
     link_institution: 'https://learn.microsoft.com/pt-br/training/browse/',
     link_credential: 'https://drive.google.com/file/d/1hKw_BF0ucbKRE3nSW0l2_6UvyPsvkshb/view',
-    style_icone: {border: '1px solid #c7c6bf'},
+    style_icone: {border: '1px solid var(--color-border-muted)'},
   },
 
   {
