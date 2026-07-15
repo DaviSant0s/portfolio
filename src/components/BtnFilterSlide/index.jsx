@@ -1,17 +1,19 @@
 import './styles.css';
 
-export default function BtnFilterSlide({ children, selected, handleClick, filterName='', fontSize }) {
+export default function BtnFilterSlide({ children, selected, handleClick, filterName='' }) {
 
   const handleClickFilterSlide = () => {
     handleClick(filterName);
   }
 
   return (
-    <div 
+    <button
+      type='button'
       onClick={handleClickFilterSlide} 
       className={`btnFilterSlide-container ${selected ? 'selectedMobile' : ''}`}
-      style={{fontSize: `${fontSize}px`}}>
+      aria-pressed={selected}
+    >
       {children}
-    </div>
+    </button>
   )
 }

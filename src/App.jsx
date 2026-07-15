@@ -14,7 +14,6 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import './App.css';
-import CarouselProvider from './context/CarrouselContext';
 import CertificationsProvider from './context/CertificationsContext';
 import SideBarProvider from './context/SideBarContext';
 import { useMediaQuery } from 'react-responsive';
@@ -49,9 +48,7 @@ function App() {
 
           <Skills/>
 
-          <CarouselProvider>
-            <Projects/>
-          </CarouselProvider>
+          <Projects/>
           
           <Experience/>
           <Contact/>

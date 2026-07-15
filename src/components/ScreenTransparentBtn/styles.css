@@ -4,7 +4,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: clamp(6px, 1.5vw, 10px);
+  padding: 0 12px;
 
   top: 0;
   left: 0;
@@ -26,6 +27,7 @@
 .screenTransparentTabletBtn > h1 {
   color: white;
   font-family: sora;
+  font-size: clamp(1rem, 2vw, 1.3rem);
   text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.317);
 }
 
@@ -33,9 +35,8 @@
 /* botão */
 
 .screenTransparentTabletBtn > .project-link-btn {
-
-  width: 130px;
-  height: 28.4px;
+  width: clamp(96px, 42%, 130px);
+  height: clamp(26px, 8%, 30px);
 
   background-color: #ffffff10;
   
@@ -50,6 +51,7 @@
 
   text-decoration: none;
   font-weight: 400;
+  font-size: clamp(0.72rem, 1.2vw, 0.82rem);
   line-height: 100%;
   color: white;
 
@@ -74,6 +76,9 @@
   align-items: center;
   gap: 5px;
   height: fit-content;
+  margin-top: clamp(8px, 1.6vw, 10px);
+  flex-wrap: wrap;
+  justify-content: center;
 
 }
 
@@ -86,6 +91,6 @@
 }
 
 .screenTransparentTabletBtn .technologies-background > img{
-  height: 20px;
+  height: clamp(16px, 1.6vw, 20px);
   object-fit: cover;
 }

@@ -12,6 +12,8 @@
   border-radius: 6px;
 
   border: 1px solid #e8e8e8;
+  background: white;
+  appearance: none;
 
   cursor: pointer;
 
@@ -19,6 +21,11 @@
   user-select: none;
 
   transition: all .2s ease;
+}
+
+.btnFilterSlide-container:focus-visible {
+  outline: 3px solid rgba(251, 84, 78, 0.2);
+  outline-offset: 2px;
 }
 
 .selectedMobile{

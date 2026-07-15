@@ -14,14 +14,10 @@
 .screenTable {
   position: absolute;
   z-index: 10;
-  top: 8px;
-  bottom: 8px;
-  left: 6px;
-  right: 7px;
-  /* top: 8px;
-  bottom: 8px;
-  left: 6px;
-  right: 7px; */
+  top: 2.79%;
+  bottom: 2.79%;
+  left: 2.09%;
+  right: 2.44%;
 
   border-radius: 8px;
   background-color: black;
@@ -34,10 +30,10 @@
 .borderBug {
   position: absolute;
   z-index: 10;
-  top: 7.5px;
-  bottom: 7.5px;
-  left: 5.5px;
-  right: 6.5px;
+  top: 2.26%;
+  bottom: 2.26%;
+  left: 1.92%;
+  right: 2.26%;
 
   border-radius: 9px;
 
@@ -46,4 +42,10 @@
   outline: 2px solid black;
   
   pointer-events: none;
+}
+
+.tabletContainer:hover .screenTransparentTabletBtn,
+.tabletContainer:focus-within .screenTransparentTabletBtn {
+  height: 100%;
+  opacity: 1;
 }

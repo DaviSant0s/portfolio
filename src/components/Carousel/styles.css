@@ -1,6 +1,6 @@
 .carousel-conteiner {
   position: relative;
-  width: 950px;
+  width: min(100%, 950px);
 
   /* background-color: green; */
 }
@@ -10,32 +10,44 @@
   width: 100%;
   /* background-color: blue; */
 }
-.wrapper-carousel {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 10px;
+.embla {
+  --slide-size: 100%;
+  --slide-spacing: 10px;
+}
 
-  overflow-x: scroll;
-  overflow-y: hidden;
-
+.embla__viewport {
+  overflow: hidden;
   filter: drop-shadow(3px 3px 10px rgba(122, 122, 122, 0.722));
-
-  /* configurações do scroll */
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
-    height: 380px;
-
-  /* background-color: yellow; */
 }
 
-.wrapper-carousel::-webkit-scrollbar {
-  display: none;
+.embla__container {
+  display: flex;
+  touch-action: pan-y pinch-zoom;
+  margin-left: calc(var(--slide-spacing) * -1);
 }
 
-.noSmooth {
-  scroll-behavior: auto;
+.embla__slide {
+  flex: 0 0 var(--slide-size);
+  min-width: 0;
+  padding-left: var(--slide-spacing);
+}
+
+@media screen and (min-width: 691px) {
+  .embla {
+    --slide-size: 50%;
+  }
+}
+
+@media screen and (min-width: 1021px) {
+  .embla {
+    --slide-size: 33.333333%;
+  }
+}
+
+@media screen and (min-width: 1340px) {
+  .embla {
+    --slide-size: 25%;
+  }
 }
 
 

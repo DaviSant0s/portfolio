@@ -9,6 +9,11 @@
   transform: scale(1.1);
 }
 
+.arrowSlide-container.is-disabled,
+.arrowSlide-container.is-disabled:hover {
+  transform: none;
+}
+
 .arrowSlide{
   display: flex;
   align-items: center;
@@ -33,6 +38,11 @@
   font-size: inherit;
   font-weight: inherit;
   line-height: 1;
+}
+
+.arrowSlide:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .arrowSlide:focus-visible {
