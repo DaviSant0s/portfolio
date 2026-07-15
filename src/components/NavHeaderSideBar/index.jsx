@@ -1,13 +1,35 @@
 import { Link } from 'react-scroll';
+import * as m from 'motion/react-m';
 import './styles.css';
 import { useSideBar } from '../../context/SideBarContext';
 import { useHeader } from '../../context/HeaderContext';
+import { navigationSections } from '../../data/navigationSections.js';
 
 
 export default function NavHeaderSideBar() {
 
   const { setMenuEnabled } = useSideBar();
   const { activeSection, setActiveSection } = useHeader();
+  const indicatorTransition = {
+    type: 'spring',
+    stiffness: 420,
+    damping: 34,
+  };
+  const itemVariants = {
+    rest: { x: 0 },
+    hovered: { x: 2 },
+    active: { x: 0 },
+  };
+  const iconVariants = {
+    rest: { color: '#6f6866' },
+    hovered: { color: '#FB544E' },
+    active: { color: '#FB544E' },
+  };
+  const labelVariants = {
+    rest: { color: '#575251' },
+    hovered: { color: '#FB544E' },
+    active: { color: '#FB544E' },
+  };
 
   const handleClickCloseSideBar = (sectionName) => {
     setActiveSection(sectionName);
@@ -16,66 +38,55 @@ export default function NavHeaderSideBar() {
 
   return (
     <nav className='nav-header-sideBar'>
+      {navigationSections.map((item) => {
+        const isActive = activeSection === item.section;
+        const itemState = isActive ? 'active' : 'rest';
+        const linkProps = item.duration ? { duration: item.duration } : {};
 
-      <Link to='id_home' smooth={true} offset={-80} className='Link'>
-        <div 
-          className={`home_sideBar link-page ${activeSection === 'home' ? 'is-active' : ''}`}
-          onClick={() => handleClickCloseSideBar('home')}
-        >
-          <span className="material-symbols-outlined">home</span>
-          <span>Início</span>
-          </div>
-      </Link>
-
-      <Link to='id_certifications' smooth={true} offset={-79} duration={700} className='Link'>
-        <div 
-          className={`certifications_sideBar link-page ${activeSection === 'certifications' ? 'is-active' : ''}`}
-          onClick={() => handleClickCloseSideBar('certifications')}
-        >
-          <span className="material-symbols-outlined">verified</span>
-          <span>Certificações</span>
-          </div>
-      </Link>
-
-      <Link to='id_skills' smooth={true} offset={-79} duration={700} className='Link'>
-        <div 
-          className={`skills_sideBar link-page ${activeSection === 'skills' ? 'is-active' : ''}`}
-          onClick={() => handleClickCloseSideBar('skills')}
-        >
-          <span className="material-symbols-outlined">emoji_objects</span>
-          <span>Habilidades</span>
-        </div>
-      </Link>
-
-      <Link to='id_projects' smooth={true} offset={-79} duration={700} className='Link'>
-        <div 
-          className={`projects_sideBar link-page ${activeSection === 'projects' ? 'is-active' : ''}`}
-          onClick={() => handleClickCloseSideBar('projects')}
-        >
-          <span className="material-symbols-outlined">folder_open</span>
-          <span>Projetos</span>
-        </div>
-      </Link>
-
-      <Link to='id_experience' smooth={true} offset={-79} duration={700} className='Link'>
-        <div 
-          className={`experiences_sideBar link-page ${activeSection === 'experience' ? 'is-active' : ''}`}
-          onClick={() => handleClickCloseSideBar('experience')}
-        >
-          <span className="material-symbols-outlined">badge</span>
-          <span>Experiências</span>
-        </div>
-      </Link>
-
-      <Link to='id_contact'  smooth={true} offset={-79} duration={700} className='Link'>
-        <div 
-          className={`contact_sideBar link-page ${activeSection === 'contact' ? 'is-active' : ''}`}
-          onClick={() => handleClickCloseSideBar('contact')}
-        >
-          <span className="material-symbols-outlined">contact_page</span>
-          <span>Contato</span>
-        </div>
-      </Link>
+        return (
+          <Link
+            key={item.section}
+            to={item.to}
+            smooth={true}
+            offset={item.offset}
+            className='Link'
+            {...linkProps}
+          >
+            <m.div
+              className='link-page'
+              variants={itemVariants}
+              initial={false}
+              animate={itemState}
+              whileHover='hovered'
+              whileTap={{ x: 0 }}
+              transition={{ duration: 0.18 }}
+              onClick={() => handleClickCloseSideBar(item.section)}
+            >
+              {isActive &&
+                <m.span
+                  layoutId='sidebar-nav-indicator'
+                  className='link-page-indicator'
+                  transition={indicatorTransition}
+                />
+              }
+              <m.span
+                className="material-symbols-outlined link-page-icon"
+                variants={iconVariants}
+                initial={false}
+              >
+                {item.icon}
+              </m.span>
+              <m.span
+                className='link-page-text'
+                variants={labelVariants}
+                initial={false}
+              >
+                {item.label}
+              </m.span>
+            </m.div>
+          </Link>
+        );
+      })}
     </nav>
   )
 }

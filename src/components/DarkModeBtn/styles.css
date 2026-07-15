@@ -20,13 +20,18 @@
   
   width: 82px;
   height: 31px;
-  
-  
+  appearance: none;
   border-radius: 20px 20px 20px 20px;
   border: 1px solid #e8e8e8;
   box-shadow: inset 0px 0px 6px #e3e3e3;
+  background: transparent;
   
   cursor: pointer;
+}
+
+.dark-mode-content:focus-visible {
+  outline: 3px solid rgba(251, 84, 78, 0.2);
+  outline-offset: 2px;
 }
 
 .circle-mode {
@@ -35,8 +40,6 @@
   background-color: white;
   border-radius: 50%;
   border: 1px solid #e3e3e3be;
-
-  transition: all 0.3s ease-in-out;
 }
 
 .mode {
@@ -54,13 +57,9 @@
 
   -webkit-user-select: none;
   user-select: none;
-  
-  transition: all 0.3s ease-in-out;
-
 }
 
 .darkMode {
-  background-color: #434141;
   color: white;
   font-size: 1.1em;
 }

@@ -8,7 +8,6 @@
   background: rgba(15, 23, 42, 0.26);
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
-  animation: sideBarOverlayFadeIn 220ms ease-out;
 }
 
 .sideBar-container{
@@ -33,15 +32,6 @@
   border-right: 1px solid #ebe8e6;
   box-shadow: 0px 24px 60px rgba(42, 51, 59, 0.22);
   outline: none;
-  animation: sideBarSlideIn 260ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.background-sidebar[data-state='closed'] {
-  animation: sideBarOverlayFadeOut 180ms ease-in forwards;
-}
-
-.sideBar-container[data-state='closed'] {
-  animation: sideBarSlideOut 180ms ease-in forwards;
 }
 
 .title-sideBar{
@@ -68,46 +58,6 @@
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
-}
-
-@keyframes sideBarOverlayFadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes sideBarOverlayFadeOut {
-  from {
-    opacity: 1;
-  }
-
-  to {
-    opacity: 0;
-  }
-}
-
-@keyframes sideBarSlideIn {
-  from {
-    transform: translateX(-100%);
-  }
-
-  to {
-    transform: translateX(0);
-  }
-}
-
-@keyframes sideBarSlideOut {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-100%);
-  }
 }
 
 @media screen and (max-width: 420px) {

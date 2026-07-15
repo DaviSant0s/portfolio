@@ -1,3 +1,4 @@
+import { LazyMotion, domAnimation } from 'motion/react';
 import FloatingButtons from './components/FloatingButtons';
 import Footer from './components/Footer';
 import Headers from './components/Headers';
@@ -23,41 +24,43 @@ function App() {
   const isTabletOrMobile = useMediaQuery({query: '(max-width: 1100px)'});
 
   return (
-    <div className='app-container'>
+    <LazyMotion features={domAnimation}>
+      <div className='app-container'>
 
-      <HeaderProvider>
+        <HeaderProvider>
 
-        <SideBarProvider>
-          <Headers/>
-        </SideBarProvider>
+          <SideBarProvider>
+            <Headers/>
+          </SideBarProvider>
 
-        {!isTabletOrMobile &&
-        
-          <FloatingButtons/>
-        
-        }
-        <div className='body-container'>
-          <ToastContainer />
-
-          <Home/>
-
-          <CertificationsProvider>
-            <Certifications/>
-          </CertificationsProvider>
+          {!isTabletOrMobile &&
           
-
-          <Skills/>
-
-          <Projects/>
+            <FloatingButtons/>
           
-          <Experience/>
-          <Contact/>
-        </div>
+          }
+          <div className='body-container'>
+            <ToastContainer />
 
-        <Footer/>
-      </HeaderProvider>
+            <Home/>
 
-    </div>
+            <CertificationsProvider>
+              <Certifications/>
+            </CertificationsProvider>
+            
+
+            <Skills/>
+
+            <Projects/>
+            
+            <Experience/>
+            <Contact/>
+          </div>
+
+          <Footer/>
+        </HeaderProvider>
+
+      </div>
+    </LazyMotion>
 
   )
 }

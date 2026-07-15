@@ -25,6 +25,7 @@
   height: 100%;
   padding-left: 10px;
   padding-right: 10px;
+  overflow: hidden;
   
   border-top: 3px solid var(--buttomBorderPage);
   border-left: 1px solid var(--buttomBorderPage);
@@ -39,6 +40,22 @@
   transition:  margin, 0.15s ease-in-out;
 }
 
+.nav-header .link-page-indicator {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-color: rgba(255, 241, 227, 0.688);
+  border-top: 3px solid rgba(251, 84, 78, 0.3);
+  border-left: 1px solid rgba(251, 84, 78, 0.3);
+  border-right: 1px solid rgba(251, 84, 78, 0.3);
+  border-radius: 10px 10px 0px 0px;
+}
+
+.nav-header .link-page-label {
+  position: relative;
+  z-index: 1;
+}
+
 .nav-header .link-page:hover {
   background-color: rgba(255, 241, 227, 0.688);
 
@@ -46,14 +63,5 @@
   border-left: 1px solid rgba(251, 84, 78, 0.3);
   border-top: 3px solid rgba(251, 84, 78, 0.3);
 
-  z-index: 2;
-}
-
-.nav-header .link-page.is-active {
-  background-color: rgba(255, 241, 227, 0.688);
-
-  border-right: 1px solid rgba(251, 84, 78, 0.3);
-  border-left: 1px solid rgba(251, 84, 78, 0.3);
-  border-top: 3px solid rgba(251, 84, 78, 0.3);
   z-index: 2;
 }
