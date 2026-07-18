@@ -1,5 +1,6 @@
 import { Suspense, lazy } from 'react';
 import Carousel from '../../components/Carousel';
+import ScrollReveal from '../../components/ScrollReveal';
 import SectionBackdrop from '../../components/SectionBackdrop';
 import SectionIntro from '../../components/SectionIntro';
 import { useTheme } from '../../context/ThemeContext';
@@ -32,9 +33,15 @@ export default function Projects() {
         />
 
         <div className='flex w-full max-w-[1020px] flex-col items-center gap-8 min-[790px]:gap-10'>
-          <Carousel />
+          <ScrollReveal className='w-full' amount={0.2} delay={0.06}>
+            <Carousel />
+          </ScrollReveal>
 
-          <div className='w-full rounded-[32px] border border-outline/70 bg-panel/76 px-4 py-4 shadow-[0_22px_46px_-32px_var(--color-shadow-md)] backdrop-blur-sm min-[500px]:px-5 min-[500px]:py-5 min-[640px]:px-6 min-[640px]:py-6'>
+          <ScrollReveal
+            className='w-full rounded-[32px] border border-outline/70 bg-panel/76 px-4 py-4 shadow-[0_22px_46px_-32px_var(--color-shadow-md)] backdrop-blur-sm min-[500px]:px-5 min-[500px]:py-5 min-[640px]:px-6 min-[640px]:py-6'
+            amount={0.24}
+            delay={0.12}
+          >
             <div className='mb-4 flex flex-col gap-2 min-[720px]:mb-5'>
               <span className='inline-flex w-fit items-center gap-2 rounded-full border border-outline/70 bg-panel/82 px-3 py-1.5 text-[0.72rem] font-medium uppercase tracking-[0.16em] text-copy-muted shadow-[0_14px_28px_-24px_var(--color-shadow-md)]'>
                 <span className='size-2 rounded-full bg-[linear-gradient(135deg,var(--color-info),var(--color-primary))]' />
@@ -64,7 +71,7 @@ export default function Projects() {
                 </Suspense>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

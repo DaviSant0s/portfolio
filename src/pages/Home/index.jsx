@@ -1,5 +1,6 @@
 import { Link } from 'react-scroll';
 import AnimatedParticleBackground from '../../components/AnimatedParticleBackground';
+import ScrollReveal from '../../components/ScrollReveal';
 import SocialsGroup from '../../components/SocialsGroup';
 import useTrackActiveSection from '../../hooks/header/useTrackActiveSection';
 
@@ -25,20 +26,37 @@ export default function Home() {
       </div>
 
       <div className='content-shell relative z-[1] flex min-h-full w-full flex-1 flex-col items-center justify-center pb-14 pt-7 text-center min-[500px]:pb-20 min-[500px]:pt-10 min-[790px]:pb-28 min-[790px]:pt-16'>
-        <div className='inline-flex items-center gap-2 rounded-full border border-outline/70 bg-panel/82 px-3.5 py-1.5 text-[0.72rem] font-medium uppercase tracking-[0.18em] text-copy-muted shadow-[0_14px_30px_-24px_var(--color-shadow-md)] backdrop-blur-sm min-[500px]:px-4 min-[500px]:py-2 min-[500px]:text-[0.78rem]'>
+        <ScrollReveal
+          amount={0.4}
+          className='inline-flex items-center gap-2 rounded-full border border-outline/70 bg-panel/82 px-3.5 py-1.5 text-[0.72rem] font-medium uppercase tracking-[0.18em] text-copy-muted shadow-[0_14px_30px_-24px_var(--color-shadow-md)] backdrop-blur-sm min-[500px]:px-4 min-[500px]:py-2 min-[500px]:text-[0.78rem]'
+        >
           <span className='size-2 rounded-full bg-[linear-gradient(135deg,var(--color-info),var(--color-primary))]' />
           <span>Davi Santos</span>
-        </div>
+        </ScrollReveal>
 
-        <h1 className='mt-5 max-w-[10.2ch] select-none text-balance text-[clamp(2.05rem,9.8vw,5.2rem)] font-semibold leading-[0.96] tracking-[-0.06em] text-copy-strong min-[500px]:mt-8 min-[500px]:max-w-[10.8ch] min-[500px]:text-[clamp(2.65rem,8.2vw,5.2rem)] min-[790px]:max-w-[13.2ch] min-[790px]:text-[clamp(3.45rem,6.8vw,5.2rem)]'>
+        <ScrollReveal
+          as='h1'
+          delay={0.06}
+          amount={0.34}
+          className='mt-5 max-w-[10.2ch] select-none text-balance text-[clamp(2.05rem,9.8vw,5.2rem)] font-semibold leading-[0.96] tracking-[-0.06em] text-copy-strong min-[500px]:mt-8 min-[500px]:max-w-[10.8ch] min-[500px]:text-[clamp(2.65rem,8.2vw,5.2rem)] min-[790px]:max-w-[13.2ch] min-[790px]:text-[clamp(3.45rem,6.8vw,5.2rem)]'
+        >
           Construo experiências web com clareza, performance e propósito.
-        </h1>
+        </ScrollReveal>
 
-        <p className='mt-4 max-w-[19rem] text-balance text-[clamp(0.92rem,3.55vw,1.18rem)] leading-[1.56] text-copy-muted min-[500px]:mt-6 min-[500px]:max-w-[30rem] min-[790px]:max-w-[46rem] min-[790px]:leading-[1.7]'>
+        <ScrollReveal
+          as='p'
+          delay={0.12}
+          amount={0.28}
+          className='mt-4 max-w-[19rem] text-balance text-[clamp(0.92rem,3.55vw,1.18rem)] leading-[1.56] text-copy-muted min-[500px]:mt-6 min-[500px]:max-w-[30rem] min-[790px]:max-w-[46rem] min-[790px]:leading-[1.7]'
+        >
           Desenvolvedor full stack e estudante de Engenharia de Computação na FURG, com atuação em React, TypeScript, Node.js, APIs REST e construção de produtos digitais mais consistentes.
-        </p>
+        </ScrollReveal>
 
-        <div className='mt-6 flex flex-wrap items-center justify-center gap-3 min-[500px]:mt-9'>
+        <ScrollReveal
+          delay={0.18}
+          amount={0.3}
+          className='mt-6 flex flex-wrap items-center justify-center gap-3 min-[500px]:mt-9'
+        >
           <a
             href={resumeFileUrl}
             target='_blank'
@@ -60,9 +78,11 @@ export default function Home() {
           >
             Explorar projetos
           </Link>
-        </div>
+        </ScrollReveal>
 
-        <SocialsGroup variant='minimal' />
+        <ScrollReveal delay={0.24} amount={0.28}>
+          <SocialsGroup variant='minimal' />
+        </ScrollReveal>
       </div>
     </div>
   );

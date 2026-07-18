@@ -18,6 +18,7 @@ import tailwindcss from '../../assets/tailwindcss.svg';
 import typescript from '../../assets/typescript.png';
 import SectionBackdrop from '../../components/SectionBackdrop';
 import SectionIntro from '../../components/SectionIntro';
+import ScrollReveal from '../../components/ScrollReveal';
 import SkillsCard from '../../components/SkillsCard';
 import useTrackActiveSection from '../../hooks/header/useTrackActiveSection';
 
@@ -66,13 +67,19 @@ export default function Skills() {
         />
 
         <div className='grid w-full max-w-[1040px] grid-cols-[repeat(auto-fit,minmax(128px,1fr))] gap-3 min-[500px]:gap-3.5 min-[640px]:gap-[1.125rem]'>
-          {skills.map((skill) => (
-            <SkillsCard
+          {skills.map((skill, index) => (
+            <ScrollReveal
               key={skill.name}
-              name={skill.name}
-              image={skill.image}
-              imageClassName={skill.imageClassName}
-            />
+              className='h-full'
+              amount={0.18}
+              delay={Math.min(index, 7) * 0.04}
+            >
+              <SkillsCard
+                name={skill.name}
+                image={skill.image}
+                imageClassName={skill.imageClassName}
+              />
+            </ScrollReveal>
           ))}
         </div>
       </div>

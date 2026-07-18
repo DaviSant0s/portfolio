@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 import gmail from '../../assets/social/gmail.webp';
 import whatsapp from '../../assets/social/whatsapp.png';
 import Loading from '../../components/Loading';
+import ScrollReveal from '../../components/ScrollReveal';
 import SectionBackdrop from '../../components/SectionBackdrop';
 import SectionIntro from '../../components/SectionIntro';
 import { EMAILJS_CONFIGURED, PUBLIC_KEY, SERVICE_ID, TEMPLATE_ID } from '../../config';
@@ -178,7 +179,10 @@ export default function Contact() {
         />
 
         <div className='grid w-full max-w-[1120px] items-start gap-5 min-[1060px]:grid-cols-[minmax(0,1fr)_340px] min-[1200px]:gap-6'>
-          <div className='rounded-[28px] border border-outline/70 bg-panel/78 px-5 py-5 shadow-[0_22px_46px_-32px_var(--color-shadow-md)] backdrop-blur-sm min-[500px]:rounded-[30px] min-[500px]:px-6 min-[500px]:py-6 min-[720px]:px-8 min-[720px]:py-8'>
+          <ScrollReveal
+            className='rounded-[28px] border border-outline/70 bg-panel/78 px-5 py-5 shadow-[0_22px_46px_-32px_var(--color-shadow-md)] backdrop-blur-sm min-[500px]:rounded-[30px] min-[500px]:px-6 min-[500px]:py-6 min-[720px]:px-8 min-[720px]:py-8'
+            amount={0.2}
+          >
             <div className='mb-6 border-b border-outline/70 pb-5'>
               <span className='inline-flex items-center gap-2 rounded-full border border-outline/70 bg-panel/82 px-3 py-1.5 text-[0.72rem] font-medium uppercase tracking-[0.16em] text-copy-muted shadow-[0_14px_30px_-24px_var(--color-shadow-md)] backdrop-blur-sm'>
                 <span className='size-2 rounded-full bg-[linear-gradient(135deg,var(--color-info),var(--color-primary))]' />
@@ -300,9 +304,15 @@ export default function Contact() {
                 </button>
               </div>
             </form>
-          </div>
+          </ScrollReveal>
 
-          <aside className='overflow-hidden rounded-[28px] border border-outline/70 bg-panel/78 shadow-[0_22px_46px_-32px_var(--color-shadow-md)] backdrop-blur-sm min-[500px]:rounded-[30px]'>
+          <ScrollReveal
+            as='aside'
+            className='overflow-hidden rounded-[28px] border border-outline/70 bg-panel/78 shadow-[0_22px_46px_-32px_var(--color-shadow-md)] backdrop-blur-sm min-[500px]:rounded-[30px]'
+            direction='left'
+            delay={0.08}
+            amount={0.2}
+          >
             <div className='border-b border-outline/70 px-5 py-5 min-[500px]:px-6 min-[500px]:py-6 min-[720px]:px-7'>
               <span className='text-[0.8rem] font-semibold uppercase tracking-[0.16em] text-copy-soft'>
                 Contato direto
@@ -357,7 +367,7 @@ export default function Contact() {
                 );
               })}
             </div>
-          </aside>
+          </ScrollReveal>
         </div>
       </div>
     </section>

@@ -3,6 +3,7 @@ import { Link } from 'react-scroll';
 import Button from '../../components/Button';
 import CardCertification from '../../components/CardCertification';
 import FilterCertificationsBtn from '../../components/FilterCertificationsBtn';
+import ScrollReveal from '../../components/ScrollReveal';
 import SectionBackdrop from '../../components/SectionBackdrop';
 import SectionIntro from '../../components/SectionIntro';
 import { useCertification } from '../../context/CertificationsContext';
@@ -66,7 +67,11 @@ export default function Certifications() {
           titleClassName='max-w-[13ch] min-[790px]:max-w-[12ch]'
         />
 
-        <div className='flex w-full max-w-[920px] flex-wrap items-center justify-center gap-2 px-2 min-[500px]:gap-2.5 min-[500px]:px-2.5'>
+        <ScrollReveal
+          amount={0.28}
+          delay={0.08}
+          className='flex w-full max-w-[920px] flex-wrap items-center justify-center gap-2 px-2 min-[500px]:gap-2.5 min-[500px]:px-2.5'
+        >
           {certificationFilters.map((filter) => (
             <FilterCertificationsBtn
               key={filter.key}
@@ -75,38 +80,44 @@ export default function Certifications() {
               handleClick={setFilterCards}
             />
           ))}
-        </div>
+        </ScrollReveal>
 
         {certificationsCount > 0 && (
           <div className='relative flex w-full justify-center'>
             <div className={gridClassName}>
-              {visibleCertifications.map((data) => (
-                <CardCertification
+              {visibleCertifications.map((data, index) => (
+                <ScrollReveal
                   key={data.id}
-                  icon={data.icon}
-                  img={data.img}
-                  name={data.name}
-                  description={data.description}
-                  institution={data.institution}
-                  conclusion={data.conclusion}
-                  duration={data.duration}
-                  link_institution={data.link_institution}
-                  mediaClassName={data.mediaClassName}
-                  status={data.status}
-                />
+                  className='h-full'
+                  amount={0.18}
+                  delay={Math.min(index, 5) * 0.05}
+                >
+                  <CardCertification
+                    icon={data.icon}
+                    img={data.img}
+                    name={data.name}
+                    description={data.description}
+                    institution={data.institution}
+                    conclusion={data.conclusion}
+                    duration={data.duration}
+                    link_institution={data.link_institution}
+                    mediaClassName={data.mediaClassName}
+                    status={data.status}
+                  />
+                </ScrollReveal>
               ))}
             </div>
           </div>
         )}
 
         {certificationsCount === 0 && (
-          <div className='flex min-h-[220px] w-full max-w-[720px] items-center justify-center rounded-[28px] border border-outline/70 bg-panel/80 px-5 py-5 text-center text-[0.95rem] leading-[1.6] text-copy-muted shadow-[0_18px_36px_-28px_var(--color-shadow-md)] backdrop-blur-sm min-[500px]:px-6 min-[500px]:py-6'>
+          <ScrollReveal className='flex min-h-[220px] w-full max-w-[720px] items-center justify-center rounded-[28px] border border-outline/70 bg-panel/80 px-5 py-5 text-center text-[0.95rem] leading-[1.6] text-copy-muted shadow-[0_18px_36px_-28px_var(--color-shadow-md)] backdrop-blur-sm min-[500px]:px-6 min-[500px]:py-6'>
             Nenhuma certificação encontrada nesta categoria ainda.
-          </div>
+          </ScrollReveal>
         )}
 
         {hasOverflowCards && (
-          <div className='flex w-full justify-center pt-1'>
+          <ScrollReveal className='flex w-full justify-center pt-1' amount={0.3}>
             {!moreCardsBool && (
               <Button
                 handleClick={handleClickBtnMoreCardsBool}
@@ -135,7 +146,7 @@ export default function Certifications() {
                 />
               </Link>
             )}
-          </div>
+          </ScrollReveal>
         )}
       </div>
     </section>

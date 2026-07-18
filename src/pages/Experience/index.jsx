@@ -1,4 +1,5 @@
 import ExperienceContainer from '../../components/ExperienceContainer';
+import ScrollReveal from '../../components/ScrollReveal';
 import SectionBackdrop from '../../components/SectionBackdrop';
 import SectionIntro from '../../components/SectionIntro';
 import useTrackActiveSection from '../../hooks/header/useTrackActiveSection';
@@ -25,7 +26,9 @@ export default function Experience() {
           description='Projetos, bolsas, residência e atuações em que venho refinando frontend, colaboração com times e construção de soluções reais.'
           titleClassName='max-w-[13ch] min-[790px]:max-w-[14ch]'
         />
-        <ExperienceContainer />
+        <ScrollReveal className='w-full' amount={0.18} delay={0.08}>
+          <ExperienceContainer />
+        </ScrollReveal>
       </div>
     </section>
   );

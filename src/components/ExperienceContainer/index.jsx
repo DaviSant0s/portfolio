@@ -1,4 +1,5 @@
 import ExperienceCard from '../ExperienceCard';
+import ScrollReveal from '../ScrollReveal';
 import bytelogo from '../../assets/companies/byte.png';
 import brisalogo from '../../assets/companies/brisa.png';
 import iteclogo from '../../assets/companies/itec.png';
@@ -60,24 +61,29 @@ const timelineExperiences = [...experiences].sort((a, b) => b.startDate.localeCo
 export default function ExperienceContainer() {
   return (
     <div className='w-full max-w-[930px]'>
-      <div className='mb-5 pl-[6.5rem] max-[640px]:mb-4 max-[640px]:pl-0'>
+      <ScrollReveal className='mb-5 pl-[6.5rem] max-[640px]:mb-4 max-[640px]:pl-0' amount={0.34}>
         <h2 className='text-[1.18rem] font-semibold tracking-[-0.03em] text-copy-strong min-[500px]:text-[1.34rem]'>
           Linha do tempo
         </h2>
-      </div>
+      </ScrollReveal>
       <div className='relative flex flex-col gap-6 pt-2 before:absolute before:top-14 before:bottom-12 before:left-10 before:block before:w-px before:bg-[linear-gradient(180deg,rgba(251,84,78,0.65),rgba(251,84,78,0.12))] before:content-[""] min-[500px]:gap-8 min-[500px]:pt-3 max-[640px]:before:hidden'>
-        {timelineExperiences.map((experience) => (
-          <ExperienceCard
+        {timelineExperiences.map((experience, index) => (
+          <ScrollReveal
             key={`${experience.institution}-${experience.date}`}
-            date={experience.date}
-            logo={experience.logo}
-            logoClassName={experience.logoClassName}
-            logoSurfaceClassName={experience.logoSurfaceClassName}
-            logoFallback={experience.logoFallback}
-            institution={experience.institution}
-            description={experience.description}
-            position={experience.position}
-          />
+            amount={0.18}
+            delay={Math.min(index, 4) * 0.06}
+          >
+            <ExperienceCard
+              date={experience.date}
+              logo={experience.logo}
+              logoClassName={experience.logoClassName}
+              logoSurfaceClassName={experience.logoSurfaceClassName}
+              logoFallback={experience.logoFallback}
+              institution={experience.institution}
+              description={experience.description}
+              position={experience.position}
+            />
+          </ScrollReveal>
         ))}
       </div>
     </div>

@@ -6,6 +6,7 @@ import { useMediaQuery } from 'react-responsive';
 import CarouselChangeMobile from '../CarouselChangeMobile/index.jsx';
 import ArrowSlide from '../ArrowSlide/index.jsx';
 import CountCardsCarousel from '../CountCardsCarousel/index.jsx';
+import ScrollReveal from '../ScrollReveal';
 import { carouselFilters, carouselProjects } from '../../data/carouselProjects.js';
 
 export default function Carousel() {
@@ -137,13 +138,19 @@ export default function Carousel() {
                   key={`${toggleCarousel}-${project.name}`}
                   className='flex min-w-0 shrink-0 grow-0 basis-full justify-center pl-[var(--slide-spacing)] min-[691px]:block min-[691px]:basis-1/2 min-[1021px]:basis-1/3 min-[1340px]:basis-1/4'
                 >
-                  <CarouselCard
-                    img={project.img}
-                    stacks={project.stacks}
-                    link={project.link}
-                    github={project.github}
-                    name={project.name}
-                  />
+                  <ScrollReveal
+                    className='w-full'
+                    amount={0.18}
+                    delay={0.04}
+                  >
+                    <CarouselCard
+                      img={project.img}
+                      stacks={project.stacks}
+                      link={project.link}
+                      github={project.github}
+                      name={project.name}
+                    />
+                  </ScrollReveal>
                 </div>
               ))}
             </div>
