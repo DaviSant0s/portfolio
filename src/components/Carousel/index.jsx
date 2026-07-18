@@ -107,11 +107,11 @@ export default function Carousel() {
         />
       }
 
-      <div className='relative w-full'>
+      <div className='relative w-full px-4 min-[691px]:px-0'>
 
         {mobile_max_690px &&
           <>
-            <div className='absolute top-1/2 left-[-14px] z-[9] -translate-y-1/2 min-[420px]:left-[-22px]'>
+            <div className='absolute top-1/2 left-4 z-[9] -translate-y-1/2 min-[420px]:left-5'>
               <ArrowSlide
                 direction='left'
                 func_handle={handleClickScrollToLeft}
@@ -119,7 +119,7 @@ export default function Carousel() {
               />
             </div>
 
-            <div className='absolute top-1/2 right-[-14px] z-[9] -translate-y-1/2 min-[420px]:right-[-22px]'>
+            <div className='absolute top-1/2 right-4 z-[9] -translate-y-1/2 min-[420px]:right-5'>
               <ArrowSlide
                 direction='right'
                 func_handle={handleClickScrollToRight}
@@ -135,7 +135,7 @@ export default function Carousel() {
               {toggleData.map((project) => (
                 <div
                   key={`${toggleCarousel}-${project.name}`}
-                  className='min-w-0 shrink-0 grow-0 basis-full pl-[var(--slide-spacing)] min-[691px]:basis-1/2 min-[1021px]:basis-1/3 min-[1340px]:basis-1/4'
+                  className='flex min-w-0 shrink-0 grow-0 basis-full justify-center pl-[var(--slide-spacing)] min-[691px]:block min-[691px]:basis-1/2 min-[1021px]:basis-1/3 min-[1340px]:basis-1/4'
                 >
                   <CarouselCard
                     img={project.img}
