@@ -1,6 +1,15 @@
 import MiniCardExp from '../MiniCardExp';
 
-export default function ExperienceCard({ date, logo, logoClassName, logoFallback, institution, description, position }) {
+export default function ExperienceCard({
+  date,
+  logo,
+  logoClassName,
+  logoSurfaceClassName,
+  logoFallback,
+  institution,
+  description,
+  position
+}) {
   return (
     <div className='grid w-full grid-cols-[5rem_minmax(0,1fr)] items-start gap-6 max-[640px]:grid-cols-1 max-[640px]:gap-0'>
       <div className='flex justify-center pt-6 max-[640px]:hidden'>
@@ -15,6 +24,7 @@ export default function ExperienceCard({ date, logo, logoClassName, logoFallback
           date={date}
           logo={logo} 
           logoClassName={logoClassName}
+          logoSurfaceClassName={logoSurfaceClassName}
           logoFallback={logoFallback}
           institution={institution} 
           description={description}
