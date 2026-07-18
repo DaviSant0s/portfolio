@@ -6,6 +6,7 @@ import gmail from '../../assets/social/gmail.webp';
 import whatsapp from '../../assets/social/whatsapp.png';
 import Loading from '../../components/Loading';
 import { EMAILJS_CONFIGURED, PUBLIC_KEY, SERVICE_ID, TEMPLATE_ID } from '../../config';
+import { useHeader } from '../../context/HeaderContext';
 import useTrackActiveSection from '../../hooks/header/useTrackActiveSection';
 import { contactFormSchema } from '../../schemas/contactFormSchema';
 
@@ -42,13 +43,16 @@ function getFieldClasses(hasError, { textarea = false } = {}) {
 
 export default function Contact() {
   const { ref } = useTrackActiveSection('contact');
+  const { activeSection } = useHeader();
   const [copiedContact, setCopiedContact] = useState(null);
   const copyTimeoutRef = useRef(null);
+  const isFormUnavailable = !EMAILJS_CONFIGURED;
 
   const {
     register,
     handleSubmit,
     reset,
+    clearErrors,
     formState: { errors, isSubmitting },
   } = useForm({
     resolver: zodResolver(contactFormSchema),
@@ -57,7 +61,7 @@ export default function Contact() {
       email: '',
       message: '',
     },
-    mode: 'onBlur',
+    mode: 'onSubmit',
     reValidateMode: 'onChange',
   });
 
@@ -68,6 +72,14 @@ export default function Contact() {
       }
     };
   }, []);
+
+  useEffect(() => {
+    if (activeSection !== 'contact') {
+      clearErrors();
+    }
+  }, [activeSection, clearErrors]);
+
+  const shouldShowFieldError = (fieldName) => !isFormUnavailable && Boolean(errors[fieldName]);
 
   const showToast = (type, msg, autoClose = null) => {
     type(msg, { autoClose });
@@ -89,6 +101,7 @@ export default function Contact() {
       const { default: emailjs } = await import('@emailjs/browser');
       await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
       reset();
+      clearErrors();
       showToast(toast.success, 'Email enviado!', 2000);
     } catch {
       showToast(toast.error, 'Falha ao enviar e-mail', 2000);
@@ -173,12 +186,12 @@ export default function Contact() {
                   type='text'
                   autoComplete='name'
                   placeholder='Digite seu nome e sobrenome'
-                  aria-invalid={errors.name ? 'true' : 'false'}
-                  aria-describedby={errors.name ? 'contact-name-error' : undefined}
-                  className={getFieldClasses(Boolean(errors.name))}
+                  aria-invalid={shouldShowFieldError('name') ? 'true' : 'false'}
+                  aria-describedby={shouldShowFieldError('name') ? 'contact-name-error' : undefined}
+                  className={getFieldClasses(shouldShowFieldError('name'))}
                   {...register('name')}
                 />
-                {errors.name && (
+                {shouldShowFieldError('name') && (
                   <span
                     id='contact-name-error'
                     className='pl-1 text-[0.86rem] font-medium leading-relaxed text-primary'
@@ -198,12 +211,12 @@ export default function Contact() {
                   type='email'
                   autoComplete='email'
                   placeholder='Digite seu e-mail'
-                  aria-invalid={errors.email ? 'true' : 'false'}
-                  aria-describedby={errors.email ? 'contact-email-error' : undefined}
-                  className={getFieldClasses(Boolean(errors.email))}
+                  aria-invalid={shouldShowFieldError('email') ? 'true' : 'false'}
+                  aria-describedby={shouldShowFieldError('email') ? 'contact-email-error' : undefined}
+                  className={getFieldClasses(shouldShowFieldError('email'))}
                   {...register('email')}
                 />
-                {errors.email && (
+                {shouldShowFieldError('email') && (
                   <span
                     id='contact-email-error'
                     className='pl-1 text-[0.86rem] font-medium leading-relaxed text-primary'
@@ -221,12 +234,12 @@ export default function Contact() {
                 <textarea
                   id='contact-message'
                   placeholder='Me conte o contexto do projeto, o que voce precisa e como posso ajudar.'
-                  aria-invalid={errors.message ? 'true' : 'false'}
-                  aria-describedby={errors.message ? 'contact-message-error' : undefined}
-                  className={getFieldClasses(Boolean(errors.message), { textarea: true })}
+                  aria-invalid={shouldShowFieldError('message') ? 'true' : 'false'}
+                  aria-describedby={shouldShowFieldError('message') ? 'contact-message-error' : undefined}
+                  className={getFieldClasses(shouldShowFieldError('message'), { textarea: true })}
                   {...register('message')}
                 />
-                {errors.message && (
+                {shouldShowFieldError('message') && (
                   <span
                     id='contact-message-error'
                     className='pl-1 text-[0.86rem] font-medium leading-relaxed text-primary'
@@ -237,8 +250,8 @@ export default function Contact() {
                 )}
               </div>
 
-              {!EMAILJS_CONFIGURED && (
-                <div className='rounded-[20px] border border-primary-soft bg-primary-surface px-4 py-3 text-[0.88rem] leading-relaxed text-primary min-[720px]:col-span-2'>
+              {isFormUnavailable && (
+                <div className='rounded-[20px] border border-[rgba(185,184,92,0.22)] bg-[rgba(185,184,92,0.08)] px-4 py-3 text-[0.88rem] leading-relaxed text-copy min-[720px]:col-span-2 dark:border-[rgba(200,190,99,0.18)] dark:bg-[rgba(200,190,99,0.08)] dark:text-copy-muted'>
                   O envio pelo formulario esta temporariamente indisponivel. Use um dos contatos diretos ao lado.
                 </div>
               )}
@@ -246,12 +259,12 @@ export default function Contact() {
               <div className='mt-2 flex min-[720px]:col-span-2 min-[940px]:justify-end'>
                 <button
                   className={`inline-flex h-12 w-full items-center justify-center gap-3 rounded-full border px-6 text-[0.95rem] font-semibold transition-all duration-200 focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-primary-soft disabled:cursor-not-allowed disabled:opacity-70 min-[720px]:w-auto min-[720px]:min-w-[190px] ${
-                    EMAILJS_CONFIGURED
+                    !isFormUnavailable
                       ? 'border-transparent bg-primary text-copy-inverse hover:bg-primary-strong'
                       : 'border-outline bg-app-alt text-copy-soft'
                   }`}
                   type='submit'
-                  disabled={isSubmitting || !EMAILJS_CONFIGURED}
+                  disabled={isSubmitting || isFormUnavailable}
                   aria-busy={isSubmitting}
                 >
                   {isSubmitting ? (
