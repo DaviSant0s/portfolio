@@ -16,7 +16,6 @@ const CONTACT_METHODS = [
     value: 'daviir17@gmail.com',
     copyValue: 'daviir17@gmail.com',
     href: 'mailto:daviir17@gmail.com',
-    description: 'Ideal para propostas, freelas e contatos profissionais.',
     icon: gmail,
     iconAlt: 'Icone do Gmail',
     iconClassName: 'w-7',
@@ -27,7 +26,6 @@ const CONTACT_METHODS = [
     value: '(53) 99932-2366',
     copyValue: '53999322366',
     href: 'https://wa.me/5553999322366',
-    description: 'Melhor para conversas rapidas e alinhamento inicial.',
     icon: whatsapp,
     iconAlt: 'Icone do WhatsApp',
     iconClassName: 'w-8',
@@ -144,7 +142,7 @@ export default function Contact() {
             Contato
           </h1>
           <p className='max-w-[22rem] text-balance text-[0.95rem] leading-[1.58] text-copy-muted min-[500px]:max-w-[27rem] min-[790px]:max-w-none min-[790px]:text-[1.05rem] min-[790px]:leading-relaxed'>
-            Se voce tem uma oportunidade, ideia de projeto ou quer trocar sobre tecnologia, esse e o melhor lugar para me chamar.
+            Para oportunidades, projetos ou uma troca sobre tecnologia, fale comigo por aqui.
           </p>
         </div>
 
@@ -152,10 +150,10 @@ export default function Contact() {
           <div className='rounded-[24px] border border-outline/70 bg-panel px-5 py-5 shadow-panel min-[500px]:rounded-[28px] min-[500px]:px-6 min-[500px]:py-6 min-[720px]:px-8 min-[720px]:py-8'>
             <div className='mb-6 border-b border-outline/70 pb-5'>
               <h2 className='max-w-[13.5ch] text-[1.16rem] font-semibold tracking-[-0.03em] text-copy-strong min-[480px]:max-w-none min-[480px]:text-[1.28rem] min-[720px]:text-[1.65rem]'>
-                Vamos conversar sobre a sua ideia
+                Vamos conversar
               </h2>
               <p className='mt-3 max-w-[24rem] text-[0.95rem] leading-[1.6] text-copy-muted min-[500px]:max-w-[42rem] min-[500px]:text-[0.98rem] min-[500px]:leading-relaxed'>
-                Me conte o contexto do projeto, a oportunidade ou o tipo de colaboracao que voce tem em mente.
+                Me conte em poucas linhas o que voce tem em mente.
               </p>
             </div>
 
@@ -245,11 +243,7 @@ export default function Contact() {
                 </div>
               )}
 
-              <div className='mt-2 flex flex-col gap-4 min-[720px]:col-span-2 min-[940px]:flex-row min-[940px]:items-center min-[940px]:justify-between'>
-                <p className='max-w-[30rem] text-[0.9rem] leading-[1.55] text-copy-muted min-[500px]:text-[0.92rem] min-[500px]:leading-relaxed'>
-                  Prefere contato direto? Voce tambem pode me chamar por e-mail ou WhatsApp na coluna ao lado.
-                </p>
-
+              <div className='mt-2 flex min-[720px]:col-span-2 min-[940px]:justify-end'>
                 <button
                   className={`inline-flex h-12 w-full items-center justify-center gap-3 rounded-full border px-6 text-[0.95rem] font-semibold transition-all duration-200 focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-primary-soft disabled:cursor-not-allowed disabled:opacity-70 min-[720px]:w-auto min-[720px]:min-w-[190px] ${
                     EMAILJS_CONFIGURED
@@ -279,10 +273,10 @@ export default function Contact() {
                 Contato direto
               </span>
               <h2 className='mt-2 text-[1.16rem] font-semibold tracking-[-0.03em] text-copy-strong min-[500px]:text-[1.28rem]'>
-                Fale comigo pelos canais abaixo
+                Canais diretos
               </h2>
               <p className='mt-3 text-[0.9rem] leading-[1.58] text-copy-muted min-[500px]:text-[0.94rem] min-[500px]:leading-relaxed'>
-                WhatsApp para alinhamentos mais rapidos, e-mail para conversas e propostas mais detalhadas.
+                WhatsApp para conversa rapida. E-mail para propostas mais detalhadas.
               </p>
             </div>
 
@@ -309,11 +303,8 @@ export default function Contact() {
                         >
                           {contact.value}
                         </a>
-                        <p className='mt-2 text-[0.88rem] leading-[1.55] text-copy-muted min-[500px]:text-[0.92rem] min-[500px]:leading-relaxed'>
-                          {contact.description}
-                        </p>
 
-                        <div className='mt-4 flex flex-wrap gap-2'>
+                        <div className='mt-3 flex flex-wrap gap-2'>
                           <a
                             href={contact.href}
                             className='inline-flex h-9 items-center justify-center gap-2 rounded-full border border-outline px-3.5 text-[0.84rem] font-semibold text-copy transition-all duration-200 hover:border-outline-strong hover:bg-app-alt focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-primary-soft min-[500px]:h-10 min-[500px]:px-4 min-[500px]:text-[0.9rem]'
