@@ -1,6 +1,5 @@
 import * as Dialog from '@radix-ui/react-dialog';
 import Logo from '../Logo';
-import './styles.css';
 import Button from '../Button';
 import NavHeader from '../NavHeader';
 import DarkModeBtn from '../DarkModeBtn'
@@ -25,29 +24,29 @@ export default function Header() {
   
   return (
     <Dialog.Root open={menuEnabled} onOpenChange={setMenuEnabled}>
-      <header className='header-container-scroll'>
+      <header className='fixed inset-x-0 top-[25px] z-[999999999999999999] flex h-[var(--heightHeaderScroll)] w-full items-center justify-center border-b border-outline bg-panel shadow-soft'>
 
-        <div className='header-content-scroll'>
-          <div className='logo-and-buttons-header-scroll'>
+        <div className='flex h-full w-[min(95%,var(--sectionWidth))] flex-col overflow-x-hidden'>
+          <div className='flex h-full items-center justify-between gap-3'>
             <Logo/>
 
             {!isTabletOrMobile &&
             
-              <div className='navHeaderAnimationBug-container-scroll'>
+              <div className='flex h-full min-w-[600px] w-[600px] items-center justify-start'>
 
                 <NavHeader/>
 
               </div>
             }
 
-            <div className='btns-header-scroll'>
+            <div className='flex h-full w-fit items-center justify-end'>
 
               {!miniMobile &&
               
-                <div className='contact-btn-scroll'>
+                <div className='flex items-center justify-center gap-1 border-r border-outline pr-2 max-[500px]:border-r-0'>
 
                     <a
-                      className='curriculum-btn-scroll'
+                      className='inline-flex'
                       href="https://drive.google.com/file/d/186QiKzScSw8rHyrKlm4UMyCKWL9a_5mh/view?usp=sharing"
                       target='_blank'
                       rel='noreferrer'
@@ -60,11 +59,10 @@ export default function Header() {
               }
 
               {!isTabletOrMobile &&
-                <div className='theme-toggle-header'>
+                <div className='ml-2.5 flex items-center justify-center'>
                   <DarkModeBtn/>
                 </div>
               }
-
 
             </div>
             

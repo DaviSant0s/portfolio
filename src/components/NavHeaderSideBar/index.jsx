@@ -1,6 +1,5 @@
 import { Link } from 'react-scroll';
 import * as m from 'motion/react-m';
-import './styles.css';
 import { useSideBar } from '../../context/SideBarContext';
 import { useHeader } from '../../context/HeaderContext';
 import { navigationSections } from '../../data/navigationSections.js';
@@ -37,11 +36,12 @@ export default function NavHeaderSideBar() {
   }
 
   return (
-    <nav className='nav-header-sideBar'>
+    <nav className='flex w-full shrink-0 flex-col gap-2 px-[14px] pt-[18px] pb-2'>
       {navigationSections.map((item) => {
         const isActive = activeSection === item.section;
         const itemState = isActive ? 'active' : 'rest';
         const linkProps = item.duration ? { duration: item.duration } : {};
+        const itemClassName = 'relative z-0 flex min-h-14 w-full cursor-pointer select-none items-center gap-[14px] overflow-hidden rounded-2xl border border-transparent px-4 text-[1.05rem] font-semibold transition-colors duration-[180ms] ease-out hover:border-primary-soft hover:bg-primary-surface-strong';
 
         return (
           <Link
@@ -49,11 +49,11 @@ export default function NavHeaderSideBar() {
             to={item.to}
             smooth={true}
             offset={item.offset}
-            className='Link'
+            className='block w-full outline-none'
             {...linkProps}
           >
             <m.div
-              className='link-page'
+              className={itemClassName}
               variants={itemVariants}
               initial={false}
               animate={itemState}
@@ -65,19 +65,19 @@ export default function NavHeaderSideBar() {
               {isActive &&
                 <m.span
                   layoutId='sidebar-nav-indicator'
-                  className='link-page-indicator'
+                  className='absolute inset-0 -z-10 rounded-2xl border border-primary-soft shadow-[inset_0_1px_0_var(--color-surface-glint)] [background:linear-gradient(180deg,var(--color-accent-surface-strong)_0%,var(--color-accent-surface)_100%)]'
                   transition={indicatorTransition}
                 />
               }
               <m.span
-                className="material-symbols-outlined link-page-icon"
+                className="material-symbols-outlined relative z-[1] text-[1.45rem]"
                 variants={iconVariants}
                 initial={false}
               >
                 {item.icon}
               </m.span>
               <m.span
-                className='link-page-text'
+                className='relative z-[1] tracking-[-0.01em]'
                 variants={labelVariants}
                 initial={false}
               >

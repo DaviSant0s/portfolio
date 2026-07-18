@@ -1,54 +1,65 @@
 import { Link } from 'react-scroll';
-import './styles.css';
+import { navigationSections } from '../../data/navigationSections';
+
+const socialLinks = [
+  {
+    href: 'https://www.linkedin.com/in/davisantoss/',
+    label: 'Abrir LinkedIn de Davi Santos',
+    icon: 'bxl-linkedin',
+    hoverClassName: 'group-hover:text-social-linkedin',
+  },
+  {
+    href: 'https://github.com/DaviSant0s',
+    label: 'Abrir GitHub de Davi Santos',
+    icon: 'bxl-github',
+    hoverClassName: 'group-hover:text-copy-strong',
+  },
+  {
+    href: 'https://api.whatsapp.com/send/?phone=53999322366&text=Ol%C3%A1%2C%20tudo%20bem%20?',
+    label: 'Abrir conversa no WhatsApp',
+    icon: 'bxl-whatsapp',
+    hoverClassName: 'group-hover:text-social-whatsapp',
+  },
+];
 
 export default function Footer() {
   return (
-    <footer className='footer-container'>
-      <div className='footer-content'>
+    <footer className='w-full bg-[var(--color-footer-bg)]'>
+      <div className='content-shell flex min-h-[300px] flex-col items-center justify-center gap-4 py-12'>
 
-        <div className='social-btns-footer'>
-        <a href="https://www.linkedin.com/in/davisantoss/" target='_blank' rel='noreferrer' aria-label='Abrir LinkedIn de Davi Santos'>
-          <i className='bx bxl-linkedin'/>
-        </a>
-
-        <a href="https://github.com/DaviSant0s" target='_blank' rel='noreferrer' aria-label='Abrir GitHub de Davi Santos'>
-          <i className='bx bxl-github'/>
-        </a>
-
-        <a href="https://api.whatsapp.com/send/?phone=53999322366&text=Ol%C3%A1%2C%20tudo%20bem%20?" target='_blank' rel='noreferrer' aria-label='Abrir conversa no WhatsApp'>
-          <i className='bx bxl-whatsapp'/>
-        </a>
+        <div className='mb-2 flex gap-1.5'>
+          {socialLinks.map((link) => (
+            <a
+              key={link.icon}
+              href={link.href}
+              target='_blank'
+              rel='noreferrer'
+              aria-label={link.label}
+              className='group inline-flex'
+            >
+              <i
+                className={`bx ${link.icon} rounded-full border border-transparent bg-[var(--color-footer-icon-bg)] p-2.5 text-[2rem] text-copy-inverse transition-all duration-300 ease-out group-hover:border-outline-strong group-hover:bg-panel ${link.hoverClassName}`}
+              />
+            </a>
+          ))}
         </div>
 
-        <nav className='navigation-footer' >
-
-          <Link to='id_home' smooth={true} offset={-80} duration={700} className='Link-footer'>
-            <span>Início</span>
-          </Link>
-
-          <Link to='id_certifications' smooth={true} offset={-79} duration={700} className='Link-footer'>
-            <span>Certificações</span>
-          </Link>
-
-          <Link to='id_skills' smooth={true} offset={-79} duration={700} className='Link-footer'>
-            <span>Habilidades</span>
-          </Link>
-
-          <Link to='id_projects' smooth={true} offset={-79} duration={700} className='Link-footer'>
-            <span>Projetos</span>
-          </Link>
-
-          <Link to='id_experience' smooth={true} offset={-79} duration={700} className='Link-footer'>
-            <span>Experiências</span>
-          </Link>
-
-          <Link to='id_contact' smooth={true} offset={-79} duration={700}  className='Link-footer'>
-            <span>Contato</span>
-          </Link>
-
+        <nav className='flex flex-col items-center gap-3 text-center min-[641px]:flex-row min-[641px]:flex-wrap min-[641px]:justify-center min-[641px]:gap-[15px]'>
+          {navigationSections.map((item) => (
+            <Link
+              key={item.section}
+              to={item.to}
+              smooth={true}
+              offset={item.offset}
+              duration={item.duration ?? 700}
+              className='text-[1.05rem] font-medium transition-colors duration-150 ease-in hover:text-primary'
+            >
+              <span>{item.label}</span>
+            </Link>
+          ))}
         </nav>
 
-        <span className='author-footer'>
+        <span className='mt-4 text-sm font-light text-copy-muted'>
           Criado por Davi Santos
         </span>
       </div>

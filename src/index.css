@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400..900&display=swap');
 @import "tailwindcss";
 
 @custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
@@ -7,6 +8,7 @@
 @theme inline {
   --font-sans: var(--font-family-sans);
   --font-display: var(--font-family-display);
+  --font-brand: var(--font-family-brand);
 
   --text-hero: 3.125rem;
   --text-hero--line-height: 1;
@@ -78,6 +80,7 @@
 :root {
   --font-family-sans: 'Plus Jakarta Sans', sans-serif;
   --font-family-display: 'Roboto Slab', serif;
+  --font-family-brand: 'Playfair Display', serif;
 
   --heightHeader: 180px;
   --heightHeaderScroll: 80px;

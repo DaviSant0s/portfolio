@@ -1,7 +1,6 @@
 import * as Dialog from '@radix-ui/react-dialog';
 import { AnimatePresence, useReducedMotion } from 'motion/react';
 import * as m from 'motion/react-m';
-import './styles.css';
 import NavHeaderSideBar from '../NavHeaderSideBar';
 import Logo from '../Logo';
 import DarkModeBtn from '../DarkModeBtn';
@@ -23,7 +22,7 @@ export default function SideBar() {
         <Dialog.Portal forceMount>
           <Dialog.Overlay forceMount asChild>
             <m.div
-              className='background-sidebar'
+              className='fixed inset-x-0 bottom-0 top-[25px] z-[99999999999999999999999999999999999999] bg-[var(--color-overlay-strong)] backdrop-blur-[2px]'
               initial={prefersReducedMotion ? false : { opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -32,25 +31,28 @@ export default function SideBar() {
           </Dialog.Overlay>
           <Dialog.Content forceMount asChild>
             <m.div
-              className='sideBar-container'
+              className='fixed left-0 top-[25px] z-[99999999999999999999999999999999999999] flex h-[calc(100dvh-25px)] w-[min(82vw,336px)] flex-col items-center overflow-y-auto rounded-r-[22px] border-r border-outline bg-panel pb-[18px] shadow-float outline-none max-[420px]:w-[min(86vw,320px)] max-[420px]:rounded-r-[20px]'
               initial={prefersReducedMotion ? false : { x: '-100%', opacity: 0.98 }}
               animate={{ x: 0, opacity: 1 }}
               exit={prefersReducedMotion ? { opacity: 0 } : { x: '-100%', opacity: 0.98 }}
               transition={contentTransition}
             >
-              <Dialog.Title className='sideBar-sr-only'>Menu de navegacao</Dialog.Title>
-              <Dialog.Description className='sideBar-sr-only'>
+              <Dialog.Title className='sr-only'>Menu de navegacao</Dialog.Title>
+              <Dialog.Description className='sr-only'>
                 Use este painel para navegar pelas secoes do portfolio.
               </Dialog.Description>
-              <div className='title-sideBar'>
+              <div
+                className='relative flex h-[var(--heightHeaderScroll)] w-full items-center justify-start border-b border-outline px-[14px]'
+                style={{ background: 'var(--color-surface-gradient)' }}
+              >
                 <Logo sideBar={true}/>
               </div>
               <NavHeaderSideBar/>
-              <div className='sidebar-preferences'>
-                <div className='sidebar-theme-toggle'>
-                  <div className='sidebar-theme-copy'>
-                    <span className='sidebar-theme-title'>Tema visual</span>
-                    <span className='sidebar-theme-description'>Alternar entre modo claro e escuro</span>
+              <div className='mt-auto w-full px-[14px] pt-[18px]'>
+                <div className='flex items-center justify-between gap-[14px] rounded-[18px] border border-outline bg-panel-soft px-4 py-[14px]'>
+                  <div className='flex min-w-0 flex-col gap-0.5'>
+                    <span className='text-[0.98rem] font-bold text-copy-strong'>Tema visual</span>
+                    <span className='text-[0.82rem] leading-[1.35] text-copy-muted'>Alternar entre modo claro e escuro</span>
                   </div>
                   <DarkModeBtn/>
                 </div>

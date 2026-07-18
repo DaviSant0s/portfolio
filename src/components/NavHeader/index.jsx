@@ -2,7 +2,6 @@ import { Link } from 'react-scroll';
 import * as m from 'motion/react-m';
 import { useHeader } from '../../context/HeaderContext';
 import { navigationSections } from '../../data/navigationSections.js';
-import './styles.css';
 
 
 export default function NavHeader({ styles={} }) {
@@ -24,11 +23,15 @@ export default function NavHeader({ styles={} }) {
   };
 
   return (
-    <nav style={styles} className='nav-header'>
+    <nav style={styles} className='flex h-[41px] shrink-0 items-end gap-0'>
       {navigationSections.map((item) => {
         const isActive = activeSection === item.section;
         const itemState = isActive ? 'active' : 'rest';
         const linkProps = item.duration ? { duration: item.duration } : {};
+        const linkPageClassName = [
+          'relative z-0 flex h-full cursor-pointer select-none items-center justify-center overflow-hidden whitespace-nowrap rounded-t-[12px] border-x border-t-[3px] border-outline-strong bg-panel px-[18px] transition-colors duration-[180ms] ease-out hover:z-[2] hover:border-primary-soft hover:bg-primary-surface',
+          isActive ? 'z-[3] border-primary-soft bg-transparent' : '',
+        ].join(' ').trim();
 
         return (
           <Link
@@ -36,12 +39,12 @@ export default function NavHeader({ styles={} }) {
             to={item.to}
             smooth={true}
             offset={item.offset}
-            className='Link'
+            className='-ml-px flex h-full first:ml-0'
             onClick={() => setActiveSection(item.section)}
             {...linkProps}
           >
             <m.div
-              className={`link-page ${isActive ? 'is-active' : ''}`}
+              className={linkPageClassName}
               variants={itemVariants}
               initial={false}
               animate={itemState}
@@ -52,12 +55,12 @@ export default function NavHeader({ styles={} }) {
               {isActive &&
                 <m.span
                   layoutId='header-nav-indicator'
-                  className='link-page-indicator'
+                  className='absolute inset-0 -z-10 rounded-[inherit] bg-primary-surface shadow-[inset_0_1px_0_var(--color-surface-glint)]'
                   transition={indicatorTransition}
                 />
               }
               <m.span
-                className='link-page-label'
+                className='relative z-[1]'
                 variants={labelVariants}
                 initial={false}
               >
