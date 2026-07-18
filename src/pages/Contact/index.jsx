@@ -10,13 +10,15 @@ import { useHeader } from '../../context/HeaderContext';
 import useTrackActiveSection from '../../hooks/header/useTrackActiveSection';
 import { contactFormSchema } from '../../schemas/contactFormSchema';
 
+const PRIMARY_EMAIL = 'daviir17@gmail.com';
+
 const CONTACT_METHODS = [
   {
     id: 'email',
     label: 'E-mail',
-    value: 'daviir17@gmail.com',
-    copyValue: 'daviir17@gmail.com',
-    href: 'mailto:daviir17@gmail.com',
+    value: PRIMARY_EMAIL,
+    copyValue: PRIMARY_EMAIL,
+    href: `mailto:${PRIMARY_EMAIL}`,
     icon: gmail,
     iconAlt: 'Icone do Gmail',
     iconClassName: 'w-7',
@@ -85,9 +87,23 @@ export default function Contact() {
     type(msg, { autoClose });
   };
 
+  const handleFallbackEmail = (formData) => {
+    const subject = encodeURIComponent(`Contato pelo portfolio - ${formData.name}`);
+    const body = encodeURIComponent([
+      `Nome: ${formData.name}`,
+      `E-mail: ${formData.email}`,
+      '',
+      'Mensagem:',
+      formData.message,
+    ].join('\n'));
+
+    window.location.href = `mailto:${PRIMARY_EMAIL}?subject=${subject}&body=${body}`;
+    showToast(toast.info, 'Abrindo seu aplicativo de e-mail...', 2200);
+  };
+
   const handleSendEmail = async (formData) => {
     if (!EMAILJS_CONFIGURED) {
-      showToast(toast.error, 'Formulario temporariamente indisponivel', 2500);
+      handleFallbackEmail(formData);
       return;
     }
 
@@ -252,7 +268,7 @@ export default function Contact() {
 
               {isFormUnavailable && (
                 <div className='rounded-[20px] border border-[rgba(185,184,92,0.22)] bg-[rgba(185,184,92,0.08)] px-4 py-3 text-[0.88rem] leading-relaxed text-copy min-[720px]:col-span-2 dark:border-[rgba(200,190,99,0.18)] dark:bg-[rgba(200,190,99,0.08)] dark:text-copy-muted'>
-                  O envio pelo formulario esta temporariamente indisponivel. Use um dos contatos diretos ao lado.
+                  Sem integracao automatica no momento. Ao enviar, seu aplicativo de e-mail sera aberto com a mensagem preenchida.
                 </div>
               )}
 
@@ -261,10 +277,10 @@ export default function Contact() {
                   className={`inline-flex h-12 w-full items-center justify-center gap-3 rounded-full border px-6 text-[0.95rem] font-semibold transition-all duration-200 focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-primary-soft disabled:cursor-not-allowed disabled:opacity-70 min-[720px]:w-auto min-[720px]:min-w-[190px] ${
                     !isFormUnavailable
                       ? 'border-transparent bg-primary text-copy-inverse hover:bg-primary-strong'
-                      : 'border-outline bg-app-alt text-copy-soft'
+                      : 'border-primary-soft bg-primary-surface text-primary hover:bg-primary-surface-strong'
                   }`}
                   type='submit'
-                  disabled={isSubmitting || isFormUnavailable}
+                  disabled={isSubmitting}
                   aria-busy={isSubmitting}
                 >
                   {isSubmitting ? (
@@ -273,7 +289,7 @@ export default function Contact() {
                       <span>Enviando...</span>
                     </>
                   ) : (
-                    EMAILJS_CONFIGURED ? 'Enviar mensagem' : 'Envio indisponivel'
+                    EMAILJS_CONFIGURED ? 'Enviar mensagem' : 'Enviar por e-mail'
                   )}
                 </button>
               </div>
