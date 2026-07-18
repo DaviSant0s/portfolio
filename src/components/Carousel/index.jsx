@@ -2,7 +2,6 @@ import { useCallback, useEffect, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import CarouselCard from '../CarouselCard';
 import CarouselChange from '../CarouselChange/index.jsx';
-import './styles.css';
 import { useMediaQuery } from 'react-responsive';
 import CarouselChangeMobile from '../CarouselChangeMobile/index.jsx';
 import ArrowSlide from '../ArrowSlide/index.jsx';
@@ -84,7 +83,7 @@ export default function Carousel() {
 
   
   return (
-    <div className='carousel-conteiner'>
+    <div className='relative w-full max-w-[950px]'>
 
       {mobile_max_690px && 
         <CarouselChangeMobile 
@@ -108,11 +107,11 @@ export default function Carousel() {
         />
       }
 
-      <div className='carousel-content'>
+      <div className='relative w-full'>
 
         {mobile_max_690px &&
           <>
-            <div className='left_arrow_change'>
+            <div className='absolute top-1/2 left-[-14px] z-[9] -translate-y-1/2 min-[420px]:left-[-22px]'>
               <ArrowSlide
                 direction='left'
                 func_handle={handleClickScrollToLeft}
@@ -120,7 +119,7 @@ export default function Carousel() {
               />
             </div>
 
-            <div className='right_arrow_change'>
+            <div className='absolute top-1/2 right-[-14px] z-[9] -translate-y-1/2 min-[420px]:right-[-22px]'>
               <ArrowSlide
                 direction='right'
                 func_handle={handleClickScrollToRight}
@@ -130,11 +129,14 @@ export default function Carousel() {
           </>
         }
 
-        <div className='embla'>
-          <div ref={emblaRef} className='embla__viewport'>
-            <div className='embla__container'>
+        <div className='[--slide-spacing:12px]'>
+          <div ref={emblaRef} className='overflow-hidden rounded-[26px] shadow-[0_24px_40px_-28px_var(--color-shadow-lg)]'>
+            <div className='-ml-[var(--slide-spacing)] flex [touch-action:pan-y_pinch-zoom]'>
               {toggleData.map((project) => (
-                <div key={`${toggleCarousel}-${project.name}`} className='embla__slide'>
+                <div
+                  key={`${toggleCarousel}-${project.name}`}
+                  className='min-w-0 shrink-0 grow-0 basis-full pl-[var(--slide-spacing)] min-[691px]:basis-1/2 min-[1021px]:basis-1/3 min-[1340px]:basis-1/4'
+                >
                   <CarouselCard
                     img={project.img}
                     stacks={project.stacks}
