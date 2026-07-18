@@ -1,10 +1,88 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+
+@theme inline {
+  --font-sans: var(--font-family-sans);
+  --font-display: var(--font-family-display);
+
+  --text-hero: 3.125rem;
+  --text-hero--line-height: 1;
+  --text-section-title: 2.2rem;
+  --text-section-title--line-height: 1.1;
+  --text-body-lg: 1.25rem;
+  --text-body-lg--line-height: 1.6;
+  --text-body-sm: 1rem;
+  --text-body-sm--line-height: 1.6;
+
+  --color-app: var(--color-bg);
+  --color-app-alt: var(--color-bg-alt);
+  --color-panel: var(--color-surface);
+  --color-panel-muted: var(--color-surface-muted);
+  --color-panel-soft: var(--color-surface-soft);
+  --color-panel-strong: var(--color-surface-strong);
+  --color-panel-hover: var(--color-surface-hover);
+  --color-panel-hover-strong: var(--color-surface-hover-strong);
+  --color-copy: var(--color-text);
+  --color-copy-strong: var(--color-text-strong);
+  --color-copy-muted: var(--color-text-muted);
+  --color-copy-soft: var(--color-text-soft);
+  --color-copy-inverse: var(--color-text-inverse);
+  --color-outline: var(--color-border);
+  --color-outline-muted: var(--color-border-muted);
+  --color-outline-strong: var(--color-border-strong);
+  --color-primary: var(--color-accent);
+  --color-primary-strong: var(--color-accent-strong);
+  --color-primary-soft: var(--color-accent-soft);
+  --color-primary-surface: var(--color-accent-surface);
+  --color-primary-surface-strong: var(--color-accent-surface-strong);
+  --color-state-success: var(--color-success);
+  --color-state-success-strong: var(--color-success-strong);
+  --color-state-warning: var(--color-warning);
+  --color-state-info: var(--color-info);
+  --color-social-linkedin: var(--color-brand-linkedin);
+  --color-social-linkedin-strong: var(--color-brand-linkedin-strong);
+  --color-social-whatsapp: var(--color-brand-whatsapp);
+  --color-social-gmail: var(--color-brand-gmail);
+
+  --shadow-soft: 0 1px 6px var(--color-shadow-soft);
+  --shadow-panel: 0 10px 30px -18px var(--color-shadow-md);
+  --shadow-float: 0 18px 40px -22px var(--color-shadow-lg);
+
+  --radius-panel: 1.5rem;
+  --radius-pill: 999px;
+
+  --container-content: var(--sectionWidth);
+
+  --spacing-section: 2.5rem;
+  --spacing-gutter: 1.25rem;
+  --spacing-header: var(--heightHeader);
+  --spacing-header-scroll: var(--heightHeaderScroll);
+  --spacing-screen-offset: var(--heightBody);
+
+  --breakpoint-phone: 24.375rem;
+  --breakpoint-phone-lg: 28.75rem;
+  --breakpoint-handset: 31.25rem;
+  --breakpoint-tablet: 49.375rem;
+  --breakpoint-laptop: 68.75rem;
+  --breakpoint-desktop: 83.125rem;
+
+  --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
+  --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
+
+  --animate-title-underline: animationTitle 0.9s forwards;
+}
 
 :root {
+  --font-family-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-family-display: 'Roboto Slab', serif;
+
   --heightHeader: 180px;
   --heightHeaderScroll: 80px;
-  --heighBody: calc(100vh - var(--heightHeaderScroll));
+  --heightBody: calc(100vh - var(--heightHeaderScroll));
+  --heighBody: var(--heightBody);
   --sectionWidth: 1295px;
   --mainColor: var(--color-surface);
 
@@ -163,8 +241,13 @@ body,
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: var(--font-family-sans);
   color: var(--color-text);
+}
+
+button:not(:disabled),
+[role='button']:not(:disabled) {
+  cursor: pointer;
 }
 
 ::selection {
@@ -210,6 +293,35 @@ h2 {
   height: min-content;
   padding-top: 40px;
   padding-bottom: 40px;
+}
+
+@utility content-shell {
+  width: min(100%, calc(var(--sectionWidth) + 20px));
+  margin-inline: auto;
+  padding-inline: 0.625rem;
+}
+
+@utility page-section {
+  padding-block: 2.5rem;
+}
+
+@utility page-viewport {
+  width: 100%;
+  min-height: var(--heightBody);
+}
+
+@utility surface-panel {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 1px 6px var(--color-shadow-soft);
+}
+
+@utility accent-text-gradient {
+  background-image: linear-gradient(to right, var(--color-accent), var(--color-accent-strong));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 
 @keyframes animationTitle {

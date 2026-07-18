@@ -1,13 +1,3 @@
-.body-container{
-  background-color: var(--color-bg);
-  width: 100%;
-  margin: auto;
-}
-
-.app-container{
-  position: relative;
-}
-
 .toast-message {
   /* + 25px do avisos */
   top: 95px;

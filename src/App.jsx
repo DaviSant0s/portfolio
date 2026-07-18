@@ -27,7 +27,7 @@ function App() {
 
   return (
     <LazyMotion features={domAnimation}>
-      <div className='app-container'>
+      <div className='relative bg-app text-copy'>
 
         <HeaderProvider>
 
@@ -40,7 +40,7 @@ function App() {
             <FloatingButtons/>
           
           }
-          <div className='body-container'>
+          <div className='mx-auto w-full bg-app'>
             <ToastContainer theme={theme} />
 
             <Home/>
