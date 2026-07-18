@@ -22,7 +22,7 @@ export default function SideBar() {
         <Dialog.Portal forceMount>
           <Dialog.Overlay forceMount asChild>
             <m.div
-              className='fixed inset-x-0 bottom-0 top-[25px] z-[99999999999999999999999999999999999999] bg-backdrop-strong backdrop-blur-[2px]'
+              className='fixed inset-0 z-[99999999999999999999999999999999999999] bg-backdrop-strong backdrop-blur-[2px]'
               initial={prefersReducedMotion ? false : { opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -31,7 +31,7 @@ export default function SideBar() {
           </Dialog.Overlay>
           <Dialog.Content forceMount asChild>
             <m.div
-              className='fixed left-0 top-[25px] z-[99999999999999999999999999999999999999] flex h-[calc(100dvh-25px)] w-[min(82vw,336px)] flex-col items-center overflow-y-auto rounded-r-[22px] border-r border-outline bg-panel pb-[18px] shadow-float outline-none max-[420px]:w-[min(84vw,312px)] max-[420px]:rounded-r-[20px]'
+              className='fixed left-0 top-0 z-[99999999999999999999999999999999999999] flex h-dvh w-[min(82vw,336px)] flex-col items-center overflow-y-auto rounded-r-[22px] border-r border-outline bg-panel pb-[18px] shadow-float outline-none max-[420px]:w-[min(84vw,312px)] max-[420px]:rounded-r-[20px]'
               initial={prefersReducedMotion ? false : { x: '-100%', opacity: 0.98 }}
               animate={{ x: 0, opacity: 1 }}
               exit={prefersReducedMotion ? { opacity: 0 } : { x: '-100%', opacity: 0.98 }}

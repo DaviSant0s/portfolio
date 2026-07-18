@@ -74,7 +74,7 @@
   --font-family-display: 'Roboto Slab', serif;
   --font-family-brand: 'Playfair Display', serif;
 
-  --noticeHeight: 25px;
+  --noticeHeight: 0px;
   --heightHeader: 180px;
   --heightHeaderScroll: 80px;
   --heightBody: calc(100vh - var(--heightHeaderScroll));

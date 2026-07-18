@@ -24,7 +24,7 @@ export default function Header() {
   
   return (
     <Dialog.Root open={menuEnabled} onOpenChange={setMenuEnabled}>
-      <header className='fixed inset-x-0 top-[25px] z-[999999999999999999] flex h-[var(--heightHeaderScroll)] w-full items-center justify-center border-b border-outline bg-panel shadow-soft'>
+      <header className='fixed inset-x-0 top-0 z-[999999999999999999] flex h-[var(--heightHeaderScroll)] w-full items-center justify-center border-b border-outline bg-panel shadow-soft'>
 
         <div className='content-shell flex h-full w-full overflow-x-hidden'>
           <div className='flex h-full w-full items-center justify-between gap-3 min-[1200px]:gap-5'>
