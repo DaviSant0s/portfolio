@@ -1,9 +1,8 @@
-import './styles.css';
-
-export default function Loading() {
+export default function Loading({ className = '' }) {
   return (
-    <div className='loading-component'>
-      
-    </div>
+    <span
+      aria-hidden='true'
+      className={`inline-block size-[23px] animate-spin rounded-full border-[3.5px] border-white border-b-transparent ${className}`.trim()}
+    />
   )
 }
