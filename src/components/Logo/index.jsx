@@ -1,6 +1,5 @@
 import * as Dialog from '@radix-ui/react-dialog';
 import { useMediaQuery } from 'react-responsive'
-import photo from '../../assets/img-perfil.jpeg'
 
 export default function Logo({ sideBar=false }) {
 
@@ -12,15 +11,17 @@ export default function Logo({ sideBar=false }) {
       : 'border-transparent bg-transparent hover:bg-panel-strong hover:text-primary',
   ].join(' ');
   const logoContainerClassName = [
-    'flex min-w-0 select-none items-center gap-[15px]',
-    sideBar ? 'w-full gap-3.5' : 'gap-2.5 min-[500px]:gap-3 min-[1200px]:gap-[15px]',
+    'flex min-w-0 select-none items-center',
+    sideBar ? 'w-full justify-between gap-3.5' : 'justify-start',
   ].join(' ');
-  const titleClassName = [
-    'font-brand tracking-[-0.03em] text-primary',
-    sideBar ? 'text-[clamp(1.8rem,6vw,2.3rem)] leading-[0.95]' : 'text-[clamp(1.65rem,8vw,2rem)] leading-[0.95] min-[500px]:leading-none',
+  const brandClassName = [
+    'group/brand inline-flex shrink-0 items-center',
   ].join(' ');
-  const subtitleClassName = [
-    sideBar ? 'mt-0.5 text-[0.96rem] text-copy-muted min-[500px]:text-base' : 'text-[0.84rem] text-copy min-[500px]:text-[0.9rem]',
+  const wordmarkClassName = [
+    'font-display font-semibold tracking-[-0.05em] text-copy-strong transition-colors duration-200 ease-out group-hover/brand:text-primary',
+    sideBar
+      ? 'text-[1.6rem] leading-none min-[500px]:text-[1.8rem]'
+      : 'text-[1.2rem] leading-none min-[500px]:text-[1.3rem]',
   ].join(' ');
   
 
@@ -52,16 +53,12 @@ export default function Logo({ sideBar=false }) {
           </Dialog.Close>
         }
 
-        {!isTabletOrMobile && 
-          <div className='size-10 overflow-hidden rounded-full border border-outline'>
-            <img className='h-full w-full object-cover' src={photo} alt="Foto de perfil de Davi Santos"/>
-          </div>
-        }
-
-      <div className='flex min-w-0 flex-col justify-center'>
-        <h1 className={titleClassName}>Portfólio</h1>
-        <span className={subtitleClassName}>Davi Santos</span>
+      <div className={brandClassName}>
+        <span className={wordmarkClassName}>
+          ds<span className='text-primary'>.</span>dev
+        </span>
       </div>
+      <span className='sr-only'>Marca ds.dev</span>
     </div>
   )
 }
