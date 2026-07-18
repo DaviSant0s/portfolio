@@ -20,7 +20,7 @@ export default function DarkModeBtn() {
         aria-label='Alternar tema visual'
         aria-pressed={isDarkMode}
         onClick={toggleTheme}
-        className='relative flex h-[38px] w-[72px] items-center justify-start overflow-hidden rounded-full border border-[var(--color-toggle-track-border)] p-1 transition-all duration-200 ease-out [background:var(--color-toggle-track)] [box-shadow:inset_0px_1px_6px_var(--color-toggle-track-shadow),0px_6px_14px_var(--color-shadow-soft)] hover:border-primary-soft hover:[box-shadow:inset_0px_1px_6px_var(--color-toggle-track-shadow),0px_8px_18px_var(--color-shadow-md)] focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-primary-soft'
+        className='bg-toggle-track relative flex h-[38px] w-[72px] items-center justify-start overflow-hidden rounded-full border border-[var(--color-toggle-track-border)] p-1 transition-all duration-200 ease-out [box-shadow:inset_0px_1px_6px_var(--color-toggle-track-shadow),0px_6px_14px_var(--color-shadow-soft)] hover:border-primary-soft hover:[box-shadow:inset_0px_1px_6px_var(--color-toggle-track-shadow),0px_8px_18px_var(--color-shadow-md)] focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-primary-soft'
         whileTap={prefersReducedMotion ? undefined : { scale: 0.97 }}
       >
         <span
@@ -36,7 +36,7 @@ export default function DarkModeBtn() {
           dark_mode
         </span>
         <m.div
-          className='relative z-[1] size-[30px] rounded-full border border-[var(--color-toggle-knob-border)] bg-[var(--color-toggle-knob)] [box-shadow:0px_6px_12px_var(--color-shadow-soft),inset_0px_1px_0px_var(--color-surface-glint)]'
+          className='relative z-[1] size-[30px] rounded-full border border-[var(--color-toggle-knob-border)] bg-toggle-surface [box-shadow:0px_6px_12px_var(--color-shadow-soft),inset_0px_1px_0px_var(--color-surface-glint)]'
           animate={{
             x: isDarkMode ? knobOffset : 0,
           }}

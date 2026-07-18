@@ -28,7 +28,7 @@ export default function Projects() {
 
         <div className='flex w-full max-w-[950px] flex-col items-center gap-14'>
           <Carousel/>
-          <div className='w-full rounded-[24px] border border-outline bg-panel px-3 py-4 shadow-panel min-[640px]:px-5 min-[640px]:py-5'>
+          <div className='w-full rounded-3xl border border-outline bg-panel px-3 py-4 shadow-panel min-[640px]:px-5 min-[640px]:py-5'>
             <div className='w-full overflow-x-auto overflow-y-hidden pb-1'>
               <div className='mx-auto min-w-[760px]'>
                 <Suspense

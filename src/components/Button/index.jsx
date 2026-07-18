@@ -10,7 +10,7 @@ export default function Button({
   const Component = as;
   const isNativeButton = Component === 'button';
   const buttonClassName = [
-    'group/button inline-flex h-[41px] w-max shrink-0 select-none items-center rounded-full border-2 border-outline px-5 no-underline appearance-none transition-all duration-150 ease-out hover:border-outline-strong focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-primary-soft [background:var(--color-neutral-gradient)]',
+    'bg-neutral-gradient group/button inline-flex h-[41px] w-max shrink-0 select-none items-center rounded-full border-2 border-outline px-5 no-underline appearance-none transition-all duration-150 ease-out hover:border-outline-strong focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-primary-soft',
     className,
   ].join(' ').trim();
 

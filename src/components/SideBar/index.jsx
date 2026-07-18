@@ -22,7 +22,7 @@ export default function SideBar() {
         <Dialog.Portal forceMount>
           <Dialog.Overlay forceMount asChild>
             <m.div
-              className='fixed inset-x-0 bottom-0 top-[25px] z-[99999999999999999999999999999999999999] bg-[var(--color-overlay-strong)] backdrop-blur-[2px]'
+              className='fixed inset-x-0 bottom-0 top-[25px] z-[99999999999999999999999999999999999999] bg-backdrop-strong backdrop-blur-[2px]'
               initial={prefersReducedMotion ? false : { opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -42,7 +42,7 @@ export default function SideBar() {
                 Use este painel para navegar pelas secoes do portfolio.
               </Dialog.Description>
               <div
-                className='relative flex h-[var(--heightHeaderScroll)] w-full items-center justify-start border-b border-outline px-[14px] [background:var(--color-surface-gradient)]'
+                className='bg-surface-gradient relative flex h-[var(--heightHeaderScroll)] w-full items-center justify-start border-b border-outline px-[14px]'
               >
                 <Logo sideBar={true}/>
               </div>

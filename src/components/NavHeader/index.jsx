@@ -55,7 +55,7 @@ export default function NavHeader() {
               {isActive &&
                 <m.span
                   layoutId='header-nav-indicator'
-                  className='absolute inset-0 -z-10 rounded-[inherit] bg-primary-surface shadow-[inset_0_1px_0_var(--color-surface-glint)]'
+                  className='shadow-surface-glint absolute inset-0 -z-10 rounded-[inherit] bg-primary-surface'
                   transition={indicatorTransition}
                 />
               }

@@ -24,7 +24,7 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className='w-full bg-[var(--color-footer-bg)]'>
+    <footer className='w-full bg-footer'>
       <div className='content-shell flex min-h-[300px] flex-col items-center justify-center gap-4 py-12'>
 
         <div className='mb-2 flex gap-1.5'>
@@ -38,7 +38,7 @@ export default function Footer() {
               className='group inline-flex'
             >
               <i
-                className={`bx ${link.icon} rounded-full border border-transparent bg-[var(--color-footer-icon-bg)] p-2.5 text-[2rem] text-copy-inverse transition-all duration-300 ease-out group-hover:border-outline-strong group-hover:bg-panel ${link.hoverClassName}`}
+                className={`bx ${link.icon} bg-footer-icon rounded-full border border-transparent p-2.5 text-[2rem] text-copy-inverse transition-all duration-300 ease-out group-hover:border-outline-strong group-hover:bg-panel ${link.hoverClassName}`}
               />
             </a>
           ))}

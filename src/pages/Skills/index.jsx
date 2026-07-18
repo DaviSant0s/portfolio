@@ -27,8 +27,8 @@ import java from '../../assets/java.svg';
 import typescript from '../../assets/typescript.png';
 
 const skills = [
-  { name: 'Javascript', image: javascript, imageClassName: 'rounded-[4px]' },
-  { name: 'Typescript', image: typescript, imageClassName: 'rounded-[4px]' },
+  { name: 'Javascript', image: javascript, imageClassName: 'rounded' },
+  { name: 'Typescript', image: typescript, imageClassName: 'rounded' },
   { name: 'Python', image: python },
   { name: 'C', image: c },
   { name: 'Java', image: java, imageClassName: 'w-[40px]' },

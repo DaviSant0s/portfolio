@@ -36,7 +36,7 @@ export default function SocialsGroup() {
   const iconBaseClassName = 'bx text-[2rem] text-[var(--color-icon-default)] transition-colors duration-200 ease-out';
 
   return (
-    <div className='mt-2.5 flex w-fit items-center justify-around gap-3 rounded-[999px] border border-outline bg-panel-muted/95 px-4 py-2 shadow-[0_14px_30px_-22px_var(--color-shadow-md)] backdrop-blur-sm transition-transform duration-300 ease-out hover:scale-[1.03]'>
+    <div className='mt-2.5 flex w-fit items-center justify-around gap-3 rounded-full border border-outline bg-panel-muted/95 px-4 py-2 shadow-[0_14px_30px_-22px_var(--color-shadow-md)] backdrop-blur-sm transition-transform duration-300 ease-out hover:scale-[1.03]'>
       {socialLinks.map((item) => {
         const iconClassName = `${iconBaseClassName} ${item.icon} ${item.hoverClassName}`;
 

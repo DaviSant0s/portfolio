@@ -65,7 +65,7 @@ export default function NavHeaderSideBar() {
               {isActive &&
                 <m.span
                   layoutId='sidebar-nav-indicator'
-                  className='absolute inset-0 -z-10 rounded-2xl border border-primary-soft shadow-[inset_0_1px_0_var(--color-surface-glint)] [background:linear-gradient(180deg,var(--color-accent-surface-strong)_0%,var(--color-accent-surface)_100%)]'
+                  className='bg-accent-surface-gradient shadow-surface-glint absolute inset-0 -z-10 rounded-2xl border border-primary-soft'
                   transition={indicatorTransition}
                 />
               }

@@ -42,6 +42,11 @@
   --color-social-linkedin-strong: var(--color-brand-linkedin-strong);
   --color-social-whatsapp: var(--color-brand-whatsapp);
   --color-social-gmail: var(--color-brand-gmail);
+  --color-footer: var(--color-footer-bg);
+  --color-footer-icon: var(--color-footer-icon-bg);
+  --color-backdrop: var(--color-overlay);
+  --color-backdrop-strong: var(--color-overlay-strong);
+  --color-toggle-surface: var(--color-toggle-knob);
 
   --shadow-soft: 0 1px 6px var(--color-shadow-soft);
   --shadow-panel: 0 10px 30px -18px var(--color-shadow-md);
@@ -274,4 +279,40 @@
   -webkit-background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
+}
+
+@utility bg-neutral-gradient {
+  background: var(--color-neutral-gradient);
+}
+
+@utility bg-neutral-gradient-strong {
+  background: var(--color-neutral-gradient-strong);
+}
+
+@utility bg-neutral-gradient-hover {
+  background: var(--color-neutral-gradient-hover);
+}
+
+@utility bg-accent-gradient {
+  background: var(--color-accent-gradient);
+}
+
+@utility bg-accent-gradient-hover {
+  background: var(--color-accent-gradient-hover);
+}
+
+@utility bg-surface-gradient {
+  background: var(--color-surface-gradient);
+}
+
+@utility bg-accent-surface-gradient {
+  background: linear-gradient(180deg, var(--color-accent-surface-strong) 0%, var(--color-accent-surface) 100%);
+}
+
+@utility bg-toggle-track {
+  background: var(--color-toggle-track);
+}
+
+@utility shadow-surface-glint {
+  box-shadow: inset 0 1px 0 var(--color-surface-glint);
 }

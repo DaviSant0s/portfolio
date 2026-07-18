@@ -18,7 +18,7 @@ export default function Modal({ children, isOpen, setIsOpen }) {
           <Dialog.Portal forceMount>
             <Dialog.Overlay forceMount asChild>
               <m.div
-                className='fixed inset-0 z-[99999999999999999999999999999999999999999999999] grid place-items-center overflow-y-auto bg-[var(--color-overlay)] px-4 pb-6 pt-[clamp(40px,8vh,84px)] backdrop-blur-[3px]'
+                className='fixed inset-0 z-[99999999999999999999999999999999999999999999999] grid place-items-center overflow-y-auto bg-backdrop px-4 pb-6 pt-[clamp(40px,8vh,84px)] backdrop-blur-[3px]'
                 initial={prefersReducedMotion ? false : { opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
