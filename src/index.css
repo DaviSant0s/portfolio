@@ -75,6 +75,19 @@
   --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
 
   --animate-title-underline: animationTitle 0.9s forwards;
+  --animate-scroll-down: scrollDownArrow 1.5s ease-out infinite forwards;
+
+  @keyframes scrollDownArrow {
+    0% {
+      transform: translateY(0px);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translateY(30px);
+      opacity: 1;
+    }
+  }
 }
 
 :root {
@@ -82,6 +95,7 @@
   --font-family-display: 'Roboto Slab', serif;
   --font-family-brand: 'Playfair Display', serif;
 
+  --noticeHeight: 25px;
   --heightHeader: 180px;
   --heightHeaderScroll: 80px;
   --heightBody: calc(100vh - var(--heightHeaderScroll));
