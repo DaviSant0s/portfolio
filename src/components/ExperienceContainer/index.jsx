@@ -7,6 +7,7 @@ import petlogo from '../../assets/companies/pet-logo.png';
 
 const experiences = [
   {
+    startDate: '2025-09',
     date: 'Set de 2025 - Presente',
     logo: leplogo,
     logoClassName: 'w-[68px] scale-[1.12] min-[720px]:w-[72px]',
@@ -16,6 +17,7 @@ const experiences = [
     position: 'Desenvolvedor Front-end Voluntário',
   },
   {
+    startDate: '2026-03',
     date: 'Mar de 2026 - Set de 2026 (em andamento)',
     logo: brisalogo,
     logoClassName: 'w-[68px] min-[720px]:w-[74px]',
@@ -25,6 +27,7 @@ const experiences = [
     position: 'Desenvolvedor Frontend - Agenda VivaUnimed',
   },
   {
+    startDate: '2026-02',
     date: 'Fev de 2026 - Jan de 2027 (em andamento)',
     logo: iteclogo,
     logoClassName: 'w-[60px] scale-[1.06] min-[720px]:w-[64px]',
@@ -33,6 +36,7 @@ const experiences = [
     position: 'Bolsista de Capacitação 4.0 - Soft Skills',
   },
   {
+    startDate: '2022-10',
     date: 'Out de 2022 - Nov de 2023',
     logo: bytelogo,
     logoClassName: 'w-[62px] min-[720px]:w-[68px]',
@@ -41,6 +45,7 @@ const experiences = [
     position: 'Desenvolvedor Front-end',
   },
   {
+    startDate: '2021-06',
     date: 'Jun de 2021 - Maio de 2023',
     logo: petlogo,
     logoClassName: 'w-[72px] min-[720px]:w-[78px]',
@@ -49,6 +54,8 @@ const experiences = [
     position: 'Bolsista - Coordenador de projeto',
   },
 ];
+
+const timelineExperiences = [...experiences].sort((a, b) => b.startDate.localeCompare(a.startDate));
 
 export default function ExperienceContainer() {
   return (
@@ -59,7 +66,7 @@ export default function ExperienceContainer() {
         </h2>
       </div>
       <div className='relative flex flex-col gap-6 pt-2 before:absolute before:top-14 before:bottom-12 before:left-10 before:block before:w-px before:bg-primary before:opacity-45 before:content-[""] min-[500px]:gap-8 min-[500px]:pt-3 max-[640px]:before:hidden'>
-        {experiences.map((experience) => (
+        {timelineExperiences.map((experience) => (
           <ExperienceCard
             key={`${experience.institution}-${experience.date}`}
             date={experience.date}
