@@ -325,36 +325,24 @@ export default function Contact() {
                         <span className='text-[0.78rem] font-semibold uppercase tracking-[0.14em] text-copy-soft'>
                           {contact.label}
                         </span>
-                        <a
-                          href={contact.href}
-                          className='mt-1 block break-words text-[1rem] font-semibold leading-snug text-copy-strong transition-colors hover:text-primary min-[500px]:text-[1.06rem]'
-                          {...(isExternalLink ? { target: '_blank', rel: 'noreferrer' } : {})}
-                        >
-                          {contact.value}
-                        </a>
-
-                        <div className='mt-3 flex flex-wrap gap-2'>
+                        <div className='mt-1 flex items-center gap-2.5'>
                           <a
                             href={contact.href}
-                            className='inline-flex h-9 items-center justify-center gap-2 rounded-full border border-outline px-3.5 text-[0.84rem] font-semibold text-copy transition-all duration-200 hover:border-outline-strong hover:bg-app-alt focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-primary-soft min-[500px]:h-10 min-[500px]:px-4 min-[500px]:text-[0.9rem]'
+                            className='block break-words text-[1rem] font-semibold leading-snug text-copy-strong transition-colors hover:text-primary min-[500px]:text-[1.06rem]'
                             {...(isExternalLink ? { target: '_blank', rel: 'noreferrer' } : {})}
                           >
-                            <span className='material-symbols-outlined text-[1.02rem] text-primary'>
-                              north_east
-                            </span>
-                            <span>Abrir</span>
+                            {contact.value}
                           </a>
 
                           <button
                             type='button'
                             aria-label={`Copiar ${contact.label}`}
                             onClick={() => handleContactCopy(contact.id)}
-                            className='inline-flex h-9 items-center justify-center gap-2 rounded-full border border-outline bg-panel px-3.5 text-[0.84rem] font-semibold text-copy transition-all duration-200 hover:border-outline-strong hover:bg-app-alt focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-primary-soft min-[500px]:h-10 min-[500px]:px-4 min-[500px]:text-[0.9rem]'
+                            className='inline-flex size-8 shrink-0 items-center justify-center rounded-full text-copy-soft transition-all duration-200 hover:bg-app-alt hover:text-copy focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-primary-soft'
                           >
-                            <span className='material-symbols-outlined text-[1.02rem] text-primary'>
+                            <span className='material-symbols-outlined text-[1.1rem] leading-none'>
                               {isCopied ? 'check' : 'content_copy'}
                             </span>
-                            <span>{isCopied ? 'Copiado' : 'Copiar'}</span>
                           </button>
                         </div>
                       </div>
