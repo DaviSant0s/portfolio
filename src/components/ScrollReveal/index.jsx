@@ -1,7 +1,6 @@
 import { useReducedMotion } from 'motion/react';
 import * as m from 'motion/react-m';
 import { useMemo } from 'react';
-import { useInView } from 'react-intersection-observer';
 
 const motionComponents = {
   a: m.a,
@@ -48,15 +47,15 @@ export default function ScrollReveal({
   direction = 'up',
   amount = 0.24,
   once = false,
+  viewportMargin = '0px 0px -10% 0px',
+  style,
   ...rest
 }) {
   const prefersReducedMotion = useReducedMotion();
-  const { ref, inView } = useInView({
-    threshold: amount,
-    triggerOnce: once,
-    rootMargin: '0px 0px -10% 0px',
-  });
   const MotionTag = motionComponents[as] ?? m.div;
+  const mergedStyle = prefersReducedMotion
+    ? style
+    : { willChange: 'transform, opacity', ...style };
 
   const variants = useMemo(() => ({
     hidden: getHiddenState(direction, distance),
@@ -69,7 +68,7 @@ export default function ScrollReveal({
 
   if (prefersReducedMotion) {
     return (
-      <MotionTag ref={ref} className={className} {...rest}>
+      <MotionTag className={className} style={mergedStyle} {...rest}>
         {children}
       </MotionTag>
     );
@@ -77,11 +76,16 @@ export default function ScrollReveal({
 
   return (
     <MotionTag
-      ref={ref}
       className={className}
+      style={mergedStyle}
       variants={variants}
       initial='hidden'
-      animate={inView ? 'visible' : 'hidden'}
+      whileInView='visible'
+      viewport={{
+        amount,
+        once,
+        margin: viewportMargin,
+      }}
       transition={{
         delay,
         duration,
