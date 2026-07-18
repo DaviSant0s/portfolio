@@ -12,9 +12,9 @@ export default function CarouselChange({
   canScrollNext,
 }) {
   return (
-    <div className='mb-5 flex items-center justify-between gap-6'>
-      <div className='flex min-h-12 flex-1 items-center'>
-        <div className='flex select-none items-center gap-[15px]'>
+    <div className='mb-5 flex flex-col items-start gap-4 min-[920px]:flex-row min-[920px]:items-center min-[920px]:justify-between'>
+      <div className='flex min-h-12 w-full items-center min-[920px]:w-auto min-[920px]:flex-1'>
+        <div className='flex flex-wrap select-none items-center gap-x-[15px] gap-y-2.5'>
           {filters.map((filter) => (
             <button
               key={filter.key}
@@ -33,7 +33,7 @@ export default function CarouselChange({
           ))}
         </div>
       </div>
-      <div className='flex shrink-0 items-center gap-5'>
+      <div className='flex w-full shrink-0 items-center justify-between gap-5 min-[920px]:w-auto min-[920px]:justify-end'>
         <span className='text-sm font-bold text-copy-strong min-[790px]:text-base'>{views} de {totalViews}</span>
         <div className='flex gap-2.5'>
 

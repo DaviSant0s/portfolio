@@ -9,9 +9,9 @@ export default function Home() {
     <div
       ref={ref}
       id='id_home'
-      className='relative mt-[calc(var(--heightHeaderScroll)+var(--noticeHeight))] flex min-h-screen justify-center bg-panel'
+      className='relative mt-[calc(var(--heightHeaderScroll)+var(--noticeHeight))] flex min-h-[calc(100vh-var(--heightHeaderScroll)-var(--noticeHeight))] justify-center bg-panel'
     >
-      <div className='content-shell relative flex min-h-[calc(100vh-var(--heightHeaderScroll)-var(--noticeHeight))] w-full flex-col items-center justify-center gap-6 pb-28 pt-12 text-center min-[790px]:pb-24'>
+      <div className='content-shell relative flex min-h-full w-full flex-1 flex-col items-center justify-center gap-6 pb-24 pt-10 text-center min-[790px]:pb-24 min-[790px]:pt-12'>
         <h1 className='select-none text-[clamp(2.188rem,8vw,3.125rem)] font-extrabold leading-none tracking-[-0.03em] text-copy-strong'>
           Desenvolvedor{' '}
           <span className='accent-text-gradient block min-[662px]:inline'>
@@ -30,7 +30,7 @@ export default function Home() {
           smooth={true}
           offset={-79}
           aria-label='Ir para a seção de certificações'
-          className='absolute bottom-[30px] animate-scroll-down'
+          className='absolute bottom-7 animate-scroll-down'
         >
           <span className="material-symbols-outlined select-none text-[2.2rem] text-copy transition-colors duration-200 hover:text-primary">
             keyboard_arrow_down

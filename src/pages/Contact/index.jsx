@@ -147,7 +147,7 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className='grid w-full max-w-[1020px] items-start gap-6 min-[980px]:grid-cols-[minmax(0,1fr)_360px]'>
+        <div className='grid w-full max-w-[1080px] items-start gap-5 min-[1060px]:grid-cols-[minmax(0,1fr)_340px] min-[1200px]:gap-6'>
           <div className='rounded-[28px] border border-outline/70 bg-panel px-6 py-6 shadow-panel min-[720px]:px-8 min-[720px]:py-8'>
             <div className='mb-6 border-b border-outline/70 pb-5'>
               <h2 className='text-[1.45rem] font-semibold tracking-[-0.03em] text-copy-strong min-[720px]:text-[1.65rem]'>
@@ -232,7 +232,7 @@ export default function Contact() {
                 </div>
               )}
 
-              <div className='mt-2 flex flex-col gap-4 min-[720px]:col-span-2 min-[860px]:flex-row min-[860px]:items-center min-[860px]:justify-between'>
+              <div className='mt-2 flex flex-col gap-4 min-[720px]:col-span-2 min-[940px]:flex-row min-[940px]:items-center min-[940px]:justify-between'>
                 <p className='max-w-[30rem] text-[0.92rem] leading-relaxed text-copy-muted'>
                   Prefere contato direto? Voce tambem pode me chamar por e-mail ou WhatsApp na coluna ao lado.
                 </p>

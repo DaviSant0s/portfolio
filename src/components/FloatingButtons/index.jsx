@@ -1,6 +1,6 @@
 export default function FloatingButtons() {
   return (
-    <div className='fixed top-1/2 right-2 z-[999999999] flex h-fit w-fit -translate-y-1/2 flex-col gap-[15px] rounded-[15px] border border-outline bg-panel px-1 py-[15px] shadow-[0px_6px_9px_0px_var(--color-shadow-soft)]'>
+    <div className='fixed top-1/2 right-4 z-[999999999] hidden h-fit w-fit -translate-y-1/2 flex-col gap-[15px] rounded-2xl border border-outline bg-panel px-2 py-4 shadow-[0px_6px_9px_0px_var(--color-shadow-soft)] min-[1361px]:flex 2xl:right-6'>
       <a
         href="https://www.linkedin.com/in/davisantoss/"
         target='_blank'

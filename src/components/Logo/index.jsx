@@ -13,11 +13,11 @@ export default function Logo({ sideBar=false }) {
   ].join(' ');
   const logoContainerClassName = [
     'flex min-w-0 select-none items-center gap-[15px]',
-    sideBar ? 'w-full gap-[14px]' : 'mr-2',
+    sideBar ? 'w-full gap-[14px]' : 'gap-3 min-[1200px]:gap-[15px]',
   ].join(' ');
   const titleClassName = [
     'font-brand tracking-[-0.03em] text-primary',
-    sideBar ? 'text-[clamp(1.9rem,7vw,2.4rem)] leading-[0.95]' : 'text-[2rem] leading-none',
+    sideBar ? 'text-[clamp(1.9rem,7vw,2.4rem)] leading-[0.95]' : 'text-[clamp(1.8rem,2.2vw,2rem)] leading-none',
   ].join(' ');
   const subtitleClassName = [
     sideBar ? 'mt-0.5 text-base text-copy-muted' : 'text-[0.9rem] text-copy',

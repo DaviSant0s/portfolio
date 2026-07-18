@@ -26,20 +26,22 @@ export default function Header() {
     <Dialog.Root open={menuEnabled} onOpenChange={setMenuEnabled}>
       <header className='fixed inset-x-0 top-[25px] z-[999999999999999999] flex h-[var(--heightHeaderScroll)] w-full items-center justify-center border-b border-outline bg-panel shadow-soft'>
 
-        <div className='flex h-full w-[min(95%,var(--sectionWidth))] flex-col overflow-x-hidden'>
-          <div className='flex h-full items-center justify-between gap-3'>
-            <Logo/>
+        <div className='content-shell flex h-full w-full overflow-x-hidden'>
+          <div className='flex h-full w-full items-center justify-between gap-3 min-[1200px]:gap-5'>
+            <div className='shrink-0'>
+              <Logo/>
+            </div>
 
             {!isTabletOrMobile &&
             
-              <div className='flex h-full min-w-[600px] w-[600px] items-center justify-start'>
+              <div className='flex h-full min-w-0 flex-1 items-center justify-center px-4 min-[1280px]:px-8'>
 
                 <NavHeader/>
 
               </div>
             }
 
-            <div className='flex h-full w-fit items-center justify-end'>
+            <div className='flex h-full shrink-0 items-center justify-end'>
 
               {!miniMobile &&
               
@@ -59,7 +61,7 @@ export default function Header() {
               }
 
               {!isTabletOrMobile &&
-                <div className='ml-2.5 flex items-center justify-center'>
+                <div className='ml-2 flex items-center justify-center min-[1280px]:ml-2.5'>
                   <DarkModeBtn/>
                 </div>
               }
