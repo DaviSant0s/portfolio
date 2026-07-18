@@ -1,7 +1,6 @@
 import * as Dialog from '@radix-ui/react-dialog';
 import { AnimatePresence, useReducedMotion } from 'motion/react';
 import * as m from 'motion/react-m';
-import './styles.css';
 
 export default function Modal({ children, isOpen, setIsOpen }) {
   const prefersReducedMotion = useReducedMotion();
@@ -19,7 +18,7 @@ export default function Modal({ children, isOpen, setIsOpen }) {
           <Dialog.Portal forceMount>
             <Dialog.Overlay forceMount asChild>
               <m.div
-                className='modal-container'
+                className='fixed inset-0 z-[99999999999999999999999999999999999999999999999] grid place-items-center overflow-y-auto bg-[var(--color-overlay)] px-4 pb-6 pt-[clamp(40px,8vh,84px)] backdrop-blur-[3px]'
                 initial={prefersReducedMotion ? false : { opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
@@ -27,7 +26,7 @@ export default function Modal({ children, isOpen, setIsOpen }) {
               >
                 <Dialog.Content forceMount asChild>
                   <m.div
-                    className='modal-content'
+                    className='h-min w-min max-w-[calc(100vw-32px)] outline-none'
                     initial={prefersReducedMotion ? false : { opacity: 0, y: 12, scale: 0.98 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, y: 8, scale: 0.98 }}

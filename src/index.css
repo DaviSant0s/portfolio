@@ -99,9 +99,7 @@
   --heightHeader: 180px;
   --heightHeaderScroll: 80px;
   --heightBody: calc(100vh - var(--heightHeaderScroll));
-  --heighBody: var(--heightBody);
   --sectionWidth: 1295px;
-  --mainColor: var(--color-surface);
 
   --color-bg: #ffffff;
   --color-bg-alt: #f9fafb;
@@ -175,8 +173,6 @@
 }
 
 :root[data-theme='dark'] {
-  --mainColor: var(--color-surface);
-
   --color-bg: #0f141b;
   --color-bg-alt: #121922;
   --color-surface: #171f29;
@@ -272,6 +268,10 @@ button:not(:disabled),
   background-color: var(--color-accent);
 }
 
+.toast-message {
+  top: 95px;
+}
+
 /* cor padrão do título */
 h1 {
   position: relative;
@@ -297,19 +297,6 @@ h2 {
 ::-webkit-scrollbar-thumb{
   background-color: var(--color-scrollbar-thumb);
   border-radius: 500px;
-}
-
-/* configuração padrão das páginas */
-
-.defaultHome {
-  width: 100%;
-  height: calc(var(--heighBody));
-}
-
-.defaultPages {
-  height: min-content;
-  padding-top: 40px;
-  padding-bottom: 40px;
 }
 
 @utility content-shell {

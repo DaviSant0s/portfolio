@@ -14,8 +14,6 @@ import Skills from './pages/Skills';
 /* toastfy */
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
-import './App.css';
 import CertificationsProvider from './context/CertificationsContext';
 import SideBarProvider from './context/SideBarContext';
 import { useMediaQuery } from 'react-responsive';
