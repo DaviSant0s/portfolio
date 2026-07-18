@@ -8,6 +8,8 @@ import { useSideBar } from '../../context/SideBarContext';
 import SideBar from '../SideBar';
 import { useEffect } from 'react';
 
+const resumeFileUrl = new URL('../../../curriculo_vitae_Davi_Santos.pdf', import.meta.url).href;
+
 export default function Header() {
   // responsividade
   const isTabletOrMobile = useMediaQuery({query: '(max-width: 1100px)'});
@@ -49,7 +51,7 @@ export default function Header() {
 
                     <a
                       className='inline-flex'
-                      href="https://drive.google.com/file/d/186QiKzScSw8rHyrKlm4UMyCKWL9a_5mh/view?usp=sharing"
+                      href={resumeFileUrl}
                       target='_blank'
                       rel='noreferrer'
                     >
