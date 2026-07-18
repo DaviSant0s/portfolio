@@ -8,29 +8,18 @@ export default function NavHeader() {
   const { activeSection, setActiveSection } = useHeader();
   const indicatorTransition = {
     type: 'spring',
-    stiffness: 420,
-    damping: 34,
-  };
-  const itemVariants = {
-    rest: { y: 0 },
-    hovered: { y: -2 },
-    active: { y: 0 },
-  };
-  const labelVariants = {
-    rest: { color: 'var(--color-text)' },
-    hovered: { color: 'var(--color-accent)' },
-    active: { color: 'var(--color-accent)' },
+    stiffness: 460,
+    damping: 38,
   };
 
   return (
-    <nav className='flex h-[41px] shrink-0 items-end gap-0'>
+    <nav className='flex shrink-0 items-center gap-7 min-[1200px]:gap-8'>
       {navigationSections.map((item) => {
         const isActive = activeSection === item.section;
-        const itemState = isActive ? 'active' : 'rest';
         const linkProps = item.duration ? { duration: item.duration } : {};
         const linkPageClassName = [
-          'relative z-0 flex h-full cursor-pointer select-none items-center justify-center overflow-hidden whitespace-nowrap rounded-t-[12px] border-x border-t-[3px] border-outline-strong bg-panel px-[18px] transition-colors duration-[180ms] ease-out hover:z-[2] hover:border-primary-soft hover:bg-primary-surface',
-          isActive ? 'z-[3] border-primary-soft bg-transparent' : '',
+          'group/header-link relative inline-flex cursor-pointer select-none items-center justify-center whitespace-nowrap py-2 text-[0.98rem] font-medium tracking-[-0.02em] transition-colors duration-200 ease-out',
+          isActive ? 'text-copy-strong' : 'text-copy-muted hover:text-copy-strong',
         ].join(' ').trim();
 
         return (
@@ -39,31 +28,25 @@ export default function NavHeader() {
             to={item.to}
             smooth={true}
             offset={item.offset}
-            className='-ml-px flex h-full first:ml-0'
+            className='inline-flex'
             onClick={() => setActiveSection(item.section)}
             {...linkProps}
           >
             <m.div
               className={linkPageClassName}
-              variants={itemVariants}
               initial={false}
-              animate={itemState}
-              whileHover='hovered'
+              whileHover={{ y: -1.5 }}
               whileTap={{ y: 0 }}
-              transition={{ duration: 0.18 }}
+              transition={{ duration: 0.18, ease: 'easeOut' }}
             >
               {isActive &&
                 <m.span
                   layoutId='header-nav-indicator'
-                  className='shadow-surface-glint absolute inset-0 -z-10 rounded-[inherit] bg-primary-surface'
+                  className='absolute inset-x-0 -bottom-0.5 h-[2px] rounded-full bg-[linear-gradient(90deg,var(--color-accent),var(--color-accent-strong))]'
                   transition={indicatorTransition}
                 />
               }
-              <m.span
-                className='relative z-[1]'
-                variants={labelVariants}
-                initial={false}
-              >
+              <m.span className='relative z-[1]'>
                 {item.label}
               </m.span>
             </m.div>

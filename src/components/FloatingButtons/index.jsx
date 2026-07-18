@@ -1,4 +1,12 @@
+import { useHeader } from '../../context/HeaderContext';
+
 export default function FloatingButtons() {
+  const { activeSection } = useHeader();
+
+  if (activeSection === 'home') {
+    return null;
+  }
+
   return (
     <div className='fixed top-1/2 right-4 z-[999999999] hidden h-fit w-fit -translate-y-1/2 flex-col gap-[15px] rounded-2xl border border-outline bg-panel px-2 py-4 shadow-[0px_6px_9px_0px_var(--color-shadow-soft)] min-[1361px]:flex 2xl:right-6'>
       <a

@@ -18,10 +18,10 @@ export default function Logo({ sideBar=false }) {
     'group/brand inline-flex shrink-0 items-center',
   ].join(' ');
   const wordmarkClassName = [
-    'font-display font-semibold tracking-[-0.05em] text-copy-strong transition-colors duration-200 ease-out group-hover/brand:text-primary',
+    'font-sans font-semibold tracking-[-0.05em] text-copy-strong transition-colors duration-200 ease-out group-hover/brand:text-copy-strong',
     sideBar
-      ? 'text-[1.6rem] leading-none min-[500px]:text-[1.8rem]'
-      : 'text-[1.2rem] leading-none min-[500px]:text-[1.3rem]',
+      ? 'text-[1.45rem] leading-none min-[500px]:text-[1.6rem]'
+      : 'text-[1.08rem] leading-none min-[500px]:text-[1.14rem]',
   ].join(' ');
   
 
