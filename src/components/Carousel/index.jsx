@@ -83,7 +83,7 @@ export default function Carousel() {
 
   
   return (
-    <div className='relative w-full max-w-[950px]'>
+    <div className='relative w-full max-w-[1020px] rounded-[32px] border border-outline/70 bg-panel/74 p-4 shadow-[0_22px_46px_-32px_var(--color-shadow-md)] backdrop-blur-sm min-[500px]:p-5 min-[790px]:p-6'>
 
       {mobile_max_690px && 
         <CarouselChangeMobile 
@@ -130,7 +130,7 @@ export default function Carousel() {
         }
 
         <div className='[--slide-spacing:10px] min-[500px]:[--slide-spacing:12px]'>
-          <div ref={emblaRef} className='overflow-hidden rounded-[26px] shadow-[0_24px_40px_-28px_var(--color-shadow-lg)]'>
+          <div ref={emblaRef} className='overflow-hidden rounded-[28px]'>
             <div className='-ml-[var(--slide-spacing)] flex [touch-action:pan-y_pinch-zoom]'>
               {toggleData.map((project) => (
                 <div

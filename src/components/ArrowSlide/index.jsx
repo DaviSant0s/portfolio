@@ -4,10 +4,10 @@ export default function ArrowSlide({ direction='right', func_handle, disabled=fa
     ? 'Ver projetos anteriores'
     : 'Ver proximos projetos';
   const buttonClassName = [
-    'inline-flex size-9 items-center justify-center rounded-full border-[1.5px] border-primary bg-panel/96 text-[1.25rem] font-extralight leading-none text-primary shadow-[0_10px_24px_-18px_var(--color-shadow-lg)] backdrop-blur-sm transition-all duration-300 ease-out focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-primary-soft min-[500px]:size-10 min-[500px]:text-[1.45rem] min-[691px]:size-11 min-[691px]:border-2 min-[691px]:bg-panel min-[691px]:text-[1.8rem] min-[691px]:shadow-none',
+    'inline-flex size-10 items-center justify-center rounded-full border border-outline/70 bg-panel/86 text-[1.2rem] font-extralight leading-none text-copy-strong shadow-[0_18px_32px_-24px_var(--color-shadow-md)] backdrop-blur-sm transition-all duration-300 ease-out focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-primary-soft min-[500px]:text-[1.35rem] min-[691px]:size-11 min-[691px]:text-[1.5rem]',
     disabled
       ? 'cursor-not-allowed opacity-35'
-      : 'hover:scale-110 hover:bg-primary hover:text-copy-inverse',
+      : 'hover:-translate-y-0.5 hover:border-copy-soft hover:bg-panel',
   ].join(' ');
 
   return (

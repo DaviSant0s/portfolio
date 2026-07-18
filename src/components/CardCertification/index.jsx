@@ -1,65 +1,65 @@
-import ModalCertification from '../ModalCertification';
 import { useState } from 'react';
+import ModalCertification from '../ModalCertification';
 
-export default function CardCertification(
-  {
-    status=false, 
-    img=null, 
-    icon, 
-    name, 
-    description, 
-    institution, 
-    conclusion, 
-    duration, 
-    link_institution='', 
-    mediaClassName=''
-  }) {
+export default function CardCertification({
+  status = false,
+  img = null,
+  icon,
+  name,
+  description,
+  institution,
+  conclusion,
+  duration,
+  link_institution = '',
+  mediaClassName = '',
+}) {
+  const [isOpen, setIsOpen] = useState(false);
+  const statusLabel = status ? 'Concluído' : 'Em andamento';
+  const statusClassName = status
+    ? 'border-[rgba(92,184,92,0.24)] bg-[rgba(92,184,92,0.12)] text-state-success-strong dark:border-[rgba(120,212,120,0.22)] dark:bg-[rgba(120,212,120,0.12)]'
+    : 'border-[rgba(185,184,92,0.24)] bg-[rgba(185,184,92,0.12)] text-[color:#8e7b2f] dark:border-[rgba(200,190,99,0.22)] dark:bg-[rgba(200,190,99,0.12)] dark:text-[color:#d6cb77]';
 
-  const [ isOpen, setIsOpen ] = useState(false);
-  const statusLabel = status ? 'Concluído' : 'Fazendo';
-  const diamondClassName = status ? 'bg-state-success-strong' : 'bg-state-warning';
-  const badgeClassName = status ? 'bg-state-success' : 'bg-state-warning';
-
-  
   return (
     <div className='h-full w-full'>
-      <div className='relative h-full rounded-xl transition-transform duration-300 ease-out hover:-translate-y-1'>
-        <div className={`absolute left-[-4px] top-[24px] size-4 rotate-45 rounded-[2px] ${diamondClassName} min-[500px]:top-[27px]`}></div>
-        
-        <article className='relative z-[2] flex h-full w-full flex-col rounded-xl border border-outline bg-panel-muted shadow-panel transition-all duration-200 ease-out hover:border-primary-soft hover:bg-panel-hover-strong'>
-          <div className='flex h-[42px] w-full items-center min-[500px]:h-[45px]'>
-            <div className={`relative left-[-8px] rounded-r-[3px] rounded-l-[2px] px-[10px] py-[1px] text-[0.78rem] font-bold shadow-[0_1px_var(--color-shadow-soft)] min-[500px]:text-sm ${badgeClassName}`}>
-              <span className='leading-none text-copy-inverse'>{statusLabel}</span>
+      <div className='relative h-full rounded-[28px] transition-transform duration-300 ease-[var(--ease-fluid)] hover:-translate-y-1'>
+        <article className='relative z-[2] flex h-full w-full flex-col rounded-[28px] border border-outline/70 bg-panel/78 p-5 shadow-[0_18px_42px_-30px_var(--color-shadow-md)] backdrop-blur-sm transition-all duration-300 ease-[var(--ease-fluid)] hover:border-primary-soft hover:shadow-[0_24px_52px_-30px_var(--color-shadow-lg)] min-[500px]:p-6'>
+          <div className='flex items-start justify-between gap-3'>
+            <span
+              className={`inline-flex min-h-9 items-center rounded-full border px-3.5 py-1.5 text-[0.76rem] font-semibold uppercase tracking-[0.12em] shadow-[0_10px_22px_-22px_var(--color-shadow-md)] min-[500px]:text-[0.8rem] ${statusClassName}`.trim()}
+            >
+              {statusLabel}
+            </span>
+
+            <div className='flex size-12 shrink-0 items-center justify-center rounded-[18px] border border-outline/70 bg-[linear-gradient(180deg,var(--color-panel),var(--color-panel-muted))] p-2 min-[500px]:size-14 min-[500px]:rounded-[20px]'>
+              {img ? (
+                <img
+                  className={`max-h-full max-w-full object-contain ${mediaClassName}`.trim()}
+                  src={img}
+                  alt={`Instituição ${institution}`}
+                />
+              ) : (
+                <i className={`${icon} text-[2rem] text-copy-strong ${mediaClassName}`.trim()} />
+              )}
             </div>
           </div>
-          <div className='flex min-h-[188px] gap-2.5 rounded-b-xl px-4 pb-4 min-[500px]:min-h-[200px] min-[500px]:gap-3 min-[500px]:px-[10px] min-[500px]:pr-[15px] min-[500px]:pb-[15px]'>
-            <div className='hidden w-[62px] justify-center min-[391px]:flex min-[500px]:w-[70px]'>
-              <div className='flex size-[35px] items-center justify-center overflow-hidden'>
-                {img &&
-                  <img
-                    className={`h-full w-full rounded-[3px] object-contain ${mediaClassName}`.trim()}
-                    src={img}
-                    alt={`Instituição ${institution}`}
-                  />
-                }
-                {!img &&
-                  <i className={`${icon} text-[2.3em] ${mediaClassName}`.trim()} />
-                }
-              </div>
-            </div>
-            <div className='flex h-full flex-1 flex-col pt-1.5 min-[500px]:pt-[5px]'>
-              <h2 className='w-full text-[1.15rem] font-semibold leading-[1.05] tracking-[-0.02em] text-copy-strong min-[500px]:text-[1.35rem] min-[500px]:leading-none'>
-                {name}
-              </h2>
-              <div className='mt-[6px] mb-[10px] min-h-[2.6rem] text-[0.92rem] font-normal leading-[1.45] text-copy min-[500px]:mt-[5px] min-[500px]:min-h-[2.8rem] min-[500px]:font-display min-[500px]:text-[1rem] min-[500px]:leading-snug'>
-                {description}
-              </div>
-      
-              <div className='flex items-start gap-[5px]'>
-                <span className='shrink-0 text-[0.92rem] font-bold text-copy-strong min-[500px]:font-display min-[500px]:text-[1rem]'>Instituição:</span>
-                <p className='text-[0.9rem] leading-snug text-copy min-[500px]:text-[0.96rem]'>
+
+          <div className='mt-5 flex flex-1 flex-col'>
+            <h2 className='text-[1.12rem] font-semibold leading-[1.08] tracking-[-0.03em] text-copy-strong min-[500px]:text-[1.28rem]'>
+              {name}
+            </h2>
+
+            <p className='mt-3 min-h-[4.2rem] text-[0.92rem] leading-[1.58] text-copy min-[500px]:min-h-[4.5rem] min-[500px]:text-[0.98rem] min-[500px]:leading-[1.64]'>
+              {description}
+            </p>
+
+            <div className='mt-5 grid gap-3 border-t border-outline/65 pt-5'>
+              <div className='flex flex-wrap items-start gap-[5px]'>
+                <span className='shrink-0 text-[0.84rem] font-semibold uppercase tracking-[0.08em] text-copy-soft min-[500px]:text-[0.8rem]'>
+                  Instituição
+                </span>
+                <p className='text-[0.9rem] leading-snug text-copy min-[500px]:text-[0.95rem]'>
                   <a
-                    className='transition-colors duration-200 hover:underline'
+                    className='transition-colors duration-200 hover:text-primary hover:underline'
                     target='_blank'
                     rel='noreferrer'
                     href={link_institution}
@@ -68,20 +68,26 @@ export default function CardCertification(
                   </a>
                 </p>
               </div>
-              <div className='flex items-start gap-[5px]'>
-                <span className='shrink-0 text-[0.92rem] font-bold text-copy-strong min-[500px]:font-display min-[500px]:text-[1rem]'>Duração:</span>
-                <p className='text-[0.9rem] leading-snug text-copy min-[500px]:text-[0.96rem]'>{duration}</p>
+
+              <div className='flex flex-wrap items-start gap-[5px]'>
+                <span className='shrink-0 text-[0.84rem] font-semibold uppercase tracking-[0.08em] text-copy-soft min-[500px]:text-[0.8rem]'>
+                  Duração
+                </span>
+                <p className='text-[0.9rem] leading-snug text-copy min-[500px]:text-[0.95rem]'>{duration}</p>
               </div>
-              <div className='flex items-start gap-[5px]'>
-                <span className='shrink-0 text-[0.92rem] font-bold text-copy-strong min-[500px]:font-display min-[500px]:text-[1rem]'>Conclusão:</span>
-                <p className='text-[0.9rem] leading-snug text-copy min-[500px]:text-[0.96rem]'>{conclusion}</p>
+
+              <div className='flex flex-wrap items-start gap-[5px]'>
+                <span className='shrink-0 text-[0.84rem] font-semibold uppercase tracking-[0.08em] text-copy-soft min-[500px]:text-[0.8rem]'>
+                  Conclusão
+                </span>
+                <p className='text-[0.9rem] leading-snug text-copy min-[500px]:text-[0.95rem]'>{conclusion}</p>
               </div>
             </div>
           </div>
         </article>
       </div>
 
-      <ModalCertification isOpen={isOpen} setIsOpen={setIsOpen} status={status}/>
+      <ModalCertification isOpen={isOpen} setIsOpen={setIsOpen} status={status} />
     </div>
   )
 }

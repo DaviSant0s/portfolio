@@ -3,6 +3,8 @@ import { Link } from 'react-scroll';
 import Button from '../../components/Button';
 import CardCertification from '../../components/CardCertification';
 import FilterCertificationsBtn from '../../components/FilterCertificationsBtn';
+import SectionBackdrop from '../../components/SectionBackdrop';
+import SectionIntro from '../../components/SectionIntro';
 import { useCertification } from '../../context/CertificationsContext';
 import useTrackActiveSection from '../../hooks/header/useTrackActiveSection';
 
@@ -48,22 +50,23 @@ export default function Certifications() {
     <section
       ref={ref}
       id='id_certifications'
-      className='page-section relative flex scroll-mt-[calc(var(--heightHeaderScroll)+var(--noticeHeight)+18px)] justify-center bg-app-alt'
+      className='page-section relative flex scroll-mt-[calc(var(--heightHeaderScroll)+var(--noticeHeight)+18px)] justify-center overflow-hidden bg-app-alt'
     >
-      <div className='content-shell relative flex flex-col items-center gap-7 py-4 min-[790px]:gap-8 min-[790px]:py-6'>
-        <div className='flex max-w-[780px] flex-col items-center gap-4 text-center'>
-          <h1
-            id='id_title_certifications'
-            className='w-fit text-section-title font-medium tracking-[-0.03em] text-copy-strong'
-          >
-            Certificações
-          </h1>
-          <p className='max-w-[22rem] text-balance text-[0.95rem] leading-[1.58] text-copy-muted min-[500px]:max-w-[28rem] min-[790px]:max-w-none min-[790px]:text-[1.05rem] min-[790px]:leading-relaxed'>
-            Cursos, trilhas e capacitações que reforçam minha base técnica e mostram continuidade no aprendizado.
-          </p>
-        </div>
+      <SectionBackdrop
+        glowClassName='top-8 h-[22rem] bg-[radial-gradient(circle_at_center,rgba(251,84,78,0.12),transparent_68%)]'
+        dotsClassName='opacity-30'
+      />
 
-        <div className='flex w-full max-w-[860px] flex-wrap items-center justify-center gap-2 px-2 min-[500px]:gap-2.5 min-[500px]:px-2.5'>
+      <div className='content-shell relative z-[1] flex flex-col items-center gap-8 py-4 min-[790px]:gap-10 min-[790px]:py-6'>
+        <SectionIntro
+          eyebrow='Aprendizado contínuo'
+          title='Certificações que sustentam minha evolução'
+          titleId='id_title_certifications'
+          description='Cursos, trilhas e estudos que reforçam minha base em frontend, backend, banco de dados e fundamentos que acompanham minha prática.'
+          titleClassName='max-w-[13ch] min-[790px]:max-w-[12ch]'
+        />
+
+        <div className='flex w-full max-w-[920px] flex-wrap items-center justify-center gap-2 px-2 min-[500px]:gap-2.5 min-[500px]:px-2.5'>
           {certificationFilters.map((filter) => (
             <FilterCertificationsBtn
               key={filter.key}
@@ -97,7 +100,7 @@ export default function Certifications() {
         )}
 
         {certificationsCount === 0 && (
-          <div className='flex min-h-[220px] w-full max-w-[720px] items-center justify-center rounded-[18px] border border-outline bg-panel px-5 py-5 text-center text-[0.95rem] leading-[1.55] text-copy-muted shadow-[0_8px_18px_var(--color-shadow-soft)] min-[500px]:px-6 min-[500px]:py-6'>
+          <div className='flex min-h-[220px] w-full max-w-[720px] items-center justify-center rounded-[28px] border border-outline/70 bg-panel/80 px-5 py-5 text-center text-[0.95rem] leading-[1.6] text-copy-muted shadow-[0_18px_36px_-28px_var(--color-shadow-md)] backdrop-blur-sm min-[500px]:px-6 min-[500px]:py-6'>
             Nenhuma certificação encontrada nesta categoria ainda.
           </div>
         )}

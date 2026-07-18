@@ -16,6 +16,8 @@ import python from '../../assets/python.png';
 import react from '../../assets/react.png';
 import tailwindcss from '../../assets/tailwindcss.svg';
 import typescript from '../../assets/typescript.png';
+import SectionBackdrop from '../../components/SectionBackdrop';
+import SectionIntro from '../../components/SectionIntro';
 import SkillsCard from '../../components/SkillsCard';
 import useTrackActiveSection from '../../hooks/header/useTrackActiveSection';
 
@@ -47,22 +49,23 @@ export default function Skills() {
     <section
       ref={ref}
       id='id_skills'
-      className='page-section flex scroll-mt-[calc(var(--heightHeaderScroll)+var(--noticeHeight)+18px)] justify-center bg-app'
+      className='page-section relative flex scroll-mt-[calc(var(--heightHeaderScroll)+var(--noticeHeight)+18px)] justify-center overflow-hidden bg-app'
     >
-      <div className='content-shell flex flex-col items-center gap-7 py-4 min-[790px]:gap-8 min-[790px]:py-6'>
-        <div className='flex max-w-[760px] flex-col items-center gap-4 text-center'>
-          <h1
-            id='id_title_skills'
-            className='w-fit text-section-title font-medium tracking-[-0.03em] text-copy-strong'
-          >
-            Habilidades
-          </h1>
-          <p className='max-w-[22rem] text-balance text-[0.95rem] leading-[1.58] text-copy-muted min-[500px]:max-w-[27rem] min-[790px]:max-w-none min-[790px]:text-[1.05rem] min-[790px]:leading-relaxed'>
-            Stack mais alinhada ao meu momento atual, com foco em React, TypeScript, Node.js, APIs REST, bancos de dados e ferramentas de produtividade para desenvolvimento web.
-          </p>
-        </div>
+      <SectionBackdrop
+        glowClassName='top-10 h-[24rem] bg-[radial-gradient(circle_at_center,rgba(2,112,173,0.1),transparent_68%)]'
+        dotsClassName='opacity-28'
+      />
 
-        <div className='grid w-full max-w-[980px] grid-cols-[repeat(auto-fit,minmax(118px,1fr))] gap-2.5 min-[500px]:gap-3 min-[640px]:gap-4'>
+      <div className='content-shell relative z-[1] flex flex-col items-center gap-8 py-4 min-[790px]:gap-10 min-[790px]:py-6'>
+        <SectionIntro
+          eyebrow='Stack atual'
+          title='Ferramentas que transformo em produto'
+          titleId='id_title_skills'
+          description='Minha base de trabalho hoje combina React, TypeScript, Node.js, APIs REST, bancos de dados e ferramentas que ajudam a construir interfaces e fluxos mais robustos.'
+          titleClassName='max-w-[14ch] min-[790px]:max-w-[15ch]'
+        />
+
+        <div className='grid w-full max-w-[1040px] grid-cols-[repeat(auto-fit,minmax(128px,1fr))] gap-3 min-[500px]:gap-3.5 min-[640px]:gap-[1.125rem]'>
           {skills.map((skill) => (
             <SkillsCard
               key={skill.name}

@@ -24,8 +24,18 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className='w-full bg-footer'>
-      <div className='content-shell flex min-h-[240px] flex-col items-center justify-center gap-4 py-10 min-[790px]:min-h-[300px] min-[790px]:py-12'>
+    <footer className='relative w-full overflow-hidden bg-[#121821]'>
+      <div className='pointer-events-none absolute inset-0'>
+        <div className='absolute inset-0 bg-[linear-gradient(180deg,#151d28_0%,#101620_100%)]' />
+        <div className='absolute inset-0 opacity-25 [background-image:radial-gradient(rgba(255,255,255,0.12)_0.75px,transparent_0.75px)] [background-size:24px_24px] [mask-image:linear-gradient(180deg,rgba(0,0,0,0.8),transparent_90%)]' />
+        <div className='absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.14),transparent)]' />
+      </div>
+
+      <div className='content-shell relative z-[1] flex min-h-[240px] flex-col items-center justify-center gap-4 py-10 min-[790px]:min-h-[300px] min-[790px]:py-12'>
+        <div className='inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 text-[0.72rem] font-medium uppercase tracking-[0.18em] text-white/60 shadow-[0_14px_30px_-24px_rgba(0,0,0,0.42)] backdrop-blur-sm min-[500px]:px-4 min-[500px]:py-2 min-[500px]:text-[0.78rem]'>
+          <span className='size-2 rounded-full bg-[linear-gradient(135deg,#4aa3d7,#ff766f)]' />
+          <span>ds.dev</span>
+        </div>
 
         <div className='mb-2 flex gap-1.5'>
           {socialLinks.map((link) => (
@@ -38,7 +48,7 @@ export default function Footer() {
               className='group inline-flex'
             >
               <i
-                className={`bx ${link.icon} bg-footer-icon rounded-full border border-transparent p-2.5 text-[2rem] text-copy-inverse transition-all duration-300 ease-out group-hover:border-outline-strong group-hover:bg-panel ${link.hoverClassName}`}
+                className={`bx ${link.icon} rounded-full border border-white/10 bg-white/5 p-2.5 text-[2rem] text-white transition-all duration-300 ease-out group-hover:border-white/25 group-hover:bg-white ${link.hoverClassName}`}
               />
             </a>
           ))}
@@ -52,14 +62,14 @@ export default function Footer() {
               smooth={true}
               offset={item.offset}
               duration={item.duration ?? 700}
-              className='text-[1.05rem] font-medium transition-colors duration-150 ease-in hover:text-primary'
+              className='text-[1.02rem] font-medium text-white/72 transition-colors duration-150 ease-in hover:text-white'
             >
               <span>{item.label}</span>
             </Link>
           ))}
         </nav>
 
-        <span className='mt-4 text-sm font-light text-copy-muted'>
+        <span className='mt-4 text-sm font-light text-white/45'>
           Criado por Davi Santos
         </span>
       </div>

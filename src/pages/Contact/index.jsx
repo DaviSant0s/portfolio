@@ -5,6 +5,8 @@ import { toast } from 'react-toastify';
 import gmail from '../../assets/social/gmail.webp';
 import whatsapp from '../../assets/social/whatsapp.png';
 import Loading from '../../components/Loading';
+import SectionBackdrop from '../../components/SectionBackdrop';
+import SectionIntro from '../../components/SectionIntro';
 import { EMAILJS_CONFIGURED, PUBLIC_KEY, SERVICE_ID, TEMPLATE_ID } from '../../config';
 import { useHeader } from '../../context/HeaderContext';
 import useTrackActiveSection from '../../hooks/header/useTrackActiveSection';
@@ -160,25 +162,29 @@ export default function Contact() {
     <section
       ref={ref}
       id='id_contact'
-      className='page-section flex scroll-mt-[calc(var(--heightHeaderScroll)+var(--noticeHeight)+18px)] justify-center bg-app-alt'
+      className='page-section relative flex scroll-mt-[calc(var(--heightHeaderScroll)+var(--noticeHeight)+18px)] justify-center overflow-hidden bg-app-alt'
     >
-      <div className='content-shell flex flex-col items-center gap-7 py-4 min-[790px]:gap-8 min-[790px]:py-6'>
-        <div className='flex max-w-[760px] flex-col items-center gap-4 text-center'>
-          <h1
-            id='id_title_contact'
-            className='w-fit text-section-title font-medium tracking-[-0.03em] text-copy-strong'
-          >
-            Contato
-          </h1>
-          <p className='max-w-[22rem] text-balance text-[0.95rem] leading-[1.58] text-copy-muted min-[500px]:max-w-[27rem] min-[790px]:max-w-none min-[790px]:text-[1.05rem] min-[790px]:leading-relaxed'>
-            Para oportunidades, projetos ou uma troca sobre tecnologia, fale comigo por aqui.
-          </p>
-        </div>
+      <SectionBackdrop
+        glowClassName='top-12 h-[24rem] bg-[radial-gradient(circle_at_center,rgba(2,112,173,0.09),transparent_68%),radial-gradient(circle_at_40%_28%,rgba(251,84,78,0.08),transparent_26%)]'
+      />
 
-        <div className='grid w-full max-w-[1080px] items-start gap-5 min-[1060px]:grid-cols-[minmax(0,1fr)_340px] min-[1200px]:gap-6'>
-          <div className='rounded-[24px] border border-outline/70 bg-panel px-5 py-5 shadow-panel min-[500px]:rounded-[28px] min-[500px]:px-6 min-[500px]:py-6 min-[720px]:px-8 min-[720px]:py-8'>
+      <div className='content-shell relative z-[1] flex flex-col items-center gap-8 py-4 min-[790px]:gap-10 min-[790px]:py-6'>
+        <SectionIntro
+          eyebrow='Vamos conversar'
+          title='Contato para oportunidades e projetos'
+          titleId='id_title_contact'
+          description='Se fizer sentido para o seu momento, me chama. Posso conversar sobre produtos web, interfaces, integrações e colaboração em times.'
+          titleClassName='max-w-[12ch] min-[790px]:max-w-[14ch]'
+        />
+
+        <div className='grid w-full max-w-[1120px] items-start gap-5 min-[1060px]:grid-cols-[minmax(0,1fr)_340px] min-[1200px]:gap-6'>
+          <div className='rounded-[28px] border border-outline/70 bg-panel/78 px-5 py-5 shadow-[0_22px_46px_-32px_var(--color-shadow-md)] backdrop-blur-sm min-[500px]:rounded-[30px] min-[500px]:px-6 min-[500px]:py-6 min-[720px]:px-8 min-[720px]:py-8'>
             <div className='mb-6 border-b border-outline/70 pb-5'>
-              <h2 className='max-w-[13.5ch] text-[1.16rem] font-semibold tracking-[-0.03em] text-copy-strong min-[480px]:max-w-none min-[480px]:text-[1.28rem] min-[720px]:text-[1.65rem]'>
+              <span className='inline-flex items-center gap-2 rounded-full border border-outline/70 bg-panel/82 px-3 py-1.5 text-[0.72rem] font-medium uppercase tracking-[0.16em] text-copy-muted shadow-[0_14px_30px_-24px_var(--color-shadow-md)] backdrop-blur-sm'>
+                <span className='size-2 rounded-full bg-[linear-gradient(135deg,var(--color-info),var(--color-primary))]' />
+                Mensagem direta
+              </span>
+              <h2 className='mt-4 max-w-[13.5ch] text-[1.16rem] font-semibold tracking-[-0.03em] text-copy-strong min-[480px]:max-w-none min-[480px]:text-[1.28rem] min-[720px]:text-[1.65rem]'>
                 Vamos conversar
               </h2>
               <p className='mt-3 max-w-[24rem] text-[0.95rem] leading-[1.6] text-copy-muted min-[500px]:max-w-[42rem] min-[500px]:text-[0.98rem] min-[500px]:leading-relaxed'>
@@ -296,7 +302,7 @@ export default function Contact() {
             </form>
           </div>
 
-          <aside className='overflow-hidden rounded-[24px] border border-outline/70 bg-panel shadow-panel min-[500px]:rounded-[28px]'>
+          <aside className='overflow-hidden rounded-[28px] border border-outline/70 bg-panel/78 shadow-[0_22px_46px_-32px_var(--color-shadow-md)] backdrop-blur-sm min-[500px]:rounded-[30px]'>
             <div className='border-b border-outline/70 px-5 py-5 min-[500px]:px-6 min-[500px]:py-6 min-[720px]:px-7'>
               <span className='text-[0.8rem] font-semibold uppercase tracking-[0.16em] text-copy-soft'>
                 Contato direto
