@@ -19,8 +19,8 @@ export default function Home() {
           </span>
         </h1>
 
-        <p className='max-w-[21.5ch] text-balance text-[clamp(0.96rem,4.2vw,1.25rem)] leading-[1.55] text-copy min-[420px]:max-w-[23.5ch] min-[540px]:max-w-[26ch] min-[790px]:max-w-[1100px] min-[790px]:leading-relaxed'>
-          Seja bem-vindo ao meu espaço virtual, onde compartilho minhas experiências, projetos e as mais recentes descobertas no mundo da tecnologia.
+        <p className='max-w-[21.5ch] text-balance text-[clamp(0.96rem,4.2vw,1.25rem)] leading-[1.55] text-copy min-[420px]:max-w-[24ch] min-[540px]:max-w-[29ch] min-[790px]:max-w-[1120px] min-[790px]:leading-relaxed'>
+          Desenvolvedor full stack e estudante de Engenharia de Computação na FURG, com maior experiência prática em frontend usando React, JavaScript e TypeScript, além de atuação com Node.js, APIs REST e bancos de dados SQL e NoSQL.
         </p>
 
         <SocialsGroup />

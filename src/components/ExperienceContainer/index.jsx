@@ -4,19 +4,43 @@ import petlogo from '../../assets/companies/pet-logo.png';
 
 const experiences = [
   {
+    date: 'Set de 2025 - Presente',
+    logo: null,
+    logoFallback: 'LEP',
+    institution: 'LEP | Laboratório de Engenharia de Produção',
+    description: 'Atuo como desenvolvedor frontend voluntário no projeto ClarIA Task, plataforma inteligente de gestão de tarefas em Kanban. Trabalho na construção da interface em React, criando telas, componentes reutilizáveis, fluxos de interação e integrações voltadas à organização e clareza das demandas.',
+    position: 'Desenvolvedor Front-end Voluntário',
+  },
+  {
+    date: 'Mar de 2026 - Set de 2026 (em andamento)',
+    logo: null,
+    logoFallback: 'BRISA',
+    institution: 'Residência em TIC 55 BRISA/FURG | Unimed Litoral Sul',
+    description: 'Atuo como desenvolvedor frontend no projeto Agenda VivaUnimed, sistema de fila inteligente para vagas remanescentes de consultas médicas. Contribuo com os módulos administrativo e do paciente, incluindo autenticação, gestão de cadastros, vagas e confirmações.',
+    position: 'Desenvolvedor Frontend - Agenda VivaUnimed',
+  },
+  {
+    date: 'Fev de 2026 - Jan de 2027 (em andamento)',
+    logo: null,
+    logoFallback: 'iTec',
+    institution: 'iTec/FURG | Centro de Robótica e Ciência de Dados',
+    description: 'Participo como bolsista no programa Capacitação 4.0, com foco em soft skills aplicadas a projetos de inovação tecnológica. A atuação está ligada ao ecossistema do iTec/FURG, voltado a robótica, automação, visão computacional, ciência de dados e inteligência artificial.',
+    position: 'Bolsista de Capacitação 4.0 - Soft Skills',
+  },
+  {
     date: 'Out de 2022 - Nov de 2023',
     logo: bytelogo,
     logoClassName: 'w-[70px] min-[720px]:w-[80px]',
     institution: 'Byte Jr. | Empresa Júnior de TI',
-    description: 'Atuei como desenvolvedor frontend, utilizando JavaScript, Node.js, React, HTML e CSS. Fui responsável pelo desenvolvimento de aplicações web, garantindo a criação de interfaces interativas e funcionais, alinhadas às melhores práticas de desenvolvimento.',
+    description: 'Atuei no desenvolvimento de aplicações web responsivas com JavaScript, React, HTML, CSS, Node.js e MongoDB. Tive contato com Scrum, Git e GitHub, além de colaborar diretamente com clientes para entender necessidades e transformar requisitos em interfaces funcionais.',
     position: 'Desenvolvedor Front-end',
   },
   {
     date: 'Jun de 2021 - Maio de 2023',
     logo: petlogo,
     logoClassName: 'w-[86px] min-[720px]:w-[98px]',
-    institution: 'PET Ciências Computacionais - FURG',
-    description: 'Atuei como Coordenador do projeto LEGO nas Escolas, onde era ensinado Pensamento computacional para estudantes de escolas públicas, através dos kits de Robótica LEGO Mindstorms EV3.',
+    institution: 'PET C3 FURG',
+    description: 'Coordenei o projeto LEGO nas Escolas, voltado ao ensino de pensamento computacional para alunos de escolas públicas. Organizei atividades, conduzi encontros semanais e atuei em aulas com Scratch, fluxogramas e programação de robôs EV3 Mindstorms.',
     position: 'Bolsista - Coordenador de projeto',
   },
 ];
@@ -36,6 +60,7 @@ export default function ExperienceContainer() {
             date={experience.date}
             logo={experience.logo}
             logoClassName={experience.logoClassName}
+            logoFallback={experience.logoFallback}
             institution={experience.institution}
             description={experience.description}
             position={experience.position}

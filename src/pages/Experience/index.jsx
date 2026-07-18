@@ -19,7 +19,7 @@ export default function Experience() {
             Experiências
           </h1>
           <p className='max-w-[22rem] text-balance text-[0.95rem] leading-[1.58] text-copy-muted min-[500px]:max-w-[27rem] min-[790px]:max-w-none min-[790px]:text-[1.05rem] min-[790px]:leading-relaxed'>
-            Vivências acadêmicas e profissionais em que atuei com desenvolvimento, liderança de projeto e construção de soluções reais.
+            Projetos de extensão, residência, bolsas e experiências profissionais em que atuei com frontend, colaboração em equipe e construção de soluções reais.
           </p>
         </div>
 
