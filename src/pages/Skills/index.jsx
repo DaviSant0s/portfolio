@@ -27,30 +27,30 @@ import java from '../../assets/java.svg';
 import typescript from '../../assets/typescript.png';
 
 const skills = [
-  { name: 'Javascript', image: javascript, style_image: { borderRadius: '4px' } },
-  { name: 'Typescript', image: typescript, style_image: { borderRadius: '4px' } },
+  { name: 'Javascript', image: javascript, imageClassName: 'rounded-[4px]' },
+  { name: 'Typescript', image: typescript, imageClassName: 'rounded-[4px]' },
   { name: 'Python', image: python },
   { name: 'C', image: c },
-  { name: 'Java', image: java, style_image: { width: '40px' } },
+  { name: 'Java', image: java, imageClassName: 'w-[40px]' },
   { name: 'React', image: react },
-  { name: 'Node', image: node, style_image: { width: '60px' } },
+  { name: 'Node', image: node, imageClassName: 'w-[60px]' },
   { name: 'Sql', image: sql },
   { name: 'MySQL', image: mysql },
-  { name: 'mongoDB', image: mongoDB, style_image: { width: '60px' } },
+  { name: 'mongoDB', image: mongoDB, imageClassName: 'w-[60px]' },
   { name: 'html', image: html },
   { name: 'css', image: css },
   { name: 'git', image: git },
-  { name: 'github', image: github, style_image: { width: '60px' } },
-  { name: 'Wordpress', image: wordpress, style_image: { width: '60px' } },
-  { name: 'CRUD', image: crud, style_image: { width: '80px' } },
-  { name: 'API REST', image: api, style_image: { width: '40px' } },
-  { name: 'POO', image: POO, style_image: { width: '60px' } },
-  { name: 'Express', image: express, style_image: { width: '70px' } },
-  { name: 'Postman', image: postman, style_image: { width: '40px' } },
-  { name: 'Tailwind', image: tailwindcss, style_image: { width: '40px' } },
-  { name: 'Insomnia', image: insomnia, style_image: { width: '40px' } },
-  { name: 'Estrutura de Dados', image: dataStructure, style_image: { width: '40px' } },
-  { name: 'Notação Big O', image: bigO, style_image: { width: '40px' } },
+  { name: 'github', image: github, imageClassName: 'w-[60px]' },
+  { name: 'Wordpress', image: wordpress, imageClassName: 'w-[60px]' },
+  { name: 'CRUD', image: crud, imageClassName: 'w-[80px]' },
+  { name: 'API REST', image: api, imageClassName: 'w-[40px]' },
+  { name: 'POO', image: POO, imageClassName: 'w-[60px]' },
+  { name: 'Express', image: express, imageClassName: 'w-[70px]' },
+  { name: 'Postman', image: postman, imageClassName: 'w-[40px]' },
+  { name: 'Tailwind', image: tailwindcss, imageClassName: 'w-[40px]' },
+  { name: 'Insomnia', image: insomnia, imageClassName: 'w-[40px]' },
+  { name: 'Estrutura de Dados', image: dataStructure, imageClassName: 'w-[40px]' },
+  { name: 'Notação Big O', image: bigO, imageClassName: 'w-[40px]' },
 ];
 
 export default function Skills() {
@@ -74,7 +74,7 @@ export default function Skills() {
               key={skill.name}
               name={skill.name}
               image={skill.image}
-              style_image={skill.style_image}
+              imageClassName={skill.imageClassName}
             />
           ))}
         </div>

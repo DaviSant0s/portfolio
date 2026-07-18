@@ -1,8 +1,10 @@
-import GitHubCalendar from 'react-github-calendar';
+import { Suspense, lazy } from 'react';
 
 import Carousel from '../../components/Carousel';
 import { useTheme } from '../../context/ThemeContext';
 import useTrackActiveSection from '../../hooks/header/useTrackActiveSection';
+
+const GitHubCalendar = lazy(() => import('react-github-calendar'));
 
 export default function Projects() {
   const currentYear = new Date().getFullYear();
@@ -24,15 +26,21 @@ export default function Projects() {
           <div className='w-full rounded-[24px] border border-outline bg-panel px-3 py-4 shadow-panel min-[640px]:px-5 min-[640px]:py-5'>
             <div className='w-full overflow-x-auto overflow-y-hidden pb-1'>
               <div className='mx-auto min-w-[760px]'>
-                <GitHubCalendar
-                  username="DaviSant0s"
-                  year={currentYear}
-                  colorScheme={isDarkMode ? 'dark' : 'light'}
-                  theme={{
-                    light: ['#ebedf0', '#ffd6d2', '#ff9b94', '#fb544e', '#d63c37'],
-                    dark: ['#1b2430', '#432b2a', '#7c3f3c', '#fb544e', '#ff9d97'],
-                  }}
-                />
+                <Suspense
+                  fallback={
+                    <div className='h-[128px] w-full animate-pulse rounded-[18px] bg-panel-muted/80' />
+                  }
+                >
+                  <GitHubCalendar
+                    username="DaviSant0s"
+                    year={currentYear}
+                    colorScheme={isDarkMode ? 'dark' : 'light'}
+                    theme={{
+                      light: ['#ebedf0', '#ffd6d2', '#ff9b94', '#fb544e', '#d63c37'],
+                      dark: ['#1b2430', '#432b2a', '#7c3f3c', '#fb544e', '#ff9d97'],
+                    }}
+                  />
+                </Suspense>
               </div>
             </div>
           </div>

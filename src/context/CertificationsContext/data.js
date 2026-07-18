@@ -19,7 +19,6 @@ export const certifications = [
     conclusion: '2024',
     duration: '8 horas',
     link_institution: 'https://www.alura.com.br/curso-online-java-listas-colecoes-dados',
-    style_icone: {borderRadius: '3px'},
   },
   {
     id: -5,
@@ -33,7 +32,6 @@ export const certifications = [
     conclusion: '2024',
     duration: '6 horas',
     link_institution: 'https://www.udemy.com/course/tailwind-completo/?couponCode=24T4MT92724B',
-    style_icone: {borderRadius: '3px'},
   },
 
   {
@@ -48,7 +46,6 @@ export const certifications = [
     conclusion: '2024',
     duration: '10 horas',
     link_institution: 'https://www.alura.com.br/curso-online-java-aplicando-orientacao-objetos',
-    style_icone: {borderRadius: '3px'},
   },
 
   {
@@ -63,7 +60,6 @@ export const certifications = [
     conclusion: '2024',
     duration: '8 horas',
     link_institution: 'https://www.alura.com.br/curso-online-java-criando-primeira-aplicacao',
-    style_icone: {borderRadius: '3px'},
   },
   
   {
@@ -78,7 +74,6 @@ export const certifications = [
     conclusion: '2024',
     duration: '58,5 horas',
     link_institution: 'https://www.udemy.com/course/bancos-de-dados-relacionais-basico-avancado/?couponCode=KEEPLEARNING',
-    style_icone: {borderRadius: '3px'},
   },
   {
     id: -1,
@@ -92,7 +87,6 @@ export const certifications = [
     conclusion: '2024',
     duration: '38 horas',
     link_institution: 'https://www.udemy.com/course/nodejs-do-zero-a-maestria-com-diversos-projetos/?couponCode=KEEPLEARNING',
-    style_icone: {borderRadius: '3px'},
   },
   
   {
@@ -107,7 +101,6 @@ export const certifications = [
     conclusion: '2024',
     duration: '93 horas',
     link_institution: 'https://www.udemy.com/course/curso-de-javascript-moderno-do-basico-ao-avancado/?couponCode=KEEPLEARNING',
-    style_icone: {borderRadius: '3px'},
   },
   {
     id: 1,
@@ -121,7 +114,6 @@ export const certifications = [
     conclusion: '2024',
     duration: '146 horas',
     link_institution: 'https://www.udemy.com/course/curso-de-reactjs-nextjs-completo-do-basico-ao-avancado/?couponCode=KEEPLEARNING',
-    style_icone: {borderRadius: '3px'},
   },
   {
     id: 2,
@@ -135,7 +127,6 @@ export const certifications = [
     conclusion: '2023',
     duration: '160 horas',
     link_institution: 'https://www.cursoemvideo.com/',
-    style_icone: {borderRadius: '3px'},
   },
   {
     id: 3,
@@ -149,7 +140,6 @@ export const certifications = [
     conclusion: '2024',
     duration: 'null',
     link_institution: 'https://www.telosconecta.com/en-US',
-    style_icone: {borderRadius: '3px'},
   },
   {
     id: 4,
@@ -164,7 +154,6 @@ export const certifications = [
     duration: '120 horas',
     link_institution: 'https://www.cursoemvideo.com/',
     link_credential: '',
-    style_icone: {borderRadius: '3px'},
   },
   
   {
@@ -180,7 +169,7 @@ export const certifications = [
     duration: 'null',
     link_institution: 'https://learn.microsoft.com/pt-br/training/browse/',
     link_credential: 'https://drive.google.com/file/d/1hKURT3dkYVdj1A6jdXkFCl_AMrobokFh/view',
-    style_icone: {border: '1px solid var(--color-border-muted)'},
+    mediaClassName: 'border border-outline/70',
   },
 
   {
@@ -196,7 +185,7 @@ export const certifications = [
     duration: 'null',
     link_institution: 'https://learn.microsoft.com/pt-br/training/browse/',
     link_credential: 'https://drive.google.com/file/d/1hKw_BF0ucbKRE3nSW0l2_6UvyPsvkshb/view',
-    style_icone: {border: '1px solid var(--color-border-muted)'},
+    mediaClassName: 'border border-outline/70',
   },
 
   {
@@ -212,7 +201,6 @@ export const certifications = [
     duration: 'null',
     link_institution: 'https://www.telosconecta.com/en-US',
     link_credential: '',
-    style_icone: {borderRadius: '3px'},
   },
   {
     id: 8,
@@ -227,7 +215,6 @@ export const certifications = [
     duration: 'null',
     link_institution: 'https://www.telosconecta.com/en-US',
     link_credential: '',
-    style_icone: {borderRadius: '3px'},
   },
   {
     id: 9,
@@ -242,7 +229,6 @@ export const certifications = [
     duration: '80 horas',
     link_institution: 'https://www.estudonauta.com/',
     link_credential: '',
-    style_icone: {borderRadius: '3px'},
   },
   {
     id: 10,
@@ -257,7 +243,6 @@ export const certifications = [
     duration: '40 horas',
     link_institution: 'https://www.cursoemvideo.com/',
     link_credential: '',
-    style_icone: {borderRadius: '3px'},
   }
 ];
 

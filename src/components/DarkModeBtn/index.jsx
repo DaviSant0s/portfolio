@@ -2,7 +2,7 @@ import { AnimatePresence, useReducedMotion } from 'motion/react';
 import * as m from 'motion/react-m';
 import { useTheme } from '../../context/ThemeContext';
 
-export default function DarkModeBtn({ styles_container={} }) {
+export default function DarkModeBtn() {
   const { isDarkMode, toggleTheme } = useTheme();
   const prefersReducedMotion = useReducedMotion();
   const knobOffset = 30;
@@ -14,7 +14,7 @@ export default function DarkModeBtn({ styles_container={} }) {
     : { duration: 0.2, ease: 'easeOut' };
 
   return (
-    <div style={styles_container} className='flex h-fit w-fit items-center justify-center'>
+    <div className='flex h-fit w-fit items-center justify-center'>
       <m.button
         type='button'
         aria-label='Alternar tema visual'

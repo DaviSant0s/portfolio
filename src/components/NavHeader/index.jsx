@@ -4,7 +4,7 @@ import { useHeader } from '../../context/HeaderContext';
 import { navigationSections } from '../../data/navigationSections.js';
 
 
-export default function NavHeader({ styles={} }) {
+export default function NavHeader() {
   const { activeSection, setActiveSection } = useHeader();
   const indicatorTransition = {
     type: 'spring',
@@ -23,7 +23,7 @@ export default function NavHeader({ styles={} }) {
   };
 
   return (
-    <nav style={styles} className='flex h-[41px] shrink-0 items-end gap-0'>
+    <nav className='flex h-[41px] shrink-0 items-end gap-0'>
       {navigationSections.map((item) => {
         const isActive = activeSection === item.section;
         const itemState = isActive ? 'active' : 'rest';

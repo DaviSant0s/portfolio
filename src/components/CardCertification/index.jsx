@@ -12,8 +12,7 @@ export default function CardCertification(
     conclusion, 
     duration, 
     link_institution='', 
-    style_icone={}, 
-    style_title={}
+    mediaClassName=''
   }) {
 
   const [ isOpen, setIsOpen ] = useState(false);
@@ -38,19 +37,18 @@ export default function CardCertification(
               <div className='flex size-[35px] items-center justify-center overflow-hidden'>
                 {img &&
                   <img
-                    style={style_icone}
-                    className='h-full w-full object-contain'
+                    className={`h-full w-full rounded-[3px] object-contain ${mediaClassName}`.trim()}
                     src={img}
                     alt={`Instituição ${institution}`}
                   />
                 }
                 {!img &&
-                  <i style={style_icone} className={`${icon} text-[2.3em]`} />
+                  <i className={`${icon} text-[2.3em] ${mediaClassName}`.trim()} />
                 }
               </div>
             </div>
             <div className='flex h-full flex-1 flex-col pt-[5px]'>
-              <h2 style={style_title} className='w-full text-[1.35rem] font-semibold leading-none text-copy-strong'>
+              <h2 className='w-full text-[1.35rem] font-semibold leading-none text-copy-strong'>
                 {name}
               </h2>
               <div className='mt-[5px] mb-[10px] min-h-[2.8rem] font-display text-[1rem] font-normal leading-snug text-copy'>

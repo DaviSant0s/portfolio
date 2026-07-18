@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { toast } from 'react-toastify';
-import emailjs from '@emailjs/browser';
 
 import { EMAILJS_CONFIGURED, SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY } from '../../config';
 import { contactFormSchema } from '../../schemas/contactFormSchema';
@@ -93,6 +92,7 @@ export default function Contact() {
         message: formData.message,
       };
 
+      const { default: emailjs } = await import('@emailjs/browser');
       await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
       reset();
       showToast(toast.success, 'Email enviado!', 2000);

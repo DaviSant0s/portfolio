@@ -81,7 +81,7 @@ export default function Certifications() {
                   conclusion={data.conclusion}
                   duration={data.duration}
                   link_institution={data.link_institution}
-                  style_icone={data.style_icone}
+                  mediaClassName={data.mediaClassName}
                   status={data.status}
                 />
               );
@@ -104,7 +104,7 @@ export default function Certifications() {
                 handleClick={handleClickBtnMoreCardsBool}
                 name='Ver mais'
                 icon={'expand_more'}
-                icon_style={{fontWeight: '400', marginBottom: '-2px', fontSize: '1.5em'}}
+                iconClassName='mb-[-2px] text-[1.5em] font-normal'
                 className='border-outline-strong px-[30px] pr-10 hover:border-copy-muted'
               />
             }
@@ -123,7 +123,7 @@ export default function Certifications() {
                   name='Ver menos'
                   icon={'expand_less'}
                   className='border-outline-strong px-[30px] pr-10 hover:border-copy-muted'
-                  icon_style={{fontWeight: '400', marginBottom: '-2px', fontSize: '1.5em'}}
+                  iconClassName='mb-[-2px] text-[1.5em] font-normal'
                 />
               </Link>
             }

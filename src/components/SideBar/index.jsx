@@ -42,8 +42,7 @@ export default function SideBar() {
                 Use este painel para navegar pelas secoes do portfolio.
               </Dialog.Description>
               <div
-                className='relative flex h-[var(--heightHeaderScroll)] w-full items-center justify-start border-b border-outline px-[14px]'
-                style={{ background: 'var(--color-surface-gradient)' }}
+                className='relative flex h-[var(--heightHeaderScroll)] w-full items-center justify-start border-b border-outline px-[14px] [background:var(--color-surface-gradient)]'
               >
                 <Logo sideBar={true}/>
               </div>
