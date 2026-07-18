@@ -50,7 +50,7 @@ export default function Certifications() {
       id='id_certifications'
       className='page-section relative flex scroll-mt-[calc(var(--heightHeaderScroll)+var(--noticeHeight)+18px)] justify-center bg-app-alt'
     >
-      <div className='content-shell relative flex flex-col items-center gap-8 py-4 min-[790px]:py-6'>
+      <div className='content-shell relative flex flex-col items-center gap-7 py-4 min-[790px]:gap-8 min-[790px]:py-6'>
         <div className='flex max-w-[780px] flex-col items-center gap-4 text-center'>
           <h1
             id='id_title_certifications'
@@ -58,12 +58,12 @@ export default function Certifications() {
           >
             Certificações
           </h1>
-          <p className='text-balance text-[0.98rem] leading-relaxed text-copy-muted min-[790px]:text-[1.05rem]'>
+          <p className='max-w-[22rem] text-balance text-[0.95rem] leading-[1.58] text-copy-muted min-[500px]:max-w-[28rem] min-[790px]:max-w-none min-[790px]:text-[1.05rem] min-[790px]:leading-relaxed'>
             Cursos, trilhas e capacitações que reforçam minha base técnica e mostram continuidade no aprendizado.
           </p>
         </div>
 
-        <div className='flex w-full max-w-[860px] flex-wrap items-center justify-center gap-2.5 px-2.5'>
+        <div className='flex w-full max-w-[860px] flex-wrap items-center justify-center gap-2 px-2 min-[500px]:gap-2.5 min-[500px]:px-2.5'>
           {certificationFilters.map((filter) => (
             <FilterCertificationsBtn
               key={filter.key}
@@ -97,7 +97,7 @@ export default function Certifications() {
         )}
 
         {certificationsCount === 0 && (
-          <div className='flex min-h-[220px] w-full max-w-[720px] items-center justify-center rounded-[18px] border border-outline bg-panel px-6 py-6 text-center text-copy-muted shadow-[0_8px_18px_var(--color-shadow-soft)]'>
+          <div className='flex min-h-[220px] w-full max-w-[720px] items-center justify-center rounded-[18px] border border-outline bg-panel px-5 py-5 text-center text-[0.95rem] leading-[1.55] text-copy-muted shadow-[0_8px_18px_var(--color-shadow-soft)] min-[500px]:px-6 min-[500px]:py-6'>
             Nenhuma certificação encontrada nesta categoria ainda.
           </div>
         )}

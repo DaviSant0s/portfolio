@@ -61,7 +61,7 @@ export default function Skills() {
       id='id_skills'
       className='page-section flex scroll-mt-[calc(var(--heightHeaderScroll)+var(--noticeHeight)+18px)] justify-center bg-app'
     >
-      <div className='content-shell flex flex-col items-center gap-8 py-4 min-[790px]:py-6'>
+      <div className='content-shell flex flex-col items-center gap-7 py-4 min-[790px]:gap-8 min-[790px]:py-6'>
         <div className='flex max-w-[760px] flex-col items-center gap-4 text-center'>
           <h1
             id='id_title_skills'
@@ -69,12 +69,12 @@ export default function Skills() {
           >
             Habilidades
           </h1>
-          <p className='text-balance text-[0.98rem] leading-relaxed text-copy-muted min-[790px]:text-[1.05rem]'>
+          <p className='max-w-[22rem] text-balance text-[0.95rem] leading-[1.58] text-copy-muted min-[500px]:max-w-[27rem] min-[790px]:max-w-none min-[790px]:text-[1.05rem] min-[790px]:leading-relaxed'>
             Tecnologias, ferramentas e fundamentos que uso para construir interfaces, APIs e projetos completos com mais consistência.
           </p>
         </div>
 
-        <div className='grid w-full max-w-[980px] grid-cols-[repeat(auto-fit,minmax(118px,1fr))] gap-3 min-[640px]:gap-4'>
+        <div className='grid w-full max-w-[980px] grid-cols-[repeat(auto-fit,minmax(118px,1fr))] gap-2.5 min-[500px]:gap-3 min-[640px]:gap-4'>
           {skills.map((skill) => (
             <SkillsCard
               key={skill.name}

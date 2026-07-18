@@ -24,12 +24,12 @@ const experiences = [
 export default function ExperienceContainer() {
   return (
     <div className='w-full max-w-[860px]'>
-      <div className='mb-4 pl-[6.5rem] max-[640px]:mb-5 max-[640px]:pl-0'>
-        <h2 className='text-[1.28rem] font-semibold tracking-[-0.02em] text-copy-strong'>
+      <div className='mb-4 pl-[6.5rem] max-[640px]:mb-4 max-[640px]:pl-0'>
+        <h2 className='text-[1.16rem] font-semibold tracking-[-0.02em] text-copy-strong min-[500px]:text-[1.28rem]'>
           Linha do tempo
         </h2>
       </div>
-      <div className='relative flex flex-col gap-8 pt-3 before:absolute before:top-14 before:bottom-12 before:left-10 before:block before:w-px before:bg-primary before:opacity-45 before:content-[""] max-[640px]:before:hidden'>
+      <div className='relative flex flex-col gap-6 pt-2 before:absolute before:top-14 before:bottom-12 before:left-10 before:block before:w-px before:bg-primary before:opacity-45 before:content-[""] min-[500px]:gap-8 min-[500px]:pt-3 max-[640px]:before:hidden'>
         {experiences.map((experience) => (
           <ExperienceCard
             key={`${experience.institution}-${experience.date}`}

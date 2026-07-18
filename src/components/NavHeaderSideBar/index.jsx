@@ -41,7 +41,7 @@ export default function NavHeaderSideBar() {
         const isActive = activeSection === item.section;
         const itemState = isActive ? 'active' : 'rest';
         const linkProps = item.duration ? { duration: item.duration } : {};
-        const itemClassName = 'relative z-0 flex min-h-14 w-full cursor-pointer select-none items-center gap-[14px] overflow-hidden rounded-2xl border border-transparent px-4 text-[1.05rem] font-semibold transition-colors duration-[180ms] ease-out hover:border-primary-soft hover:bg-primary-surface-strong';
+        const itemClassName = 'relative z-0 flex min-h-[52px] w-full cursor-pointer select-none items-center gap-3 overflow-hidden rounded-[20px] border border-transparent px-4 text-[0.98rem] font-semibold transition-colors duration-[180ms] ease-out hover:border-primary-soft hover:bg-primary-surface-strong min-[500px]:min-h-14 min-[500px]:gap-[14px] min-[500px]:rounded-2xl min-[500px]:text-[1.05rem]';
 
         return (
           <Link
@@ -70,7 +70,7 @@ export default function NavHeaderSideBar() {
                 />
               }
               <m.span
-                className="material-symbols-outlined relative z-[1] text-[1.45rem]"
+                className="material-symbols-outlined relative z-[1] text-[1.32rem] min-[500px]:text-[1.45rem]"
                 variants={iconVariants}
                 initial={false}
               >

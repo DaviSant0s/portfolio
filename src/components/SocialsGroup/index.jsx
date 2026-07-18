@@ -32,11 +32,11 @@ const socialLinks = [
 ];
 
 export default function SocialsGroup() {
-  const itemClassName = 'group/social inline-flex size-11 items-center justify-center rounded-full border border-transparent bg-transparent transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-outline hover:bg-panel hover:shadow-soft focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-primary-soft';
-  const iconBaseClassName = 'bx text-[2rem] text-[var(--color-icon-default)] transition-colors duration-200 ease-out';
+  const itemClassName = 'group/social inline-flex size-10 items-center justify-center rounded-full border border-transparent bg-transparent transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-outline hover:bg-panel hover:shadow-soft focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-primary-soft min-[500px]:size-11';
+  const iconBaseClassName = 'bx text-[1.85rem] text-[var(--color-icon-default)] transition-colors duration-200 ease-out min-[500px]:text-[2rem]';
 
   return (
-    <div className='mt-2.5 flex w-fit items-center justify-around gap-3 rounded-full border border-outline bg-panel-muted/95 px-4 py-2 shadow-[0_14px_30px_-22px_var(--color-shadow-md)] backdrop-blur-sm transition-transform duration-300 ease-out hover:scale-[1.03]'>
+    <div className='mt-1.5 flex w-full max-w-[18.75rem] items-center justify-between gap-2 rounded-full border border-outline bg-panel-muted/95 px-3 py-1.5 shadow-[0_14px_30px_-22px_var(--color-shadow-md)] backdrop-blur-sm transition-transform duration-300 ease-out hover:scale-[1.03] min-[500px]:mt-2.5 min-[500px]:w-fit min-[500px]:max-w-none min-[500px]:justify-around min-[500px]:gap-3 min-[500px]:px-4 min-[500px]:py-2'>
       {socialLinks.map((item) => {
         const iconClassName = `${iconBaseClassName} ${item.icon} ${item.hoverClassName}`;
 

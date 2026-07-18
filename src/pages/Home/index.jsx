@@ -11,15 +11,15 @@ export default function Home() {
       id='id_home'
       className='relative mt-[calc(var(--heightHeaderScroll)+var(--noticeHeight))] flex min-h-[calc(100vh-var(--heightHeaderScroll)-var(--noticeHeight))] justify-center bg-panel'
     >
-      <div className='content-shell relative flex min-h-full w-full flex-1 flex-col items-center justify-center gap-6 pb-24 pt-10 text-center min-[790px]:pb-24 min-[790px]:pt-12'>
-        <h1 className='select-none text-[clamp(2.188rem,8vw,3.125rem)] font-extrabold leading-none tracking-[-0.03em] text-copy-strong'>
+      <div className='content-shell relative flex min-h-full w-full flex-1 flex-col items-center justify-center gap-5 pb-20 pt-8 text-center min-[500px]:gap-6 min-[500px]:pb-24 min-[500px]:pt-10 min-[790px]:pt-12'>
+        <h1 className='select-none text-[clamp(1.85rem,12vw,3.125rem)] font-extrabold leading-[0.96] tracking-[-0.045em] text-copy-strong min-[500px]:leading-none min-[500px]:tracking-[-0.03em]'>
           Desenvolvedor{' '}
           <span className='accent-text-gradient block min-[662px]:inline'>
             Fullstack
           </span>
         </h1>
 
-        <p className='max-w-[1100px] text-balance text-[clamp(0.95rem,2.5vw,1.25rem)] leading-relaxed text-copy max-[790px]:max-w-[560px]'>
+        <p className='max-w-[21.5ch] text-balance text-[clamp(0.96rem,4.2vw,1.25rem)] leading-[1.55] text-copy min-[420px]:max-w-[23.5ch] min-[540px]:max-w-[26ch] min-[790px]:max-w-[1100px] min-[790px]:leading-relaxed'>
           Seja bem-vindo ao meu espaço virtual, onde compartilho minhas experiências, projetos e as mais recentes descobertas no mundo da tecnologia.
         </p>
 

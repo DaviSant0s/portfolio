@@ -107,11 +107,11 @@ export default function Carousel() {
         />
       }
 
-      <div className='relative w-full px-4 min-[691px]:px-0'>
+      <div className='relative w-full px-5 min-[480px]:px-6 min-[691px]:px-0'>
 
         {mobile_max_690px &&
           <>
-            <div className='absolute top-1/2 left-4 z-[9] -translate-y-1/2 min-[420px]:left-5'>
+            <div className='absolute top-1/2 left-7 z-[9] -translate-y-1/2 min-[480px]:left-8'>
               <ArrowSlide
                 direction='left'
                 func_handle={handleClickScrollToLeft}
@@ -119,7 +119,7 @@ export default function Carousel() {
               />
             </div>
 
-            <div className='absolute top-1/2 right-4 z-[9] -translate-y-1/2 min-[420px]:right-5'>
+            <div className='absolute top-1/2 right-7 z-[9] -translate-y-1/2 min-[480px]:right-8'>
               <ArrowSlide
                 direction='right'
                 func_handle={handleClickScrollToRight}
@@ -129,7 +129,7 @@ export default function Carousel() {
           </>
         }
 
-        <div className='[--slide-spacing:12px]'>
+        <div className='[--slide-spacing:10px] min-[500px]:[--slide-spacing:12px]'>
           <div ref={emblaRef} className='overflow-hidden rounded-[26px] shadow-[0_24px_40px_-28px_var(--color-shadow-lg)]'>
             <div className='-ml-[var(--slide-spacing)] flex [touch-action:pan-y_pinch-zoom]'>
               {toggleData.map((project) => (

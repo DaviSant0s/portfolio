@@ -266,7 +266,7 @@
 @utility content-shell {
   width: min(100%, calc(var(--sectionWidth) + 20px));
   margin-inline: auto;
-  padding-inline: 0.625rem;
+  padding-inline: clamp(0.875rem, 3.8vw, 1.1rem);
 }
 
 @utility page-section {

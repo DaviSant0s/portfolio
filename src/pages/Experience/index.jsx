@@ -10,7 +10,7 @@ export default function Experience() {
       id='id_experience'
       className='page-section flex scroll-mt-[calc(var(--heightHeaderScroll)+var(--noticeHeight)+18px)] justify-center bg-app'
     >
-      <div className='content-shell flex flex-col items-center gap-10 pb-16 pt-4 min-[790px]:pb-20 min-[790px]:pt-6'>
+      <div className='content-shell flex flex-col items-center gap-8 pb-14 pt-4 min-[790px]:gap-10 min-[790px]:pb-20 min-[790px]:pt-6'>
         <div className='flex max-w-[720px] flex-col items-center gap-3 text-center'>
           <h1
             id='id_title_experience'
@@ -18,7 +18,7 @@ export default function Experience() {
           >
             Experiências
           </h1>
-          <p className='text-balance text-[0.98rem] leading-relaxed text-copy-muted min-[790px]:text-[1.05rem]'>
+          <p className='max-w-[22rem] text-balance text-[0.95rem] leading-[1.58] text-copy-muted min-[500px]:max-w-[27rem] min-[790px]:max-w-none min-[790px]:text-[1.05rem] min-[790px]:leading-relaxed'>
             Vivências acadêmicas e profissionais em que atuei com desenvolvimento, liderança de projeto e construção de soluções reais.
           </p>
         </div>

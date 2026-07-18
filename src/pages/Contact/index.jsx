@@ -36,8 +36,8 @@ const CONTACT_METHODS = [
 
 function getFieldClasses(hasError, { textarea = false } = {}) {
   return [
-    'w-full rounded-[20px] border bg-app-alt px-4 text-[0.98rem] text-copy transition-all duration-200 placeholder:text-copy-soft focus:outline-none focus-visible:border-primary focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-primary-soft',
-    textarea ? 'min-h-[200px] resize-none py-4 leading-relaxed' : 'h-14',
+    'w-full rounded-[20px] border bg-app-alt px-4 text-[0.95rem] text-copy transition-all duration-200 placeholder:text-copy-soft focus:outline-none focus-visible:border-primary focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-primary-soft min-[500px]:text-[0.98rem]',
+    textarea ? 'min-h-[180px] resize-none py-3.5 leading-relaxed min-[500px]:min-h-[200px] min-[500px]:py-4' : 'h-[3.25rem] min-[500px]:h-14',
     hasError ? 'border-primary bg-primary-surface' : 'border-outline/70',
   ].join(' ');
 }
@@ -135,7 +135,7 @@ export default function Contact() {
       id='id_contact'
       className='page-section flex scroll-mt-[calc(var(--heightHeaderScroll)+var(--noticeHeight)+18px)] justify-center bg-app-alt'
     >
-      <div className='content-shell flex flex-col items-center gap-8 py-4 min-[790px]:py-6'>
+      <div className='content-shell flex flex-col items-center gap-7 py-4 min-[790px]:gap-8 min-[790px]:py-6'>
         <div className='flex max-w-[760px] flex-col items-center gap-4 text-center'>
           <h1
             id='id_title_contact'
@@ -143,18 +143,18 @@ export default function Contact() {
           >
             Contato
           </h1>
-          <p className='text-balance text-[0.98rem] leading-relaxed text-copy-muted min-[790px]:text-[1.05rem]'>
+          <p className='max-w-[22rem] text-balance text-[0.95rem] leading-[1.58] text-copy-muted min-[500px]:max-w-[27rem] min-[790px]:max-w-none min-[790px]:text-[1.05rem] min-[790px]:leading-relaxed'>
             Se voce tem uma oportunidade, ideia de projeto ou quer trocar sobre tecnologia, esse e o melhor lugar para me chamar.
           </p>
         </div>
 
         <div className='grid w-full max-w-[1080px] items-start gap-5 min-[1060px]:grid-cols-[minmax(0,1fr)_340px] min-[1200px]:gap-6'>
-          <div className='rounded-[28px] border border-outline/70 bg-panel px-6 py-6 shadow-panel min-[720px]:px-8 min-[720px]:py-8'>
+          <div className='rounded-[24px] border border-outline/70 bg-panel px-5 py-5 shadow-panel min-[500px]:rounded-[28px] min-[500px]:px-6 min-[500px]:py-6 min-[720px]:px-8 min-[720px]:py-8'>
             <div className='mb-6 border-b border-outline/70 pb-5'>
-              <h2 className='max-w-[12ch] text-[1.28rem] font-semibold tracking-[-0.03em] text-copy-strong min-[480px]:max-w-none min-[480px]:text-[1.4rem] min-[720px]:text-[1.65rem]'>
+              <h2 className='max-w-[13.5ch] text-[1.16rem] font-semibold tracking-[-0.03em] text-copy-strong min-[480px]:max-w-none min-[480px]:text-[1.28rem] min-[720px]:text-[1.65rem]'>
                 Vamos conversar sobre a sua ideia
               </h2>
-              <p className='mt-3 max-w-[42rem] text-[0.98rem] leading-relaxed text-copy-muted'>
+              <p className='mt-3 max-w-[24rem] text-[0.95rem] leading-[1.6] text-copy-muted min-[500px]:max-w-[42rem] min-[500px]:text-[0.98rem] min-[500px]:leading-relaxed'>
                 Me conte o contexto do projeto, a oportunidade ou o tipo de colaboracao que voce tem em mente.
               </p>
             </div>
@@ -167,7 +167,7 @@ export default function Contact() {
               className='grid gap-4 min-[720px]:grid-cols-2 min-[720px]:gap-5'
             >
               <div className='flex flex-col gap-2'>
-                <label className='text-[0.88rem] font-semibold text-copy-strong' htmlFor='contact-name'>
+                <label className='text-[0.84rem] font-semibold text-copy-strong min-[500px]:text-[0.88rem]' htmlFor='contact-name'>
                   Nome completo
                 </label>
                 <input
@@ -192,7 +192,7 @@ export default function Contact() {
               </div>
 
               <div className='flex flex-col gap-2'>
-                <label className='text-[0.88rem] font-semibold text-copy-strong' htmlFor='contact-email'>
+                <label className='text-[0.84rem] font-semibold text-copy-strong min-[500px]:text-[0.88rem]' htmlFor='contact-email'>
                   Seu e-mail
                 </label>
                 <input
@@ -217,7 +217,7 @@ export default function Contact() {
               </div>
 
               <div className='flex flex-col gap-2 min-[720px]:col-span-2'>
-                <label className='text-[0.88rem] font-semibold text-copy-strong' htmlFor='contact-message'>
+                <label className='text-[0.84rem] font-semibold text-copy-strong min-[500px]:text-[0.88rem]' htmlFor='contact-message'>
                   Mensagem
                 </label>
                 <textarea
@@ -246,7 +246,7 @@ export default function Contact() {
               )}
 
               <div className='mt-2 flex flex-col gap-4 min-[720px]:col-span-2 min-[940px]:flex-row min-[940px]:items-center min-[940px]:justify-between'>
-                <p className='max-w-[30rem] text-[0.92rem] leading-relaxed text-copy-muted'>
+                <p className='max-w-[30rem] text-[0.9rem] leading-[1.55] text-copy-muted min-[500px]:text-[0.92rem] min-[500px]:leading-relaxed'>
                   Prefere contato direto? Voce tambem pode me chamar por e-mail ou WhatsApp na coluna ao lado.
                 </p>
 
@@ -273,15 +273,15 @@ export default function Contact() {
             </form>
           </div>
 
-          <aside className='overflow-hidden rounded-[28px] border border-outline/70 bg-panel shadow-panel'>
-            <div className='border-b border-outline/70 px-6 py-6 min-[720px]:px-7'>
+          <aside className='overflow-hidden rounded-[24px] border border-outline/70 bg-panel shadow-panel min-[500px]:rounded-[28px]'>
+            <div className='border-b border-outline/70 px-5 py-5 min-[500px]:px-6 min-[500px]:py-6 min-[720px]:px-7'>
               <span className='text-[0.8rem] font-semibold uppercase tracking-[0.16em] text-copy-soft'>
                 Contato direto
               </span>
-              <h2 className='mt-2 text-[1.28rem] font-semibold tracking-[-0.03em] text-copy-strong'>
+              <h2 className='mt-2 text-[1.16rem] font-semibold tracking-[-0.03em] text-copy-strong min-[500px]:text-[1.28rem]'>
                 Fale comigo pelos canais abaixo
               </h2>
-              <p className='mt-3 text-[0.94rem] leading-relaxed text-copy-muted'>
+              <p className='mt-3 text-[0.9rem] leading-[1.58] text-copy-muted min-[500px]:text-[0.94rem] min-[500px]:leading-relaxed'>
                 WhatsApp para alinhamentos mais rapidos, e-mail para conversas e propostas mais detalhadas.
               </p>
             </div>
@@ -292,9 +292,9 @@ export default function Contact() {
                 const isExternalLink = contact.href.startsWith('http');
 
                 return (
-                  <article key={contact.id} className='px-6 py-6 min-[720px]:px-7'>
+                  <article key={contact.id} className='px-5 py-5 min-[500px]:px-6 min-[500px]:py-6 min-[720px]:px-7'>
                     <div className='flex items-start gap-4'>
-                      <div className='flex size-14 shrink-0 items-center justify-center rounded-[18px] border border-outline/60 bg-app-alt'>
+                      <div className='flex size-12 shrink-0 items-center justify-center rounded-[16px] border border-outline/60 bg-app-alt min-[500px]:size-14 min-[500px]:rounded-[18px]'>
                         <img src={contact.icon} alt={contact.iconAlt} className={contact.iconClassName} />
                       </div>
 
@@ -304,19 +304,19 @@ export default function Contact() {
                         </span>
                         <a
                           href={contact.href}
-                          className='mt-1 block break-words text-[1.06rem] font-semibold leading-snug text-copy-strong transition-colors hover:text-primary'
+                          className='mt-1 block break-words text-[1rem] font-semibold leading-snug text-copy-strong transition-colors hover:text-primary min-[500px]:text-[1.06rem]'
                           {...(isExternalLink ? { target: '_blank', rel: 'noreferrer' } : {})}
                         >
                           {contact.value}
                         </a>
-                        <p className='mt-2 text-[0.92rem] leading-relaxed text-copy-muted'>
+                        <p className='mt-2 text-[0.88rem] leading-[1.55] text-copy-muted min-[500px]:text-[0.92rem] min-[500px]:leading-relaxed'>
                           {contact.description}
                         </p>
 
-                        <div className='mt-4 flex flex-wrap gap-2.5'>
+                        <div className='mt-4 flex flex-wrap gap-2'>
                           <a
                             href={contact.href}
-                            className='inline-flex h-10 items-center justify-center gap-2 rounded-full border border-outline px-4 text-[0.9rem] font-semibold text-copy transition-all duration-200 hover:border-outline-strong hover:bg-app-alt focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-primary-soft'
+                            className='inline-flex h-9 items-center justify-center gap-2 rounded-full border border-outline px-3.5 text-[0.84rem] font-semibold text-copy transition-all duration-200 hover:border-outline-strong hover:bg-app-alt focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-primary-soft min-[500px]:h-10 min-[500px]:px-4 min-[500px]:text-[0.9rem]'
                             {...(isExternalLink ? { target: '_blank', rel: 'noreferrer' } : {})}
                           >
                             <span className='material-symbols-outlined text-[1.02rem] text-primary'>
@@ -329,7 +329,7 @@ export default function Contact() {
                             type='button'
                             aria-label={`Copiar ${contact.label}`}
                             onClick={() => handleContactCopy(contact.id)}
-                            className='inline-flex h-10 items-center justify-center gap-2 rounded-full border border-outline bg-panel px-4 text-[0.9rem] font-semibold text-copy transition-all duration-200 hover:border-outline-strong hover:bg-app-alt focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-primary-soft'
+                            className='inline-flex h-9 items-center justify-center gap-2 rounded-full border border-outline bg-panel px-3.5 text-[0.84rem] font-semibold text-copy transition-all duration-200 hover:border-outline-strong hover:bg-app-alt focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-primary-soft min-[500px]:h-10 min-[500px]:px-4 min-[500px]:text-[0.9rem]'
                           >
                             <span className='material-symbols-outlined text-[1.02rem] text-primary'>
                               {isCopied ? 'check' : 'content_copy'}

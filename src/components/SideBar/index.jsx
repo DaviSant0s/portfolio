@@ -31,7 +31,7 @@ export default function SideBar() {
           </Dialog.Overlay>
           <Dialog.Content forceMount asChild>
             <m.div
-              className='fixed left-0 top-[25px] z-[99999999999999999999999999999999999999] flex h-[calc(100dvh-25px)] w-[min(82vw,336px)] flex-col items-center overflow-y-auto rounded-r-[22px] border-r border-outline bg-panel pb-[18px] shadow-float outline-none max-[420px]:w-[min(86vw,320px)] max-[420px]:rounded-r-[20px]'
+              className='fixed left-0 top-[25px] z-[99999999999999999999999999999999999999] flex h-[calc(100dvh-25px)] w-[min(82vw,336px)] flex-col items-center overflow-y-auto rounded-r-[22px] border-r border-outline bg-panel pb-[18px] shadow-float outline-none max-[420px]:w-[min(84vw,312px)] max-[420px]:rounded-r-[20px]'
               initial={prefersReducedMotion ? false : { x: '-100%', opacity: 0.98 }}
               animate={{ x: 0, opacity: 1 }}
               exit={prefersReducedMotion ? { opacity: 0 } : { x: '-100%', opacity: 0.98 }}
@@ -48,10 +48,10 @@ export default function SideBar() {
               </div>
               <NavHeaderSideBar/>
               <div className='mt-auto w-full px-[14px] pt-[18px]'>
-                <div className='flex items-center justify-between gap-[14px] rounded-[18px] border border-outline bg-panel-soft px-4 py-[14px]'>
+                <div className='flex items-center justify-between gap-3 rounded-[18px] border border-outline bg-panel-soft px-4 py-3.5'>
                   <div className='flex min-w-0 flex-col gap-0.5'>
-                    <span className='text-[0.98rem] font-bold text-copy-strong'>Tema visual</span>
-                    <span className='text-[0.82rem] leading-[1.35] text-copy-muted'>Alternar entre modo claro e escuro</span>
+                    <span className='text-[0.94rem] font-bold text-copy-strong min-[500px]:text-[0.98rem]'>Tema visual</span>
+                    <span className='text-[0.78rem] leading-[1.35] text-copy-muted min-[500px]:text-[0.82rem]'>Alternar entre modo claro e escuro</span>
                   </div>
                   <DarkModeBtn/>
                 </div>

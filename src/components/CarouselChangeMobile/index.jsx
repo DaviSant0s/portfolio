@@ -2,7 +2,7 @@ import BtnFilterSlide from '../BtnFilterSlide';
 
 export default function CarouselChangeMobile({ filters, selectedFilter, onSelectFilter }) {
   return (
-    <div className='mb-4 flex flex-wrap items-center justify-center gap-2.5'>
+    <div className='mb-3.5 flex flex-wrap items-center justify-center gap-2'>
       {filters.map((filter) => (
         <BtnFilterSlide
           key={filter.key}

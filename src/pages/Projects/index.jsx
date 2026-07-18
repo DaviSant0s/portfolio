@@ -16,7 +16,7 @@ export default function Projects() {
       id='id_projects'
       className='page-section flex scroll-mt-[calc(var(--heightHeaderScroll)+var(--noticeHeight)+18px)] justify-center bg-app-alt'
     >
-      <div className='content-shell flex flex-col items-center gap-10 py-4 min-[790px]:py-6'>
+      <div className='content-shell flex flex-col items-center gap-8 py-4 min-[790px]:gap-10 min-[790px]:py-6'>
         <div className='flex max-w-[760px] flex-col items-center gap-4 text-center'>
           <h1
             id='id_title_projects'
@@ -24,15 +24,15 @@ export default function Projects() {
           >
             Meus projetos
           </h1>
-          <p className='text-balance text-[0.98rem] leading-relaxed text-copy-muted min-[790px]:text-[1.05rem]'>
+          <p className='max-w-[22rem] text-balance text-[0.95rem] leading-[1.58] text-copy-muted min-[500px]:max-w-[27rem] min-[790px]:max-w-none min-[790px]:text-[1.05rem] min-[790px]:leading-relaxed'>
             Aplicações, interfaces e experimentos que mostram minha evolução prática em frontend, backend e integração entre tecnologias.
           </p>
         </div>
 
-        <div className='flex w-full max-w-[950px] flex-col items-center gap-14'>
+        <div className='flex w-full max-w-[950px] flex-col items-center gap-11 min-[790px]:gap-14'>
           <Carousel />
 
-          <div className='w-full rounded-3xl border border-outline bg-panel px-3 py-4 shadow-panel min-[640px]:px-5 min-[640px]:py-5'>
+          <div className='w-full rounded-3xl border border-outline bg-panel px-3 py-3.5 shadow-panel min-[500px]:py-4 min-[640px]:px-5 min-[640px]:py-5'>
             <div className='w-full overflow-x-auto overflow-y-hidden pb-1'>
               <div className='mx-auto min-w-[760px]'>
                 <Suspense
