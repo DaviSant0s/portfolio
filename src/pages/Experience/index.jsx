@@ -6,8 +6,8 @@ export default function Experience() {
 
   return (
     <section ref={ref} id='id_experience' className='page-section flex justify-center bg-app'>
-      <div className='content-shell flex flex-col items-center gap-8 py-4 min-[790px]:py-6'>
-        <div className='flex max-w-[760px] flex-col items-center gap-4 text-center'>
+      <div className='content-shell flex flex-col items-center gap-10 pb-16 pt-4 min-[790px]:pb-20 min-[790px]:pt-6'>
+        <div className='flex max-w-[720px] flex-col items-center gap-3 text-center'>
           <h1 id='id_title_experience'>
             Experiências
           </h1>

@@ -6,6 +6,7 @@ const experiences = [
   {
     date: 'Out de 2022 - Nov de 2023',
     logo: bytelogo,
+    logoClassName: 'w-[70px] min-[720px]:w-[80px]',
     institution: 'Byte Jr. | Empresa Júnior de TI',
     description: 'Atuei como desenvolvedor frontend, utilizando JavaScript, Node.js, React, HTML e CSS. Fui responsável pelo desenvolvimento de aplicações web, garantindo a criação de interfaces interativas e funcionais, alinhadas às melhores práticas de desenvolvimento.',
     position: 'Desenvolvedor Front-end',
@@ -13,6 +14,7 @@ const experiences = [
   {
     date: 'Jun de 2021 - Maio de 2023',
     logo: petlogo,
+    logoClassName: 'w-[86px] min-[720px]:w-[98px]',
     institution: 'PET Ciências Computacionais - FURG',
     description: 'Atuei como Coordenador do projeto LEGO nas Escolas, onde era ensinado Pensamento computacional para estudantes de escolas públicas, através dos kits de Robótica LEGO Mindstorms EV3.',
     position: 'Bolsista - Coordenador de projeto',
@@ -21,24 +23,22 @@ const experiences = [
 
 export default function ExperienceContainer() {
   return (
-    <div className='w-full max-w-[720px]'>
-      <div className='mb-5 flex items-center gap-3'>
-        <div className='h-px flex-1 bg-outline-muted' />
-        <h2 className='text-xl font-medium text-copy-strong'>
+    <div className='w-full max-w-[860px]'>
+      <div className='mb-4 pl-[6.5rem] max-[640px]:mb-5 max-[640px]:pl-0'>
+        <h2 className='text-[1.28rem] font-semibold tracking-[-0.02em] text-copy-strong'>
           Linha do tempo
         </h2>
-        <div className='h-px flex-1 bg-outline-muted' />
       </div>
-      <div className='relative mt-8 space-y-6 pl-10 max-[370px]:pl-0 before:absolute before:top-4 before:bottom-4 before:left-[14px] before:w-px before:bg-primary-soft/70 before:content-[""] max-[370px]:before:hidden'>
-        {experiences.map((experience, index) => (
+      <div className='relative flex flex-col gap-8 pt-3 before:absolute before:top-14 before:bottom-12 before:left-10 before:block before:w-px before:bg-primary before:opacity-45 before:content-[""] max-[640px]:before:hidden'>
+        {experiences.map((experience) => (
           <ExperienceCard
             key={`${experience.institution}-${experience.date}`}
             date={experience.date}
             logo={experience.logo}
+            logoClassName={experience.logoClassName}
             institution={experience.institution}
             description={experience.description}
             position={experience.position}
-            isLast={index === experiences.length - 1}
           />
         ))}
       </div>

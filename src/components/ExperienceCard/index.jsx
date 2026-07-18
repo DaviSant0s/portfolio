@@ -1,18 +1,25 @@
 import MiniCardExp from '../MiniCardExp';
 
-export default function ExperienceCard({ date, logo, institution, description, position, isLast=false }) {
+export default function ExperienceCard({ date, logo, logoClassName, institution, description, position }) {
   return (
-    <div className={`relative w-full ${isLast ? 'pb-0' : ''}`}>
-      <span className="material-symbols-outlined absolute top-6 left-0 z-[1] flex size-8 -translate-x-1/2 items-center justify-center rounded-full border-[3px] border-app bg-primary text-[1.2rem] text-copy-inverse shadow-[0_8px_18px_var(--color-shadow-soft)] max-[370px]:hidden">
-        apartment
-      </span>
-      <MiniCardExp 
-        date={date}
-        logo={logo} 
-        institution={institution} 
-        description={description}
-        position={position}
-      />
+    <div className='grid w-full grid-cols-[5rem_minmax(0,1fr)] items-start gap-6 max-[640px]:grid-cols-1 max-[640px]:gap-0'>
+      <div className='flex justify-center pt-6 max-[640px]:hidden'>
+        <div className='grid size-11 place-items-center rounded-full border-[4px] border-app bg-primary shadow-[0_10px_24px_-10px_var(--color-shadow-lg)]'>
+          <span className="material-symbols-outlined relative -translate-y-px text-[1.15rem] leading-none text-white [font-variation-settings:'FILL'_1,'wght'_500,'GRAD'_0,'opsz'_24]">
+            apartment
+          </span>
+        </div>
+      </div>
+      <div className='w-full'>
+        <MiniCardExp 
+          date={date}
+          logo={logo} 
+          logoClassName={logoClassName}
+          institution={institution} 
+          description={description}
+          position={position}
+        />
+      </div>
     </div>
   )
 }
