@@ -81,7 +81,7 @@ export default function Home() {
           <span>Davi Santos</span>
         </div>
 
-        <h1 className='mt-5 max-w-[9.8ch] select-none text-balance text-[clamp(2.35rem,11.4vw,6.4rem)] font-semibold leading-[0.94] tracking-[-0.065em] text-copy-strong min-[500px]:mt-8 min-[500px]:max-w-[10.2ch] min-[500px]:text-[clamp(3rem,10vw,6.4rem)] min-[790px]:max-w-[13ch] min-[790px]:text-[clamp(4rem,9vw,6.4rem)]'>
+        <h1 className='mt-5 max-w-[10.2ch] select-none text-balance text-[clamp(2.05rem,9.8vw,5.2rem)] font-semibold leading-[0.96] tracking-[-0.06em] text-copy-strong min-[500px]:mt-8 min-[500px]:max-w-[10.8ch] min-[500px]:text-[clamp(2.65rem,8.2vw,5.2rem)] min-[790px]:max-w-[13.2ch] min-[790px]:text-[clamp(3.45rem,6.8vw,5.2rem)]'>
           Construo experiências web com clareza, performance e propósito.
         </h1>
 
