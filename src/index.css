@@ -10,14 +10,8 @@
   --font-display: var(--font-family-display);
   --font-brand: var(--font-family-brand);
 
-  --text-hero: 3.125rem;
-  --text-hero--line-height: 1;
   --text-section-title: 2.2rem;
   --text-section-title--line-height: 1.1;
-  --text-body-lg: 1.25rem;
-  --text-body-lg--line-height: 1.6;
-  --text-body-sm: 1rem;
-  --text-body-sm--line-height: 1.6;
 
   --color-app: var(--color-bg);
   --color-app-alt: var(--color-bg-alt);
@@ -53,28 +47,8 @@
   --shadow-panel: 0 10px 30px -18px var(--color-shadow-md);
   --shadow-float: 0 18px 40px -22px var(--color-shadow-lg);
 
-  --radius-panel: 1.5rem;
-  --radius-pill: 999px;
-
-  --container-content: var(--sectionWidth);
-
-  --spacing-section: 2.5rem;
-  --spacing-gutter: 1.25rem;
-  --spacing-header: var(--heightHeader);
-  --spacing-header-scroll: var(--heightHeaderScroll);
-  --spacing-screen-offset: var(--heightBody);
-
-  --breakpoint-phone: 24.375rem;
-  --breakpoint-phone-lg: 28.75rem;
-  --breakpoint-handset: 31.25rem;
-  --breakpoint-tablet: 49.375rem;
-  --breakpoint-laptop: 68.75rem;
-  --breakpoint-desktop: 83.125rem;
-
-  --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
   --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
 
-  --animate-title-underline: animationTitle 0.9s forwards;
   --animate-scroll-down: scrollDownArrow 1.5s ease-out infinite forwards;
 
   @keyframes scrollDownArrow {
@@ -244,59 +218,44 @@
   --color-brand-gmail: #ff796d;
 }
 
-html,
-body,
-#root {
-  background-color: var(--color-bg);
-}
+@layer base {
+  html,
+  body,
+  #root {
+    background-color: var(--color-bg);
+  }
 
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: var(--font-family-sans);
-  color: var(--color-text);
-}
+  body {
+    font-family: var(--font-family-sans);
+    color: var(--color-text);
+  }
 
-button:not(:disabled),
-[role='button']:not(:disabled) {
-  cursor: pointer;
-}
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
 
-::selection {
-  color: var(--color-text-inverse);
-  background-color: var(--color-accent);
-}
+  button:not(:disabled),
+  [role='button']:not(:disabled) {
+    cursor: pointer;
+  }
 
-.toast-message {
-  top: 95px;
-}
+  ::selection {
+    color: var(--color-text-inverse);
+    background-color: var(--color-accent);
+  }
 
-/* cor padrão do título */
-h1 {
-  position: relative;
-  color: var(--color-text-strong);
-  width: fit-content;
-  font-size: 2.2em;
-}
+  ::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 999px;
+    background-color: var(--color-scrollbar-track);
+  }
 
-h2 {
-  color: var(--color-text-strong);
-}
-
-/* Barra de Rolagem */
-
-/* trilho */
-::-webkit-scrollbar{
-  background-color: var(--color-scrollbar-track);
-  width: 5px;
-  border-radius: 50px 50px 50px 50px;
-}
-
-/* scroll */
-::-webkit-scrollbar-thumb{
-  background-color: var(--color-scrollbar-thumb);
-  border-radius: 500px;
+  ::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background-color: var(--color-scrollbar-thumb);
+  }
 }
 
 @utility content-shell {
@@ -309,49 +268,10 @@ h2 {
   padding-block: 2.5rem;
 }
 
-@utility page-viewport {
-  width: 100%;
-  min-height: var(--heightBody);
-}
-
-@utility surface-panel {
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-border);
-  box-shadow: 0 1px 6px var(--color-shadow-soft);
-}
-
 @utility accent-text-gradient {
   background-image: linear-gradient(to right, var(--color-accent), var(--color-accent-strong));
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
-}
-
-@keyframes animationTitle {
-  0% {
-    width: 0%;
-  }
-    
-  100% {
-    width: 100%;
-  }
-}
-
-.animationTitle {
-  position: absolute;
-  left: 0px;
-  margin: auto;
-  width: 0%;
-  height: 4px;
-  margin-top: 7px;
-
-  background: linear-gradient(to right, var(--color-accent), var(--color-accent-strong), transparent 75%);
-  opacity: 0.8;
-  border-radius: 2px;
-
-  animation-duration: 0.9s;
-  animation-fill-mode: forwards;
-  animation-iteration-count: 1;
-
 }

@@ -60,7 +60,10 @@ export default function Skills() {
     <section ref={ref} id='id_skills' className='page-section flex justify-center bg-app'>
       <div className='content-shell flex flex-col items-center gap-8 py-4 min-[790px]:py-6'>
         <div className='flex max-w-[760px] flex-col items-center gap-4 text-center'>
-          <h1 id='id_title_skills'>
+          <h1
+            id='id_title_skills'
+            className='w-fit text-section-title font-medium tracking-[-0.03em] text-copy-strong'
+          >
             Habilidades
           </h1>
           <p className='text-balance text-[0.98rem] leading-relaxed text-copy-muted min-[790px]:text-[1.05rem]'>

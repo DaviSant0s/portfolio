@@ -39,7 +39,10 @@ function App() {
           
           }
           <div className='mx-auto w-full bg-app'>
-            <ToastContainer theme={theme} />
+            <ToastContainer
+              theme={theme}
+              className='[--toastify-toast-top:calc(var(--heightHeaderScroll)+var(--noticeHeight)+8px)]'
+            />
 
             <Home/>
 
