@@ -15,69 +15,95 @@ import project10 from '../assets/projects/finance.png';
 
 import project9 from '../assets/projects/github/projeto_login.png';
 
+const htmlStack = { icon: html, label: 'HTML' };
+const cssStack = { icon: css, label: 'CSS' };
+const scssStack = { icon: scss, label: 'Sass' };
+const javascriptStack = { icon: javascript, label: 'JavaScript' };
+const reactStack = { icon: react, label: 'React' };
+
 export const carouselProjects = {
   frontend: [
     {
       name: 'Finance',
+      summary: 'Plataforma financeira responsiva para organização e visualização de dados.',
       img: project10,
-      stacks: [html, scss, javascript, react],
+      imageClassName: 'object-center',
+      stacks: [htmlStack, scssStack, javascriptStack, reactStack],
       link: '',
       github: 'https://github.com/DaviSant0s/Finance/tree/main',
     },
     {
       name: 'Projeto Android',
+      summary: 'Landing page editorial sobre o universo Android com layout adaptativo.',
       img: project1,
-      stacks: [css, html],
+      imageClassName: 'object-top',
+      stacks: [cssStack, htmlStack],
       link: 'https://davisant0s.github.io/projeto-android/',
       github: 'https://github.com/DaviSant0s/projeto-android',
     },
     {
-      name: 'Tela responsiva',
+      name: 'Tela Responsiva',
+      summary: 'Estudo de responsividade com adaptação fluida para múltiplas larguras.',
       img: project2,
-      stacks: [css, html],
+      imageClassName: 'object-top',
+      stacks: [cssStack, htmlStack],
       link: 'https://davisant0s.github.io/html-css/exercicios/ex026/mq002/',
       github: 'https://github.com/DaviSant0s/html-css/tree/main/exercicios/ex026/mq002',
     },
     {
       name: 'Cordel Moderno',
+      summary: 'Página temática com tipografia marcante e efeito de paralaxe na leitura.',
       img: project3,
-      stacks: [css, html],
+      imageClassName: 'object-center',
+      stacks: [cssStack, htmlStack],
       link: 'https://davisant0s.github.io/projeto-cordel/',
       github: 'https://github.com/DaviSant0s/projeto-cordel',
     },
     {
       name: 'Projeto Social',
+      summary: 'Interface mobile simulada com navegação visual e composição enxuta.',
       img: project4,
-      stacks: [css, html],
+      imageClassName: 'object-center',
+      stacks: [cssStack, htmlStack],
       link: 'https://davisant0s.github.io/projeto-social/',
       github: 'https://github.com/DaviSant0s/projeto-social',
     },
     {
-      name: 'Testando Media Query',
+      name: 'Media Query Lab',
+      summary: 'Experimento com breakpoints e componentes ajustados para múltiplas telas.',
       img: project5,
-      stacks: [css, html],
+      imageClassName: 'object-top',
+      stacks: [cssStack, htmlStack],
       link: 'https://davisant0s.github.io/html-css/exercicios/ex026/mq004/',
       github: 'https://github.com/DaviSant0s/html-css/tree/main/exercicios/ex026/mq004',
     },
     {
       name: 'Meu Site',
+      summary: 'Página institucional enxuta para prática de estrutura e composição visual.',
       img: project6,
-      stacks: [css, html],
+      imageClassName: 'object-center',
+      stacks: [cssStack, htmlStack],
       link: 'https://davisant0s.github.io/html-css/exercicios/ex026/mq005/',
       github: 'https://github.com/DaviSant0s/html-css/tree/main/exercicios/ex026/mq005',
     },
     {
       name: 'Login Responsivo',
+      summary: 'Tela de autenticação adaptável com foco em leitura, contraste e clareza.',
       img: project7,
-      stacks: [css, html],
+      imageClassName: 'object-top',
+      stacks: [cssStack, htmlStack],
       link: 'https://davisant0s.github.io/projeto-login/',
       github: 'https://github.com/DaviSant0s/projeto-login',
     },
   ],
   backend: [
     {
-      name: 'API de autenticacao',
+      name: 'API de Autenticação',
+      summary: 'API REST para autenticação e proteção de rotas com foco em segurança.',
       img: project9,
+      imageClassName: 'object-top',
+      stacks: [javascriptStack],
+      link: '',
       github: 'https://github.com/DaviSant0s',
     },
   ],

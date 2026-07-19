@@ -84,7 +84,7 @@ export default function Carousel() {
 
   
   return (
-    <div className='relative w-full max-w-[1020px] rounded-[32px] border border-outline/70 bg-panel/74 p-4 shadow-[0_22px_46px_-32px_var(--color-shadow-md)] backdrop-blur-sm min-[500px]:p-5 min-[790px]:p-6'>
+    <div className='relative w-full max-w-[1020px] rounded-[32px] border border-outline/60 bg-panel/60 p-4 shadow-[0_18px_38px_-30px_var(--color-shadow-md)] backdrop-blur-sm min-[500px]:p-5 min-[790px]:p-6'>
 
       {mobile_max_690px && 
         <CarouselChangeMobile 
@@ -132,23 +132,25 @@ export default function Carousel() {
 
         <div className='[--slide-spacing:10px] min-[500px]:[--slide-spacing:12px]'>
           <div ref={emblaRef} className='overflow-hidden rounded-[28px]'>
-            <div className='-ml-[var(--slide-spacing)] flex [touch-action:pan-y_pinch-zoom]'>
+            <div className='-ml-[var(--slide-spacing)] flex py-1 pr-[var(--slide-spacing)] [touch-action:pan-y_pinch-zoom]'>
               {toggleData.map((project) => (
                 <div
                   key={`${toggleCarousel}-${project.name}`}
-                  className='flex min-w-0 shrink-0 grow-0 basis-full justify-center pl-[var(--slide-spacing)] min-[691px]:block min-[691px]:basis-1/2 min-[1021px]:basis-1/3 min-[1340px]:basis-1/4'
+                  className='flex min-w-0 shrink-0 grow-0 basis-full items-stretch pl-[var(--slide-spacing)] min-[691px]:basis-1/2 min-[1021px]:basis-1/3 min-[1340px]:basis-1/4'
                 >
                   <ScrollReveal
-                    className='w-full'
+                    className='flex h-full w-full'
                     amount={0.18}
                     delay={0.04}
                   >
                     <CarouselCard
                       img={project.img}
+                      imageClassName={project.imageClassName}
                       stacks={project.stacks}
                       link={project.link}
                       github={project.github}
                       name={project.name}
+                      summary={project.summary}
                     />
                   </ScrollReveal>
                 </div>
