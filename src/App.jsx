@@ -2,6 +2,7 @@ import { LazyMotion, domAnimation } from 'motion/react';
 import FloatingButtons from './components/FloatingButtons';
 import Footer from './components/Footer';
 import Headers from './components/Headers';
+import Bio from './pages/Bio';
 import HeaderProvider from './context/HeaderContext';
 import { useTheme } from './context/ThemeContext';
 import Certifications from './pages/Certifications';
@@ -46,16 +47,17 @@ function App() {
 
             <Home/>
 
-            <CertificationsProvider>
-              <Certifications/>
-            </CertificationsProvider>
-            
-
+            <Bio/>
             <Skills/>
 
             <Projects/>
             
             <Experience/>
+
+            <CertificationsProvider>
+              <Certifications/>
+            </CertificationsProvider>
+
             <Contact/>
           </div>
 

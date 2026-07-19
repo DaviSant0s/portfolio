@@ -4,10 +4,9 @@ import NavHeader from '../NavHeader';
 import { useMediaQuery } from 'react-responsive';
 import { useSideBar } from '../../context/SideBarContext';
 import { useTheme } from '../../context/ThemeContext';
+import { resumeFileUrl } from '../../data/resumeFileUrl';
 import SideBar from '../SideBar';
 import { useEffect } from 'react';
-
-const resumeFileUrl = new URL('../../../curriculo_vitae_Davi_Santos.pdf', import.meta.url).href;
 
 export default function Header() {
   // responsividade

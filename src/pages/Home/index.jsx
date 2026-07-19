@@ -2,9 +2,8 @@ import { Link } from 'react-scroll';
 import AnimatedParticleBackground from '../../components/AnimatedParticleBackground';
 import ScrollReveal from '../../components/ScrollReveal';
 import SocialsGroup from '../../components/SocialsGroup';
+import { resumeFileUrl } from '../../data/resumeFileUrl';
 import useTrackActiveSection from '../../hooks/header/useTrackActiveSection';
-
-const resumeFileUrl = new URL('../../../curriculo_vitae_Davi_Santos.pdf', import.meta.url).href;
 
 export default function Home() {
   const { ref } = useTrackActiveSection('home');
