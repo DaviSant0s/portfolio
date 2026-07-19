@@ -20,15 +20,15 @@ export default function Certifications() {
   const gridColumnsClassName = certificationsCount === 1
     ? 'grid-cols-1'
     : certificationsCount === 2
-      ? 'grid-cols-1 min-[790px]:grid-cols-2'
-      : 'grid-cols-1 min-[790px]:grid-cols-2 min-[1190px]:grid-cols-3';
+      ? 'grid-cols-1 min-[720px]:grid-cols-2'
+      : 'grid-cols-1 min-[720px]:grid-cols-2 min-[1160px]:grid-cols-3';
   const gridWidthClassName = certificationsCount === 1
-    ? 'max-w-[350px]'
+    ? 'max-w-[23rem]'
     : certificationsCount === 2
-      ? 'max-w-[720px]'
-      : 'max-w-[1090px]';
+      ? 'max-w-[47rem]'
+      : 'max-w-[70rem]';
   const gridClassName = [
-    'grid w-full gap-5',
+    'grid w-full gap-4 min-[720px]:gap-5',
     gridColumnsClassName,
     gridWidthClassName,
   ].join(' ');
@@ -96,13 +96,15 @@ export default function Certifications() {
                     icon={data.icon}
                     img={data.img}
                     name={data.name}
-                    description={data.description}
                     institution={data.institution}
                     conclusion={data.conclusion}
                     duration={data.duration}
                     link_institution={data.link_institution}
                     mediaClassName={data.mediaClassName}
                     status={data.status}
+                    category={data.category}
+                    tags={data.tags}
+                    featuredIcon={data.featuredIcon}
                   />
                 </ScrollReveal>
               ))}

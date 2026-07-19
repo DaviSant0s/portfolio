@@ -6,17 +6,26 @@ export const GlobalCertificationsContext = createContext();
 export default function CertificationsProvider({ children }) {
   const [ filterCards, setFilterCardsState ] = useState('all');
 
+  const sortHighlightedFirst = useCallback((items) => (
+    [...items].sort((firstItem, secondItem) => {
+      const firstIsHighlighted = Number(Boolean(firstItem.featuredIcon));
+      const secondIsHighlighted = Number(Boolean(secondItem.featuredIcon));
+
+      return secondIsHighlighted - firstIsHighlighted;
+    })
+  ), []);
+
   const setFilterCards = useCallback((nextFilter) => {
     setFilterCardsState(normalizeCertificationFilter(nextFilter));
   }, []);
 
   const filteredData = useMemo(() => {
     if (filterCards === 'all') {
-      return certifications;
+      return sortHighlightedFirst(certifications);
     }
 
-    return certifications.filter((item) => item.type === filterCards);
-  }, [filterCards]);
+    return sortHighlightedFirst(certifications.filter((item) => item.type === filterCards));
+  }, [filterCards, sortHighlightedFirst]);
 
   const value = useMemo(() => ({
     filterCards,
