@@ -3,6 +3,7 @@ import brisalogo from '../assets/companies/brisa.png';
 import iteclogo from '../assets/companies/itec.png';
 import leplogo from '../assets/companies/lep.png';
 import petlogo from '../assets/companies/pet-logo.png';
+import clariaTaskLoginPreview from '../assets/projects/claria-task-login.png';
 
 export const experiences = [
   {
@@ -10,6 +11,12 @@ export const experiences = [
     type: 'project',
     startDate: '2025-09',
     date: 'Set de 2025 - Presente',
+    projectName: 'ClarIA Task',
+    projectUrl: 'https://claria-task.up.railway.app/login',
+    projectPreview: clariaTaskLoginPreview,
+    projectSummary:
+      'Plataforma que utiliza Inteligencia Artificial para auxiliar na descricao e no detalhamento de tarefas superficiais, melhorando a clareza das demandas e o fluxo de trabalho da equipe.',
+    projectHighlights: ['React', 'Kanban', 'Boards compartilhados'],
     logo: leplogo,
     logoClassName: 'w-[60px] scale-[1.08] min-[500px]:w-[66px]',
     logoSurfaceClassName: 'px-2',
