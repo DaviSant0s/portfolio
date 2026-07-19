@@ -24,6 +24,12 @@ export default function CertificationsProvider({ children }) {
       return sortHighlightedFirst(certifications);
     }
 
+    if (filterCards === 'featured') {
+      return sortHighlightedFirst(
+        certifications.filter((item) => Boolean(item.featuredIcon))
+      );
+    }
+
     return sortHighlightedFirst(certifications.filter((item) => item.type === filterCards));
   }, [filterCards, sortHighlightedFirst]);
 

@@ -20,7 +20,7 @@ export const certifications = [
   },
   {
     id: 1,
-    type: 'linguagens',
+    type: 'frontend',
     status: true,
     category: 'Linguagens Web',
     featuredIcon: '',
@@ -80,7 +80,7 @@ export const certifications = [
   },
   {
     id: 5,
-    type: 'linguagens',
+    type: 'frontend',
     status: true,
     category: 'Linguagens Web',
     featuredIcon: '',
@@ -157,9 +157,10 @@ export const certifications = [
 
 export const certificationFilters = [
   { key: 'all', label: 'Todos' },
+  { key: 'featured', label: 'Destaques' },
+  { key: 'ia', label: 'IA' },
   { key: 'backend', label: 'Backend' },
   { key: 'frontend', label: 'Frontend' },
-  { key: 'linguagens', label: 'Linguagens' },
   { key: 'banco de dados', label: 'Dados' },
   { key: 'outros', label: 'Outros' },
 ];
@@ -167,13 +168,17 @@ export const certificationFilters = [
 const certificationFilterAliases = {
   all: 'all',
   tudo: 'all',
+  featured: 'featured',
+  destaque: 'featured',
+  destaques: 'featured',
+  ia: 'ia',
+  'inteligencia artificial': 'ia',
+  'inteligência artificial': 'ia',
   backend: 'backend',
   frontend: 'frontend',
-  linguagens: 'linguagens',
+  linguagens: 'frontend',
   dados: 'banco de dados',
   'banco de dados': 'banco de dados',
-  softskills: 'softskills',
-  'soft skills': 'softskills',
   outros: 'outros',
 };
 
