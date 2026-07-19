@@ -8,14 +8,6 @@ const THEME_META_COLORS = {
 
 const ThemeContext = createContext(null);
 
-function getSystemTheme() {
-  if (typeof window === 'undefined') {
-    return 'light';
-  }
-
-  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-}
-
 function getStoredTheme() {
   if (typeof window === 'undefined') {
     return null;
@@ -35,7 +27,7 @@ function getInitialTheme() {
     }
   }
 
-  return getStoredTheme() ?? getSystemTheme();
+  return getStoredTheme() ?? 'dark';
 }
 
 function applyTheme(theme) {

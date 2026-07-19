@@ -7,14 +7,14 @@
       name="description"
       content="Portfólio de Davi Santos com projetos, certificações, experiências e contatos."
     />
-    <meta name="theme-color" content="#fb544e" />
+    <meta name="theme-color" content="#0f141b" />
     <script>
       (function() {
         var storageKey = 'portfolio-theme';
         var storedTheme = localStorage.getItem(storageKey);
         var theme = storedTheme === 'dark' || storedTheme === 'light'
           ? storedTheme
-          : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          : 'dark';
         var themeColor = theme === 'dark' ? '#0f141b' : '#ffffff';
         document.documentElement.dataset.theme = theme;
         document.documentElement.style.colorScheme = theme;
