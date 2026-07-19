@@ -18,7 +18,7 @@ export default function ExperienceCard({
   const typeConfig = experienceTypeConfig[type] ?? experienceTypeConfig.professional;
 
   return (
-    <div className='relative grid w-full grid-cols-[2.75rem_minmax(0,1fr)] items-start gap-x-4 gap-y-3 min-[500px]:gap-x-5 min-[1080px]:grid-cols-[minmax(0,1fr)_6rem_minmax(0,1fr)] min-[1080px]:gap-x-0'>
+    <div className='relative grid w-full grid-cols-[2.75rem_minmax(0,1fr)] items-start gap-x-4 gap-y-3 min-[500px]:gap-x-5 min-[1080px]:grid-cols-[minmax(0,1fr)_5rem_minmax(0,1fr)] min-[1080px]:gap-x-0'>
       <div
         className={[
           'col-start-2 row-start-1 min-w-0',
@@ -51,8 +51,8 @@ export default function ExperienceCard({
               'pointer-events-none absolute top-1/2 h-px -translate-y-1/2 bg-primary/24',
               'left-full w-4 min-[500px]:w-5',
               isLeftSide
-                ? 'min-[1080px]:left-auto min-[1080px]:right-full min-[1080px]:w-6 min-[1260px]:w-8'
-                : 'min-[1080px]:w-6 min-[1260px]:w-8',
+                ? 'min-[1080px]:left-auto min-[1080px]:right-full min-[1080px]:w-5 min-[1260px]:w-6'
+                : 'min-[1080px]:w-5 min-[1260px]:w-6',
             ].join(' ')}
           />
 
