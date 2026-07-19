@@ -14,7 +14,7 @@ export default function Home() {
     <div
       ref={ref}
       id='id_home'
-      className='relative mt-[calc(var(--heightHeaderScroll)+var(--noticeHeight))] flex min-h-[calc(100vh-var(--heightHeaderScroll)-var(--noticeHeight))] justify-center overflow-hidden bg-panel'
+      className='relative flex min-h-screen justify-center overflow-hidden bg-panel pt-[calc(var(--heightHeaderScroll)+var(--noticeHeight))]'
     >
       <div className='pointer-events-none absolute inset-0'>
         <div className='absolute inset-0 bg-[linear-gradient(180deg,var(--color-panel)_0%,var(--color-app-alt)_100%)]' />
@@ -24,7 +24,7 @@ export default function Home() {
         <div className='absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,var(--color-border),transparent)] opacity-70' />
       </div>
 
-      <div className='content-shell relative z-[1] flex min-h-full w-full flex-1 flex-col items-center justify-center pb-14 pt-7 text-center min-[500px]:pb-20 min-[500px]:pt-10 min-[790px]:pb-28 min-[790px]:pt-16'>
+      <div className='content-shell relative z-[1] flex min-h-[calc(100vh-var(--heightHeaderScroll)-var(--noticeHeight))] w-full flex-1 flex-col items-center justify-center pb-14 pt-7 text-center min-[500px]:pb-20 min-[500px]:pt-10 min-[790px]:pb-28 min-[790px]:pt-16'>
         <ScrollReveal
           amount={0.4}
           className='inline-flex items-center gap-2 rounded-full border border-outline/70 bg-panel/82 px-3.5 py-1.5 text-[0.72rem] font-medium uppercase tracking-[0.18em] text-copy-muted shadow-[0_14px_30px_-24px_var(--color-shadow-md)] backdrop-blur-sm min-[500px]:px-4 min-[500px]:py-2 min-[500px]:text-[0.78rem]'
