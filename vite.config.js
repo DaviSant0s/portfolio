@@ -22,15 +22,6 @@ export default defineConfig({
           }
 
           if (
-            id.includes('@radix-ui') ||
-            id.includes('motion') ||
-            id.includes('react-responsive') ||
-            id.includes('react-scroll')
-          ) {
-            return 'ui-vendor';
-          }
-
-          if (
             id.includes('react-hook-form') ||
             id.includes('@hookform/resolvers') ||
             id.includes('zod') ||
@@ -42,12 +33,6 @@ export default defineConfig({
           if (id.includes('embla-carousel-react')) {
             return 'carousel-vendor';
           }
-
-          if (id.includes('react') || id.includes('scheduler')) {
-            return 'react-vendor';
-          }
-
-          return 'vendor';
         },
       },
     },
