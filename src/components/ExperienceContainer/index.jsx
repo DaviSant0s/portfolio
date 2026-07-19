@@ -5,12 +5,6 @@ import ScrollReveal from '../ScrollReveal';
 export default function ExperienceContainer() {
   return (
     <div className='w-full max-w-[1060px]'>
-      <ScrollReveal className='mb-5 flex justify-start min-[790px]:mb-7' amount={0.34}>
-        <h2 className='text-[1.18rem] font-semibold tracking-[-0.03em] text-copy-strong min-[500px]:text-[1.34rem]'>
-          Linha do tempo
-        </h2>
-      </ScrollReveal>
-
       <div className='relative'>
         <div
           aria-hidden='true'
