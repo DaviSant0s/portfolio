@@ -1,6 +1,6 @@
 import api from '../../assets/api.png';
 import css from '../../assets/css.png';
-import sql from '../../assets/database.png';
+import postgreSQL from '../../assets/database.png';
 import express from '../../assets/express.svg';
 import git from '../../assets/git.png';
 import github from '../../assets/github1.webp';
@@ -22,25 +22,40 @@ import ScrollReveal from '../../components/ScrollReveal';
 import SkillsCard from '../../components/SkillsCard';
 import useTrackActiveSection from '../../hooks/header/useTrackActiveSection';
 
-const skills = [
-  { name: 'Javascript', image: javascript, imageClassName: 'rounded' },
-  { name: 'Typescript', image: typescript, imageClassName: 'rounded' },
-  { name: 'React', image: react },
-  { name: 'Node.js', image: node, imageClassName: 'w-[60px]' },
-  { name: 'Express', image: express, imageClassName: 'w-[70px]' },
-  { name: 'PostgreSQL', image: sql },
-  { name: 'MySQL', image: mysql },
-  { name: 'MongoDB', image: mongoDB, imageClassName: 'w-[60px]' },
-  { name: 'HTML', image: html },
-  { name: 'CSS', image: css },
-  { name: 'Tailwind CSS', image: tailwindcss, imageClassName: 'w-[40px]' },
-  { name: 'Git', image: git },
-  { name: 'GitHub', image: github, imageClassName: 'w-[60px]' },
-  { name: 'API REST', image: api, imageClassName: 'w-[40px]' },
-  { name: 'Postman', image: postman, imageClassName: 'w-[40px]' },
-  { name: 'Insomnia', image: insomnia, imageClassName: 'w-[40px]' },
-  { name: 'Java', image: java, imageClassName: 'w-[40px]' },
-  { name: 'Python', image: python },
+const skillGroups = [
+  {
+    title: 'Frontend',
+    items: [
+      { name: 'JavaScript', image: javascript, imageClassName: 'rounded-[0.35rem] w-[34px]' },
+      { name: 'TypeScript', image: typescript, imageClassName: 'rounded-[0.35rem] w-[34px]' },
+      { name: 'React', image: react, imageClassName: 'w-[42px]' },
+      { name: 'HTML', image: html, imageClassName: 'w-[34px]' },
+      { name: 'CSS', image: css, imageClassName: 'w-[34px]' },
+      { name: 'Tailwind CSS', image: tailwindcss, imageClassName: 'w-[42px]' },
+    ],
+  },
+  {
+    title: 'Backend e dados',
+    items: [
+      { name: 'Node.js', image: node, imageClassName: 'w-[58px] brightness-125 contrast-125 saturate-125' },
+      { name: 'Express', image: express, imageClassName: 'w-[64px] brightness-150 contrast-125 opacity-80' },
+      { name: 'Java', image: java, imageClassName: 'w-[38px]' },
+      { name: 'Python', image: python, imageClassName: 'w-[40px]' },
+      { name: 'PostgreSQL', image: postgreSQL, imageClassName: 'w-[34px]' },
+      { name: 'MySQL', image: mysql, imageClassName: 'w-[40px]' },
+      { name: 'MongoDB', image: mongoDB, imageClassName: 'w-[38px]' },
+    ],
+  },
+  {
+    title: 'Ferramentas',
+    items: [
+      { name: 'Git', image: git, imageClassName: 'w-[38px]' },
+      { name: 'GitHub', image: github, imageClassName: 'w-[42px] brightness-150 contrast-125' },
+      { name: 'Postman', image: postman, imageClassName: 'w-[34px]' },
+      { name: 'Insomnia', image: insomnia, imageClassName: 'w-[34px]' },
+      { name: 'API REST', image: api, imageClassName: 'w-[32px]' },
+    ],
+  },
 ];
 
 export default function Skills() {
@@ -66,20 +81,36 @@ export default function Skills() {
           titleClassName='max-w-[14ch] min-[790px]:max-w-[15ch]'
         />
 
-        <div className='grid w-full max-w-[1040px] grid-cols-[repeat(auto-fit,minmax(128px,1fr))] gap-3 min-[500px]:gap-3.5 min-[640px]:gap-[1.125rem]'>
-          {skills.map((skill, index) => (
-            <ScrollReveal
-              key={skill.name}
-              className='h-full'
-              amount={0.18}
-              delay={Math.min(index, 7) * 0.04}
-            >
-              <SkillsCard
-                name={skill.name}
-                image={skill.image}
-                imageClassName={skill.imageClassName}
-              />
-            </ScrollReveal>
+        <div className='flex w-full max-w-[1040px] flex-col gap-5 min-[640px]:gap-6'>
+          {skillGroups.map((group, groupIndex) => (
+            <div key={group.title} className='flex flex-col items-center gap-3 min-[640px]:gap-3.5'>
+              <ScrollReveal
+                className='flex w-full justify-center'
+                amount={0.22}
+                delay={groupIndex * 0.05}
+              >
+                <h3 className='text-center text-[0.82rem] font-semibold uppercase tracking-[0.18em] text-copy-soft min-[500px]:text-[0.86rem]'>
+                  {group.title}
+                </h3>
+              </ScrollReveal>
+
+              <div className='flex w-full flex-wrap justify-center gap-2.5 min-[500px]:gap-3 min-[640px]:gap-3.5'>
+                {group.items.map((skill, itemIndex) => (
+                  <ScrollReveal
+                    key={skill.name}
+                    className='h-full'
+                    amount={0.18}
+                    delay={(groupIndex * 0.06) + (Math.min(itemIndex, 7) * 0.035)}
+                  >
+                    <SkillsCard
+                      name={skill.name}
+                      image={skill.image}
+                      imageClassName={skill.imageClassName}
+                    />
+                  </ScrollReveal>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </div>
