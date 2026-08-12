@@ -48,7 +48,6 @@ Seções atuais:
 - `@radix-ui/react-dialog`
 - `embla-carousel-react`
 - `react-toastify`
-- `react-github-calendar`
 
 ### Formulário e validação
 

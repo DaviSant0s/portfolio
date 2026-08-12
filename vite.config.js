@@ -13,10 +13,6 @@ export default defineConfig({
             return;
           }
 
-          if (id.includes('react-github-calendar')) {
-            return 'github-calendar';
-          }
-
           if (id.includes('@emailjs/browser')) {
             return 'contact-vendor';
           }
