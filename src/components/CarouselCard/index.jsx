@@ -56,11 +56,29 @@ export default function CarouselCard({
                   aria-label={stack.label}
                   title={stack.label}
                 >
-                  <img
-                    className='max-h-full max-w-full object-contain'
-                    src={stack.icon}
-                    alt={stack.label}
-                  />
+                  {stack.simpleIcon ? (
+                    <svg
+                      className='h-full w-full'
+                      viewBox='0 0 24 24'
+                      role='img'
+                      aria-label={stack.label}
+                      style={{ color: `#${stack.simpleIcon.hex}` }}
+                    >
+                      <path fill='currentColor' d={stack.simpleIcon.path} />
+                    </svg>
+                  ) : stack.iconClass ? (
+                    <i
+                      className={`${stack.iconClass} text-[1.25rem]`}
+                      style={{ color: stack.iconColor }}
+                      aria-hidden='true'
+                    />
+                  ) : (
+                    <img
+                      className='max-h-full max-w-full object-contain'
+                      src={stack.icon}
+                      alt={stack.label}
+                    />
+                  )}
                   <span className='pointer-events-none absolute bottom-full left-1/2 z-[2] mb-2 -translate-x-1/2 translate-y-1 rounded-full border border-outline/70 bg-panel px-2 py-1 text-[0.65rem] font-medium leading-none text-copy-muted opacity-0 shadow-[0_12px_24px_-20px_var(--color-shadow-md)] transition-all duration-200 ease-out group-hover/stack:translate-y-0 group-hover/stack:opacity-100'>
                     {stack.label}
                   </span>

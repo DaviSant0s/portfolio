@@ -11,6 +11,7 @@ import vivaUnimedPreview from '../assets/projects/vivaunimed.jpg';
 
 import project9 from '../assets/projects/github/projeto_login.png';
 import tccPdf from '../../tcc.pdf';
+import { siKeras, siTensorflow } from 'simple-icons';
 
 const javascriptStack = { icon: javascript, label: 'JavaScript' };
 const typescriptStack = { icon: typescript, label: 'TypeScript' };
@@ -18,6 +19,13 @@ const reactStack = { icon: react, label: 'React' };
 const nodeStack = { icon: node, label: 'Node.js' };
 const pythonStack = { icon: python, label: 'Python' };
 const apiStack = { icon: api, label: 'API REST' };
+const deepLearningStack = { simpleIcon: siTensorflow, label: 'Deep Learning' };
+const lstmStack = { simpleIcon: siKeras, label: 'LSTM' };
+const timeSeriesStack = {
+  iconClass: 'bx bx-line-chart',
+  iconColor: '#7FC8FF',
+  label: 'Séries temporais',
+};
 
 export const carouselProjects = [
   {
@@ -98,7 +106,7 @@ export const carouselProjects = [
     modalImageClassName: 'object-contain bg-[#09131e]',
     img: projectResearch,
     imageClassName: 'object-center',
-    stacks: [pythonStack],
+    stacks: [pythonStack, deepLearningStack, lstmStack, timeSeriesStack],
   },
   {
     id: 'api-autenticacao',
