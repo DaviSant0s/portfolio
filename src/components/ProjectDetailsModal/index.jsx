@@ -108,8 +108,8 @@ export default function ProjectDetailsModal({
               </p>
             </div>
 
-            <div className='grid gap-4 min-[920px]:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]'>
-              <div className='space-y-4'>
+            <div className='grid grid-cols-1 gap-4 min-[720px]:grid-cols-2 min-[720px]:items-start min-[720px]:gap-6'>
+              <div className='min-w-0 space-y-4'>
                 <div className='space-y-4 rounded-[22px] border border-outline/70 bg-panel-muted/55 p-4 min-[640px]:p-5'>
                   <div className='space-y-1.5'>
                     <h4 className='text-[0.82rem] font-semibold uppercase tracking-[0.18em] text-copy-soft'>
@@ -158,7 +158,7 @@ export default function ProjectDetailsModal({
                 </div>
               </div>
 
-              <div className='space-y-4'>
+              <div className='min-w-0 space-y-4'>
                 <div className='space-y-2 rounded-[22px] border border-outline/70 bg-panel-muted/55 p-4 min-[640px]:p-5'>
                   <h4 className='text-[0.82rem] font-semibold uppercase tracking-[0.18em] text-copy-soft'>
                     Descrição detalhada
