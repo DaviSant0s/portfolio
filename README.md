@@ -1,6 +1,6 @@
 # Portfólio | Davi Santos
 
-Portfólio pessoal desenvolvido com React, Vite e Tailwind CSS v4 para apresentar minha trajetória, habilidades, projetos, experiências, certificações e formas de contato em uma interface moderna, responsiva e alinhada ao currículo atualizado.
+Portfólio pessoal desenvolvido com React, Vite e Tailwind CSS v4 para apresentar minha trajetória como desenvolvedor fullstack, minhas habilidades, projetos, experiências, certificações e formas de contato em uma interface moderna, responsiva e alinhada ao currículo atualizado.
 
 ## Visão geral
 
@@ -149,7 +149,7 @@ O projeto reúne conteúdo real do meu currículo, GitHub e LinkedIn, incluindo:
 - residência tecnológica na BRISA/FURG com a Unimed Litoral Sul
 - voluntariado em ClarIA Task no LEP/FURG
 - pesquisa e formação na FURG e no iTec/FURG
-- projetos pessoais, estudos de frontend e pesquisa acadêmica
+- projetos pessoais, estudos de frontend/backend e pesquisa acadêmica
 - certificações e links diretos para contato
 
 Também existe um currículo em PDF disponível na raiz do projeto:

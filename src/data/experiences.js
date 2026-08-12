@@ -14,12 +14,23 @@ export const experiences = [
     logo: brisalogo,
     logoClassName: 'w-[60px] min-[500px]:w-[66px]',
     logoSurfaceClassName: 'px-2',
+
     institution: 'Residência em TIC 55 BRISA/FURG | Unimed Litoral Sul',
+
     description:
-      'Atuo no frontend do painel administrativo da Agenda VivaUnimed, sistema de fila inteligente para vagas remanescentes de consultas médicas. Participo da implementação de módulos, telas e integrações com uma API Node.js, em uma equipe ágil de 5 desenvolvedores.',
+      'Atuo no desenvolvimento frontend da Agenda VivaUnimed, sistema de fila inteligente para aproveitamento de vagas remanescentes em consultas médicas. Em uma equipe ágil de 5 desenvolvedores, participei da implementação e integração de 8 módulos administrativos, totalizando 18 telas e integração com 35 endpoints REST de uma API Node.js.',
+
     position: 'Desenvolvedor Frontend - Agenda VivaUnimed',
-    technologies: ['React', 'Context API', 'API REST', 'Node.js', 'JWT'],
+
+    technologies: [
+      'React',
+      'Context API',
+      'API REST',
+      'Node.js',
+      'JWT',
+    ],
   },
+
   {
     id: 'itec-capacitacao-4-0',
     type: 'research',
@@ -27,10 +38,14 @@ export const experiences = [
     date: '02/2026 - Presente | término previsto: 01/2027',
     logo: iteclogo,
     logoClassName: 'w-[54px] scale-[1.04] min-[500px]:w-[60px]',
+
     institution: 'iTec/FURG | Centro de Robótica e Ciência de Dados',
+
     description:
-      'Participo do programa Capacitação 4.0 no iTec/FURG, com foco no desenvolvimento de competências socioemocionais aplicadas a projetos de inovação tecnológica. A vivência fortalece comunicação, colaboração, liderança e resolução de problemas.',
+      'Participo do Programa Capacitação 4.0 da Unidade EMBRAPII iTec/FURG, voltado ao desenvolvimento de competências socioemocionais aplicadas a projetos de inovação tecnológica, com atividades focadas em comunicação, colaboração, liderança, trabalho em equipe e resolução de problemas.',
+
     position: 'Bolsista de Capacitação 4.0 - Soft Skills',
+
     technologies: [
       'Comunicação',
       'Colaboração',
@@ -39,26 +54,47 @@ export const experiences = [
       'Resolução de problemas',
     ],
   },
+
   {
     id: 'lep-claria-task',
     type: 'project',
     startDate: '2025-09',
     date: '09/2025 - Presente',
+
     projectName: 'ClarIA Task',
     projectUrl: 'https://claria-task.up.railway.app/',
     projectPreview: clariaTaskLoginPreview,
+
     projectSummary:
-      'Plataforma inteligente de gestão de tarefas em Kanban, desenvolvida com React e Vite, com autenticação, workspaces, boards e refinamento assistido por IA.',
-    projectHighlights: ['React', 'Vite', 'Kanban', 'IA aplicada'],
+      'Plataforma web de gestão inteligente de tarefas em Kanban, com autenticação, workspaces, boards, colaboração em equipe e refinamento de tarefas com Inteligência Artificial.',
+
+    projectHighlights: [
+      'React',
+      'Vite',
+      'FastAPI',
+      'IA aplicada',
+    ],
+
     logo: leplogo,
     logoClassName: 'w-[60px] scale-[1.08] min-[500px]:w-[66px]',
     logoSurfaceClassName: 'px-2',
-    institution: 'LEP | Laboratório de Engenharia de Produção',
+
+    institution: 'LEP | Laboratório de Engenharia de Produção - FURG',
+
     description:
-      'Atuo como desenvolvedor frontend voluntário na ClarIA Task, plataforma de gestão inteligente de tarefas em Kanban. Construo a interface em React e Vite, integrando autenticação, workspaces, boards, membros e refinamento de tarefas com IA.',
-    position: 'Desenvolvedor Front-end Voluntário',
-    technologies: ['React', 'Vite', 'FastAPI', 'JWT', 'Context API'],
+      'Atuo como desenvolvedor frontend voluntário na ClarIA Task, construindo e integrando fluxos de autenticação, workspaces, boards, membros, tarefas, Kanban, busca, filtros, dependências e refinamento assistido por IA. A interface em React e Vite é integrada a uma API FastAPI com autenticação JWT. Também sou coautor de artigo sobre o desenvolvimento e a avaliação exploratória da plataforma.',
+
+    position: 'Desenvolvedor Frontend Voluntário',
+
+    technologies: [
+      'React',
+      'Vite',
+      'FastAPI',
+      'JWT',
+      'Context API',
+    ],
   },
+
   {
     id: 'byte-jr',
     type: 'juniorCompany',
@@ -66,12 +102,23 @@ export const experiences = [
     date: '10/2022 - 11/2023',
     logo: bytelogo,
     logoClassName: 'w-[56px] min-[500px]:w-[62px]',
-    institution: 'Byte Jr. | Empresa Júnior de TI',
+
+    institution: 'Byte Jr. | Empresa Júnior de Tecnologia',
+
     description:
-      'Atuei no desenvolvimento de sites responsivos para clientes externos utilizando JavaScript, React, HTML e CSS, com apoio de Node.js e MongoDB quando necessário. Também participei do levantamento de requisitos e da rotina ágil com Scrum, Git e GitHub.',
+      'Atuei no desenvolvimento de sites completos e responsivos para clientes externos utilizando React, JavaScript, HTML e CSS, com apoio de Node.js e MongoDB quando necessário. Também participei do levantamento de requisitos e do contato com clientes, transformando necessidades de negócio em interfaces funcionais dentro de uma rotina ágil com Scrum, Git e GitHub.',
+
     position: 'Desenvolvedor Frontend',
-    technologies: ['React', 'JavaScript', 'Node.js', 'MongoDB', 'Scrum'],
+
+    technologies: [
+      'React',
+      'JavaScript',
+      'Node.js',
+      'MongoDB',
+      'Scrum',
+    ],
   },
+
   {
     id: 'pet-c3-furg',
     type: 'teaching',
@@ -79,16 +126,20 @@ export const experiences = [
     date: '06/2021 - 05/2023',
     logo: petlogo,
     logoClassName: 'w-[66px] min-[500px]:w-[72px]',
-    institution: 'PET C3 FURG',
+
+    institution: 'PET C3 | FURG',
+
     description:
-      'Coordenei o projeto LEGO nas Escolas, planejando oficinas de pensamento computacional para turmas de escolas públicas, conduzindo encontros semanais e apoiando atividades com Scratch e robótica EV3 Mindstorms.',
+      'Coordenei uma equipe de 8 integrantes no projeto LEGO nas Escolas, planejando atividades, distribuindo responsabilidades e conduzindo reuniões semanais. Organizamos cerca de 25 oficinas de pensamento computacional em duas escolas públicas, utilizando algoritmos, fluxogramas, Scratch e robótica LEGO Mindstorms EV3 com turmas de aproximadamente 20 alunos.',
+
     position: 'Bolsista | Coordenador do projeto LEGO nas Escolas',
+
     technologies: [
       'Pensamento computacional',
       'Scratch',
-      'EV3 Mindstorms',
+      'LEGO Mindstorms EV3',
       'Ensino',
-      'Coordenação',
+      'Liderança',
     ],
   },
 ];

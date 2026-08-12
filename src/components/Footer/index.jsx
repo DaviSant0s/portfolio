@@ -32,10 +32,6 @@ export default function Footer() {
       </div>
 
       <div className='content-shell relative z-[1] flex min-h-[240px] flex-col items-center justify-center gap-4 py-10 min-[790px]:min-h-[300px] min-[790px]:py-12'>
-        <div className='inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 text-[0.72rem] font-medium uppercase tracking-[0.18em] text-white/60 shadow-[0_14px_30px_-24px_rgba(0,0,0,0.42)] backdrop-blur-sm min-[500px]:px-4 min-[500px]:py-2 min-[500px]:text-[0.78rem]'>
-          <span className='size-2 rounded-full bg-[linear-gradient(135deg,#4aa3d7,#ff766f)]' />
-          <span>ds.dev</span>
-        </div>
 
         <div className='mb-2 flex gap-1.5'>
           {socialLinks.map((link) => (
