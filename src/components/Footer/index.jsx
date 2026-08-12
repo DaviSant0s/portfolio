@@ -12,7 +12,7 @@ const socialLinks = [
     href: 'https://github.com/DaviSant0s',
     label: 'Abrir GitHub de Davi Santos',
     icon: 'bxl-github',
-    hoverClassName: 'group-hover:text-copy-strong',
+    hoverClassName: 'group-hover:text-[#171515]',
   },
   {
     href: 'https://api.whatsapp.com/send/?phone=53999322366&text=Ol%C3%A1%2C%20tudo%20bem%20?',
