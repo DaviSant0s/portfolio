@@ -6,12 +6,13 @@ import typescript from '../assets/typescript.png';
 import api from '../assets/api.png';
 
 import clariaTaskLoginPreview from '../assets/projects/claria-task-login.png';
+import portfolioPreview from '../assets/projects/portfolio.png';
 import projectResearch from '../assets/projects/lstm-research.svg';
 import vivaUnimedPreview from '../assets/projects/vivaunimed.jpg';
 
 import project9 from '../assets/projects/github/projeto_login.png';
 import tccPdf from '../../tcc.pdf';
-import { siKeras, siTensorflow } from 'simple-icons';
+import { siKeras, siTailwindcss, siTensorflow, siVite } from 'simple-icons';
 
 const javascriptStack = { icon: javascript, label: 'JavaScript' };
 const typescriptStack = { icon: typescript, label: 'TypeScript' };
@@ -19,6 +20,8 @@ const reactStack = { icon: react, label: 'React' };
 const nodeStack = { icon: node, label: 'Node.js' };
 const pythonStack = { icon: python, label: 'Python' };
 const apiStack = { icon: api, label: 'API REST' };
+const viteStack = { simpleIcon: siVite, label: 'Vite' };
+const tailwindStack = { simpleIcon: siTailwindcss, label: 'Tailwind CSS' };
 const deepLearningStack = { simpleIcon: siTensorflow, label: 'Deep Learning' };
 const lstmStack = { simpleIcon: siKeras, label: 'LSTM' };
 const timeSeriesStack = {
@@ -78,6 +81,36 @@ export const carouselProjects = [
     img: vivaUnimedPreview,
     imageClassName: 'object-center',
     stacks: [reactStack, javascriptStack, typescriptStack, nodeStack, apiStack],
+  },
+  {
+    id: 'portfolio-pessoal',
+    name: 'Portfólio Pessoal',
+    badge: 'Projeto pessoal',
+    summary:
+      'Portfólio responsivo para apresentar minha trajetória, habilidades, experiências e projetos de forma clara e interativa.',
+    context: 'Projeto pessoal e identidade profissional',
+    role: 'Desenvolvimento e design da interface',
+    status: 'Publicado',
+    description:
+      'Portfólio pessoal desenvolvido em React e Vite para reunir minha apresentação profissional, stack, experiências, certificações e projetos selecionados. A interface foi construída com Tailwind CSS, tema claro e escuro, navegação responsiva, animações, carrossel de projetos, modais detalhados e formulário de contato integrado ao EmailJS.',
+    highlights: [
+      'Interface responsiva para desktop e dispositivos móveis',
+      'Temas claro e escuro com preferência persistida',
+      'Carrossel de projetos com modais detalhados',
+      'Animações e interações acessíveis',
+      'Formulário de contato integrado ao EmailJS',
+      'Deploy contínuo na Vercel',
+    ],
+    technologies: ['React', 'JavaScript', 'Vite', 'Tailwind CSS', 'Motion', 'EmailJS'],
+    links: [
+      {
+        label: 'Abrir projeto',
+        href: 'https://davisantoss.vercel.app/',
+      },
+    ],
+    img: portfolioPreview,
+    imageClassName: 'object-center',
+    stacks: [reactStack, javascriptStack, viteStack, tailwindStack],
   },
   {
     id: 'predicao-tendencias-lstm',
