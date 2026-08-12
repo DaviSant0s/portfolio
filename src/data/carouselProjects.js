@@ -10,6 +10,7 @@ import projectResearch from '../assets/projects/lstm-research.svg';
 import vivaUnimedPreview from '../assets/projects/vivaunimed.jpg';
 
 import project9 from '../assets/projects/github/projeto_login.png';
+import tccPdf from '../../tcc.pdf';
 
 const javascriptStack = { icon: javascript, label: 'JavaScript' };
 const typescriptStack = { icon: typescript, label: 'TypeScript' };
@@ -88,6 +89,12 @@ export const carouselProjects = [
       'Avaliação de desempenho de LSTM',
     ],
     technologies: ['Python', 'Deep Learning', 'LSTM', 'Séries temporais'],
+    links: [
+      {
+        label: 'Abrir projeto',
+        href: tccPdf,
+      },
+    ],
     modalImageClassName: 'object-contain bg-[#09131e]',
     img: projectResearch,
     imageClassName: 'object-center',

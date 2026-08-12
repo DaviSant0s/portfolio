@@ -67,45 +67,43 @@ export default function ProjectDetailsModal({
           className='max-h-[min(72vh,760px)] overflow-y-auto px-4 py-5 min-[640px]:px-6 min-[640px]:py-6'
         >
           <div className='flex flex-col gap-5 pr-12 min-[640px]:pr-14'>
-            <div className='flex flex-wrap items-center gap-2'>
-              {project.badge ? (
-                <span className='inline-flex w-fit items-center rounded-full border border-outline/70 bg-panel/82 px-2.5 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-copy-soft'>
-                  {project.badge}
-                </span>
-              ) : null}
+            <div className='flex flex-wrap items-center justify-between gap-3'>
+              <div className='flex flex-wrap items-center gap-2'>
+                {project.badge ? (
+                  <span className='inline-flex w-fit items-center rounded-full border border-outline/70 bg-panel/82 px-2.5 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-copy-soft'>
+                    {project.badge}
+                  </span>
+                ) : null}
 
-              {project.status ? (
-                <span className='inline-flex w-fit items-center rounded-full border border-outline/70 bg-panel-muted/80 px-2.5 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-copy-muted'>
-                  {project.status}
-                </span>
-              ) : null}
-            </div>
-
-            <div className='grid grid-cols-1 gap-4 min-[720px]:grid-cols-2 min-[720px]:gap-6'>
-              <div className='min-w-0 space-y-2'>
-                <h3 className='text-[1.55rem] font-semibold leading-tight tracking-[-0.04em] text-copy-strong min-[640px]:text-[1.9rem]'>
-                  {project.name}
-                </h3>
-                <p className='max-w-[66ch] text-[0.98rem] leading-[1.7] text-copy-muted min-[640px]:text-[1.03rem]'>
-                  {project.summary}
-                </p>
+                {project.status ? (
+                  <span className='inline-flex w-fit items-center rounded-full border border-outline/70 bg-panel-muted/80 px-2.5 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-copy-muted'>
+                    {project.status}
+                  </span>
+                ) : null}
               </div>
 
               {projectLink ? (
-                <div className='flex items-end justify-end'>
-                  <a
-                    className='inline-flex h-10 w-fit shrink-0 items-center justify-center gap-2 rounded-full bg-[#15181d] px-5 text-[0.86rem] font-semibold text-white shadow-[0_14px_28px_-22px_rgba(21,24,29,0.48)] transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-[#0f1115] focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-primary-soft dark:bg-white dark:text-[#12161d] dark:shadow-[0_14px_28px_-22px_rgba(0,0,0,0.32)] dark:hover:bg-[#f4f7fa]'
-                    href={projectLink.href}
-                    target='_blank'
-                    rel='noreferrer'
-                  >
-                    <span>{projectLink.label}</span>
-                    <span className='material-icons text-[1rem]' aria-hidden='true'>
-                      arrow_outward
-                    </span>
-                  </a>
-                </div>
+                <a
+                  className='inline-flex h-10 w-fit shrink-0 items-center justify-center gap-2 rounded-full bg-[#15181d] px-5 text-[0.86rem] font-semibold text-white shadow-[0_14px_28px_-22px_rgba(21,24,29,0.48)] transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-[#0f1115] focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-primary-soft dark:bg-white dark:text-[#12161d] dark:shadow-[0_14px_28px_-22px_rgba(0,0,0,0.32)] dark:hover:bg-[#f4f7fa]'
+                  href={projectLink.href}
+                  target='_blank'
+                  rel='noreferrer'
+                >
+                  <span>{projectLink.label}</span>
+                  <span className='material-icons text-[1rem]' aria-hidden='true'>
+                    arrow_outward
+                  </span>
+                </a>
               ) : null}
+            </div>
+
+            <div className='flex flex-col gap-2'>
+              <h3 className='text-[1.55rem] font-semibold leading-tight tracking-[-0.04em] text-copy-strong min-[640px]:text-[1.9rem]'>
+                {project.name}
+              </h3>
+              <p className='max-w-[66ch] text-[0.98rem] leading-[1.7] text-copy-muted min-[640px]:text-[1.03rem]'>
+                {project.summary}
+              </p>
             </div>
 
             <div className='grid grid-cols-1 gap-4 min-[720px]:grid-cols-2 min-[720px]:items-start min-[720px]:gap-6'>
