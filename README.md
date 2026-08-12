@@ -1,6 +1,6 @@
 # Portfólio | Davi Santos
 
-Portfólio pessoal desenvolvido com React, Vite e Tailwind CSS v4 para apresentar minha trajetória, habilidades, projetos, experiências, certificações e formas de contato em uma interface moderna, responsiva e com foco em acabamento visual.
+Portfólio pessoal desenvolvido com React, Vite e Tailwind CSS v4 para apresentar minha trajetória, habilidades, projetos, experiências, certificações e formas de contato em uma interface moderna, responsiva e alinhada ao currículo atualizado.
 
 ## Visão geral
 
@@ -22,7 +22,7 @@ Seções atuais:
 - Navegação com destaque automático da seção ativa
 - Fundo animado em Canvas na Home
 - Animações de entrada baseadas em scroll
-- Carrossel de projetos com `Embla`
+- Carrossel de projetos com `Embla` e filtros por projetos aplicados, acadêmicos, frontend e backend
 - Projeto em destaque com preview real da aplicação
 - Timeline visual de experiências
 - Filtros para certificações
@@ -146,16 +146,15 @@ Algumas decisões importantes da implementação:
 
 O projeto reúne conteúdo real do meu currículo, GitHub e LinkedIn, incluindo:
 
-- experiências acadêmicas e profissionais
-- projetos pessoais e aplicados
-- certificações
-- links diretos para contato
+- residência tecnológica na BRISA/FURG com a Unimed Litoral Sul
+- voluntariado em ClarIA Task no LEP/FURG
+- pesquisa e formação na FURG e no iTec/FURG
+- projetos pessoais, estudos de frontend e pesquisa acadêmica
+- certificações e links diretos para contato
 
 Também existe um currículo em PDF disponível na raiz do projeto:
 
-```text
-curriculo_vitae_Davi_Santos.pdf
-```
+`curriculo_vitae_Davi_Santos.pdf`
 
 ## Objetivo do projeto
 
@@ -167,3 +166,4 @@ Davi Santos
 
 - LinkedIn: `https://www.linkedin.com/in/davisantoss/`
 - GitHub: `https://github.com/DaviSant0s`
+- Site: `https://davisantoss.vercel.app/`

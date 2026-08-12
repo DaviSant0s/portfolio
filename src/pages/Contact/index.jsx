@@ -140,7 +140,7 @@ export default function Contact() {
       }
 
       await navigator.clipboard.writeText(contact.copyValue);
-      showToast(toast.success, 'Copiado para area de transferencia!', 2000);
+      showToast(toast.success, 'Copiado para a área de transferência!', 2000);
       setCopiedContact(contactId);
 
       if (copyTimeoutRef.current) {
@@ -153,7 +153,7 @@ export default function Contact() {
     } catch {
       showToast(
         toast.error,
-        `Erro ao copiar o ${contactId === 'email' ? 'e-mail' : 'numero de telefone'}`,
+        `Erro ao copiar o ${contactId === 'email' ? 'e-mail' : 'número de telefone'}`,
         2000,
       );
     }
@@ -174,7 +174,7 @@ export default function Contact() {
           eyebrow='Vamos conversar'
           title='Contato para oportunidades e projetos'
           titleId='id_title_contact'
-          description='Se fizer sentido para o seu momento, me chama. Posso conversar sobre produtos web, interfaces, integrações e colaboração em times.'
+          description='Se fizer sentido para o seu momento, me chama. Posso conversar sobre produtos web, interfaces, integrações, residência tecnológica e colaboração em times.'
           titleClassName='max-w-[12ch] min-[790px]:max-w-[14ch]'
         />
 
@@ -192,7 +192,7 @@ export default function Contact() {
                 Vamos conversar
               </h2>
               <p className='mt-3 max-w-[24rem] text-[0.95rem] leading-[1.6] text-copy-muted min-[500px]:max-w-[42rem] min-[500px]:text-[0.98rem] min-[500px]:leading-relaxed'>
-                Me conte em poucas linhas o que voce tem em mente.
+                Me conte em poucas linhas o que você tem em mente.
               </p>
             </div>
 

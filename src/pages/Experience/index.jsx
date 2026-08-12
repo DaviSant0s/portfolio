@@ -22,7 +22,7 @@ export default function Experience() {
           eyebrow='Trajetória prática'
           title='Experiências que conectam estudo e entrega'
           titleId='id_title_experience'
-          description='Projetos, bolsas, residência e atuações em que venho refinando frontend, colaboração com times e construção de soluções reais.'
+          description='Residência tecnológica, voluntariado, empresa júnior, ensino e pesquisa que sustentam minha atuação atual.'
           titleClassName='max-w-[13ch] min-[790px]:max-w-[14ch]'
         />
         <ExperienceContainer />

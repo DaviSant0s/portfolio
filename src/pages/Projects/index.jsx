@@ -29,7 +29,7 @@ export default function Projects() {
           eyebrow='Projetos selecionados'
           title='Interfaces, produtos e estudos aplicados'
           titleId='id_title_projects'
-          description='Recortes do que venho construindo com foco em experiência, lógica de produto, integração entre camadas e atenção à clareza visual.'
+          description='Recortes do que venho construindo com foco em produtos aplicados, estudos de frontend e pesquisa acadêmica em IA.'
           titleClassName='max-w-[14ch] min-[790px]:max-w-[15ch]'
         />
 

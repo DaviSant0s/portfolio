@@ -77,7 +77,7 @@ export default function Skills() {
           eyebrow='Stack atual'
           title='Ferramentas que transformo em produto'
           titleId='id_title_skills'
-          description='Minha base de trabalho hoje combina React, TypeScript, Node.js, APIs REST, bancos de dados e ferramentas que ajudam a construir interfaces e fluxos mais robustos.'
+          description='Minha base de trabalho hoje combina React, TypeScript, Node.js, Python, APIs REST, bancos de dados e ferramentas que ajudam a construir interfaces e fluxos mais robustos.'
           titleClassName='max-w-[14ch] min-[790px]:max-w-[15ch]'
         />
 

@@ -48,7 +48,7 @@ export default function Home() {
           amount={0.28}
           className='mt-4 max-w-[19rem] text-balance text-[clamp(0.92rem,3.55vw,1.18rem)] leading-[1.56] text-copy-muted min-[500px]:mt-6 min-[500px]:max-w-[30rem] min-[790px]:max-w-[46rem] min-[790px]:leading-[1.7]'
         >
-          Desenvolvedor full stack e estudante de Engenharia de Computação na FURG, com atuação em React, TypeScript, Node.js, APIs REST e construção de produtos digitais mais consistentes.
+          Desenvolvedor frontend e estudante de Engenharia de Computação na FURG, com atuação em React, TypeScript, Node.js, APIs REST, saúde digital e IA aplicada.
         </ScrollReveal>
 
         <ScrollReveal

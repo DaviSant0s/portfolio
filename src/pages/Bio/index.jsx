@@ -33,7 +33,7 @@ export default function Bio() {
                 <div className='overflow-hidden rounded-[24px] border border-outline/60 bg-[linear-gradient(180deg,var(--color-panel),var(--color-panel-muted))]'>
                   <img
                     src={profileImage}
-                    alt='Retrato de Davi Santos, desenvolvedor fullstack e estudante de Engenharia de Computação.'
+                    alt='Retrato de Davi Santos, desenvolvedor frontend e estudante de Engenharia de Computação na FURG.'
                     loading='lazy'
                     decoding='async'
                     className='aspect-[4/5] h-full w-full object-cover object-center'

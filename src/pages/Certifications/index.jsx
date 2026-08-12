@@ -63,7 +63,7 @@ export default function Certifications() {
           eyebrow='Aprendizado contínuo'
           title='Certificações que sustentam minha evolução'
           titleId='id_title_certifications'
-          description='Cursos, trilhas e estudos que reforçam minha base em frontend, backend, banco de dados e fundamentos que acompanham minha prática.'
+          description='Cursos, trilhas e estudos que reforçam minha base em frontend, backend, banco de dados, IA aplicada e fundamentos que acompanham minha prática.'
           titleClassName='max-w-[13ch] min-[790px]:max-w-[12ch]'
         />
 

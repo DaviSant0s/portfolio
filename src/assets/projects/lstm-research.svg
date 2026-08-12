@@ -1,0 +1,99 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="160" y1="80" x2="1440" y2="840" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#09131e"/>
+      <stop offset="0.55" stop-color="#0f1b29"/>
+      <stop offset="1" stop-color="#162335"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="340" y1="180" x2="1240" y2="760" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fb544e"/>
+      <stop offset="0.5" stop-color="#0270ad"/>
+      <stop offset="1" stop-color="#7dd3fc"/>
+    </linearGradient>
+    <linearGradient id="card" x1="412" y1="252" x2="1188" y2="650" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.02"/>
+    </linearGradient>
+    <linearGradient id="line" x1="454" y1="584" x2="1118" y2="338" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7dd3fc"/>
+      <stop offset="0.48" stop-color="#fb544e"/>
+      <stop offset="1" stop-color="#ffd0cb"/>
+    </linearGradient>
+    <filter id="blur" x="0" y="0" width="1600" height="900" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="34"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" rx="48" fill="url(#bg)"/>
+
+  <g opacity="0.18" filter="url(#blur)">
+    <circle cx="310" cy="180" r="156" fill="#fb544e"/>
+    <circle cx="1290" cy="220" r="176" fill="#0270ad"/>
+    <circle cx="1200" cy="700" r="150" fill="#fb544e"/>
+  </g>
+
+  <g opacity="0.16">
+    <path d="M150 220H1450" stroke="#ffffff" stroke-width="1.2" stroke-dasharray="3 16"/>
+    <path d="M150 315H1450" stroke="#ffffff" stroke-width="1.2" stroke-dasharray="3 16"/>
+    <path d="M150 410H1450" stroke="#ffffff" stroke-width="1.2" stroke-dasharray="3 16"/>
+    <path d="M150 505H1450" stroke="#ffffff" stroke-width="1.2" stroke-dasharray="3 16"/>
+    <path d="M150 600H1450" stroke="#ffffff" stroke-width="1.2" stroke-dasharray="3 16"/>
+    <path d="M150 695H1450" stroke="#ffffff" stroke-width="1.2" stroke-dasharray="3 16"/>
+  </g>
+
+  <rect x="220" y="160" width="1160" height="580" rx="42" fill="url(#card)" stroke="#ffffff" stroke-opacity="0.12"/>
+  <rect x="260" y="202" width="1080" height="498" rx="30" fill="#08111a" fill-opacity="0.55" stroke="#ffffff" stroke-opacity="0.08"/>
+
+  <g transform="translate(304 248)">
+    <rect x="0" y="0" width="252" height="122" rx="26" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.08"/>
+    <text x="28" y="44" fill="#cde8f7" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="700" letter-spacing="2">TCC</text>
+    <text x="28" y="84" fill="#ffffff" fill-opacity="0.86" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="500">LSTM + B3</text>
+    <rect x="166" y="28" width="58" height="58" rx="18" fill="#fb544e" fill-opacity="0.16" stroke="#fb544e" stroke-opacity="0.42"/>
+    <path d="M181 56H209" stroke="#fb544e" stroke-width="3" stroke-linecap="round"/>
+    <path d="M195 42V70" stroke="#fb544e" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <g transform="translate(620 248)">
+    <rect x="0" y="0" width="538" height="122" rx="26" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.08"/>
+    <text x="30" y="44" fill="#ffffff" fill-opacity="0.9" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="600">Predicao de tendencias em acoes brasileiras</text>
+    <text x="30" y="83" fill="#cde8f7" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="400">OHLCV • preprocessamento • janela temporal • avaliacao</text>
+  </g>
+
+  <g transform="translate(312 430)">
+    <path d="M0 146C72 120 108 104 165 92C221 80 276 82 332 62C389 42 445 28 500 38C557 49 612 90 668 78C726 66 781 17 838 20C892 23 938 56 1002 38C1060 22 1120 7 1168 0" stroke="url(#line)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M0 146C72 120 108 104 165 92C221 80 276 82 332 62C389 42 445 28 500 38C557 49 612 90 668 78C726 66 781 17 838 20C892 23 938 56 1002 38C1060 22 1120 7 1168 0" stroke="#ffffff" stroke-opacity="0.16" stroke-width="1.5" stroke-dasharray="8 10"/>
+
+    <g opacity="0.95">
+      <circle cx="0" cy="146" r="8" fill="#7dd3fc"/>
+      <circle cx="165" cy="92" r="8" fill="#fb544e"/>
+      <circle cx="332" cy="62" r="8" fill="#7dd3fc"/>
+      <circle cx="500" cy="38" r="8" fill="#fb544e"/>
+      <circle cx="668" cy="78" r="8" fill="#7dd3fc"/>
+      <circle cx="838" cy="20" r="8" fill="#fb544e"/>
+      <circle cx="1002" cy="38" r="8" fill="#7dd3fc"/>
+      <circle cx="1168" cy="0" r="8" fill="#fb544e"/>
+    </g>
+
+    <g transform="translate(34 184)" opacity="0.82">
+      <rect x="0" y="0" width="118" height="194" rx="22" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.08"/>
+      <rect x="22" y="28" width="74" height="16" rx="8" fill="#7dd3fc" fill-opacity="0.8"/>
+      <rect x="22" y="58" width="90" height="16" rx="8" fill="#fb544e" fill-opacity="0.8"/>
+      <rect x="22" y="88" width="62" height="16" rx="8" fill="#7dd3fc" fill-opacity="0.8"/>
+      <rect x="22" y="118" width="80" height="16" rx="8" fill="#fb544e" fill-opacity="0.8"/>
+      <rect x="22" y="148" width="48" height="16" rx="8" fill="#7dd3fc" fill-opacity="0.8"/>
+    </g>
+
+    <g transform="translate(1060 170)" opacity="0.86">
+      <rect x="0" y="0" width="108" height="238" rx="22" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.08"/>
+      <rect x="24" y="26" width="60" height="178" rx="14" fill="#fb544e" fill-opacity="0.15" stroke="#fb544e" stroke-opacity="0.38"/>
+      <path d="M54 18V210" stroke="#7dd3fc" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="54" cy="18" r="7" fill="#7dd3fc"/>
+      <circle cx="54" cy="210" r="7" fill="#fb544e"/>
+    </g>
+  </g>
+
+  <g opacity="0.88">
+    <rect x="220" y="782" width="1160" height="54" rx="22" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.08"/>
+    <text x="252" y="816" fill="#d6e8f4" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="500">Pesquisa academica com metodologia, preprocessamento e avaliacao de modelos</text>
+  </g>
+</svg>

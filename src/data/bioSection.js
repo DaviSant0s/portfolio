@@ -1,31 +1,31 @@
 export const bioParagraphs = [
-  'Olá, sou Davi Santos, desenvolvedor Fullstack e estudante de Engenharia de Computação na FURG. Tenho experiência no desenvolvimento de aplicações web utilizando React, Node.js, JavaScript, Python e bancos de dados relacionais.',
-  'Atualmente, também estou me especializando no desenvolvimento de soluções com Inteligência Artificial, incluindo agentes inteligentes, RAG, LangChain e integração de modelos de linguagem com aplicações web.',
-  'Gosto de transformar problemas reais em soluções práticas, organizadas e fáceis de utilizar, trabalhando tanto no frontend quanto no backend.',
+  'Olá, sou Davi Santos, desenvolvedor frontend e graduando em Engenharia de Computação na FURG. Hoje meu trabalho gira em torno de produtos web, interfaces claras e integração com APIs em contextos reais.',
+  'Atuo em frentes diferentes ao mesmo tempo: residência tecnológica na BRISA/FURG com a Unimed Litoral Sul, voluntariado no LEP em ClarIA Task e desenvolvimento acadêmico na FURG, com pesquisa em inteligência artificial e séries temporais.',
+  'Gosto de transformar requisitos em entregas organizadas, colaborando com equipes multidisciplinares e cuidando da experiência do usuário, da manutenção do código e da coerência entre frontend, backend e dados.',
 ];
 
 export const bioQuickFacts = [
   {
     icon: 'school',
     label: 'Formação',
-    value: 'Engenharia de Computação na FURG',
+    value: 'Bacharelado em Engenharia de Computação na FURG',
   },
   {
     icon: 'deployed_code',
     label: 'Atuação',
-    value: 'Aplicações web com frontend e backend integrados',
+    value: 'Frontend em produtos web e integração com APIs',
   },
   {
     icon: 'neurology',
     label: 'Foco atual',
-    value: 'IA aplicada com agentes, RAG e LLMs',
+    value: 'IA aplicada, LSTM e soluções com dados',
   },
 ];
 
 export const bioHighlights = [
-  'Desenvolvimento Fullstack',
-  'React e Node.js',
-  'Engenharia de Computação',
-  'Inteligência Artificial',
-  'Agentes inteligentes',
+  'React',
+  'TypeScript',
+  'APIs REST',
+  'IA aplicada',
+  'LSTM',
 ];
