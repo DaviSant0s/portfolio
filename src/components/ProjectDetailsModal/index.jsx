@@ -47,6 +47,15 @@ export default function ProjectDetailsModal({
 }) {
   const scrollRef = useRef(null);
 
+  useEffect(() => {
+    if (!isOpen) return;
+
+    scrollRef.current?.scrollTo({
+      top: 0,
+      behavior: 'auto',
+    });
+  }, [isOpen, project?.id]);
+
   if (!project) return null;
 
   return (
@@ -99,40 +108,40 @@ export default function ProjectDetailsModal({
               </p>
             </div>
 
-            <div className='grid gap-4 min-[820px]:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]'>
-              <div className='space-y-4 rounded-[22px] border border-outline/70 bg-panel-muted/55 p-4 min-[640px]:p-5'>
-                <div className='space-y-1.5'>
-                  <h4 className='text-[0.82rem] font-semibold uppercase tracking-[0.18em] text-copy-soft'>
-                    Contexto
-                  </h4>
-                  <p className='text-[0.96rem] leading-[1.7] text-copy-muted'>
-                    {project.context || 'Informação não disponível no currículo.'}
-                  </p>
-                </div>
-
-                <div className='space-y-1.5'>
-                  <h4 className='text-[0.82rem] font-semibold uppercase tracking-[0.18em] text-copy-soft'>
-                    Meu papel
-                  </h4>
-                  <p className='text-[0.96rem] leading-[1.7] text-copy-muted'>
-                    {project.role || 'Informação não disponível no currículo.'}
-                  </p>
-                </div>
-
-                {project.status ? (
+            <div className='grid gap-4 min-[920px]:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]'>
+              <div className='space-y-4'>
+                <div className='space-y-4 rounded-[22px] border border-outline/70 bg-panel-muted/55 p-4 min-[640px]:p-5'>
                   <div className='space-y-1.5'>
                     <h4 className='text-[0.82rem] font-semibold uppercase tracking-[0.18em] text-copy-soft'>
-                      Status
+                      Contexto
                     </h4>
                     <p className='text-[0.96rem] leading-[1.7] text-copy-muted'>
-                      {project.status}
+                      {project.context || 'Informação não disponível no currículo.'}
                     </p>
                   </div>
-                ) : null}
-              </div>
 
-              <div className='space-y-4 rounded-[22px] border border-outline/70 bg-panel-muted/55 p-4 min-[640px]:p-5'>
-                <div className='space-y-2'>
+                  <div className='space-y-1.5'>
+                    <h4 className='text-[0.82rem] font-semibold uppercase tracking-[0.18em] text-copy-soft'>
+                      Meu papel
+                    </h4>
+                    <p className='text-[0.96rem] leading-[1.7] text-copy-muted'>
+                      {project.role || 'Informação não disponível no currículo.'}
+                    </p>
+                  </div>
+
+                  {project.status ? (
+                    <div className='space-y-1.5'>
+                      <h4 className='text-[0.82rem] font-semibold uppercase tracking-[0.18em] text-copy-soft'>
+                        Status
+                      </h4>
+                      <p className='text-[0.96rem] leading-[1.7] text-copy-muted'>
+                        {project.status}
+                      </p>
+                    </div>
+                  ) : null}
+                </div>
+
+                <div className='space-y-2 rounded-[22px] border border-outline/70 bg-panel-muted/55 p-4 min-[640px]:p-5'>
                   <h4 className='text-[0.82rem] font-semibold uppercase tracking-[0.18em] text-copy-soft'>
                     Tecnologias
                   </h4>
@@ -148,33 +157,33 @@ export default function ProjectDetailsModal({
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div className='space-y-5 pt-1'>
-              <div className='space-y-2 rounded-[22px] border border-outline/70 bg-panel-muted/55 p-4 min-[640px]:p-5'>
-                <h4 className='text-[0.82rem] font-semibold uppercase tracking-[0.18em] text-copy-soft'>
-                  Descrição detalhada
-                </h4>
-                <p className='text-[0.96rem] leading-[1.75] text-copy-muted'>
-                  {project.description || project.summary}
-                </p>
-              </div>
-
-              <div className='space-y-2 rounded-[22px] border border-outline/70 bg-panel-muted/55 p-4 min-[640px]:p-5'>
-                <h4 className='text-[0.82rem] font-semibold uppercase tracking-[0.18em] text-copy-soft'>
-                  Destaques
-                </h4>
-                <DetailList items={project.highlights} />
-              </div>
-
-              {project.links?.length ? (
+              <div className='space-y-4'>
                 <div className='space-y-2 rounded-[22px] border border-outline/70 bg-panel-muted/55 p-4 min-[640px]:p-5'>
                   <h4 className='text-[0.82rem] font-semibold uppercase tracking-[0.18em] text-copy-soft'>
-                    Links
+                    Descrição detalhada
                   </h4>
-                  <LinkList links={project.links} />
+                  <p className='text-[0.96rem] leading-[1.75] text-copy-muted'>
+                    {project.description || project.summary}
+                  </p>
                 </div>
-              ) : null}
+
+                <div className='space-y-2 rounded-[22px] border border-outline/70 bg-panel-muted/55 p-4 min-[640px]:p-5'>
+                  <h4 className='text-[0.82rem] font-semibold uppercase tracking-[0.18em] text-copy-soft'>
+                    Destaques
+                  </h4>
+                  <DetailList items={project.highlights} />
+                </div>
+
+                {project.links?.length ? (
+                  <div className='space-y-2 rounded-[22px] border border-outline/70 bg-panel-muted/55 p-4 min-[640px]:p-5'>
+                    <h4 className='text-[0.82rem] font-semibold uppercase tracking-[0.18em] text-copy-soft'>
+                      Links
+                    </h4>
+                    <LinkList links={project.links} />
+                  </div>
+                ) : null}
+              </div>
             </div>
           </div>
         </div>
