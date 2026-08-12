@@ -1,8 +1,8 @@
 export const skillsSectionIntro = {
-  eyebrow: 'Stack do currículo',
+  eyebrow: 'Stack & Ferramentas',
   title: 'Tecnologias que uso na prática',
   description:
-    'A seção reúne as stacks citadas no meu currículo: frontend, backend, IA aplicada, bancos de dados, ferramentas de qualidade e conhecimentos complementares.',
+    'Minha stack para construir aplicações web, integrar sistemas e desenvolver soluções com inteligência artificial.',
 };
 
 export const skillGroups = [
@@ -17,6 +17,9 @@ export const skillGroups = [
       { name: 'Context API', icon: 'bx-customize' },
       { name: 'HTML', icon: 'bxl-html5' },
       { name: 'CSS', icon: 'bxl-css3' },
+    ],
+    desktopRows: [
+      ['React', 'JavaScript', 'TypeScript', 'Vite', 'Tailwind CSS', 'Context API', 'HTML', 'CSS'],
     ],
   },
 
@@ -33,6 +36,10 @@ export const skillGroups = [
       { name: 'Sequelize', icon: 'bx-layer' },
       { name: 'Mongoose', icon: 'bx-cube' },
     ],
+    desktopRows: [
+      ['Node.js', 'Express.js', 'Python', 'FastAPI', 'APIs REST'],
+      ['JWT', 'WebSockets', 'Sequelize', 'Mongoose'],
+    ],
   },
 
   {
@@ -48,6 +55,10 @@ export const skillGroups = [
       { name: 'LSTM', icon: 'bx-line-chart' },
       { name: 'Séries temporais', icon: 'bx-trending-up' },
     ],
+    desktopRows: [
+      ['LangChain', 'LangGraph', 'RAG', 'Embeddings', 'LLMs'],
+      ['Bancos vetoriais', 'Deep Learning', 'LSTM', 'Séries temporais'],
+    ],
   },
 
   {
@@ -56,6 +67,9 @@ export const skillGroups = [
       { name: 'PostgreSQL', icon: 'bxl-postgresql' },
       { name: 'MySQL', icon: 'bx-data' },
       { name: 'MongoDB', icon: 'bxl-mongodb' },
+    ],
+    desktopRows: [
+      ['PostgreSQL', 'MySQL', 'MongoDB'],
     ],
   },
 
@@ -72,6 +86,10 @@ export const skillGroups = [
       { name: 'ESLint', icon: 'bx-check' },
       { name: 'Prettier', icon: 'bx-palette' },
     ],
+    desktopRows: [
+      ['Git', 'GitHub', 'Docker', 'Docker Compose', 'GitHub Actions'],
+      ['Jest', 'Postman', 'ESLint', 'Prettier'],
+    ],
   },
 
   {
@@ -83,6 +101,10 @@ export const skillGroups = [
       { name: 'Responsividade', icon: 'bx-devices' },
       { name: 'Acessibilidade', icon: 'bx-accessibility' },
       { name: 'Figma', icon: 'bxl-figma' },
+    ],
+    desktopRows: [
+      ['Java', 'C', 'Scrum'],
+      ['Responsividade', 'Acessibilidade', 'Figma'],
     ],
   },
 ];

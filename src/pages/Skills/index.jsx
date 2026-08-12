@@ -8,6 +8,19 @@ import useTrackActiveSection from '../../hooks/header/useTrackActiveSection';
 export default function Skills() {
   const { ref } = useTrackActiveSection('skills');
 
+  const renderSkillCard = (skill, groupIndex, rowIndex, itemIndex) => (
+    <ScrollReveal
+      key={`${skill.name}-${groupIndex}-${rowIndex}-${itemIndex}`}
+      amount={0.18}
+      delay={(groupIndex * 0.045) + (rowIndex * 0.02) + (itemIndex * 0.015)}
+    >
+      <SkillsCard
+        name={skill.name}
+        icon={skill.icon}
+      />
+    </ScrollReveal>
+  );
+
   return (
     <section
       ref={ref}
@@ -28,35 +41,44 @@ export default function Skills() {
           titleClassName='max-w-[15ch] min-[790px]:max-w-[18ch]'
         />
 
-        <div className='flex w-full max-w-[1140px] flex-col gap-5 min-[640px]:gap-6'>
-          {skillGroups.map((group, groupIndex) => (
-            <div key={group.title} className='flex flex-col items-center gap-3 min-[640px]:gap-3.5'>
-              <ScrollReveal
-                className='flex w-full justify-center'
-                amount={0.22}
-                delay={groupIndex * 0.05}
-              >
-                <h3 className='text-center text-[0.82rem] font-semibold uppercase tracking-[0.18em] text-copy-soft min-[500px]:text-[0.86rem]'>
-                  {group.title}
-                </h3>
-              </ScrollReveal>
+        <div className='flex w-full max-w-[1140px] flex-col gap-4 min-[640px]:gap-5'>
+          {skillGroups.map((group, groupIndex) => {
+            const itemsByName = new Map(group.items.map((skill) => [skill.name, skill]));
+            const rows = group.desktopRows ?? [group.items.map((skill) => skill.name)];
 
-              <div className='flex w-full flex-wrap items-start justify-center gap-2.5 min-[500px]:gap-3 min-[640px]:gap-3.5'>
-                {group.items.map((skill, itemIndex) => (
-                  <ScrollReveal
-                    key={skill.name}
-                    amount={0.18}
-                    delay={(groupIndex * 0.06) + (Math.min(itemIndex, 8) * 0.03)}
-                  >
-                    <SkillsCard
-                      name={skill.name}
-                      icon={skill.icon}
-                    />
-                  </ScrollReveal>
-                ))}
+            return (
+              <div key={group.title} className='flex flex-col items-center gap-2.5 min-[640px]:gap-3'>
+                <ScrollReveal
+                  className='flex w-full justify-center'
+                  amount={0.22}
+                  delay={groupIndex * 0.04}
+                >
+                  <h3 className='text-center text-[0.76rem] font-semibold uppercase tracking-[0.22em] text-copy-soft min-[500px]:text-[0.82rem]'>
+                    {group.title}
+                  </h3>
+                </ScrollReveal>
+
+                <div className='flex w-full flex-col items-center gap-2.5 min-[500px]:gap-3 min-[640px]:gap-3.5'>
+                  {rows.map((row, rowIndex) => (
+                    <div
+                      key={`${group.title}-row-${rowIndex}`}
+                      className='flex w-full flex-wrap justify-center gap-2.5 min-[500px]:gap-3 min-[640px]:gap-3.5 min-[1100px]:flex-nowrap'
+                    >
+                      {row.map((skillName, itemIndex) => {
+                        const skill = itemsByName.get(skillName);
+
+                        if (!skill) {
+                          return null;
+                        }
+
+                        return renderSkillCard(skill, groupIndex, rowIndex, itemIndex);
+                      })}
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
