@@ -13,6 +13,7 @@ export default function CarouselCard({
   link,
   github,
   name,
+  badge,
   stacks = [],
   summary = '',
   imageClassName = '',
@@ -33,12 +34,18 @@ export default function CarouselCard({
       </div>
 
       <div className='flex flex-1 flex-col px-3.5 pb-3.5 pt-3 min-[500px]:px-4 min-[500px]:pb-4'>
-        <div className='flex flex-col gap-2.5'>
-          <h3 className='min-h-[2.4rem] text-[1rem] font-semibold leading-snug tracking-[-0.03em] text-copy-strong line-clamp-2 min-[500px]:text-[1.1rem]'>
+        <div className='flex flex-1 flex-col gap-2.5'>
+          {badge ? (
+            <span className='inline-flex w-fit items-center rounded-full border border-outline/70 bg-panel/80 px-2.5 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-copy-soft'>
+              {badge}
+            </span>
+          ) : null}
+
+          <h3 className='min-h-[2.7rem] text-[1rem] font-semibold leading-snug tracking-[-0.03em] text-copy-strong line-clamp-2 min-[500px]:text-[1.1rem]'>
             {name}
           </h3>
 
-          <p className='min-h-[2.55rem] text-[0.82rem] leading-[1.5] text-copy-muted line-clamp-2 min-[500px]:text-[0.88rem]'>
+          <p className='min-h-[4.55rem] text-[0.82rem] leading-[1.5] text-copy-muted line-clamp-3 min-[500px]:text-[0.88rem]'>
             {summary}
           </p>
 

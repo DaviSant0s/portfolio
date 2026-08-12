@@ -1,6 +1,5 @@
 import { Suspense, lazy } from 'react';
 import Carousel from '../../components/Carousel';
-import FeaturedProject from '../../components/FeaturedProject';
 import ScrollReveal from '../../components/ScrollReveal';
 import SectionBackdrop from '../../components/SectionBackdrop';
 import SectionIntro from '../../components/SectionIntro';
@@ -34,10 +33,6 @@ export default function Projects() {
         />
 
         <div className='flex w-full max-w-[1020px] flex-col items-center gap-8 min-[790px]:gap-10'>
-          <ScrollReveal className='w-full' amount={0.22} delay={0.05}>
-            <FeaturedProject />
-          </ScrollReveal>
-
           <ScrollReveal className='w-full' amount={0.2} delay={0.06}>
             <Carousel />
           </ScrollReveal>

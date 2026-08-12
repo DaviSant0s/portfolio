@@ -3,19 +3,13 @@ import useEmblaCarousel from 'embla-carousel-react';
 import CarouselCard from '../CarouselCard';
 import CarouselChange from '../CarouselChange/index.jsx';
 import { useMediaQuery } from 'react-responsive';
-import CarouselChangeMobile from '../CarouselChangeMobile/index.jsx';
 import ArrowSlide from '../ArrowSlide/index.jsx';
 import CountCardsCarousel from '../CountCardsCarousel/index.jsx';
 import ScrollReveal from '../ScrollReveal';
-import { carouselFilters, carouselProjects } from '../../data/carouselProjects.js';
+import { carouselProjects } from '../../data/carouselProjects.js';
 
 export default function Carousel() {
   const mobile_max_690px = useMediaQuery({query: '(max-width: 690px)'});
-  const availableFilters = carouselFilters.filter(({ key }) => {
-    return (carouselProjects[key] ?? []).length > 0;
-  });
-  const fallbackFilter = availableFilters[0]?.key ?? 'frontend';
-  const [ toggleCarousel, setToggleCarousel ] = useState(fallbackFilter);
   const [ emblaRef, emblaApi ] = useEmblaCarousel({
     align: 'start',
     containScroll: 'trimSnaps',
@@ -23,8 +17,6 @@ export default function Carousel() {
     dragFree: false,
     loop: false,
   });
-  const toggleData = carouselProjects[toggleCarousel] ?? [];
-  const hasSelectedFilter = availableFilters.some(({ key }) => key === toggleCarousel);
   const [ selectedSnap, setSelectedSnap ] = useState(0);
   const [ totalSnaps, setTotalSnaps ] = useState(1);
   const [ canScrollPrev, setCanScrollPrev ] = useState(false);
@@ -53,24 +45,6 @@ export default function Carousel() {
     };
   }, [emblaApi, updateCarouselState]);
 
-  useEffect(() => {
-    if (hasSelectedFilter) return;
-
-    setToggleCarousel(fallbackFilter);
-  }, [fallbackFilter, hasSelectedFilter, toggleCarousel]);
-
-  useEffect(() => {
-    if (!emblaApi) return;
-
-    emblaApi.reInit();
-    emblaApi.scrollTo(0, true);
-    updateCarouselState(emblaApi);
-  }, [emblaApi, toggleCarousel, toggleData.length, updateCarouselState]);
-
-  const handleSelectFilter = (filterKey) => {
-    setToggleCarousel(filterKey);
-  };
-
   const handleClickScrollToLeft = () => {
     emblaApi?.scrollPrev();
   };
@@ -85,20 +59,8 @@ export default function Carousel() {
   
   return (
     <div className='relative w-full max-w-[1020px] rounded-[32px] border border-outline/60 bg-panel/60 p-4 shadow-[0_18px_38px_-30px_var(--color-shadow-md)] backdrop-blur-sm min-[500px]:p-5 min-[790px]:p-6'>
-
-      {mobile_max_690px && 
-        <CarouselChangeMobile 
-          filters={availableFilters}
-          selectedFilter={toggleCarousel}
-          onSelectFilter={handleSelectFilter}
-        />
-      }
-
       {!mobile_max_690px &&
         <CarouselChange 
-          filters={availableFilters}
-          selectedFilter={toggleCarousel}
-          onSelectFilter={handleSelectFilter}
           views={views} 
           totalViews={totalViews} 
           handleClickScrollToLeft={handleClickScrollToLeft}
@@ -133,10 +95,10 @@ export default function Carousel() {
         <div className='[--slide-spacing:10px] min-[500px]:[--slide-spacing:12px]'>
           <div ref={emblaRef} className='overflow-hidden rounded-[28px]'>
             <div className='-ml-[var(--slide-spacing)] flex py-1 pr-[var(--slide-spacing)] [touch-action:pan-y_pinch-zoom]'>
-              {toggleData.map((project) => (
+              {carouselProjects.map((project) => (
                 <div
-                  key={`${toggleCarousel}-${project.name}`}
-                  className='flex min-w-0 shrink-0 grow-0 basis-full items-stretch pl-[var(--slide-spacing)] min-[691px]:basis-1/2 min-[1021px]:basis-1/3 min-[1340px]:basis-1/4'
+                  key={project.name}
+                  className='flex min-w-0 shrink-0 grow-0 basis-full items-stretch pl-[var(--slide-spacing)] min-[691px]:basis-1/2 min-[1021px]:basis-1/4'
                 >
                   <ScrollReveal
                     className='flex h-full w-full'
@@ -146,6 +108,7 @@ export default function Carousel() {
                     <CarouselCard
                       img={project.img}
                       imageClassName={project.imageClassName}
+                      badge={project.badge}
                       stacks={project.stacks}
                       link={project.link}
                       github={project.github}
