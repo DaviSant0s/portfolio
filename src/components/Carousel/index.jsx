@@ -57,6 +57,7 @@ export default function Carousel() {
 
   const views = totalSnaps ? selectedSnap + 1 : 1;
   const totalViews = totalSnaps || 1;
+  const hasMultipleViews = totalViews > 1;
   const selectedProject = useMemo(
     () => carouselProjects.find((project) => project.id === selectedProjectId) || null,
     [selectedProjectId]
@@ -65,7 +66,7 @@ export default function Carousel() {
   
   return (
     <div className='relative w-full max-w-[1020px] rounded-[32px] border border-outline/60 bg-panel/60 p-4 shadow-[0_18px_38px_-30px_var(--color-shadow-md)] backdrop-blur-sm min-[500px]:p-5 min-[790px]:p-6'>
-      {!mobile_max_690px &&
+      {!mobile_max_690px && hasMultipleViews &&
         <CarouselChange 
           views={views} 
           totalViews={totalViews} 
@@ -78,7 +79,7 @@ export default function Carousel() {
 
       <div className='relative w-full px-5 min-[480px]:px-6 min-[691px]:px-0'>
 
-        {mobile_max_690px &&
+        {mobile_max_690px && hasMultipleViews &&
           <>
             <div className='absolute top-1/2 left-7 z-[9] -translate-y-1/2 min-[480px]:left-8'>
               <ArrowSlide
@@ -127,7 +128,7 @@ export default function Carousel() {
           </div>
         </div>
       </div>
-      {mobile_max_690px &&
+      {mobile_max_690px && hasMultipleViews &&
         <CountCardsCarousel views={views} totalViews={totalViews}/>
       }
 

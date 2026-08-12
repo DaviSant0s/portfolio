@@ -43,7 +43,7 @@ export default function CarouselCard({
             {name}
           </h3>
 
-          <p className='min-h-[4.55rem] text-[0.82rem] leading-[1.5] text-copy-muted line-clamp-3 min-[500px]:text-[0.88rem]'>
+          <p className='text-[0.82rem] leading-[1.5] text-copy-muted line-clamp-3 min-[500px]:text-[0.88rem]'>
             {summary}
           </p>
 
