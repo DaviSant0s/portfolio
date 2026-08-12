@@ -1,16 +1,13 @@
-import profileDark from '../../assets/profile/davi-profile-dark.png';
 import profileLight from '../../assets/profile/davi-profile-light.jpg';
 import ScrollReveal from '../../components/ScrollReveal';
 import SectionBackdrop from '../../components/SectionBackdrop';
-import { useTheme } from '../../context/ThemeContext';
 import { bioHighlights, bioParagraphs, bioQuickFacts } from '../../data/bioSection';
 import { resumeFileUrl } from '../../data/resumeFileUrl';
 import useTrackActiveSection from '../../hooks/header/useTrackActiveSection';
 
 export default function Bio() {
   const { ref } = useTrackActiveSection('bio');
-  const { isDarkMode } = useTheme();
-  const profileImage = isDarkMode ? profileDark : profileLight;
+  const profileImage = profileLight;
 
   return (
     <section
