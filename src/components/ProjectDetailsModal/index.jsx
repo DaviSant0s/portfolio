@@ -20,26 +20,6 @@ function DetailList({ items = [] }) {
   );
 }
 
-function LinkList({ links = [] }) {
-  if (!links.length) return null;
-
-  return (
-    <div className='flex flex-wrap gap-3'>
-      {links.map((link) => (
-        <a
-          key={`${link.label}-${link.href}`}
-          className='inline-flex h-11 items-center rounded-full border border-outline/70 bg-panel/82 px-4 text-[0.93rem] font-semibold text-copy-strong shadow-[0_16px_30px_-24px_var(--color-shadow-md)] transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-copy-soft hover:bg-panel focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-primary-soft'
-          href={link.href}
-          target='_blank'
-          rel='noreferrer'
-        >
-          {link.label}
-        </a>
-      ))}
-    </div>
-  );
-}
-
 export default function ProjectDetailsModal({
   isOpen,
   setIsOpen,
@@ -57,6 +37,8 @@ export default function ProjectDetailsModal({
   }, [isOpen, project?.id]);
 
   if (!project) return null;
+
+  const projectLink = project.links?.[0];
 
   return (
     <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
@@ -99,13 +81,31 @@ export default function ProjectDetailsModal({
               ) : null}
             </div>
 
-            <div className='flex flex-col gap-2'>
-              <h3 className='text-[1.55rem] font-semibold leading-tight tracking-[-0.04em] text-copy-strong min-[640px]:text-[1.9rem]'>
-                {project.name}
-              </h3>
-              <p className='max-w-[66ch] text-[0.98rem] leading-[1.7] text-copy-muted min-[640px]:text-[1.03rem]'>
-                {project.summary}
-              </p>
+            <div className='grid grid-cols-1 gap-4 min-[720px]:grid-cols-2 min-[720px]:gap-6'>
+              <div className='min-w-0 space-y-2'>
+                <h3 className='text-[1.55rem] font-semibold leading-tight tracking-[-0.04em] text-copy-strong min-[640px]:text-[1.9rem]'>
+                  {project.name}
+                </h3>
+                <p className='max-w-[66ch] text-[0.98rem] leading-[1.7] text-copy-muted min-[640px]:text-[1.03rem]'>
+                  {project.summary}
+                </p>
+              </div>
+
+              {projectLink ? (
+                <div className='flex items-end justify-end'>
+                  <a
+                    className='inline-flex h-10 w-fit shrink-0 items-center justify-center gap-2 rounded-full bg-[#15181d] px-5 text-[0.86rem] font-semibold text-white shadow-[0_14px_28px_-22px_rgba(21,24,29,0.48)] transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-[#0f1115] focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-primary-soft dark:bg-white dark:text-[#12161d] dark:shadow-[0_14px_28px_-22px_rgba(0,0,0,0.32)] dark:hover:bg-[#f4f7fa]'
+                    href={projectLink.href}
+                    target='_blank'
+                    rel='noreferrer'
+                  >
+                    <span>{projectLink.label}</span>
+                    <span className='material-icons text-[1rem]' aria-hidden='true'>
+                      arrow_outward
+                    </span>
+                  </a>
+                </div>
+              ) : null}
             </div>
 
             <div className='grid grid-cols-1 gap-4 min-[720px]:grid-cols-2 min-[720px]:items-start min-[720px]:gap-6'>
@@ -175,14 +175,6 @@ export default function ProjectDetailsModal({
                   <DetailList items={project.highlights} />
                 </div>
 
-                {project.links?.length ? (
-                  <div className='space-y-2 rounded-[22px] border border-outline/70 bg-panel-muted/55 p-4 min-[640px]:p-5'>
-                    <h4 className='text-[0.82rem] font-semibold uppercase tracking-[0.18em] text-copy-soft'>
-                      Links
-                    </h4>
-                    <LinkList links={project.links} />
-                  </div>
-                ) : null}
               </div>
             </div>
           </div>
