@@ -4,6 +4,7 @@ import react from '../assets/react.png';
 import javascript from '../assets/javascript.png';
 import node from '../assets/node.png';
 import python from '../assets/python.png';
+import typescript from '../assets/typescript.png';
 import tailwindcss from '../assets/tailwindcss.svg';
 
 import project1 from '../assets/projects/curiosity_and_technology_screen.png';
@@ -16,6 +17,7 @@ import project7 from '../assets/projects/loginscreen.png';
 import project10 from '../assets/projects/finance.png';
 import clariaTaskLoginPreview from '../assets/projects/claria-task-login.png';
 import projectResearch from '../assets/projects/lstm-research.svg';
+import vivaUnimedPreview from '../assets/projects/vivaunimed.jpg';
 
 import project9 from '../assets/projects/github/projeto_login.png';
 
@@ -23,6 +25,7 @@ const htmlStack = { icon: html, label: 'HTML' };
 const cssStack = { icon: css, label: 'CSS' };
 const tailwindStack = { icon: tailwindcss, label: 'Tailwind CSS' };
 const javascriptStack = { icon: javascript, label: 'JavaScript' };
+const typescriptStack = { icon: typescript, label: 'TypeScript' };
 const reactStack = { icon: react, label: 'React' };
 const nodeStack = { icon: node, label: 'Node.js' };
 const pythonStack = { icon: python, label: 'Python' };
@@ -37,6 +40,16 @@ export const carouselProjects = {
       imageClassName: 'object-center',
       stacks: [reactStack, javascriptStack, pythonStack],
       link: 'https://claria-task.up.railway.app/',
+      github: '',
+    },
+    {
+      name: 'Agenda VivaUnimed',
+      summary:
+        'Sistema de fila inteligente para aproveitamento de vagas remanescentes em consultas médicas, com 8 módulos administrativos, 18 telas e integração com 35 endpoints REST.',
+      img: vivaUnimedPreview,
+      imageClassName: 'object-center',
+      stacks: [reactStack, javascriptStack, typescriptStack, nodeStack],
+      link: '',
       github: '',
     },
   ],

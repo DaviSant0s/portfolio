@@ -24,6 +24,7 @@ export const experiences = [
 
     technologies: [
       'React',
+      'TypeScript',
       'Context API',
       'API REST',
       'Node.js',
