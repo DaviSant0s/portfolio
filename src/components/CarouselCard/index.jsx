@@ -10,17 +10,15 @@ function normalizeStacks(stacks = []) {
 
 export default function CarouselCard({
   img,
-  link,
-  github,
   name,
   badge,
   stacks = [],
   summary = '',
   imageClassName = '',
+  onViewDetails,
 }) {
   const normalizedStacks = normalizeStacks(stacks);
-  const secondaryActionClassName = 'inline-flex h-9 w-full items-center justify-center rounded-full border border-outline/70 bg-panel/80 px-4 text-[0.84rem] font-semibold text-copy-strong shadow-[0_12px_24px_-22px_var(--color-shadow-md)] backdrop-blur-sm transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-copy-soft hover:bg-panel focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-primary-soft';
-  const primaryActionClassName = 'inline-flex h-9 w-full items-center justify-center rounded-full bg-[#15181d] px-4 text-[0.84rem] font-semibold text-white shadow-[0_14px_28px_-22px_rgba(21,24,29,0.48)] transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-[#0f1115] focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-primary-soft dark:bg-white dark:text-[#12161d] dark:shadow-[0_14px_28px_-22px_rgba(0,0,0,0.32)] dark:hover:bg-[#f4f7fa]';
+  const actionClassName = 'inline-flex h-10 w-full items-center justify-center rounded-full bg-[#15181d] px-4 text-[0.86rem] font-semibold text-white shadow-[0_14px_28px_-22px_rgba(21,24,29,0.48)] transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-[#0f1115] focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-primary-soft dark:bg-white dark:text-[#12161d] dark:shadow-[0_14px_28px_-22px_rgba(0,0,0,0.32)] dark:hover:bg-[#f4f7fa]';
 
   return (
     <article className='group flex h-full w-full flex-col overflow-hidden rounded-[24px] border border-outline/60 bg-panel/56 shadow-[0_18px_34px_-30px_var(--color-shadow-md)] transition-all duration-300 ease-[var(--ease-fluid)] hover:border-primary/30 hover:bg-panel/68 hover:shadow-[0_24px_46px_-32px_var(--color-shadow-lg)]'>
@@ -72,28 +70,14 @@ export default function CarouselCard({
           )}
         </div>
 
-        <div className='mt-auto flex flex-col justify-end gap-1.5 pt-3'>
-          {link && (
-            <a
-              className={primaryActionClassName}
-              href={link}
-              target='_blank'
-              rel='noreferrer'
-            >
-              Ver projeto
-            </a>
-          )}
-
-          {github && (
-            <a
-              className={secondaryActionClassName}
-              href={github}
-              target='_blank'
-              rel='noreferrer'
-            >
-              GitHub
-            </a>
-          )}
+        <div className='mt-auto pt-3'>
+          <button
+            type='button'
+            className={actionClassName}
+            onClick={onViewDetails}
+          >
+            Ver detalhes
+          </button>
         </div>
       </div>
     </article>

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import CarouselCard from '../CarouselCard';
 import CarouselChange from '../CarouselChange/index.jsx';
@@ -7,9 +7,11 @@ import ArrowSlide from '../ArrowSlide/index.jsx';
 import CountCardsCarousel from '../CountCardsCarousel/index.jsx';
 import ScrollReveal from '../ScrollReveal';
 import { carouselProjects } from '../../data/carouselProjects.js';
+import ProjectDetailsModal from '../ProjectDetailsModal';
 
 export default function Carousel() {
   const mobile_max_690px = useMediaQuery({query: '(max-width: 690px)'});
+  const [ selectedProjectId, setSelectedProjectId ] = useState(null);
   const [ emblaRef, emblaApi ] = useEmblaCarousel({
     align: 'start',
     containScroll: 'trimSnaps',
@@ -55,6 +57,10 @@ export default function Carousel() {
 
   const views = totalSnaps ? selectedSnap + 1 : 1;
   const totalViews = totalSnaps || 1;
+  const selectedProject = useMemo(
+    () => carouselProjects.find((project) => project.id === selectedProjectId) || null,
+    [selectedProjectId]
+  );
 
   
   return (
@@ -110,10 +116,9 @@ export default function Carousel() {
                       imageClassName={project.imageClassName}
                       badge={project.badge}
                       stacks={project.stacks}
-                      link={project.link}
-                      github={project.github}
                       name={project.name}
                       summary={project.summary}
+                      onViewDetails={() => setSelectedProjectId(project.id)}
                     />
                   </ScrollReveal>
                 </div>
@@ -125,6 +130,14 @@ export default function Carousel() {
       {mobile_max_690px &&
         <CountCardsCarousel views={views} totalViews={totalViews}/>
       }
+
+      <ProjectDetailsModal
+        isOpen={Boolean(selectedProject)}
+        setIsOpen={(open) => {
+          if (!open) setSelectedProjectId(null);
+        }}
+        project={selectedProject}
+      />
     </div>
   )
 }
