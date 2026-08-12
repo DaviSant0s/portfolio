@@ -1,3 +1,5 @@
+import { useTheme } from '../../context/ThemeContext';
+
 function isSimpleIcon(icon) {
   return Boolean(icon && typeof icon === 'object' && typeof icon.path === 'string');
 }
@@ -5,18 +7,25 @@ function isSimpleIcon(icon) {
 export default function SkillsCard({
   icon,
   iconBackgroundClassName = '',
+  iconDarkColor,
   iconColor,
   name,
 }) {
-  const iconStyle = iconColor
-    ? { color: iconColor }
-    : isSimpleIcon(icon)
-      ? { color: `#${icon.hex}` }
-      : undefined;
+  const { isDarkMode } = useTheme();
+
+  const resolvedIconColor = iconColor
+    ?? (isSimpleIcon(icon)
+      ? (isDarkMode && iconDarkColor ? iconDarkColor : `#${icon.hex}`)
+      : undefined);
+
+  const iconStyle = resolvedIconColor
+    ? { color: resolvedIconColor }
+    : undefined;
 
   const iconClassName = isSimpleIcon(icon)
     ? 'h-[1.55rem] w-[1.55rem] select-none transition-transform duration-300 ease-out group-hover:-translate-y-0.5 group-hover:scale-105 min-[500px]:h-[1.68rem] min-[500px]:w-[1.68rem]'
     : `bx ${icon} text-[1.5rem] select-none transition-transform duration-300 ease-out group-hover:-translate-y-0.5 group-hover:scale-105 min-[500px]:text-[1.62rem]`;
+  const resolvedIconClassName = iconClassName;
 
   return (
     <article className='group flex w-[96px] flex-col items-center gap-1.5 rounded-[22px] border border-outline/65 bg-panel/74 px-1.5 py-1.5 text-center shadow-[0_16px_34px_-30px_var(--color-shadow-md)] backdrop-blur-sm transition-all duration-300 ease-[var(--ease-fluid)] hover:-translate-y-1 hover:border-primary-soft hover:shadow-[0_22px_42px_-30px_var(--color-shadow-lg)] min-[500px]:w-[104px] min-[500px]:gap-1.5 min-[500px]:px-2 min-[500px]:py-1.5'>
@@ -27,14 +36,14 @@ export default function SkillsCard({
               role='img'
               aria-hidden='true'
               viewBox='0 0 24 24'
-              className={iconClassName}
+              className={resolvedIconClassName}
               style={iconStyle}
             >
               <path d={icon.path} fill='currentColor' />
             </svg>
           ) : (
             <i
-              className={iconClassName}
+              className={resolvedIconClassName}
               style={iconStyle}
               aria-hidden='true'
             />

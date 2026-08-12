@@ -15,8 +15,7 @@ export default function Skills() {
       delay={(groupIndex * 0.045) + (rowIndex * 0.02) + (itemIndex * 0.015)}
     >
       <SkillsCard
-        name={skill.name}
-        icon={skill.icon}
+        {...skill}
       />
     </ScrollReveal>
   );

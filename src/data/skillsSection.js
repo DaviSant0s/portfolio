@@ -41,7 +41,6 @@ const createSkill = (name, icon, extra = {}) => ({ name, icon, ...extra });
 const conceptBlue = '#61DAFB';
 const conceptAI = '#7FC8FF';
 const conceptWarm = '#F24E1E';
-const darkLogoSurface = 'dark:bg-white/90';
 
 export const skillsSectionIntro = {
   eyebrow: 'Stack & Ferramentas',
@@ -71,12 +70,12 @@ export const skillGroups = [
     title: 'Backend',
     items: [
       createSkill('Node.js', siNodedotjs),
-      createSkill('Express.js', siExpress, { iconBackgroundClassName: darkLogoSurface }),
+      createSkill('Express.js', siExpress, { iconDarkColor: 'var(--color-text-strong)' }),
       createSkill('Python', siPython),
       createSkill('FastAPI', siFastapi),
       createSkill('APIs REST', siOpenapiinitiative),
-      createSkill('JWT', siJsonwebtokens, { iconBackgroundClassName: darkLogoSurface }),
-      createSkill('WebSockets', siSocketdotio, { iconBackgroundClassName: darkLogoSurface }),
+      createSkill('JWT', siJsonwebtokens, { iconDarkColor: 'var(--color-text-strong)' }),
+      createSkill('WebSockets', siSocketdotio, { iconDarkColor: 'var(--color-text-strong)' }),
       createSkill('Sequelize', siSequelize),
       createSkill('Mongoose', siMongoose),
     ],
@@ -118,7 +117,7 @@ export const skillGroups = [
     title: 'Ferramentas e qualidade',
     items: [
       createSkill('Git', siGit),
-      createSkill('GitHub', siGithub, { iconBackgroundClassName: darkLogoSurface }),
+      createSkill('GitHub', siGithub, { iconDarkColor: 'var(--color-text-strong)' }),
       createSkill('Docker', siDocker),
       createSkill('Docker Compose', siDocker),
       createSkill('GitHub Actions', siGithubactions),
@@ -136,7 +135,7 @@ export const skillGroups = [
   {
     title: 'Outros conhecimentos',
     items: [
-      createSkill('Java', siOpenjdk, { iconBackgroundClassName: darkLogoSurface }),
+      createSkill('Java', siOpenjdk, { iconDarkColor: 'var(--color-text-strong)' }),
       createSkill('C', siC),
       createSkill('Scrum', 'bx-group', { iconColor: conceptWarm }),
       createSkill('Responsividade', 'bx-devices', { iconColor: conceptBlue }),
