@@ -18,13 +18,17 @@ export default function NavHeader() {
     <nav aria-label='Navegação principal' className='flex shrink-0 items-center gap-5 min-[1280px]:gap-7'>
       {navigationSections.map((item) => {
         const isRouteLink = Boolean(item.path);
+        const isArticlesLink = item.section === 'articles';
         const isActive = isRouteLink
           ? pathname.startsWith(item.path)
           : pathname === '/' && activeSection === item.section;
         const linkProps = item.duration ? { duration: item.duration } : {};
         const linkPageClassName = [
           'group/header-link relative inline-flex cursor-pointer select-none items-center justify-center whitespace-nowrap py-2 text-[0.98rem] font-medium tracking-[-0.02em] transition-colors duration-200 ease-out',
-          isActive ? 'text-copy-strong' : 'text-copy-muted hover:text-copy-strong',
+          isArticlesLink
+            ? 'gap-1.5 rounded-full border border-outline/70 bg-panel-soft px-3.5 text-copy-muted shadow-[0_10px_24px_-20px_var(--color-shadow-md)] hover:border-copy-soft hover:bg-panel-strong hover:text-copy-strong'
+            : (isActive ? 'text-copy-strong' : 'text-copy-muted hover:text-copy-strong'),
+          isArticlesLink && isActive ? 'border-copy-soft bg-panel-strong text-copy-strong' : '',
         ].join(' ').trim();
 
         const content = (
@@ -35,7 +39,7 @@ export default function NavHeader() {
             whileTap={{ y: 0 }}
             transition={{ duration: 0.18, ease: 'easeOut' }}
           >
-            {isActive &&
+            {isActive && !isArticlesLink &&
               <m.span
                 layoutId='header-nav-indicator'
                 aria-hidden='true'
@@ -43,6 +47,11 @@ export default function NavHeader() {
                 transition={indicatorTransition}
               />
             }
+            {isArticlesLink && (
+              <span className='material-symbols-outlined relative z-[1] text-[1.05rem] leading-none' aria-hidden='true'>
+                article
+              </span>
+            )}
             <m.span className='relative z-[1]'>
               {item.label}
             </m.span>

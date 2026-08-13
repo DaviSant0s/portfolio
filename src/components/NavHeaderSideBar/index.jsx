@@ -18,16 +18,22 @@ export default function NavHeaderSideBar() {
   };
   const itemVariants = {
     rest: { x: 0 },
+    featured: { x: 0 },
+    featuredActive: { x: 0 },
     hovered: { x: 2 },
     active: { x: 0 },
   };
   const iconVariants = {
     rest: { color: 'var(--color-text-muted)' },
+    featured: { color: 'var(--color-text-muted)' },
+    featuredActive: { color: 'var(--color-text-strong)' },
     hovered: { color: 'var(--color-accent)' },
     active: { color: 'var(--color-accent)' },
   };
   const labelVariants = {
     rest: { color: 'var(--color-text)' },
+    featured: { color: 'var(--color-text)' },
+    featuredActive: { color: 'var(--color-text-strong)' },
     hovered: { color: 'var(--color-accent)' },
     active: { color: 'var(--color-accent)' },
   };
@@ -41,12 +47,20 @@ export default function NavHeaderSideBar() {
     <nav aria-label='Navegação do menu' className='flex w-full shrink-0 flex-col gap-2 px-[14px] pt-[18px] pb-2'>
       {navigationSections.map((item) => {
         const isRouteLink = Boolean(item.path);
+        const isArticlesLink = item.section === 'articles';
         const isActive = isRouteLink
           ? pathname.startsWith(item.path)
           : pathname === '/' && activeSection === item.section;
-        const itemState = isActive ? 'active' : 'rest';
+        const itemState = isArticlesLink
+          ? (isActive ? 'featuredActive' : 'featured')
+          : (isActive ? 'active' : 'rest');
         const linkProps = item.duration ? { duration: item.duration } : {};
-        const itemClassName = 'relative z-0 flex min-h-[52px] w-full cursor-pointer select-none items-center gap-3 overflow-hidden rounded-[20px] border border-transparent px-4 text-[0.98rem] font-semibold transition-colors duration-[180ms] ease-out hover:border-primary-soft hover:bg-primary-surface-strong min-[500px]:min-h-14 min-[500px]:gap-[14px] min-[500px]:rounded-2xl min-[500px]:text-[1.05rem]';
+        const itemClassName = [
+          'relative z-0 flex min-h-[52px] w-full cursor-pointer select-none items-center gap-3 overflow-hidden rounded-[20px] border px-4 text-[0.98rem] font-semibold transition-colors duration-[180ms] ease-out min-[500px]:min-h-14 min-[500px]:gap-[14px] min-[500px]:rounded-2xl min-[500px]:text-[1.05rem]',
+          isArticlesLink && !isActive
+            ? 'border-outline bg-panel-soft hover:border-copy-soft hover:bg-panel-strong'
+            : 'border-transparent hover:border-primary-soft hover:bg-primary-surface-strong',
+        ].join(' ');
 
         const content = (
           <m.div
@@ -54,7 +68,7 @@ export default function NavHeaderSideBar() {
             variants={itemVariants}
             initial={false}
             animate={itemState}
-            whileHover='hovered'
+            whileHover={isArticlesLink ? 'featuredActive' : 'hovered'}
             whileTap={{ x: 0 }}
             transition={{ duration: 0.18 }}
           >
@@ -62,7 +76,11 @@ export default function NavHeaderSideBar() {
               <m.span
                 layoutId='sidebar-nav-indicator'
                 aria-hidden='true'
-                className='bg-accent-surface-gradient shadow-surface-glint absolute inset-0 -z-10 rounded-2xl border border-primary-soft'
+                className={`shadow-surface-glint absolute inset-0 -z-10 rounded-2xl border ${
+                  isArticlesLink
+                    ? 'border-outline bg-panel-strong'
+                    : 'bg-accent-surface-gradient border-primary-soft'
+                }`}
                 transition={indicatorTransition}
               />
             }
