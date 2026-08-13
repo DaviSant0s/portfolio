@@ -42,7 +42,7 @@ export default function SideBar() {
                 Use este painel para navegar pelas secoes do portfolio.
               </Dialog.Description>
               <div
-                className='bg-surface-gradient relative flex h-[var(--heightHeaderScroll)] w-full items-center justify-start border-b border-outline px-[14px]'
+                className='bg-surface-gradient relative flex min-h-[88px] w-full shrink-0 items-center justify-start border-b border-outline px-4 py-4 min-[500px]:px-5'
               >
                 <Logo sideBar={true}/>
               </div>
