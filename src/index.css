@@ -316,3 +316,100 @@
 @utility shadow-surface-glint {
   box-shadow: inset 0 1px 0 var(--color-surface-glint);
 }
+
+@layer components {
+  .article-content {
+    color: var(--color-text);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .article-content > * + * {
+    margin-top: 1.25rem;
+  }
+
+  .article-content h1,
+  .article-content h2,
+  .article-content h3 {
+    color: var(--color-text-strong);
+    font-weight: 650;
+    line-height: 1.2;
+    letter-spacing: -0.035em;
+  }
+
+  .article-content h1 {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+  }
+
+  .article-content h2 {
+    margin-top: 2.25rem;
+    font-size: clamp(1.45rem, 4vw, 1.9rem);
+  }
+
+  .article-content h3 {
+    margin-top: 1.75rem;
+    font-size: clamp(1.2rem, 3vw, 1.45rem);
+  }
+
+  .article-content a {
+    color: var(--color-accent);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+
+  .article-content ul,
+  .article-content ol {
+    padding-left: 1.5rem;
+  }
+
+  .article-content ul {
+    list-style: disc;
+  }
+
+  .article-content ol {
+    list-style: decimal;
+  }
+
+  .article-content li + li {
+    margin-top: 0.45rem;
+  }
+
+  .article-content blockquote {
+    border-left: 3px solid var(--color-accent);
+    border-radius: 0 0.75rem 0.75rem 0;
+    background: var(--color-surface-muted);
+    padding: 1rem 1.25rem;
+    color: var(--color-text-muted);
+  }
+
+  .article-content :not(pre) > code {
+    border: 1px solid var(--color-border);
+    border-radius: 0.4rem;
+    background: var(--color-surface-muted);
+    padding: 0.12rem 0.38rem;
+    font-size: 0.9em;
+  }
+
+  .article-content pre {
+    overflow-x: auto;
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    background: var(--color-surface-muted);
+    padding: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+
+  .article-content img {
+    width: 100%;
+    border-radius: 1rem;
+    border: 1px solid var(--color-border);
+  }
+
+  @media (min-width: 790px) {
+    .article-content {
+      font-size: 1.06rem;
+    }
+  }
+}

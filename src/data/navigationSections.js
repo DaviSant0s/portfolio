@@ -2,6 +2,7 @@ export const navigationSections = [
   {
     section: 'home',
     to: 'id_home',
+    hash: 'inicio',
     label: 'Início',
     icon: 'home',
     offset: -80,
@@ -9,6 +10,7 @@ export const navigationSections = [
   {
     section: 'bio',
     to: 'id_bio',
+    hash: 'sobre',
     label: 'Sobre',
     icon: 'person',
     offset: -79,
@@ -17,6 +19,7 @@ export const navigationSections = [
   {
     section: 'skills',
     to: 'id_skills',
+    hash: 'habilidades',
     label: 'Habilidades',
     icon: 'emoji_objects',
     offset: -79,
@@ -25,6 +28,7 @@ export const navigationSections = [
   {
     section: 'projects',
     to: 'id_projects',
+    hash: 'projetos',
     label: 'Projetos',
     icon: 'folder_open',
     offset: -79,
@@ -33,6 +37,7 @@ export const navigationSections = [
   {
     section: 'experience',
     to: 'id_experience',
+    hash: 'experiencia',
     label: 'Experiências',
     icon: 'badge',
     offset: -79,
@@ -41,6 +46,7 @@ export const navigationSections = [
   {
     section: 'certifications',
     to: 'id_certifications',
+    hash: 'certificacoes',
     label: 'Certificações',
     icon: 'verified',
     offset: -79,
@@ -49,9 +55,16 @@ export const navigationSections = [
   {
     section: 'contact',
     to: 'id_contact',
+    hash: 'contato',
     label: 'Contato',
     icon: 'contact_page',
     offset: -79,
     duration: 700,
+  },
+  {
+    section: 'articles',
+    path: '/artigos',
+    label: 'Artigos',
+    icon: 'article',
   },
 ];

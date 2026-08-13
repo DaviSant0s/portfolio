@@ -1,4 +1,5 @@
-import { Link } from 'react-scroll';
+import { Link as ScrollLink } from 'react-scroll';
+import { Link as RouterLink, useLocation } from 'react-router-dom';
 import { navigationSections } from '../../data/navigationSections';
 
 const socialLinks = [
@@ -23,6 +24,8 @@ const socialLinks = [
 ];
 
 export default function Footer() {
+  const { pathname } = useLocation();
+
   return (
     <footer className='relative w-full overflow-hidden bg-[#121821]'>
       <div className='pointer-events-none absolute inset-0'>
@@ -51,18 +54,34 @@ export default function Footer() {
         </div>
 
         <nav className='flex flex-col items-center gap-3 text-center min-[641px]:flex-row min-[641px]:flex-wrap min-[641px]:justify-center min-[641px]:gap-[15px]'>
-          {navigationSections.map((item) => (
-            <Link
-              key={item.section}
-              to={item.to}
-              smooth={true}
-              offset={item.offset}
-              duration={item.duration ?? 700}
-              className='text-[1.02rem] font-medium text-white/72 transition-colors duration-150 ease-in hover:text-white'
-            >
-              <span>{item.label}</span>
-            </Link>
-          ))}
+          {navigationSections.map((item) => {
+            const className = 'text-[1.02rem] font-medium text-white/72 transition-colors duration-150 ease-in hover:text-white';
+
+            if (item.path || pathname !== '/') {
+              return (
+                <RouterLink
+                  key={item.section}
+                  to={item.path ?? `/#${item.hash}`}
+                  className={className}
+                >
+                  {item.label}
+                </RouterLink>
+              );
+            }
+
+            return (
+              <ScrollLink
+                key={item.section}
+                to={item.to}
+                smooth={true}
+                offset={item.offset}
+                duration={item.duration ?? 700}
+                className={className}
+              >
+                {item.label}
+              </ScrollLink>
+            );
+          })}
         </nav>
 
         <span className='mt-4 text-sm font-light text-white/45'>
