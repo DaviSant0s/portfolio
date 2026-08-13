@@ -1,6 +1,7 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import RouteScrollManager from '../components/RouteScrollManager';
 import SEO from '../components/SEO';
+import StackMarquee from '../components/StackMarquee';
 import CertificationsProvider from '../context/CertificationsContext';
 import Article from '../pages/Article';
 import Articles from '../pages/Articles';
@@ -21,6 +22,7 @@ function PortfolioHome() {
       <SEO metadata={homeSeoMetadata}/>
       <main>
         <Home/>
+        <StackMarquee/>
         <Bio/>
         <Skills/>
         <Projects/>

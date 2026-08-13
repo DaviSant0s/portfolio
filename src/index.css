@@ -311,6 +311,61 @@
 }
 
 @layer components {
+  .stack-marquee__viewport {
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+  }
+
+  .stack-marquee__track {
+    display: flex;
+    width: max-content;
+    will-change: transform;
+    animation: stack-marquee 38s linear infinite;
+  }
+
+  .stack-marquee__group {
+    --stack-marquee-gap: clamp(2.25rem, 5vw, 4.5rem);
+
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: var(--stack-marquee-gap);
+    padding-right: var(--stack-marquee-gap);
+  }
+
+  .stack-marquee__viewport:hover .stack-marquee__track {
+    animation-play-state: paused;
+  }
+
+  @keyframes stack-marquee {
+    to {
+      transform: translate3d(-20%, 0, 0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .stack-marquee__viewport {
+      overflow-x: auto;
+      -webkit-mask-image: none;
+      mask-image: none;
+      scrollbar-width: none;
+    }
+
+    .stack-marquee__viewport::-webkit-scrollbar {
+      display: none;
+    }
+
+    .stack-marquee__track {
+      animation: none;
+      will-change: auto;
+    }
+
+    .stack-marquee__group[aria-hidden='true'] {
+      display: none;
+    }
+  }
+
   .article-content {
     min-width: 0;
     color: var(--color-text);
