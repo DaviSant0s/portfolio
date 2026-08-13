@@ -5,7 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "npm run build:client && npm run build:seo && npm run generate:seo",
+    "build:client": "vite build",
+    "build:seo": "vite build --ssr src/seo/buildEntry.js --outDir dist-seo",
+    "generate:seo": "node scripts/generate-static-seo.mjs",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },

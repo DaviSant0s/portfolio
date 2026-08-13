@@ -1,5 +1,6 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import RouteScrollManager from '../components/RouteScrollManager';
+import SEO from '../components/SEO';
 import CertificationsProvider from '../context/CertificationsContext';
 import Article from '../pages/Article';
 import Articles from '../pages/Articles';
@@ -9,11 +10,15 @@ import Contact from '../pages/Contact';
 import Experience from '../pages/Experience';
 import Home from '../pages/Home';
 import Projects from '../pages/Projects';
+import { createHomeSeoMetadata } from '../seo/metadata';
 import Skills from '../pages/Skills';
+
+const homeSeoMetadata = createHomeSeoMetadata();
 
 function PortfolioHome() {
   return (
     <>
+      <SEO metadata={homeSeoMetadata}/>
       <Home/>
       <Bio/>
       <Skills/>

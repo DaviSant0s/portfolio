@@ -1,5 +1,10 @@
 {
+  "trailingSlash": false,
   "rewrites": [
+    {
+      "source": "/artigos/:slug",
+      "destination": "/artigos/404.html"
+    },
     {
       "source": "/(.*)",
       "destination": "/index.html"
