@@ -319,6 +319,7 @@
 
 @layer components {
   .article-content {
+    min-width: 0;
     color: var(--color-text);
     font-size: 1rem;
     line-height: 1.8;
@@ -388,28 +389,180 @@
     border-radius: 0.4rem;
     background: var(--color-surface-muted);
     padding: 0.12rem 0.38rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
     font-size: 0.9em;
   }
 
   .article-content pre {
+    max-width: 100%;
     overflow-x: auto;
     border: 1px solid var(--color-border);
     border-radius: 1rem;
     background: var(--color-surface-muted);
-    padding: 1rem;
+    padding: 1rem 1.1rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
     font-size: 0.9rem;
     line-height: 1.65;
+    tab-size: 2;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .article-content pre code {
+    display: block;
+    min-width: max-content;
+    border: 0;
+    background: transparent;
+    padding: 0;
+    font: inherit;
+  }
+
+  .article-content pre[data-language]::before {
+    display: block;
+    width: fit-content;
+    margin-bottom: 0.75rem;
+    color: var(--color-text-muted);
+    content: attr(data-language);
+    font-family: var(--font-family-sans);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  :root[data-theme='dark'] .article-content .shiki,
+  :root[data-theme='dark'] .article-content .shiki span {
+    color: var(--shiki-dark) !important;
+    background-color: var(--shiki-dark-bg) !important;
+    font-style: var(--shiki-dark-font-style) !important;
+    font-weight: var(--shiki-dark-font-weight) !important;
+    text-decoration: var(--shiki-dark-text-decoration) !important;
   }
 
   .article-content img {
+    display: block;
+    height: auto;
     width: 100%;
     border-radius: 1rem;
     border: 1px solid var(--color-border);
   }
 
+  .article-image {
+    width: 100%;
+  }
+
+  .article-content .article-image__media {
+    max-width: 100%;
+    object-fit: contain;
+    box-shadow: 0 18px 38px -30px var(--color-shadow-lg);
+  }
+
+  .article-image__caption {
+    margin-top: 0.7rem;
+    padding-inline: 0.25rem;
+    color: var(--color-text-muted);
+    font-size: 0.82rem;
+    line-height: 1.55;
+    text-align: center;
+  }
+
+  .article-two-columns {
+    display: grid;
+    width: 100%;
+    min-width: 0;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  .article-two-columns > * {
+    width: 100%;
+    min-width: 0;
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    background: var(--color-surface-muted);
+    padding: clamp(1rem, 3vw, 1.25rem);
+  }
+
+  .article-two-columns > * > * + * {
+    margin-top: 0.85rem;
+  }
+
+  .article-two-columns pre,
+  .article-two-columns img {
+    max-width: 100%;
+  }
+
+  .article-callout {
+    --article-callout-accent: var(--color-info);
+
+    display: grid;
+    min-width: 0;
+    grid-template-columns: auto minmax(0, 1fr);
+    column-gap: 0.8rem;
+    border: 1px solid var(--color-border);
+    border-left: 3px solid var(--article-callout-accent);
+    border-radius: 0.9rem;
+    background: var(--color-surface-muted);
+    padding: 1rem 1.1rem;
+    box-shadow: 0 14px 30px -28px var(--color-shadow-md);
+  }
+
+  .article-callout--warning {
+    --article-callout-accent: var(--color-warning);
+  }
+
+  .article-callout--success {
+    --article-callout-accent: var(--color-success-strong);
+  }
+
+  .article-callout__icon {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    padding-top: 0.08rem;
+    color: var(--article-callout-accent);
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  .article-callout__title {
+    grid-column: 2;
+    color: var(--color-text-strong);
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+
+  .article-callout__content {
+    min-width: 0;
+    grid-column: 2;
+    color: var(--color-text);
+    font-size: 0.94rem;
+    line-height: 1.7;
+  }
+
+  .article-callout__title + .article-callout__content {
+    margin-top: 0.25rem;
+  }
+
+  .article-callout__content > * + * {
+    margin-top: 0.75rem;
+  }
+
   @media (min-width: 790px) {
     .article-content {
       font-size: 1.06rem;
+    }
+
+    .article-two-columns--50-50 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .article-two-columns--60-40 {
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    }
+
+    .article-two-columns--40-60 {
+      grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
     }
   }
 }

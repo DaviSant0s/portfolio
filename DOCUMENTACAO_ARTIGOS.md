@@ -45,6 +45,7 @@ Não foi feita uma reestruturação geral. A composição visual da Home e os co
 ### Dependências de desenvolvimento e compilação
 
 - `@mdx-js/rollup`: compila arquivos `.mdx` por meio do Vite/Rollup.
+- `@shikijs/rehype`: aplica syntax highlighting aos blocos de código durante a compilação MDX.
 - `remark-frontmatter`: reconhece blocos YAML de frontmatter nos arquivos MDX.
 - `remark-mdx-frontmatter`: transforma os metadados do frontmatter em um export utilizável pelo React.
 
@@ -60,13 +61,21 @@ O arquivo `vite.config.js` foi atualizado para:
 2. Reconhecer arquivos `.md` e `.mdx` junto com `.js` e `.jsx`.
 3. Processar frontmatter YAML.
 4. Exportar os metadados de cada artigo pelo nome `frontmatter`.
-5. Preservar a configuração existente de Tailwind CSS e dos chunks manuais do build.
+5. Aplicar syntax highlighting com temas GitHub claro e escuro por meio do Shiki.
+6. Adicionar automaticamente o nome da linguagem ao bloco de código.
+7. Preservar a configuração existente de Tailwind CSS e dos chunks manuais do build.
 
 Configuração conceitual aplicada:
 
 ```js
 mdx({
   remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter],
+  rehypePlugins: [[rehypeShiki, {
+    themes: {
+      light: 'github-light',
+      dark: 'github-dark',
+    },
+  }]],
 })
 ```
 
@@ -74,6 +83,8 @@ Com isso, um arquivo MDX exporta simultaneamente:
 
 - o componente React que representa seu conteúdo;
 - o objeto `frontmatter` com seus metadados.
+
+O highlighting é feito na transformação do MDX. O navegador recebe apenas a marcação já tokenizada e os estilos necessários, sem executar uma biblioteca para analisar o código.
 
 ## 5. Estrutura de rotas
 
@@ -307,7 +318,7 @@ A solução é genérica. Não existem componentes específicos como `ArtigoJWT.
 
 Quando o slug não existe, a própria rota de artigo mostra uma tela de erro 404 com link para a listagem. Caminhos que não correspondem a nenhuma rota configurada são redirecionados para `/`.
 
-## 13. Suporte futuro a componentes React no MDX
+## 13. Registro global de componentes React no MDX
 
 Foi criado:
 
@@ -315,10 +326,18 @@ Foi criado:
 src/content/articles/mdxComponents.js
 ```
 
-Ele exporta atualmente um objeto vazio:
+Ele importa e registra os componentes compartilhados:
 
 ```js
-export const mdxComponents = {};
+import ArticleImage from '../../components/ArticleImage';
+import Callout from '../../components/Callout';
+import TwoColumns from '../../components/TwoColumns';
+
+export const mdxComponents = {
+  ArticleImage,
+  Callout,
+  TwoColumns,
+};
 ```
 
 Esse objeto é passado para todo conteúdo MDX:
@@ -327,25 +346,30 @@ Esse objeto é passado para todo conteúdo MDX:
 <Content components={mdxComponents}/>
 ```
 
-No futuro, componentes compartilhados poderão ser registrados nele:
-
-```js
-import ArticleImage from '../../components/ArticleImage';
-import TwoColumns from '../../components/TwoColumns';
-
-export const mdxComponents = {
-  ArticleImage,
-  TwoColumns,
-};
-```
-
-Depois disso, poderão ser usados diretamente dentro dos artigos:
+Como o registro é centralizado, esses componentes podem ser utilizados diretamente em qualquer `.mdx`, sem imports locais:
 
 ```mdx
-<TwoColumns>
-  Conteúdo das colunas.
+<ArticleImage
+  src="/images/articles/diagrama.png"
+  alt="Descrição do diagrama"
+  caption="Legenda opcional."
+/>
+
+<TwoColumns ratio="60-40">
+  <div>Conteúdo principal.</div>
+  <div>Conteúdo de apoio.</div>
 </TwoColumns>
+
+<Callout type="warning" title="Atenção">
+  Conteúdo do aviso.
+</Callout>
 ```
+
+`ArticleImage` usa `figure`, `img` e `figcaption`, aceita legenda opcional, carrega a imagem de forma lazy e preserva sua proporção.
+
+`TwoColumns` usa CSS Grid, empilha o conteúdo no mobile e aceita somente `50-50`, `60-40` e `40-60`. Valores ausentes ou desconhecidos usam `50-50`.
+
+`Callout` usa uma estrutura semântica com `role="note"`, título opcional e os tipos `info`, `warning` e `success`. O tipo padrão é `info`; valores desconhecidos também usam esse fallback.
 
 ## 14. Estilos do conteúdo MDX
 
@@ -360,15 +384,18 @@ Foram adicionados estilos para:
 - itens de lista;
 - citações com `blockquote`;
 - código inline;
-- blocos de código com rolagem horizontal;
+- blocos de código com syntax highlighting, rótulo de linguagem e rolagem horizontal interna;
 - imagens responsivas;
+- `ArticleImage` e suas legendas;
+- grades responsivas do `TwoColumns`;
+- variações discretas do `Callout`;
 - ajuste de tamanho de texto em telas maiores.
 
 Os estilos usam as variáveis de cor e superfície já existentes. Não foram alteradas as cores globais nem as famílias tipográficas do portfólio.
 
 ## 15. Primeiro artigo de validação
 
-Foi criado somente um artigo curto e temporário:
+O artigo temporário foi transformado em um playground de validação:
 
 ```text
 src/content/articles/primeiro-artigo.mdx
@@ -380,13 +407,14 @@ Ele fica disponível em:
 /artigos/primeiro-artigo
 ```
 
-Seu objetivo é apenas confirmar:
+Ele continua explicitamente identificado como conteúdo temporário de desenvolvimento e demonstra:
 
-- leitura do frontmatter;
-- descoberta automática;
-- criação da URL por slug;
-- renderização de Markdown;
-- suporte a formatação MDX.
+- títulos `h2` e `h3`;
+- parágrafos, negrito, link, lista e código inline;
+- callouts `info`, `warning`, `success` e um callout sem título;
+- colunas `50-50` e `60-40`;
+- imagem local com legenda;
+- blocos JavaScript, Python e JSON com syntax highlighting.
 
 Nenhum artigo técnico completo foi escrito nesta etapa.
 
@@ -448,15 +476,45 @@ Recomendações:
 - mantenha `tags` como uma lista YAML;
 - não repita o título principal no corpo se não quiser dois títulos visuais, pois a página individual já renderiza o `title` do frontmatter como `h1`.
 
+Imagens dos artigos devem ser salvas em:
+
+```text
+public/images/articles/
+```
+
+E referenciadas a partir da raiz pública:
+
+```mdx
+<ArticleImage
+  src="/images/articles/minha-imagem.png"
+  alt="Descrição acessível da imagem"
+  caption="Legenda opcional."
+/>
+```
+
+Blocos de código recebem highlighting a partir do identificador informado depois das crases:
+
+````md
+```typescript
+const published = true
+```
+````
+
+As linguagens suportadas pelo Shiki incluem JavaScript, TypeScript, JSX, TSX, Python, JSON, Bash, SQL, CSS e HTML.
+
 ## 18. Arquivos criados
 
 - `src/components/RouteScrollManager/index.jsx`
+- `src/components/ArticleImage/index.jsx`
+- `src/components/Callout/index.jsx`
+- `src/components/TwoColumns/index.jsx`
 - `src/content/articles/index.js`
 - `src/content/articles/mdxComponents.js`
 - `src/content/articles/primeiro-artigo.mdx`
 - `src/pages/Article/index.jsx`
 - `src/pages/Articles/index.jsx`
 - `src/routes/index.jsx`
+- `public/images/articles/mdx-playground-placeholder.svg`
 - `vercel.json`
 - `DOCUMENTACAO_ARTIGOS.md`
 
@@ -464,14 +522,17 @@ Recomendações:
 
 - `package.json`: registro das novas dependências.
 - `package-lock.json`: atualização da árvore de dependências.
-- `vite.config.js`: compilação MDX e leitura de frontmatter.
+- `vite.config.js`: compilação MDX, leitura de frontmatter, syntax highlighting e rótulos de linguagem.
 - `src/main.jsx`: inclusão do `BrowserRouter`.
 - `src/App.jsx`: integração de rotas ao layout global e posterior extração para `AppRoutes`.
 - `src/data/navigationSections.js`: hashes das seções e item `Artigos`.
 - `src/components/NavHeader/index.jsx`: navegação híbrida entre scroll e rotas no desktop.
 - `src/components/NavHeaderSideBar/index.jsx`: navegação híbrida no menu mobile.
 - `src/components/Footer/index.jsx`: navegação funcional tanto na Home quanto nas páginas de artigos.
-- `src/index.css`: apresentação tipográfica do conteúdo MDX.
+- `src/content/articles/mdxComponents.js`: registro global de `ArticleImage`, `TwoColumns` e `Callout`.
+- `src/content/articles/primeiro-artigo.mdx`: playground temporário de todos os recursos desta etapa.
+- `src/index.css`: apresentação tipográfica, componentes MDX e blocos Shiki responsivos.
+- `DOCUMENTACAO_ARTIGOS.md`: atualização da documentação para refletir a segunda etapa.
 
 ## 20. Validações realizadas
 
@@ -489,7 +550,7 @@ Resultados:
 
 - lint aprovado sem warnings ou erros;
 - build de produção aprovado;
-- 748 módulos transformados após a separação final das rotas;
+- 751 módulos transformados no build após a inclusão do highlighting;
 - nenhum problema de whitespace detectado no diff.
 
 ### Rotas e renderização
@@ -502,6 +563,14 @@ Foram validados em servidor local:
 - título da página individual;
 - exibição do card do primeiro artigo;
 - renderização do conteúdo MDX;
+- registro global dos três componentes, sem imports no artigo;
+- quatro callouts renderizados com semântica e variações visuais;
+- `TwoColumns` em duas colunas no desktop/notebook e empilhado no tablet/smartphone;
+- imagem com `figure`, `figcaption`, carregamento local e proporção preservada;
+- três blocos Shiki com rótulos JavaScript, Python e JSON;
+- alternância real das cores dos tokens entre tema claro e escuro;
+- overflow horizontal restrito ao bloco de código;
+- ausência de overflow horizontal da página nas larguras de 1440, 1024, 768 e 390 pixels;
 - ausência de erros no console do navegador.
 
 ### Navegação
@@ -541,6 +610,10 @@ A formatação usa UTC para impedir que uma data editorial mude para o dia anter
 
 Toda a configuração foi retirada do `App.jsx` e colocada em `src/routes/index.jsx`, mantendo o arquivo principal focado no layout e nos recursos globais.
 
+### Syntax highlighting no build
+
+Foi escolhido `@shikijs/rehype`, integração oficial do Shiki com Rehype. A transformação ocorre durante o build do MDX, usa os temas `github-light` e `github-dark` e não depende de uma biblioteca executada no navegador. Um transformer pequeno adiciona o rótulo da linguagem ao `<pre>` sem outra dependência.
+
 ## 22. Commits relacionados
 
 As mudanças foram registradas nos seguintes commits:
@@ -549,4 +622,3 @@ As mudanças foram registradas nos seguintes commits:
 a3ed605 feat: adiciona área de artigos técnicos com suporte a MDX
 5265530 refactor: centraliza configuração de rotas
 ```
-
