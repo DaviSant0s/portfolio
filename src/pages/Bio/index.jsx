@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import profileLight from '../../assets/profile/davi-profile-light.jpg';
 import ScrollReveal from '../../components/ScrollReveal';
 import SectionBackdrop from '../../components/SectionBackdrop';
@@ -116,7 +117,7 @@ export default function Bio() {
               ))}
             </ScrollReveal>
 
-            <ScrollReveal delay={0.34} amount={0.2} className='mt-6'>
+            <ScrollReveal delay={0.34} amount={0.2} className='mt-6 flex flex-wrap gap-3'>
               <a
                 href={resumeFileUrl}
                 target='_blank'
@@ -128,6 +129,16 @@ export default function Bio() {
                   south_east
                 </span>
               </a>
+
+              <Link
+                to='/artigos'
+                className='inline-flex h-11 items-center gap-2 rounded-full border border-outline/70 bg-panel/82 px-5 text-[0.94rem] font-semibold tracking-[-0.02em] text-copy-strong shadow-[0_18px_34px_-26px_var(--color-shadow-md)] backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-copy-soft hover:bg-panel-strong focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-primary-soft'
+              >
+                <span className='material-symbols-outlined text-[1.05rem] leading-none text-copy-muted' aria-hidden='true'>
+                  article
+                </span>
+                <span>Ler artigos</span>
+              </Link>
             </ScrollReveal>
           </div>
         </div>
