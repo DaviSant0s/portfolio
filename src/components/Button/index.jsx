@@ -26,7 +26,7 @@ export default function Button({
     >
       <span className='flex h-full w-full items-center justify-center gap-[5px]'>
         <span
-          className={`material-icons text-[1.28em] text-copy-strong transition-colors group-hover/button:text-primary ${iconClassName}`.trim()}
+          className={`material-symbols-outlined text-[1.28em] text-copy-strong transition-colors group-hover/button:text-primary ${iconClassName}`.trim()}
           aria-hidden='true'
         >
           {icon}

@@ -25,7 +25,7 @@ const tailwindStack = { simpleIcon: siTailwindcss, label: 'Tailwind CSS' };
 const deepLearningStack = { simpleIcon: siTensorflow, label: 'Deep Learning' };
 const lstmStack = { simpleIcon: siKeras, label: 'LSTM' };
 const timeSeriesStack = {
-  iconClass: 'bx bx-line-chart',
+  iconName: 'bx-line-chart',
   iconColor: '#7FC8FF',
   label: 'Séries temporais',
 };

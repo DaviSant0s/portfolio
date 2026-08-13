@@ -25,13 +25,13 @@ export default function DarkModeBtn() {
       >
         <span
           aria-hidden='true'
-          className='pointer-events-none material-icons absolute left-[10px] top-1/2 -translate-y-1/2 select-none text-[0.95rem] leading-none text-[var(--color-toggle-icon-sun)] opacity-[0.78]'
+          className='pointer-events-none material-symbols-outlined absolute left-[10px] top-1/2 -translate-y-1/2 select-none text-[0.95rem] leading-none text-[var(--color-toggle-icon-sun)] opacity-[0.78]'
         >
           light_mode
         </span>
         <span
           aria-hidden='true'
-          className='pointer-events-none material-icons absolute right-[10px] top-1/2 -translate-y-1/2 select-none text-[0.95rem] leading-none text-[var(--color-toggle-icon-moon)] opacity-[0.78]'
+          className='pointer-events-none material-symbols-outlined absolute right-[10px] top-1/2 -translate-y-1/2 select-none text-[0.95rem] leading-none text-[var(--color-toggle-icon-moon)] opacity-[0.78]'
         >
           dark_mode
         </span>
@@ -49,7 +49,7 @@ export default function DarkModeBtn() {
               animate={prefersReducedMotion ? { opacity: 1 } : { rotate: 0, opacity: 1, scale: 1 }}
               exit={prefersReducedMotion ? { opacity: 0 } : { rotate: 90, opacity: 0, scale: 0.6 }}
               transition={iconTransition}
-              className={`material-icons flex size-full select-none items-center justify-center rounded-full text-base ${isDarkMode ? 'text-[var(--color-toggle-icon-moon)]' : 'text-[var(--color-toggle-icon-sun)]'}`}
+              className={`material-symbols-outlined flex size-full select-none items-center justify-center rounded-full text-base ${isDarkMode ? 'text-[var(--color-toggle-icon-moon)]' : 'text-[var(--color-toggle-icon-sun)]'}`}
             >
               {isDarkMode ? 'dark_mode' : 'light_mode'}
             </m.span>

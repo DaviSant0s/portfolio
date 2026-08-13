@@ -57,7 +57,7 @@ export default function ProjectDetailsModal({
               className='inline-flex h-10 w-10 items-center justify-center rounded-full border border-outline/70 bg-panel/92 text-copy-strong shadow-[0_16px_30px_-22px_var(--color-shadow-md)] transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-copy-soft hover:bg-panel focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-primary-soft'
               aria-label='Fechar detalhes do projeto'
             >
-              <span className='material-icons text-[1.12rem]' aria-hidden='true'>close</span>
+              <span className='material-symbols-outlined text-[1.12rem]' aria-hidden='true'>close</span>
             </button>
           </Dialog.Close>
         </div>
@@ -90,7 +90,7 @@ export default function ProjectDetailsModal({
                   rel='noreferrer'
                 >
                   <span>{projectLink.label}</span>
-                  <span className='material-icons text-[1rem]' aria-hidden='true'>
+                  <span className='material-symbols-outlined text-[1rem]' aria-hidden='true'>
                     arrow_outward
                   </span>
                 </a>

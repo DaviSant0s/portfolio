@@ -1,4 +1,5 @@
 import { useHeader } from '../../context/HeaderContext';
+import BoxIcon from '../BoxIcon';
 
 export default function FloatingButtons() {
   const { activeSection } = useHeader();
@@ -16,7 +17,7 @@ export default function FloatingButtons() {
         aria-label='Abrir LinkedIn de Davi Santos'
         className='inline-flex rounded-sm focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-primary-soft'
       >
-        <i className='bx bxl-linkedin text-[2rem] text-social-linkedin transition-transform duration-200 ease-in-out hover:scale-110' aria-hidden='true'/>
+        <BoxIcon name='bxl-linkedin' className='text-[2rem] text-social-linkedin transition-transform duration-200 ease-in-out hover:scale-110' />
       </a>
       <a
         href="https://api.whatsapp.com/send/?phone=53999322366&text=Ol%C3%A1%2C%20tudo%20bem%20?"
@@ -25,7 +26,7 @@ export default function FloatingButtons() {
         aria-label='Abrir conversa no WhatsApp'
         className='inline-flex rounded-sm focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-primary-soft'
       >
-        <i className='bx bxl-whatsapp text-[2rem] text-social-whatsapp transition-transform duration-200 ease-in-out hover:scale-110' aria-hidden='true'/>
+        <BoxIcon name='bxl-whatsapp' className='text-[2rem] text-social-whatsapp transition-transform duration-200 ease-in-out hover:scale-110' />
       </a>
       <a
         href="https://github.com/DaviSant0s"
@@ -34,7 +35,7 @@ export default function FloatingButtons() {
         aria-label='Abrir GitHub de Davi Santos'
         className='inline-flex rounded-sm focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-primary-soft'
       >
-        <i className='bx bxl-github text-[2rem] text-[var(--color-icon-contrast)] opacity-80 transition-transform duration-200 ease-in-out hover:scale-110' aria-hidden='true'/>
+        <BoxIcon name='bxl-github' className='text-[2rem] text-[var(--color-icon-contrast)] opacity-80 transition-transform duration-200 ease-in-out hover:scale-110' />
       </a>
     </div>
   )

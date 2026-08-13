@@ -1,4 +1,5 @@
 import { useTheme } from '../../context/ThemeContext';
+import BoxIcon from '../BoxIcon';
 
 function isSimpleIcon(icon) {
   return Boolean(icon && typeof icon === 'object' && typeof icon.path === 'string');
@@ -24,7 +25,7 @@ export default function SkillsCard({
 
   const iconClassName = isSimpleIcon(icon)
     ? 'h-[1.55rem] w-[1.55rem] select-none transition-transform duration-300 ease-out group-hover:-translate-y-0.5 group-hover:scale-105 min-[500px]:h-[1.68rem] min-[500px]:w-[1.68rem]'
-    : `bx ${icon} text-[1.5rem] select-none transition-transform duration-300 ease-out group-hover:-translate-y-0.5 group-hover:scale-105 min-[500px]:text-[1.62rem]`;
+    : 'text-[1.5rem] select-none transition-transform duration-300 ease-out group-hover:-translate-y-0.5 group-hover:scale-105 min-[500px]:text-[1.62rem]';
   const resolvedIconClassName = iconClassName;
 
   return (
@@ -41,10 +42,10 @@ export default function SkillsCard({
               <path d={icon.path} fill='currentColor' />
             </svg>
           ) : (
-            <i
+            <BoxIcon
+              name={icon}
               className={resolvedIconClassName}
               style={iconStyle}
-              aria-hidden='true'
             />
           )}
         </div>

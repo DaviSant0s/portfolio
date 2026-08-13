@@ -1,4 +1,5 @@
 import { Link } from 'react-scroll';
+import BoxIcon from '../BoxIcon';
 
 const socialLinks = [
   {
@@ -37,8 +38,8 @@ export default function SocialsGroup({ variant = 'default' }) {
     ? 'group/social inline-flex size-10 items-center justify-center rounded-full border border-outline/70 bg-panel/82 shadow-[0_12px_24px_-20px_var(--color-shadow-md)] backdrop-blur-sm transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-copy-soft hover:bg-panel focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-primary-soft min-[500px]:size-11'
     : 'group/social inline-flex size-10 items-center justify-center rounded-full border border-transparent bg-transparent transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-outline hover:bg-panel hover:shadow-soft focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-primary-soft min-[500px]:size-11';
   const iconBaseClassName = isMinimal
-    ? 'bx text-[1.5rem] text-[var(--color-icon-default)] transition-colors duration-200 ease-out min-[500px]:text-[1.65rem]'
-    : 'bx text-[1.85rem] text-[var(--color-icon-default)] transition-colors duration-200 ease-out min-[500px]:text-[2rem]';
+    ? 'text-[1.5rem] text-[var(--color-icon-default)] transition-colors duration-200 ease-out min-[500px]:text-[1.65rem]'
+    : 'text-[1.85rem] text-[var(--color-icon-default)] transition-colors duration-200 ease-out min-[500px]:text-[2rem]';
   const containerClassName = isMinimal
     ? 'mt-4 flex w-full flex-wrap items-center justify-center gap-2.5 min-[500px]:mt-5 min-[500px]:w-fit min-[500px]:gap-3'
     : 'mt-1.5 flex w-full max-w-[18.75rem] items-center justify-between gap-2 rounded-full border border-outline bg-panel-muted/95 px-3 py-1.5 shadow-[0_14px_30px_-22px_var(--color-shadow-md)] backdrop-blur-sm transition-transform duration-300 ease-out hover:scale-[1.03] min-[500px]:mt-2.5 min-[500px]:w-fit min-[500px]:max-w-none min-[500px]:justify-around min-[500px]:gap-3 min-[500px]:px-4 min-[500px]:py-2';
@@ -46,7 +47,7 @@ export default function SocialsGroup({ variant = 'default' }) {
   return (
     <div className={containerClassName}>
       {socialLinks.map((item) => {
-        const iconClassName = `${iconBaseClassName} ${item.icon} ${item.hoverClassName}`;
+        const iconClassName = `${iconBaseClassName} ${item.hoverClassName}`;
 
         if (item.type === 'external') {
           return (
@@ -58,7 +59,7 @@ export default function SocialsGroup({ variant = 'default' }) {
               aria-label={item.label}
               className={itemClassName}
             >
-              <i className={iconClassName} aria-hidden='true'/>
+              <BoxIcon name={item.icon} className={iconClassName} />
             </a>
           );
         }
@@ -74,7 +75,7 @@ export default function SocialsGroup({ variant = 'default' }) {
             aria-label={item.label}
             className={itemClassName}
           >
-            <i className={iconClassName} aria-hidden='true'/>
+            <BoxIcon name={item.icon} className={iconClassName} />
           </Link>
         );
       })}

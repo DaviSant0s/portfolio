@@ -1,3 +1,5 @@
+import BoxIcon from '../BoxIcon';
+
 function normalizeStacks(stacks = []) {
   return stacks.map((stackItem) => {
     if (typeof stackItem === 'string') {
@@ -64,11 +66,11 @@ export default function CarouselCard({
                     >
                       <path fill='currentColor' d={stack.simpleIcon.path} />
                     </svg>
-                  ) : stack.iconClass ? (
-                    <i
-                      className={`${stack.iconClass} text-[1.25rem]`}
+                  ) : stack.iconName ? (
+                    <BoxIcon
+                      name={stack.iconName}
+                      className='text-[1.25rem]'
                       style={{ color: stack.iconColor }}
-                      aria-hidden='true'
                     />
                   ) : (
                     <img

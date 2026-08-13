@@ -1,3 +1,5 @@
+import BoxIcon from '../BoxIcon';
+
 function getInstitutionInitials(institution) {
   return institution
     .split(/\s+/)
@@ -44,9 +46,9 @@ export default function CardCertification({
               alt=''
             />
           ) : icon ? (
-            <i
-              className={`${icon} text-[1.8rem] text-copy-strong ${mediaClassName}`.trim()}
-              aria-hidden='true'
+            <BoxIcon
+              name={icon}
+              className={`text-[1.8rem] text-copy-strong ${mediaClassName}`.trim()}
             />
           ) : (
             <span className='text-[0.82rem] font-semibold uppercase tracking-[0.18em] text-copy-muted' aria-hidden='true'>

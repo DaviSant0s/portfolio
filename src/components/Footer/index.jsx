@@ -1,6 +1,7 @@
 import { Link as ScrollLink } from 'react-scroll';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
 import { navigationSections } from '../../data/navigationSections';
+import BoxIcon from '../BoxIcon';
 
 const socialLinks = [
   {
@@ -46,10 +47,11 @@ export default function Footer() {
               aria-label={link.label}
               className='group inline-flex rounded-full focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-white'
             >
-              <i
-                className={`bx ${link.icon} rounded-full border border-white/10 bg-white/5 p-2.5 text-[2rem] text-white transition-all duration-300 ease-out group-hover:border-white/25 group-hover:bg-white ${link.hoverClassName}`}
-                aria-hidden='true'
-              />
+              <span
+                className={`inline-flex rounded-full border border-white/10 bg-white/5 p-2.5 text-[2rem] text-white transition-all duration-300 ease-out group-hover:border-white/25 group-hover:bg-white ${link.hoverClassName}`}
+              >
+                <BoxIcon name={link.icon} />
+              </span>
             </a>
           ))}
         </div>
