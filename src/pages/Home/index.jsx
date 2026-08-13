@@ -19,7 +19,7 @@ export default function Home() {
       <div className='pointer-events-none absolute inset-0'>
         <div className='absolute inset-0 bg-[linear-gradient(180deg,var(--color-panel)_0%,var(--color-app-alt)_100%)]' />
         <div className='absolute inset-0 opacity-45 [background-image:radial-gradient(var(--color-border-muted)_0.8px,transparent_0.8px)] [background-size:24px_24px] [mask-image:linear-gradient(180deg,rgba(0,0,0,0.82),rgba(0,0,0,0.28))]' />
-        <div className='absolute inset-y-0 left-0 w-[min(44vw,38rem)] bg-[radial-gradient(circle_at_20%_76%,rgba(251,84,78,0.12),transparent_36%),radial-gradient(circle_at_46%_24%,rgba(2,112,173,0.1),transparent_24%)]' />
+        <div className='absolute inset-y-0 left-0 w-full bg-[radial-gradient(circle_at_20%_76%,rgba(251,84,78,0.12),transparent_36%),radial-gradient(circle_at_46%_24%,rgba(2,112,173,0.1),transparent_24%)] min-[790px]:w-[min(44vw,38rem)]' />
         <AnimatedParticleBackground />
         <div className='absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,var(--color-border),transparent)] opacity-70' />
       </div>
