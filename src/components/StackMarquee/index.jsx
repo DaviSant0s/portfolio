@@ -30,11 +30,11 @@ function StackList({ copyIndex = 0 }) {
       {featuredSkills.map((skill) => (
         <li
           key={`${copyIndex}-${skill.name}`}
-          className='group/stack-name flex shrink-0 items-center gap-2.5 text-[0.88rem] font-semibold tracking-[-0.02em] text-white/52 transition-colors duration-200 hover:text-white/80 min-[500px]:text-[0.94rem]'
+          className='group/stack-name flex shrink-0 items-center gap-2.5 text-[0.88rem] font-semibold tracking-[-0.02em] text-copy-muted transition-colors duration-200 hover:text-copy-strong min-[500px]:text-[0.94rem]'
         >
           <svg
             viewBox='0 0 24 24'
-            className='size-[15px] shrink-0 text-white/38 transition-colors duration-200 group-hover/stack-name:text-white/65 min-[500px]:size-4'
+            className='size-[15px] shrink-0 text-copy-soft transition-colors duration-200 group-hover/stack-name:text-copy-muted min-[500px]:size-4'
             aria-hidden='true'
           >
             <path d={skill.icon.path} fill='currentColor' />
@@ -50,10 +50,10 @@ export default function StackMarquee() {
   return (
     <section
       aria-label='Principais tecnologias'
-      className='relative z-[1] overflow-hidden border-y border-white/[0.06] bg-[#121821] py-4 min-[500px]:py-5'
+      className='relative z-[1] overflow-hidden border-y border-outline/70 bg-panel py-4 dark:border-white/[0.06] dark:bg-[#121821] min-[500px]:py-5'
     >
-      <div className='pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_8%_30%,rgba(2,112,173,0.11),transparent_28%),radial-gradient(circle_at_92%_70%,rgba(251,84,78,0.07),transparent_26%)]' />
-      <div className='pointer-events-none absolute inset-0 opacity-[0.12] [background-image:radial-gradient(rgba(255,255,255,0.15)_0.65px,transparent_0.65px)] [background-size:22px_22px]' />
+      <div className='pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_8%_30%,rgba(2,112,173,0.07),transparent_28%),radial-gradient(circle_at_92%_70%,rgba(251,84,78,0.05),transparent_26%)] dark:bg-[radial-gradient(circle_at_8%_30%,rgba(2,112,173,0.11),transparent_28%),radial-gradient(circle_at_92%_70%,rgba(251,84,78,0.07),transparent_26%)]' />
+      <div className='pointer-events-none absolute inset-0 opacity-25 [background-image:radial-gradient(var(--color-border-muted)_0.65px,transparent_0.65px)] [background-size:22px_22px] dark:opacity-[0.16]' />
 
       <div className='stack-marquee__viewport relative z-[1] w-full'>
         <div className='stack-marquee__track'>
