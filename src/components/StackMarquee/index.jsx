@@ -50,7 +50,7 @@ export default function StackMarquee() {
   return (
     <section
       aria-label='Principais tecnologias'
-      className='relative z-[1] overflow-hidden border-y border-white/[0.06] bg-[#121821] py-5 min-[500px]:py-6'
+      className='relative z-[1] overflow-hidden border-y border-white/[0.06] bg-[#121821] py-4 min-[500px]:py-5'
     >
       <div className='pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_8%_30%,rgba(2,112,173,0.11),transparent_28%),radial-gradient(circle_at_92%_70%,rgba(251,84,78,0.07),transparent_26%)]' />
       <div className='pointer-events-none absolute inset-0 opacity-[0.12] [background-image:radial-gradient(rgba(255,255,255,0.15)_0.65px,transparent_0.65px)] [background-size:22px_22px]' />
