@@ -41,12 +41,15 @@ export default function CardCertification({
             <img
               className={`max-h-full max-w-full object-contain ${mediaClassName}`.trim()}
               src={img}
-              alt={`Instituição ${institution}`}
+              alt=''
             />
           ) : icon ? (
-            <i className={`${icon} text-[1.8rem] text-copy-strong ${mediaClassName}`.trim()} />
+            <i
+              className={`${icon} text-[1.8rem] text-copy-strong ${mediaClassName}`.trim()}
+              aria-hidden='true'
+            />
           ) : (
-            <span className='text-[0.82rem] font-semibold uppercase tracking-[0.18em] text-copy-muted'>
+            <span className='text-[0.82rem] font-semibold uppercase tracking-[0.18em] text-copy-muted' aria-hidden='true'>
               {getInstitutionInitials(institution)}
             </span>
           )}
@@ -57,9 +60,10 @@ export default function CardCertification({
             <span
               className='inline-flex size-8 items-center justify-center rounded-full border border-outline/70 bg-panel/82 text-copy-soft shadow-[0_10px_20px_-22px_var(--color-shadow-md)]'
               title='Certificação em destaque'
+              role='img'
               aria-label='Certificação em destaque'
             >
-              <span className="material-symbols-outlined text-[0.95rem] leading-none [font-variation-settings:'FILL'_0,'wght'_500,'GRAD'_0,'opsz'_24]">
+              <span className="material-symbols-outlined text-[0.95rem] leading-none [font-variation-settings:'FILL'_0,'wght'_500,'GRAD'_0,'opsz'_24]" aria-hidden='true'>
                 {featuredIcon}
               </span>
             </span>
@@ -113,6 +117,7 @@ export default function CardCertification({
             target='_blank'
             rel='noreferrer'
             href={link_institution}
+            aria-label={`Ver certificado: ${name}`}
           >
             <span>Ver certificado</span>
             <span aria-hidden='true' className='text-[0.92rem]'>↗</span>

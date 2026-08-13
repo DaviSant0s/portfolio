@@ -35,7 +35,7 @@ export default function Logo({ sideBar=false }) {
               aria-label="Abrir menu de navegacao"
               className={menuButtonClassName}
             >
-              <span className="material-symbols-outlined">menu</span>
+              <span className="material-symbols-outlined" aria-hidden='true'>menu</span>
             </button>
           </Dialog.Trigger>
         }
@@ -48,7 +48,7 @@ export default function Logo({ sideBar=false }) {
               aria-label="Fechar menu de navegacao"
               className={menuButtonClassName}
             >
-              <span className="material-symbols-outlined">close</span>
+              <span className="material-symbols-outlined" aria-hidden='true'>close</span>
             </button>
           </Dialog.Close>
         }

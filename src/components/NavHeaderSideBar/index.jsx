@@ -38,7 +38,7 @@ export default function NavHeaderSideBar() {
   }
 
   return (
-    <nav className='flex w-full shrink-0 flex-col gap-2 px-[14px] pt-[18px] pb-2'>
+    <nav aria-label='Navegação do menu' className='flex w-full shrink-0 flex-col gap-2 px-[14px] pt-[18px] pb-2'>
       {navigationSections.map((item) => {
         const isRouteLink = Boolean(item.path);
         const isActive = isRouteLink
@@ -57,11 +57,11 @@ export default function NavHeaderSideBar() {
             whileHover='hovered'
             whileTap={{ x: 0 }}
             transition={{ duration: 0.18 }}
-            onClick={() => handleClickCloseSideBar(item.section)}
           >
             {isActive &&
               <m.span
                 layoutId='sidebar-nav-indicator'
+                aria-hidden='true'
                 className='bg-accent-surface-gradient shadow-surface-glint absolute inset-0 -z-10 rounded-2xl border border-primary-soft'
                 transition={indicatorTransition}
               />
@@ -70,6 +70,7 @@ export default function NavHeaderSideBar() {
               className="material-symbols-outlined relative z-[1] text-[1.32rem] min-[500px]:text-[1.45rem]"
               variants={iconVariants}
               initial={false}
+              aria-hidden='true'
             >
               {item.icon}
             </m.span>
@@ -90,7 +91,9 @@ export default function NavHeaderSideBar() {
             <RouterLink
               key={item.section}
               to={destination}
-              className='block w-full outline-none'
+              className='block w-full focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-[-3px] focus-visible:outline-primary-soft'
+              aria-current={isActive ? (isRouteLink ? 'page' : 'location') : undefined}
+              onClick={() => handleClickCloseSideBar(item.section)}
             >
               {content}
             </RouterLink>
@@ -103,7 +106,10 @@ export default function NavHeaderSideBar() {
             to={item.to}
             smooth={true}
             offset={item.offset}
-            className='block w-full outline-none'
+            href={`/#${item.hash}`}
+            className='block w-full focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-[-3px] focus-visible:outline-primary-soft'
+            aria-current={isActive ? 'location' : undefined}
+            onClick={() => handleClickCloseSideBar(item.section)}
             {...linkProps}
           >
             {content}

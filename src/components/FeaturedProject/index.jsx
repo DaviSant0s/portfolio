@@ -66,7 +66,7 @@ export default function FeaturedProject() {
                 className='inline-flex h-11 items-center justify-center gap-2 rounded-full bg-[#15181d] px-5 text-[0.95rem] font-semibold tracking-[-0.02em] text-white shadow-[0_18px_34px_-24px_rgba(21,24,29,0.52)] transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-[#0f1115] focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-primary-soft dark:bg-white dark:text-[#12161d] dark:shadow-[0_18px_34px_-24px_rgba(0,0,0,0.34)] dark:hover:bg-[#f4f7fa]'
               >
                 <span>Abrir projeto</span>
-                <span className='material-symbols-outlined text-[1rem] leading-none'>
+                <span className='material-symbols-outlined text-[1rem] leading-none' aria-hidden='true'>
                   north_east
                 </span>
               </a>

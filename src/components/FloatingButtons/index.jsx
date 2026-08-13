@@ -14,27 +14,27 @@ export default function FloatingButtons() {
         target='_blank'
         rel='noreferrer'
         aria-label='Abrir LinkedIn de Davi Santos'
-        className='inline-flex'
+        className='inline-flex rounded-sm focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-primary-soft'
       >
-        <i className='bx bxl-linkedin text-[2rem] text-social-linkedin transition-transform duration-200 ease-in-out hover:scale-110' />
+        <i className='bx bxl-linkedin text-[2rem] text-social-linkedin transition-transform duration-200 ease-in-out hover:scale-110' aria-hidden='true'/>
       </a>
       <a
         href="https://api.whatsapp.com/send/?phone=53999322366&text=Ol%C3%A1%2C%20tudo%20bem%20?"
         target='_blank'
         rel='noreferrer'
         aria-label='Abrir conversa no WhatsApp'
-        className='inline-flex'
+        className='inline-flex rounded-sm focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-primary-soft'
       >
-        <i className='bx bxl-whatsapp text-[2rem] text-social-whatsapp transition-transform duration-200 ease-in-out hover:scale-110' />
+        <i className='bx bxl-whatsapp text-[2rem] text-social-whatsapp transition-transform duration-200 ease-in-out hover:scale-110' aria-hidden='true'/>
       </a>
       <a
         href="https://github.com/DaviSant0s"
         target='_blank'
         rel='noreferrer'
         aria-label='Abrir GitHub de Davi Santos'
-        className='inline-flex'
+        className='inline-flex rounded-sm focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-primary-soft'
       >
-        <i className='bx bxl-github text-[2rem] text-[var(--color-icon-contrast)] opacity-80 transition-transform duration-200 ease-in-out hover:scale-110' />
+        <i className='bx bxl-github text-[2rem] text-[var(--color-icon-contrast)] opacity-80 transition-transform duration-200 ease-in-out hover:scale-110' aria-hidden='true'/>
       </a>
     </div>
   )

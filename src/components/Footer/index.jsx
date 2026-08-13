@@ -44,18 +44,19 @@ export default function Footer() {
               target='_blank'
               rel='noreferrer'
               aria-label={link.label}
-              className='group inline-flex'
+              className='group inline-flex rounded-full focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-white'
             >
               <i
                 className={`bx ${link.icon} rounded-full border border-white/10 bg-white/5 p-2.5 text-[2rem] text-white transition-all duration-300 ease-out group-hover:border-white/25 group-hover:bg-white ${link.hoverClassName}`}
+                aria-hidden='true'
               />
             </a>
           ))}
         </div>
 
-        <nav className='flex flex-col items-center gap-3 text-center min-[641px]:flex-row min-[641px]:flex-wrap min-[641px]:justify-center min-[641px]:gap-[15px]'>
+        <nav aria-label='Navegação do rodapé' className='flex flex-col items-center gap-3 text-center min-[641px]:flex-row min-[641px]:flex-wrap min-[641px]:justify-center min-[641px]:gap-[15px]'>
           {navigationSections.map((item) => {
-            const className = 'text-[1.02rem] font-medium text-white/72 transition-colors duration-150 ease-in hover:text-white';
+            const className = 'text-[1.02rem] font-medium text-white/72 transition-colors duration-150 ease-in hover:text-white focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-white';
 
             if (item.path || pathname !== '/') {
               return (
@@ -76,6 +77,7 @@ export default function Footer() {
                 smooth={true}
                 offset={item.offset}
                 duration={item.duration ?? 700}
+                href={`/#${item.hash}`}
                 className={className}
               >
                 {item.label}

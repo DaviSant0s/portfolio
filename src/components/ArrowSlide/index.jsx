@@ -18,7 +18,7 @@ export default function ArrowSlide({ direction='right', func_handle, disabled=fa
       className={buttonClassName}
       disabled={disabled}
     >
-      <span className="material-symbols-outlined text-inherit leading-none">{icon}</span>
+      <span className="material-symbols-outlined text-inherit leading-none" aria-hidden='true'>{icon}</span>
     </button>
   )
 }

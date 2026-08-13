@@ -52,7 +52,7 @@ export default function Header() {
                   onClick={toggleTheme}
                   className='inline-flex size-10 items-center justify-center rounded-full border border-outline/70 bg-panel/86 text-copy shadow-[0_10px_24px_-20px_var(--color-shadow-md)] transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-copy-soft hover:text-copy-strong focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-primary-soft min-[1200px]:size-11'
                 >
-                  <span className='material-symbols-outlined text-[1.1rem] leading-none'>
+                  <span className='material-symbols-outlined text-[1.1rem] leading-none' aria-hidden='true'>
                     {isDarkMode ? 'light_mode' : 'dark_mode'}
                   </span>
                 </button>
@@ -67,7 +67,7 @@ export default function Header() {
                   rel='noreferrer'
                 >
                   <span>Currículo</span>
-                  <span className='material-symbols-outlined text-[1.05rem] leading-none'>
+                  <span className='material-symbols-outlined text-[1.05rem] leading-none' aria-hidden='true'>
                     south_east
                   </span>
                 </a>

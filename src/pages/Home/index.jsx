@@ -11,9 +11,10 @@ export default function Home() {
   const secondaryCtaClassName = 'inline-flex h-12 items-center justify-center rounded-full border border-outline/70 bg-panel/82 px-6 text-[0.98rem] font-semibold tracking-[-0.02em] text-copy-strong shadow-[0_18px_34px_-26px_var(--color-shadow-md)] backdrop-blur-sm transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-copy-soft hover:bg-panel focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-primary-soft';
 
   return (
-    <div
+    <section
       ref={ref}
       id='id_home'
+      aria-labelledby='id_title_home'
       className='relative flex min-h-screen justify-center overflow-hidden bg-panel pt-[calc(var(--heightHeaderScroll)+var(--noticeHeight))]'
     >
       <div className='pointer-events-none absolute inset-0'>
@@ -35,6 +36,7 @@ export default function Home() {
 
         <ScrollReveal
           as='h1'
+          id='id_title_home'
           delay={0.06}
           amount={0.34}
           className='mt-5 max-w-[10.2ch] select-none text-balance text-[clamp(2.05rem,9.8vw,5.2rem)] font-semibold leading-[0.96] tracking-[-0.06em] text-copy-strong min-[500px]:mt-8 min-[500px]:max-w-[10.8ch] min-[500px]:text-[clamp(2.65rem,8.2vw,5.2rem)] min-[790px]:max-w-[13.2ch] min-[790px]:text-[clamp(3.45rem,6.8vw,5.2rem)]'
@@ -63,7 +65,7 @@ export default function Home() {
             className={primaryCtaClassName}
           >
             <span>Ver currículo</span>
-            <span className='material-symbols-outlined text-[1.05rem] leading-none'>
+            <span className='material-symbols-outlined text-[1.05rem] leading-none' aria-hidden='true'>
               south_east
             </span>
           </a>
@@ -73,6 +75,7 @@ export default function Home() {
             smooth={true}
             offset={-79}
             duration={700}
+            href='/#projetos'
             className={secondaryCtaClassName}
           >
             Explorar projetos
@@ -83,6 +86,6 @@ export default function Home() {
           <SocialsGroup variant='minimal' />
         </ScrollReveal>
       </div>
-    </div>
+    </section>
   );
 }

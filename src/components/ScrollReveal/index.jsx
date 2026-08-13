@@ -8,6 +8,7 @@ const motionComponents = {
   aside: m.aside,
   button: m.button,
   div: m.div,
+  dl: m.dl,
   form: m.form,
   h1: m.h1,
   h2: m.h2,

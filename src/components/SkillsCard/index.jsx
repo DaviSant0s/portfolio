@@ -33,7 +33,6 @@ export default function SkillsCard({
         <div className={`flex size-[44px] select-none items-center justify-center rounded-[18px] border border-outline/60 bg-panel/90 shadow-[0_10px_18px_-16px_var(--color-shadow-md)] transition-all duration-300 ease-out group-hover:-translate-y-0.5 group-hover:border-primary-soft min-[500px]:size-[48px] ${iconBackgroundClassName}`.trim()}>
           {isSimpleIcon(icon) ? (
             <svg
-              role='img'
               aria-hidden='true'
               viewBox='0 0 24 24'
               className={resolvedIconClassName}

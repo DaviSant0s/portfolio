@@ -24,6 +24,7 @@ export default function Skills() {
     <section
       ref={ref}
       id='id_skills'
+      aria-labelledby='id_title_skills'
       className='page-section relative flex scroll-mt-[calc(var(--heightHeaderScroll)+var(--noticeHeight)+18px)] justify-center overflow-hidden bg-app'
     >
       <SectionBackdrop
@@ -36,6 +37,7 @@ export default function Skills() {
           eyebrow={skillsSectionIntro.eyebrow}
           title={skillsSectionIntro.title}
           titleId='id_title_skills'
+          as='h2'
           description={skillsSectionIntro.description}
           titleClassName='max-w-[15ch] min-[790px]:max-w-[18ch]'
         />

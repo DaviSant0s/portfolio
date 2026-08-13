@@ -51,6 +51,7 @@ export default function Certifications() {
     <section
       ref={ref}
       id='id_certifications'
+      aria-labelledby='id_title_certifications'
       className='page-section relative flex scroll-mt-[calc(var(--heightHeaderScroll)+var(--noticeHeight)+18px)] justify-center overflow-hidden bg-app-alt'
     >
       <SectionBackdrop
@@ -63,6 +64,7 @@ export default function Certifications() {
           eyebrow='Aprendizado contínuo'
           title='Certificações que sustentam minha evolução'
           titleId='id_title_certifications'
+          as='h2'
           description='Cursos, trilhas e estudos que reforçam minha base em frontend, backend, banco de dados, IA aplicada e fundamentos que acompanham minha prática.'
           titleClassName='max-w-[13ch] min-[790px]:max-w-[12ch]'
         />
@@ -136,11 +138,12 @@ export default function Certifications() {
                 smooth={true}
                 offset={-79}
                 duration={300}
+                href='/#certificacoes'
+                onClick={handleClickBtnLessCardsBool}
                 className='inline-flex transition-transform duration-200 ease-out hover:scale-[1.03]'
               >
                 <Button
                   as='span'
-                  handleClick={handleClickBtnLessCardsBool}
                   name='Ver menos'
                   icon='expand_less'
                   className='border-outline-strong px-[30px] pr-10 hover:border-copy-muted'

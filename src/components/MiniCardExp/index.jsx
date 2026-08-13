@@ -44,7 +44,7 @@ export default function MiniCardExp({
                   <img
                     className={`object-contain ${logoClassName || 'w-[58px]'}`.trim()}
                     src={logo}
-                    alt={`Logo de ${institution}`}
+                    alt=''
                   />
                 </div>
               ) : (

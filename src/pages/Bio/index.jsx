@@ -13,6 +13,7 @@ export default function Bio() {
     <section
       ref={ref}
       id='id_bio'
+      aria-labelledby='id_title_bio'
       className='page-section relative flex scroll-mt-[calc(var(--heightHeaderScroll)+var(--noticeHeight)+18px)] justify-center overflow-hidden bg-app'
     >
       <SectionBackdrop
@@ -51,6 +52,7 @@ export default function Bio() {
 
             <ScrollReveal
               as='h2'
+              id='id_title_bio'
               delay={0.04}
               amount={0.26}
               className='mt-5 max-w-[11ch] text-balance text-[clamp(2rem,5vw,3.3rem)] font-semibold leading-[0.98] tracking-[-0.055em] text-copy-strong min-[500px]:mt-7 min-[960px]:max-w-[12ch]'
@@ -83,14 +85,14 @@ export default function Bio() {
                   key={fact.label}
                   className='rounded-[22px] border border-outline/70 bg-panel/76 px-4 py-4 shadow-[0_18px_36px_-30px_var(--color-shadow-md)] backdrop-blur-sm'
                 >
-                  <div className='flex items-center gap-2.5'>
-                    <span className='material-symbols-outlined text-[1.15rem] leading-none text-primary'>
+                  <dt className='flex items-center gap-2.5 text-[0.78rem] font-semibold uppercase tracking-[0.14em] text-copy-soft'>
+                    <span className='material-symbols-outlined text-[1.15rem] leading-none text-primary' aria-hidden='true'>
                       {fact.icon}
                     </span>
-                    <dt className='text-[0.78rem] font-semibold uppercase tracking-[0.14em] text-copy-soft'>
+                    <span>
                       {fact.label}
-                    </dt>
-                  </div>
+                    </span>
+                  </dt>
                   <dd className='mt-3 text-[0.92rem] leading-[1.58] text-copy min-[500px]:text-[0.95rem]'>
                     {fact.value}
                   </dd>
@@ -122,7 +124,7 @@ export default function Bio() {
                 className='inline-flex h-11 items-center gap-2 rounded-full bg-[#15181d] px-5 text-[0.94rem] font-semibold tracking-[-0.02em] text-white shadow-[0_18px_34px_-24px_rgba(21,24,29,0.52)] transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-[#0f1115] focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-primary-soft dark:bg-white dark:text-[#12161d] dark:shadow-[0_18px_34px_-24px_rgba(0,0,0,0.34)] dark:hover:bg-[#f4f7fa]'
               >
                 <span>Ver currículo</span>
-                <span className='material-symbols-outlined text-[1.05rem] leading-none'>
+                <span className='material-symbols-outlined text-[1.05rem] leading-none' aria-hidden='true'>
                   south_east
                 </span>
               </a>

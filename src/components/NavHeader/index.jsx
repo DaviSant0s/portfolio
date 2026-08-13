@@ -15,7 +15,7 @@ export default function NavHeader() {
   };
 
   return (
-    <nav className='flex shrink-0 items-center gap-5 min-[1280px]:gap-7'>
+    <nav aria-label='Navegação principal' className='flex shrink-0 items-center gap-5 min-[1280px]:gap-7'>
       {navigationSections.map((item) => {
         const isRouteLink = Boolean(item.path);
         const isActive = isRouteLink
@@ -38,6 +38,7 @@ export default function NavHeader() {
             {isActive &&
               <m.span
                 layoutId='header-nav-indicator'
+                aria-hidden='true'
                 className='absolute inset-x-0 -bottom-0.5 h-[2px] rounded-full bg-[linear-gradient(90deg,var(--color-accent),var(--color-accent-strong))]'
                 transition={indicatorTransition}
               />
@@ -55,7 +56,8 @@ export default function NavHeader() {
             <RouterLink
               key={item.section}
               to={destination}
-              className='inline-flex'
+              className='inline-flex focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-primary-soft'
+              aria-current={isActive ? (isRouteLink ? 'page' : 'location') : undefined}
               onClick={() => setActiveSection(item.section)}
             >
               {content}
@@ -69,7 +71,9 @@ export default function NavHeader() {
             to={item.to}
             smooth={true}
             offset={item.offset}
-            className='inline-flex'
+            href={`/#${item.hash}`}
+            className='inline-flex focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-primary-soft'
+            aria-current={isActive ? 'location' : undefined}
             onClick={() => setActiveSection(item.section)}
             {...linkProps}
           >

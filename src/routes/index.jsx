@@ -19,17 +19,19 @@ function PortfolioHome() {
   return (
     <>
       <SEO metadata={homeSeoMetadata}/>
-      <Home/>
-      <Bio/>
-      <Skills/>
-      <Projects/>
-      <Experience/>
+      <main>
+        <Home/>
+        <Bio/>
+        <Skills/>
+        <Projects/>
+        <Experience/>
 
-      <CertificationsProvider>
-        <Certifications/>
-      </CertificationsProvider>
+        <CertificationsProvider>
+          <Certifications/>
+        </CertificationsProvider>
 
-      <Contact/>
+        <Contact/>
+      </main>
     </>
   );
 }

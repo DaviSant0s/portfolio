@@ -10,6 +10,7 @@ export default function Experience() {
     <section
       ref={ref}
       id='id_experience'
+      aria-labelledby='id_title_experience'
       className='page-section relative flex scroll-mt-[calc(var(--heightHeaderScroll)+var(--noticeHeight)+18px)] justify-center overflow-hidden bg-app'
     >
       <SectionBackdrop
@@ -22,6 +23,7 @@ export default function Experience() {
           eyebrow='Trajetória prática'
           title='Experiências que conectam estudo e entrega'
           titleId='id_title_experience'
+          as='h2'
           description='Residência tecnológica, voluntariado, empresa júnior, ensino e pesquisa que sustentam minha atuação atual.'
           titleClassName='max-w-[13ch] min-[790px]:max-w-[14ch]'
         />

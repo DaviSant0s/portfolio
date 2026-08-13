@@ -12,6 +12,7 @@ export default function Projects() {
     <section
       ref={ref}
       id='id_projects'
+      aria-labelledby='id_title_projects'
       className='page-section relative flex scroll-mt-[calc(var(--heightHeaderScroll)+var(--noticeHeight)+18px)] justify-center overflow-hidden bg-app-alt'
     >
       <SectionBackdrop
@@ -23,6 +24,7 @@ export default function Projects() {
           eyebrow='Projetos selecionados'
           title='Interfaces, produtos e estudos aplicados'
           titleId='id_title_projects'
+          as='h2'
           description='Recortes do que venho construindo com foco em produtos aplicados, soluções fullstack e pesquisa acadêmica em IA.'
           titleClassName='max-w-[14ch] min-[790px]:max-w-[15ch]'
         />

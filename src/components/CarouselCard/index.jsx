@@ -53,15 +53,13 @@ export default function CarouselCard({
                 <div
                   key={`${name}-stack-${stack.label}-${index}`}
                   className='group/stack relative flex h-8 w-8 items-center justify-center rounded-[0.9rem] border border-outline/65 bg-panel/84 p-1.5 shadow-[0_10px_18px_-16px_var(--color-shadow-lg)]'
-                  aria-label={stack.label}
                   title={stack.label}
                 >
                   {stack.simpleIcon ? (
                     <svg
                       className='h-full w-full'
                       viewBox='0 0 24 24'
-                      role='img'
-                      aria-label={stack.label}
+                      aria-hidden='true'
                       style={{ color: `#${stack.simpleIcon.hex}` }}
                     >
                       <path fill='currentColor' d={stack.simpleIcon.path} />
@@ -76,7 +74,7 @@ export default function CarouselCard({
                     <img
                       className='max-h-full max-w-full object-contain'
                       src={stack.icon}
-                      alt={stack.label}
+                      alt=''
                     />
                   )}
                   <span className='pointer-events-none absolute bottom-full left-1/2 z-[2] mb-2 -translate-x-1/2 translate-y-1 rounded-full border border-outline/70 bg-panel px-2 py-1 text-[0.65rem] font-medium leading-none text-copy-muted opacity-0 shadow-[0_12px_24px_-20px_var(--color-shadow-md)] transition-all duration-200 ease-out group-hover/stack:translate-y-0 group-hover/stack:opacity-100'>
@@ -93,6 +91,7 @@ export default function CarouselCard({
             type='button'
             className={actionClassName}
             onClick={onViewDetails}
+            aria-label={`Ver detalhes do projeto ${name}`}
           >
             Ver detalhes
           </button>

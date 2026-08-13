@@ -23,7 +23,6 @@ const CONTACT_METHODS = [
     copyValue: PRIMARY_EMAIL,
     href: `mailto:${PRIMARY_EMAIL}`,
     icon: gmail,
-    iconAlt: 'Icone do Gmail',
     iconClassName: 'w-7',
   },
   {
@@ -33,7 +32,6 @@ const CONTACT_METHODS = [
     copyValue: '53999322366',
     href: 'https://wa.me/5553999322366',
     icon: whatsapp,
-    iconAlt: 'Icone do WhatsApp',
     iconClassName: 'w-8',
   },
 ];
@@ -163,6 +161,7 @@ export default function Contact() {
     <section
       ref={ref}
       id='id_contact'
+      aria-labelledby='id_title_contact'
       className='page-section relative flex scroll-mt-[calc(var(--heightHeaderScroll)+var(--noticeHeight)+18px)] justify-center overflow-hidden bg-app-alt'
     >
       <SectionBackdrop
@@ -174,6 +173,7 @@ export default function Contact() {
           eyebrow='Vamos conversar'
           title='Contato para oportunidades e projetos'
           titleId='id_title_contact'
+          as='h2'
           description='Se fizer sentido para o seu momento, me chama. Posso conversar sobre produtos web, interfaces, integrações, residência tecnológica e colaboração em times.'
           titleClassName='max-w-[12ch] min-[790px]:max-w-[14ch]'
         />
@@ -188,9 +188,9 @@ export default function Contact() {
                 <span className='size-2 rounded-full bg-[linear-gradient(135deg,var(--color-info),var(--color-primary))]' />
                 Mensagem direta
               </span>
-              <h2 className='mt-4 max-w-[13.5ch] text-[1.16rem] font-semibold tracking-[-0.03em] text-copy-strong min-[480px]:max-w-none min-[480px]:text-[1.28rem] min-[720px]:text-[1.65rem]'>
+              <h3 className='mt-4 max-w-[13.5ch] text-[1.16rem] font-semibold tracking-[-0.03em] text-copy-strong min-[480px]:max-w-none min-[480px]:text-[1.28rem] min-[720px]:text-[1.65rem]'>
                 Vamos conversar
-              </h2>
+              </h3>
               <p className='mt-3 max-w-[24rem] text-[0.95rem] leading-[1.6] text-copy-muted min-[500px]:max-w-[42rem] min-[500px]:text-[0.98rem] min-[500px]:leading-relaxed'>
                 Me conte em poucas linhas o que você tem em mente.
               </p>
@@ -317,9 +317,9 @@ export default function Contact() {
               <span className='text-[0.8rem] font-semibold uppercase tracking-[0.16em] text-copy-soft'>
                 Contato direto
               </span>
-              <h2 className='mt-2 text-[1.16rem] font-semibold tracking-[-0.03em] text-copy-strong min-[500px]:text-[1.28rem]'>
+              <h3 className='mt-2 text-[1.16rem] font-semibold tracking-[-0.03em] text-copy-strong min-[500px]:text-[1.28rem]'>
                 Canais diretos
-              </h2>
+              </h3>
               <p className='mt-3 text-[0.9rem] leading-[1.58] text-copy-muted min-[500px]:text-[0.94rem] min-[500px]:leading-relaxed'>
                 WhatsApp para conversa rapida. E-mail para propostas mais detalhadas.
               </p>
@@ -334,7 +334,7 @@ export default function Contact() {
                   <article key={contact.id} className='px-5 py-5 min-[500px]:px-6 min-[500px]:py-6 min-[720px]:px-7'>
                     <div className='flex items-start gap-4'>
                       <div className='flex size-12 shrink-0 items-center justify-center rounded-[16px] border border-outline/60 bg-app-alt min-[500px]:size-14 min-[500px]:rounded-[18px]'>
-                        <img src={contact.icon} alt={contact.iconAlt} className={contact.iconClassName} />
+                        <img src={contact.icon} alt='' className={contact.iconClassName} />
                       </div>
 
                       <div className='min-w-0 flex-1'>
@@ -344,7 +344,7 @@ export default function Contact() {
                         <div className='mt-1 flex items-center gap-2.5'>
                           <a
                             href={contact.href}
-                            className='block break-words text-[1rem] font-semibold leading-snug text-copy-strong transition-colors hover:text-primary min-[500px]:text-[1.06rem]'
+                            className='block break-words text-[1rem] font-semibold leading-snug text-copy-strong transition-colors hover:text-primary focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-primary-soft min-[500px]:text-[1.06rem]'
                             {...(isExternalLink ? { target: '_blank', rel: 'noreferrer' } : {})}
                           >
                             {contact.value}
@@ -356,7 +356,7 @@ export default function Contact() {
                             onClick={() => handleContactCopy(contact.id)}
                             className='inline-flex size-8 shrink-0 items-center justify-center rounded-full text-copy-soft transition-all duration-200 hover:bg-app-alt hover:text-copy focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-primary-soft'
                           >
-                            <span className='material-symbols-outlined text-[1.1rem] leading-none'>
+                            <span className='material-symbols-outlined text-[1.1rem] leading-none' aria-hidden='true'>
                               {isCopied ? 'check' : 'content_copy'}
                             </span>
                           </button>

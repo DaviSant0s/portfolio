@@ -58,7 +58,7 @@ export default function SocialsGroup({ variant = 'default' }) {
               aria-label={item.label}
               className={itemClassName}
             >
-              <i className={iconClassName}/>
+              <i className={iconClassName} aria-hidden='true'/>
             </a>
           );
         }
@@ -70,10 +70,11 @@ export default function SocialsGroup({ variant = 'default' }) {
             smooth={true}
             offset={-79}
             duration={700}
+            href='/#contato'
             aria-label={item.label}
             className={itemClassName}
           >
-            <i className={iconClassName}/>
+            <i className={iconClassName} aria-hidden='true'/>
           </Link>
         );
       })}
