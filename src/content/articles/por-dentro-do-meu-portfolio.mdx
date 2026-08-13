@@ -1,0 +1,304 @@
+---
+title: "Por dentro do meu portfólio: arquitetura e evolução técnica"
+description: "Como meu portfólio evoluiu de uma landing page em React e Vite para uma aplicação com rotas, artigos em MDX, SEO estático e melhorias mensuradas."
+date: "2026-08-13"
+tags: ["React", "Vite", "MDX", "Arquitetura", "SEO"]
+slug: "por-dentro-do-meu-portfolio"
+---
+
+Este portfólio começou como uma landing page: uma única rota, seções organizadas verticalmente e navegação por scroll. A Home concentrava minha apresentação, habilidades, projetos, experiências, certificações e formas de contato em uma interface única.
+
+Com o tempo, o projeto passou a cumprir outra função. Além de apresentar o que construo, ele se tornou um lugar para registrar conhecimento técnico. Adicionar artigos parece uma mudança pequena na interface, mas afetou rotas, navegação, build, deploy e SEO. Este texto percorre essa evolução e mostra como essas partes se conectam na implementação atual.
+
+## O projeto hoje
+
+A Home continua sendo a parte central do portfólio. Ela reúne sete áreas dentro de um único `main`: apresentação, bio, habilidades, projetos, experiências, certificações e contato. A navegação acompanha a seção visível, funciona em desktop e mobile e mantém links diretos como `/#projetos` e `/#contato`.
+
+Alguns comportamentos atravessam a aplicação inteira:
+
+- o tema claro ou escuro é aplicado antes da montagem do React e persistido em `localStorage`;
+- as animações respeitam `prefers-reduced-motion`;
+- projetos, experiências e habilidades ficam separados da interface em arquivos de dados;
+- o formulário usa React Hook Form e Zod, envia pelo EmailJS quando configurado e recorre a `mailto:` quando o serviço não está disponível;
+- Header, Footer, menu mobile e páginas de artigos compartilham a mesma navegação.
+
+A stack se encaixa ao redor dessas responsabilidades. React compõe a interface, Vite organiza desenvolvimento e build, Tailwind concentra grande parte da apresentação, Motion cuida das transições e React Router resolve as páginas que deixaram de caber no modelo de uma única rota.
+
+## A arquitetura em camadas
+
+O diretório `src` está organizado por responsabilidade, sem esconder a natureza de uma aplicação frontend:
+
+```text
+src/
+├── components/       componentes reutilizáveis da interface
+├── config/           ambiente e configuração do site
+├── content/articles/ conteúdo MDX e catálogo de artigos
+├── context/          tema e estados compartilhados
+├── data/             projetos, experiências e habilidades
+├── hooks/            comportamento reutilizável
+├── pages/            seções da Home e páginas de artigos
+├── routes/           composição e configuração das rotas
+├── schemas/          validação do formulário
+└── seo/              metadata usada no cliente e no build
+
+scripts/
+└── generate-static-seo.mjs
+```
+
+Essa separação não elimina dependências entre as partes. Um artigo, por exemplo, nasce em `content`, é descoberto durante a transformação do Vite, aparece em uma página do React Router, fornece dados para `seo` e termina como um documento específico dentro de `dist`.
+
+É justamente esse percurso que tornou a área de artigos a parte arquiteturalmente mais interessante do projeto.
+
+## Quando uma página única ganhou novas rotas
+
+Antes dos artigos, o `App.jsx` renderizava todas as seções diretamente. Esse modelo combinava bem com `react-scroll`: cada item do Header apontava para um elemento da mesma página.
+
+Com a listagem e as páginas individuais, a configuração passou a ter três destinos principais:
+
+```jsx
+<Routes>
+  <Route path='/' element={<PortfolioHome/>}/>
+  <Route path='/artigos' element={<Articles/>}/>
+  <Route path='/artigos/:slug' element={<Article/>}/>
+  <Route path='*' element={<Navigate to='/' replace/>}/>
+</Routes>
+```
+
+A Home não foi fragmentada em várias URLs. Ela continua composta pelas mesmas seções, agora dentro de `PortfolioHome`, enquanto `/artigos` e `/artigos/:slug` usam React Router.
+
+Isso criou dois modelos de navegação na mesma aplicação:
+
+1. dentro de `/`, os links usam scroll suave e offsets para o Header fixo;
+2. fora da Home, esses mesmos links navegam primeiro para uma URL como `/#projetos`.
+
+O `RouteScrollManager` observa `pathname` e `hash`. Quando a navegação chega à Home com um hash, ele encontra a seção correspondente e executa o scroll depois da renderização. Sem hash, reposiciona a nova rota no topo.
+
+```text
+/artigos/algum-slug
+        ↓ clique em “Projetos”
+/#projetos
+        ↓ React Router renderiza a Home
+RouteScrollManager localiza id_projects
+        ↓
+scroll até a seção
+```
+
+O mesmo catálogo de navegação alimenta Header desktop, menu mobile e Footer. Assim, o nome, o hash e o destino de uma seção não precisam ser repetidos em cada componente.
+
+<Callout type="info" title="Uma consequência da mudança">
+  Adicionar páginas não significou apenas instalar um roteador. Foi necessário preservar o comportamento de scroll da Home e, ao mesmo tempo, fazer os mesmos links funcionarem a partir de qualquer artigo.
+</Callout>
+
+## Artigos como parte do próprio código
+
+Os artigos vivem em `src/content/articles`. Cada arquivo MDX contém frontmatter e conteúdo, e não existe um array manual registrando publicações.
+
+O ponto de entrada do catálogo é uma linha pequena:
+
+```js
+const articleModules = import.meta.glob('./*.mdx', { eager: true });
+```
+
+Para cada módulo encontrado, a aplicação lê o frontmatter, valida os campos obrigatórios, normaliza datas e tags e associa o componente MDX exportado como `Content`. Depois, verifica slugs duplicados e ordena os artigos da data mais recente para a mais antiga.
+
+Os metadados mínimos são:
+
+```yaml
+title: "Título do artigo"
+description: "Descrição usada na página e nos metadados."
+date: "2026-08-13"
+tags: ["React", "Arquitetura"]
+slug: "titulo-do-artigo"
+```
+
+Há também suporte a `updatedDate`, `image` e `noindex`. Um frontmatter inválido interrompe o desenvolvimento ou o build com uma mensagem explícita, em vez de produzir silenciosamente uma rota inconsistente.
+
+O carregamento `eager` tem um trade-off direto. Ele torna metadados e componentes imediatamente disponíveis e mantém o catálogo simples, mas inclui os módulos MDX no grafo inicial do cliente. Para o volume atual isso é administrável; com muitos artigos, carregamento sob demanda e separação entre índice de metadata e conteúdo seriam pontos naturais de revisão.
+
+## MDX sem transformar cada artigo em uma página React
+
+A rota individual é genérica. Ela recebe o slug, busca o artigo e renderiza o componente produzido pelo MDX:
+
+```jsx
+const { Content } = article;
+
+<div className='article-content'>
+  <Content components={mdxComponents}/>
+</div>
+```
+
+O objeto `mdxComponents` registra três componentes globais:
+
+```js
+export const mdxComponents = {
+  ArticleImage,
+  Callout,
+  TwoColumns,
+};
+```
+
+Isso permite enriquecer o conteúdo sem adicionar imports em cada arquivo:
+
+- `ArticleImage` produz `figure`, imagem responsiva e legenda opcional;
+- `Callout` representa informação, atenção ou resultado com semântica de nota;
+- `TwoColumns` oferece proporções limitadas e empilha o conteúdo abaixo de 790 pixels.
+
+Na implementação atual, essa camada mantém o texto como conteúdo. Os componentes entram apenas onde Markdown normal não expressa bem a estrutura necessária.
+
+<TwoColumns ratio="50-50">
+  <div>
+    ### Markdown continua sendo a base
+
+    Parágrafos, listas, links, títulos e blocos de código permanecem legíveis diretamente no arquivo MDX.
+  </div>
+
+  <div>
+    ### React entra de forma localizada
+
+    Imagens com legenda, notas semânticas e comparações em colunas usam componentes com APIs pequenas.
+  </div>
+</TwoColumns>
+
+## Syntax highlighting acontece antes do navegador
+
+Os blocos de código passam pelo `@shikijs/rehype` durante a transformação do MDX. A configuração usa os temas `github-light` e `github-dark`, e o CSS alterna as variáveis produzidas pelo Shiki de acordo com o mesmo `data-theme` usado pelo restante do portfólio.
+
+Um transformer pequeno adiciona `data-language` ao elemento `pre`. O rótulo “JavaScript”, “TypeScript” ou “Python” é exibido pelo CSS, sem um componente React exclusivo e sem lógica de highlighting no navegador.
+
+Essa solução desloca trabalho para o build e entrega a marcação já tokenizada ao cliente. Em contrapartida, aumenta o custo de compilação e mantém uma exigência de ambiente: a versão atual do Shiki requer Node.js 20 ou superior.
+
+## O problema do HTML inicial
+
+Rotas no cliente resolvem navegação, mas não mudam o documento que o servidor entrega antes do JavaScript. Na primeira versão da área de artigos, a Home, a listagem e um artigo recebiam inicialmente o mesmo `index.html`. Título e descrição eram alterados depois por efeitos React.
+
+Esse comportamento é suficiente para a aba do navegador após a aplicação iniciar, mas não para todos os crawlers e geradores de preview que avaliam o HTML recebido na primeira resposta.
+
+A solução atual mantém a aplicação cliente e adiciona documentos específicos por rota durante o build. O processo é dividido em três comandos:
+
+```json
+"build": "npm run build:client && npm run build:seo && npm run generate:seo"
+```
+
+O fluxo completo fica assim:
+
+```text
+arquivo MDX
+    ↓
+frontmatter validado
+    ↓
+metadata central
+    ↓
+entrada de SEO compilada pelo Vite
+    ↓
+gerador de documentos
+    ├── HTML específico da rota
+    ├── canonical
+    ├── Open Graph
+    ├── Twitter Cards
+    ├── JSON-LD TechArticle
+    ├── sitemap.xml
+    └── robots.txt
+```
+
+A mesma função que cria metadata para a navegação interna do React é usada pela entrada de build. Isso evita manter dois conjuntos independentes de título, description, canonical e dados estruturados.
+
+Para artigos, o JSON-LD usa `TechArticle`. A data de modificação vem de `updatedDate`, quando presente, e usa a data de publicação como fallback. Tags alimentam tanto `article:tag` quanto `keywords`. Uma imagem social só é emitida quando o frontmatter fornece uma imagem real.
+
+<Callout type="warning" title="Não é renderização estática completa">
+  Os documentos gerados possuem um `head` específico, mas o elemento `#root` continua vazio no HTML do build. O corpo da Home e dos artigos ainda é renderizado pelo React no cliente. O uso de `vite build --ssr` serve apenas para produzir o módulo Node consumido pelo gerador; não existe um servidor SSR em produção.
+</Callout>
+
+## Build e deploy
+
+O primeiro estágio gera a aplicação cliente e seus chunks. O `vite.config.js` separa dependências de formulário, contato e carrossel em bundles próprios. O segundo estágio compila uma entrada capaz de ler os frontmatters no ambiente Node. O terceiro injeta os metadados e grava os documentos finais.
+
+Para este artigo, por exemplo, o build passa a produzir:
+
+```text
+dist/artigos/por-dentro-do-meu-portfolio/index.html
+```
+
+O sitemap usa a mesma lista de rotas e inclui apenas páginas cujo `robots` não começa com `noindex`. Publicar um novo MDX indexável não exige editar o script ou cadastrar manualmente sua URL.
+
+Na Vercel, arquivos gerados têm precedência. Os rewrites mantêm o fallback da SPA e direcionam slugs de artigo sem arquivo correspondente para `dist/artigos/404.html`.
+
+Existe uma limitação nessa abordagem: o fallback apresenta tela e metadata de artigo inexistente, mas pode ser servido com status HTTP 200. Responder com um 404 real exigiria uma Function, SSR ou outra mudança de infraestrutura.
+
+## Evoluir também significou medir
+
+Depois de rotas, conteúdo e SEO, duas auditorias registraram problemas que não estavam evidentes apenas olhando para a interface.
+
+Na revisão de acessibilidade, a Home recebeu um único `main`, hierarquia sequencial de headings, listas de definição válidas, destinos reais nos links de scroll e nomes mais específicos para controles repetidos. No Lighthouse mobile usado nessa auditoria, Accessibility passou de 90 para 100, enquanto Best Practices permaneceu em 100.
+
+Na revisão de fontes e ícones, a captura de rede encontrou uma fonte Material Symbols de 3.964.532 bytes, além de famílias sem uso, Material Icons legado e uma webfont completa de Boxicons. O conjunto Material foi limitado aos glifos realmente usados, e os 20 Boxicons referenciados viraram SVGs locais.
+
+<TwoColumns ratio="50-50">
+  <div>
+    ### Antes
+
+    - 15 requests de fontes e ícones;
+    - 4.401.842 bytes transferidos;
+    - Material Symbols com 3.964.532 bytes.
+  </div>
+
+  <div>
+    ### Depois
+
+    - 4 requests de fontes e ícones;
+    - 43.282 bytes transferidos;
+    - subconjunto Material com 13.464 bytes.
+  </div>
+</TwoColumns>
+
+Esses números vieram de um build de produção em Chromium, com cache desativado. A redução medida na transferência de fontes e ícones foi de 99,02%. O ganho não veio de trocar toda a identidade visual, mas de remover recursos que a página não utilizava e limitar um pacote ao conjunto necessário.
+
+## Decisões e trade-offs que permanecem visíveis
+
+### Evoluir a SPA existente
+
+A implementação atual incorporou React Router, MDX e geração de metadata sem migrar o portfólio para outro framework. Isso preservou a Home e seus comportamentos, mas manteve o corpo das páginas dependente de JavaScript.
+
+### Manter conteúdo e código no mesmo repositório
+
+Um artigo participa do mesmo versionamento, revisão e build da interface. Componentes e estilos podem ser usados diretamente no MDX. Em troca, publicar exige alterar o repositório e executar um novo deploy; não existe uma interface editorial independente.
+
+### Descobrir artigos automaticamente
+
+`import.meta.glob` elimina um cadastro manual e reduz a chance de criar um arquivo esquecido fora da listagem. A opção eager simplifica o catálogo, mas pode deixar de ser adequada conforme o volume de conteúdo crescer.
+
+### Processar código durante o build
+
+Shiki não precisa analisar os blocos no navegador e já produz as cores para os dois temas. O custo aparece no ambiente e no tempo de compilação.
+
+### Gerar apenas o que o projeto precisa para SEO
+
+O gerador resolve metadata inicial, canonical, compartilhamento, dados estruturados, sitemap e robots sem adicionar uma biblioteca de runtime. Por outro lado, é código próprio: precisa continuar sincronizado com o template, as rotas e a hospedagem.
+
+## Limitações atuais
+
+A arquitetura resolve o escopo atual, mas não encerra todos os problemas possíveis:
+
+- o conteúdo visível ainda depende da renderização cliente;
+- o fallback de artigo inexistente não garante status HTTP 404;
+- não existe uma imagem social padrão para Home e artigos sem `image`;
+- todos os módulos MDX são descobertos com `eager: true`;
+- não há busca, paginação, RSS, comentários ou tabela de conteúdos;
+- o bundle principal ainda ultrapassa 500 kB minificado e gera um aviso no Vite;
+- adicionar um novo Material Symbol exige atualizar manualmente o parâmetro `icon_names` em `index.html`;
+- publicar conteúdo depende de build e deploy do repositório.
+
+Essas limitações não tornam a solução atual inválida. Elas definem o ponto em que outra abordagem pode passar a fazer sentido se o volume de conteúdo ou os requisitos mudarem.
+
+## O que essa evolução deixou evidente
+
+O histórico do projeto mostra que uma funcionalidade raramente permanece isolada. Artigos introduziram rotas; rotas alteraram a navegação; páginas novas expuseram limitações no HTML inicial; corrigir o HTML levou a um pipeline de metadata e sitemap; publicar essa estrutura exigiu rever o comportamento da hospedagem.
+
+Também ficou evidente que funcionamento visual não encerra uma entrega. A Home já parecia pronta antes das auditorias, mas ainda continha problemas semânticos e transferia megabytes em fontes desnecessárias. Ferramentas de medição ajudaram a transformar suspeitas em mudanças verificáveis.
+
+Por fim, abstrações pequenas funcionaram melhor quando surgiram de necessidades repetidas: uma fonte central de navegação para três interfaces, metadata compartilhada entre cliente e build, componentes MDX com APIs restritas e validação única de frontmatter.
+
+## Conclusão
+
+O portfólio continua sendo uma aplicação React e Vite centrada em uma Home por seções. A diferença é que agora ele também possui uma camada de conteúdo integrada ao código, rotas próprias e documentos preparados para descoberta e compartilhamento.
+
+Mais do que adicionar uma página de artigos, essa evolução transformou o projeto em um registro do modo como organizo código, valido decisões e reconheço os limites da solução atual.
