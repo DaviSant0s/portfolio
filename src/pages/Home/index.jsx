@@ -2,7 +2,6 @@ import { Link } from 'react-scroll';
 import AnimatedParticleBackground from '../../components/AnimatedParticleBackground';
 import ScrollReveal from '../../components/ScrollReveal';
 import SocialsGroup from '../../components/SocialsGroup';
-import { resumeFileUrl } from '../../data/resumeFileUrl';
 import useTrackActiveSection from '../../hooks/header/useTrackActiveSection';
 
 export default function Home() {
@@ -58,27 +57,29 @@ export default function Home() {
           amount={0.3}
           className='mt-6 flex flex-wrap items-center justify-center gap-3 min-[500px]:mt-9'
         >
-          <a
-            href={resumeFileUrl}
-            target='_blank'
-            rel='noreferrer'
-            className={primaryCtaClassName}
-          >
-            <span>Ver currículo</span>
-            <span className='material-symbols-outlined text-[1.05rem] leading-none' aria-hidden='true'>
-              south_east
-            </span>
-          </a>
-
           <Link
             to='id_projects'
             smooth={true}
             offset={-79}
             duration={700}
             href='/#projetos'
+            className={primaryCtaClassName}
+          >
+            <span>Explorar projetos</span>
+            <span className='material-symbols-outlined text-[1.05rem] leading-none' aria-hidden='true'>
+              south_east
+            </span>
+          </Link>
+
+          <Link
+            to='id_bio'
+            smooth={true}
+            offset={-79}
+            duration={700}
+            href='/#sobre'
             className={secondaryCtaClassName}
           >
-            Explorar projetos
+            Sobre mim
           </Link>
         </ScrollReveal>
 
