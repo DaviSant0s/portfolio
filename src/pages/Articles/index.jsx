@@ -17,6 +17,7 @@ export default function Articles() {
           <div className='content-shell relative z-[1] flex flex-col items-center'>
             <SectionIntro
               eyebrow='Conteúdo técnico'
+              showEyebrow={false}
               title='Artigos'
               description='Anotações, aprendizados e experiências sobre desenvolvimento de software.'
             />
